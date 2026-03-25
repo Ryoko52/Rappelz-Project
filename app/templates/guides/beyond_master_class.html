@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Beyond Master Class</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg0: #0a0907; --bg1: #111009; --bg2: #1a1710; --bg3: #242015; --gold: #c9a84c; --gold2: #e8c96a; --gold3: #f5e098; --gold-dim: #7a6330; --text: #d4c9a8; --text2: #a09070; --text3: #6a5f45; --border: rgba(201,168,76,0.18);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg0); color: var(--text); font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; line-height: 1.65; min-height: 100vh; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg1); }
+  ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+  header { position: sticky; top: 0; z-index: 100; background: rgba(10,9,7,0.92); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); padding: 0 2rem; }
+  .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 2rem; height: 58px; }
+  .logo { font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700; color: var(--gold2); letter-spacing: 0.12em; text-decoration: none; white-space: nowrap; text-shadow: 0 0 20px rgba(201,168,76,0.4); }
+  nav { display: flex; gap: 0; flex: 1; }
+  nav a { font-family: 'Cinzel', serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; color: var(--text2); text-decoration: none; padding: 0 1rem; height: 58px; display: flex; align-items: center; border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s; }
+  nav a:hover { color: var(--gold2); border-bottom-color: var(--gold); }
+  .page { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+  h1 { font-family: 'Cinzel', serif; font-size: 2.5rem; font-weight: 700; color: var(--gold3); margin-bottom: 1rem; }
+  h2 { font-family: 'Cinzel', serif; font-size: 1.5rem; color: var(--gold2); margin: 2rem 0 1rem; }
+  p { margin-bottom: 1rem; color: var(--text2); }
+  .back-link { font-family: 'Cinzel', serif; font-size: 0.8rem; color: var(--gold-dim); text-decoration: none; margin-bottom: 2rem; display: inline-block; }
+  .back-link:hover { color: var(--gold2); }
+  table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(--bg2); border: 1px solid var(--border); }
+  thead { background: rgba(201,168,76,0.15); border-bottom: 2px solid var(--gold); }
+  th { padding: 1rem; text-align: left; color: var(--gold2); font-family: 'Cinzel', serif; font-weight: 600; border-right: 1px solid var(--border); }
+  th:last-child { border-right: none; }
+  td { padding: 1rem; border-right: 1px solid var(--border); color: var(--text); }
+  td:last-child { border-right: none; }
+  tbody tr { border-bottom: 1px solid rgba(201,168,76,0.1); transition: background 0.2s; }
+  tbody tr:hover { background: rgba(201,168,76,0.08); }
+  tbody tr:last-child { border-bottom: none; }
+  .difficulty { padding: 0.3rem 0.6rem; border-radius: 2px; font-weight: 600; display: inline-block; }
+  .easy { background: rgba(100,200,100,0.3); color: #90ff90; }
+  .medium { background: rgba(200,200,100,0.3); color: #ffff99; }
+  .hard { background: rgba(200,100,100,0.3); color: #ff9999; }
+  .highlight-box { background: rgba(201,168,76,0.1); border-left: 4px solid var(--gold); padding: 1.5rem; margin: 2rem 0; border-radius: 2px; }
+  footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--text3); font-size: 0.82rem; font-style: italic; margin-top: 4rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="/">RAPPELZ<span style="color:var(--text3);font-weight:400;font-size:0.75rem;margin-left:4px;">CODEX</span></a>
+    <nav>
+      <a href="/">← Back to Home</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+  <a class="back-link" href="/">← Back to Home</a>
+  <h1>Beyond Master Class</h1>
+  <p style="font-size:1.1rem;color:var(--text2);margin-bottom:2rem;">Level progression from 153 to 175 with optimized gear and farming strategies.</p>
+
+  <h2>Level 153–160: Early Endgame</h2>
+  <p>Choose one of the following methods based on your class strength and gear:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Location</th>
+        <th>Difficulty</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Method 1</strong></td>
+        <td>UG Quests</td>
+        <td><span class="difficulty easy">Easy</span></td>
+        <td>Take from village teleport NPCs. Pop Stamina Saver and Growth potions. Spam UG 2 Palmir until level 160.</td>
+      </tr>
+      <tr>
+        <td><strong>Method 2</strong></td>
+        <td>Snow Basin</td>
+        <td><span class="difficulty medium">Medium</span></td>
+        <td>Kill dragons until level 160. Best for Void Mage or Berserker (AoE abilities make it easier to kite).</td>
+      </tr>
+      <tr>
+        <td><strong>Method 3</strong></td>
+        <td>Labyrinth Dungeon</td>
+        <td><span class="difficulty medium">Medium</span></td>
+        <td>Do quests to final boss summoning Butkada and Akshas. Take quest → kill boss → abandon. +5% exp per run.</td>
+      </tr>
+      <tr>
+        <td><strong>Method 4</strong></td>
+        <td>Island of Gods</td>
+        <td><span class="difficulty hard">Hard & Fast</span></td>
+        <td>Buy Boarding Pass from Black Marketer. 30-min solo to level 160. Not recommended for new players - alts only.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Level 160–175: Gear Progression Checklist</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Step</th>
+        <th>Item / Set</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>1</strong></td>
+        <td>PW Gear Set</td>
+        <td><strong>From the farming above you are surely able to buy PW set from Auction House. The set is called:<br>
+- Daman - For Hunters<br>
+- Mach - For Warriors<br>
+- Nemon - For Mages<br>
+- Skadi - For Summoners.<br> Buy Boots, Armor, Gloves - prefer 3-slot, cheapest possible.</td>
+      </tr>
+      <tr>
+        <td><strong>2</strong></td>
+        <td>Pets & Belt</td>
+        <td>Death Tyrant 150 (+1 skill) | Bear Belt with passives + Gaia/Asura/Deva skills. Oracle: look for Passive + beneficial effects.</td>
+      </tr>
+      <tr>
+        <td><strong>3</strong></td>
+        <td>Helmet & Awakening</td>
+        <td>Make Helmet R2+20 from Moonlight Dungeon. Awaken with Awakening Stones (Black Marketer Nostra Family).</td>
+      </tr>
+      <tr>
+        <td><strong>4</strong></td>
+        <td>Unity & Potion</td>
+        <td>Wind Pixie / Ethereal Pixie / Bloodthirster (class-dependent). Spam use as level 1 potion every hour.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Best Leveling Location: Remains of Ancients (RoA)</h2>
+  <p><strong>To enter:</strong> Complete a quest at Circus 3 (starts at City of Ruins Hector NPC).</p>
+  <p>If you followed the previous steps, RoA will be easy for you. <strong>Farm here for an hour or more</strong> - this step defines your future leveling speed for years to come.</p>
+
+  <h3 style="color:var(--gold2);margin-top:1.5rem;margin-bottom:0.5rem;">Circus Drops (Game Changers)</h3>
+  <p>Circus 3 drops Necklace + Earrings with bonus damage and damage reduction to mobs. <strong>Highest priority types:</strong> Undead, Beast, and Mecca. You'll need 2 earrings + 1 necklace of the same type to switch depending on the mobs you face in RoA.</p>
+  <p><strong>Pro tip:</strong> If your class can handle Circus 4, go for it - the drops are much better.</p>
+
+  <h2>Target Gear for RoA Farming</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Equipment</th>
+        <th>Specifications</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Weapon</td>
+        <td>+12 Circus with Accuracy stat (Mystic Jewel +500 ATK from Alvaria). Awakened with Weapon Stones.</td>
+      </tr>
+      <tr>
+        <td>Accessories</td>
+        <td>Earrings + Necklace (multiple types). Awakened with Accessory Stones.</td>
+      </tr>
+      <tr>
+        <td>Rings</td>
+        <td>Circus Rings with effects (+ATK or +stats)</td>
+      </tr>
+      <tr>
+        <td>Belt</td>
+        <td>Bear Belt +1 (4-slot). Easy to make with Belt Upgrader Kit drops.</td>
+      </tr>
+      <tr>
+        <td>Armor</td>
+        <td>PW gear +7</td>
+      </tr>
+      <tr>
+        <td>Pets</td>
+        <td>3 Pets + Boss Card setup. New pet level 150.</td>
+      </tr>
+      <tr>
+        <td>Cards</td>
+        <td>Lunacy or Mephisto Card</td>
+      </tr>
+      <tr>
+        <td>Farming</td>
+        <td>Island of Gods for weapons/accessories 170+, or buy from AH</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="highlight-box">
+    <p><strong>✓ With this setup:</strong> Solo RoA even in Hector Room and level to 175. With a friend having the same gear, you can do HRoA First Room.</p>
+  </div>
+
+  <h2 style="margin-top:2rem;">What's Next?</h2>
+  <p>Ready to continue your journey beyond level 175? Check out the <a href="/guide/175-and-beyond" style="color:var(--gold);">175 and beyond guide</a> for the complete progression roadmap.</p>
+
+<footer>
+  <strong>RAPPELZ CODEX</strong> - Fan-made community guide
+</footer>
+
+</body>
+</html>
