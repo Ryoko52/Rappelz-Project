@@ -1,7 +1,2 @@
-<<<<<<< HEAD
 Flask==3.1.0
 Werkzeug==3.1.0
-=======
-Flask==3.1.0
-Werkzeug==3.1.0
->>>>>>> 5976057 (changes applied)
