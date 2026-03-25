@@ -115,6 +115,7 @@
   .search-result-item .sr-title { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.06em; }
   .search-result-item .sr-cat { font-size: 0.65rem; color: var(--text3); margin-top: 2px; }
   .search-no-results { padding: 0.8rem; color: var(--text3); font-size: 0.85rem; text-align: center; }
+  .search-result-item mark { background: rgba(201,168,76,0.3); color: var(--gold2); padding: 0 2px; border-radius: 2px; }
 
   /* HERO */
   #hero {
@@ -676,6 +677,7 @@
   <span style="margin-top:0.4rem;display:block">Content is community-sourced. Contribute corrections via the Discord.</span>
 </footer>
 
+<script src="js/search-index.js"></script>
 <script>
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('nav a');
@@ -690,64 +692,48 @@
   }, { rootMargin: '-40% 0px -50% 0px' });
   sections.forEach(s => observer.observe(s));
 
-  document.getElementById('search-input').addEventListener('input', function() {
-    const q = this.value.toLowerCase();
-    document.querySelectorAll('.guide-card, .item-card, .strat-block').forEach(el => {
-      el.style.opacity = (!q || el.textContent.toLowerCase().includes(q)) ? '1' : '0.2';
-    });
-    document.querySelectorAll('.tier-table tbody tr').forEach(row => {
-      row.style.opacity = (!q || row.textContent.toLowerCase().includes(q)) ? '1' : '0.2';
-    });
-  });
-
-  // Search dropdown
-  const searchPages = [];
-  document.querySelectorAll('.guide-card[href], .strat-block[href], .map-card[href]').forEach(el => {
-    const h = el.querySelector('h3, h4');
-    const p = el.querySelector('p');
-    const tag = el.querySelector('.guide-card-tag, .strat-tag');
-    if (h) searchPages.push({
-      title: h.textContent.trim(),
-      desc: p ? p.textContent.trim() : '',
-      keywords: (tag ? tag.textContent.trim() : '') + ' ' + (h.textContent.trim()),
-      url: el.getAttribute('href'),
-      cat: el.classList.contains('guide-card') ? 'Guide' : el.classList.contains('strat-block') ? 'Strategy' : 'Map'
-    });
-  });
-  document.querySelectorAll('.tier-table tbody tr').forEach(row => {
-    const cells = row.querySelectorAll('td');
-    if (cells.length >= 2) {
-      const link = cells[1].querySelector('a');
-      if (link) searchPages.push({
-        title: link.textContent.trim(),
-        desc: cells[2] ? cells[2].textContent.trim() : '',
-        keywords: link.textContent.trim() + ' class',
-        url: link.getAttribute('href'),
-        cat: 'Class'
-      });
-    }
-  });
-
+  // Search with content matching
   const searchInput = document.getElementById('search-input');
   const searchResults = document.getElementById('search-results');
   let selectedIdx = -1;
 
+  function getSnippet(text, query, len) {
+    const lower = text.toLowerCase();
+    const idx = lower.indexOf(query);
+    if (idx === -1) return '';
+    const start = Math.max(0, idx - 30);
+    const end = Math.min(text.length, idx + query.length + (len || 60));
+    let snippet = (start > 0 ? '...' : '') + text.substring(start, end) + (end < text.length ? '...' : '');
+    const re = new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+    snippet = snippet.replace(re, '<mark>$1</mark>');
+    return snippet;
+  }
+
   searchInput.addEventListener('input', function() {
     const q = this.value.toLowerCase().trim();
     selectedIdx = -1;
-    if (!q) { searchResults.classList.remove('active'); searchResults.innerHTML = ''; return; }
-    const matches = searchPages.filter(p =>
-      p.title.toLowerCase().includes(q) ||
-      p.desc.toLowerCase().includes(q) ||
-      p.keywords.toLowerCase().includes(q)
-    ).slice(0, 8);
+    if (!q || q.length < 2) { searchResults.classList.remove('active'); searchResults.innerHTML = ''; return; }
+
+    const matches = [];
+    for (const p of SEARCH_INDEX) {
+      const titleMatch = p.title.toLowerCase().includes(q);
+      const textMatch = p.text.toLowerCase().includes(q);
+      if (titleMatch || textMatch) {
+        matches.push({ ...p, titleMatch, snippet: textMatch ? getSnippet(p.text, q) : '' });
+      }
+      if (matches.length >= 8) break;
+    }
+
+    // Sort: title matches first
+    matches.sort((a, b) => (b.titleMatch ? 1 : 0) - (a.titleMatch ? 1 : 0));
+
     if (matches.length === 0) {
       searchResults.innerHTML = '<div class="search-no-results">No results found</div>';
     } else {
       searchResults.innerHTML = matches.map((m, i) =>
         '<a class="search-result-item" href="' + m.url + '" data-idx="' + i + '">' +
         '<div class="sr-title">' + m.title + '</div>' +
-        '<div class="sr-cat">' + m.cat + '</div></a>'
+        '<div class="sr-cat">' + m.cat + (m.snippet ? ' &mdash; ' + m.snippet : '') + '</div></a>'
       ).join('');
     }
     searchResults.classList.add('active');
