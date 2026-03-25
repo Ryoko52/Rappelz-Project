@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -215,3 +216,222 @@
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Getting Started in Rappelz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg0: #0a0907;
+    --bg1: #111009;
+    --bg2: #1a1710;
+    --bg3: #242015;
+    --bg4: #2e2a1a;
+    --gold: #c9a84c;
+    --gold2: #e8c96a;
+    --gold3: #f5e098;
+    --gold-dim: #7a6330;
+    --text: #d4c9a8;
+    --text2: #a09070;
+    --text3: #6a5f45;
+    --border: rgba(201,168,76,0.18);
+    --glow: 0 0 18px rgba(201,168,76,0.12);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg0);
+    color: var(--text);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.65;
+    min-height: 100vh;
+  }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg1); }
+  ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,9,7,0.92);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+    padding: 0 2rem;
+  }
+  .header-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; gap: 2rem;
+    height: 58px;
+  }
+  .logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--gold2);
+    letter-spacing: 0.12em;
+    text-decoration: none;
+    white-space: nowrap;
+    text-shadow: 0 0 20px rgba(201,168,76,0.4);
+  }
+  nav { display: flex; gap: 0; flex: 1; }
+  nav a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--text2);
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 58px;
+    display: flex; align-items: center;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  nav a:hover { color: var(--gold2); border-bottom-color: var(--gold); }
+
+  .page { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gold3);
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: var(--gold2);
+    margin: 2rem 0 1rem;
+  }
+  p { margin-bottom: 1rem; color: var(--text2); }
+  .back-link {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    color: var(--gold-dim);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    display: inline-block;
+  }
+  .back-link:hover { color: var(--gold2); }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+    color: var(--text3);
+    font-size: 0.82rem;
+    font-style: italic;
+    margin-top: 4rem;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(--bg2); border: 1px solid var(--border); }
+  thead { background: rgba(201,168,76,0.15); border-bottom: 2px solid var(--gold); }
+  th { padding: 1rem; text-align: left; color: var(--gold2); font-family: 'Cinzel', serif; font-weight: 600; border-right: 1px solid var(--border); }
+  th:last-child { border-right: none; }
+  td { padding: 1rem; border-right: 1px solid var(--border); color: var(--text); }
+  td:last-child { border-right: none; }
+  tbody tr { border-bottom: 1px solid rgba(201,168,76,0.1); transition: background 0.2s; }
+  tbody tr:hover { background: rgba(201,168,76,0.08); }
+  tbody tr:last-child { border-bottom: none; }
+  .level-badge { background: rgba(201,168,76,0.2); color: var(--gold2); padding: 0.3rem 0.6rem; border-radius: 2px; font-weight: 600; display: inline-block; }
+  .location { color: var(--gold3); font-weight: 600; }
+  .highlight-box { background: rgba(201,168,76,0.1); border-left: 4px solid var(--gold); padding: 1.5rem; margin: 2rem 0; border-radius: 2px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="/">RAPPELZ<span style="color:var(--text3);font-weight:400;font-size:0.75rem;margin-left:4px;">CODEX</span></a>
+    <nav>
+      <a href="/">← Back to Home</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+  <a class="back-link" href="/">← Back to Home</a>
+  <h1>Getting Started in Rappelz</h1>
+  <p style="font-size:1.1rem;color:var(--text2);margin-bottom:2rem;">Everything a new player needs: early leveling zones, buffs, quests and more.</p>
+
+  <h2>Starting Your Character</h2>
+  <p>If you have 0 Rupies on your account, follow these steps first. <strong>Note:</strong> It's recommended that you walk through the quests of Trainee Island to get a feel of the game the first time if you don't want to skip the initial steps outlined below.</p>
+
+  <h3 style="color:var(--gold2);margin-top:1.5rem;margin-bottom:0.5rem;">Initial Setup</h3>
+  <ol style="margin-left:2rem;margin-bottom:1rem;">
+    <li>Teleport to Hidden Village and go to the merchant then sell everything in your bag. This will get you more than 7,000 Rupees needed for buffs and traveling to Moonlight Dungeon.</li>
+    <li>Put Rupies in Warehouse and delete your character, then create a new one.</li>
+    <li>Go to the Buffer NPC and take the free buff and the 7,000 Rupee Buff.</li>
+  </ol>
+
+  <h2>Leveling Phases</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Level Range</th>
+        <th>Location / Method</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="level-badge">1–10</span></td>
+        <td><span class="location">Moonlight Dungeon Exterior</span></td>
+        <td>Kill 3 mobs outside while using Stamina Saver and a growth potion.</td>
+      </tr>
+      <tr>
+        <td><span class="level-badge">10–50</span></td>
+        <td><span class="location">Moonlight Dungeon Interior</span></td>
+        <td>Continue leveling inside Moonlight Dungeon.</td>
+      </tr>
+      <tr>
+        <td><span class="level-badge">50</span></td>
+        <td><span class="location">Class Change</span></td>
+        <td>Teleport to Hidden Village and talk to the Class Master. If broke, sell Extreme Essence at the Flea Market.</td>
+      </tr>
+      <tr>
+        <td><span class="level-badge">50–105</span></td>
+        <td><span class="location">Crystal Valley (Hard Mode)</span></td>
+        <td>Find the Koala and enter Hard mode. Stay until level 105. Do your 2nd class change at the Class Master.</td>
+      </tr>
+      <tr>
+        <td><span class="level-badge">105–120</span></td>
+        <td><span class="location">Red Farm or Witch Quest 1</span></td>
+        <td>RedFarm: Rondo Guild NPC | Witch Quest 1: Katan Guild NPC. Complete second class change first.</td>
+      </tr>
+      <tr>
+        <td><span class="level-badge">120–138</span></td>
+        <td><span class="location">Sanctuary Questline</span></td>
+        <td>Complete the Sanctuary questline. Quest starts at Rondo Merchant NPC.</td>
+      </tr>
+      <tr>
+        <td><span class="level-badge">138–150</span></td>
+        <td><span class="location">Witch Quest 2</span></td>
+        <td>Quest starts at Horizon Hector NPC.</td>
+      </tr>
+      <tr>
+        <td><span class="level-badge">150–153</span></td>
+        <td><span class="location">Master Class Trials</span></td>
+        <td>Complete Master Class Trials. Quest starts at Hector.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Self-Sufficient Progression</h2>
+  <p><strong>If you don't want to rely on other players to progress:</strong></p>
+  <p>Go to Sanctuary Hidden and farm items with the [Witch] type because they have better stats. Take 120 items and make them +12 without breaking them, then attempt an Ancient Cube for a chance at getting +17.</p>
+  <p>If you have full [Witch] equipment at level 120, all +12 or more, you will be stronger than anyone using level 150 gear at +7. This means your future characters will be able to skip Sanctuary quests entirely because you'll one-shot mobs in Sanctuary Hidden from level 105 to 133.</p>
+
+  <h2>What's Next?</h2>
+  <p>Once you reach level 153 and complete the Master Class Trials, you're ready for endgame progression. Head over to our <a href="{{ url_for('main.guide_beyond_master_class') }}" style="color:var(--gold2);text-decoration:underline;">Beyond Master Class</a> guide to learn about gear requirements and strategies to push further.</p>
+</div>
+
+<footer>
+  <strong>RAPPELZ CODEX</strong> - Fan-made community guide
+</footer>
+
+</body>
+</html>
+>>>>>>> 5976057 (changes applied)

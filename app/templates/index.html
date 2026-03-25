@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -705,3 +706,712 @@
 </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rappelz Codex - Player Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg0: #0a0907;
+    --bg1: #111009;
+    --bg2: #1a1710;
+    --bg3: #242015;
+    --bg4: #2e2a1a;
+    --gold: #c9a84c;
+    --gold2: #e8c96a;
+    --gold3: #f5e098;
+    --gold-dim: #7a6330;
+    --red: #a33b2a;
+    --red2: #c44a35;
+    --teal: #2a6e70;
+    --teal2: #3d9ea0;
+    --text: #d4c9a8;
+    --text2: #a09070;
+    --text3: #6a5f45;
+    --border: rgba(201,168,76,0.18);
+    --border2: rgba(201,168,76,0.35);
+    --glow: 0 0 18px rgba(201,168,76,0.12);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg0);
+    color: var(--text);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.65;
+    min-height: 100vh;
+    background-image:
+      radial-gradient(ellipse 80% 40% at 50% 0%, rgba(90,60,10,0.18) 0%, transparent 70%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='80' height='80' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg1); }
+  ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+
+  /* HEADER */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,9,7,0.92);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+    padding: 0 2rem;
+  }
+  .header-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; gap: 2rem;
+    height: 58px;
+  }
+  .logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--gold2);
+    letter-spacing: 0.12em;
+    text-decoration: none;
+    white-space: nowrap;
+    text-shadow: 0 0 20px rgba(201,168,76,0.4);
+  }
+  .logo span { color: var(--text3); font-weight: 400; font-size: 0.75rem; margin-left: 4px; }
+  nav { display: flex; gap: 0; flex: 1; }
+  nav a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--text2);
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 58px;
+    display: flex; align-items: center;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+  }
+  nav a:hover, nav a.active { color: var(--gold2); border-bottom-color: var(--gold); }
+  .search-wrap { margin-left: auto; position: relative; }
+  .search-wrap input {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.9rem;
+    padding: 6px 36px 6px 12px;
+    width: 210px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .search-wrap input::placeholder { color: var(--text3); }
+  .search-wrap input:focus { border-color: var(--gold-dim); box-shadow: var(--glow); }
+  .search-wrap svg { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); opacity: 0.4; pointer-events: none; }
+
+  /* HERO */
+  #hero {
+    position: relative; overflow: hidden;
+    min-height: 400px;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 5rem 2rem 4rem;
+    border-bottom: 1px solid var(--border);
+  }
+  #hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 30%, rgba(120,80,10,0.22) 0%, transparent 65%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(42,110,112,0.1) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 80% 70%, rgba(163,59,42,0.1) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  #hero::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(201,168,76,0.04) 60px);
+    pointer-events: none;
+  }
+  .hero-tag {
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem; letter-spacing: 0.3em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    display: flex; align-items: center; justify-content: center; gap: 1rem;
+  }
+  .hero-tag::before, .hero-tag::after {
+    content: '';
+    display: block; width: 60px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim));
+  }
+  .hero-tag::after { background: linear-gradient(90deg, var(--gold-dim), transparent); }
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 5vw, 3.6rem);
+    font-weight: 700;
+    color: var(--gold3);
+    line-height: 1.1;
+    letter-spacing: 0.06em;
+    text-shadow: 0 0 40px rgba(201,168,76,0.3), 0 2px 8px rgba(0,0,0,0.6);
+    margin-bottom: 1rem;
+  }
+  .hero-sub {
+    font-size: 1.1rem; font-style: italic;
+    color: var(--text2);
+    max-width: 520px; margin: 0 auto 2.5rem;
+    font-weight: 300;
+  }
+  .hero-cards {
+    display: flex; gap: 0.8rem; flex-wrap: wrap;
+    justify-content: center;
+    position: relative; z-index: 1;
+  }
+  .hero-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.8rem 1.4rem;
+    text-decoration: none;
+    color: var(--text);
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem; letter-spacing: 0.1em;
+    transition: background 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .hero-card:hover {
+    background: var(--bg3);
+    border-color: var(--gold-dim);
+    color: var(--gold2);
+    box-shadow: var(--glow);
+  }
+
+  /* LAYOUT */
+  .page { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+  .section { margin-bottom: 4rem; }
+
+  /* SECTION HEADING */
+  .section-head {
+    display: flex; align-items: center; gap: 1.2rem;
+    margin-bottom: 1.8rem;
+  }
+  .section-head h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem; font-weight: 600;
+    letter-spacing: 0.14em;
+    color: var(--gold2);
+    white-space: nowrap;
+  }
+  .section-line { flex: 1; height: 1px; background: var(--border); }
+  .section-badge {
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem; letter-spacing: 0.12em;
+    color: var(--bg0);
+    background: var(--gold-dim);
+    padding: 2px 8px; border-radius: 2px;
+  }
+
+  /* TIER TABLE */
+  .tier-table { width: 100%; border-collapse: collapse; }
+  .tier-table th {
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem; letter-spacing: 0.14em;
+    color: var(--text3);
+    text-align: left; padding: 0 1rem 0.6rem;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  .tier-table td {
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid rgba(201,168,76,0.07);
+    vertical-align: middle;
+    font-size: 0.95rem;
+  }
+  .tier-table tr:hover td { background: rgba(201,168,76,0.04); }
+  .tier-badge {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem; font-weight: 700;
+    width: 30px; text-align: center;
+    padding: 3px 0; border-radius: 3px;
+  }
+  .tier-S { background: rgba(220,80,60,0.25); color: #e87060; border: 1px solid rgba(220,80,60,0.4); }
+  .tier-A { background: rgba(201,168,76,0.2); color: var(--gold2); border: 1px solid rgba(201,168,76,0.35); }
+  .tier-B { background: rgba(61,158,160,0.18); color: var(--teal2); border: 1px solid rgba(61,158,160,0.3); }
+  .tier-C { background: rgba(120,100,70,0.2); color: var(--text2); border: 1px solid rgba(120,100,70,0.3); }
+  .tier-D { background: rgba(100,80,60,0.15); color: var(--text3); border: 1px solid rgba(100,80,60,0.3); }
+  .role-badge {
+    display: inline-block;
+    font-size: 0.68rem; font-family: 'Cinzel', serif;
+    padding: 2px 7px; border-radius: 2px;
+    letter-spacing: 0.06em;
+  }
+  .role-tank { background: rgba(61,158,160,0.15); color: var(--teal2); }
+  .role-dps  { background: rgba(163,59,42,0.2); color: #d96050; }
+  .role-heal { background: rgba(100,160,80,0.18); color: #8bc87a; }
+  .role-supp { background: rgba(120,100,200,0.15); color: #a090e0; }
+  .race-tag { color: var(--text3); font-size: 0.85rem; font-style: italic; }
+
+  /* GUIDE CARDS */
+  .guide-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.1rem; }
+  .guide-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.3rem 1.5rem;
+    text-decoration: none; color: inherit;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    display: block;
+    position: relative; overflow: hidden;
+  }
+  .guide-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--border2);
+    transition: background 0.2s;
+  }
+  .guide-card:hover { border-color: var(--gold-dim); background: var(--bg3); box-shadow: var(--glow); }
+  .guide-card:hover::before { background: var(--gold); }
+  .guide-card-tag {
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem; letter-spacing: 0.16em;
+    color: var(--text3); margin-bottom: 0.45rem;
+    text-transform: uppercase;
+  }
+  .guide-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem; font-weight: 600;
+    color: var(--gold2); margin-bottom: 0.45rem;
+  }
+  .guide-card p { font-size: 0.9rem; color: var(--text2); line-height: 1.55; }
+  .guide-card-meta {
+    margin-top: 0.9rem;
+    display: flex; gap: 0.8rem;
+    font-size: 0.76rem; color: var(--text3);
+  }
+
+  /* ITEM DB */
+  .item-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 0.85rem; }
+  .item-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.95rem 1.1rem;
+    display: flex; gap: 0.9rem; align-items: flex-start;
+  }
+  .item-icon {
+    width: 42px; height: 42px; border-radius: 3px;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; flex-shrink: 0;
+  }
+  .item-info h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem; font-weight: 600;
+    color: var(--gold2); margin-bottom: 0.2rem;
+  }
+  .item-info .item-type { font-size: 0.76rem; color: var(--text3); margin-bottom: 0.25rem; }
+  .item-info .item-stats { font-size: 0.8rem; color: var(--teal2); }
+
+  /* STRATEGY */
+  .strat-list { display: flex; flex-direction: column; gap: 1rem; }
+  .strat-block {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.3rem 1.7rem;
+    display: grid; grid-template-columns: 1fr auto;
+    gap: 0.5rem 2rem; align-items: start;
+  }
+  .strat-block h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.88rem; font-weight: 600;
+    color: var(--gold2); margin-bottom: 0.35rem;
+  }
+  .strat-block p { font-size: 0.9rem; color: var(--text2); line-height: 1.6; }
+  .strat-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; padding-top: 0.2rem; }
+  .strat-tag {
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem; letter-spacing: 0.1em;
+    padding: 2px 7px; border-radius: 2px;
+    background: var(--bg4); color: var(--text3);
+    border: 1px solid var(--border);
+    white-space: nowrap;
+  }
+
+  /* MAPS */
+  .map-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
+  .map-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .map-thumb {
+    height: 96px;
+    background: var(--bg4);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem;
+    border-bottom: 1px solid var(--border);
+    position: relative; overflow: hidden;
+  }
+  .map-thumb::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(201,168,76,0.07) 0%, transparent 70%);
+  }
+  .map-info { padding: 0.95rem 1.1rem; }
+  .map-info h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.83rem; font-weight: 600;
+    color: var(--gold2); margin-bottom: 0.25rem;
+  }
+  .map-info p { font-size: 0.82rem; color: var(--text2); margin-bottom: 0.5rem; }
+  .map-meta { display: flex; gap: 1rem; align-items: center; font-size: 0.78rem; color: var(--text3); }
+  .map-level { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.1em; color: var(--gold-dim); }
+  .diff { display: flex; gap: 3px; align-items: center; }
+  .diff span { width: 7px; height: 7px; border-radius: 50%; background: var(--border2); display: inline-block; }
+  .diff span.on { background: var(--gold); }
+
+  /* ORNAMENT */
+  .ornament {
+    text-align: center; margin: 3rem 0;
+    color: var(--text3); letter-spacing: 0.5em; font-size: 0.72rem;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+    color: var(--text3);
+    font-size: 0.82rem;
+    font-style: italic;
+  }
+  footer strong { color: var(--gold-dim); font-style: normal; font-family: 'Cinzel', serif; font-size: 0.76rem; }
+
+  @media (max-width: 680px) {
+    nav { display: none; }
+    .search-wrap input { width: 150px; }
+    .strat-block { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#hero">RAPPELZ<span>CODEX</span></a>
+    <nav>
+      <a href="#tier-list">Tier List</a>
+      <a href="#guides">Guides</a>
+      <a href="#strategies">Strategies</a>
+      <a href="#maps">Maps</a>
+    </nav>
+    <div class="search-wrap">
+      <input type="text" placeholder="Search the Codex…" id="search-input"/>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.2"/>
+        <line x1="9.5" y1="9.5" x2="13" y2="13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section id="hero">
+  <div style="position:relative;z-index:1">
+    <p class="hero-tag">Community Knowledge Base</p>
+    <h1>Rappelz Codex</h1>
+    <p class="hero-sub">Tier lists, class guides, tips and tricks, strategies, and maps - all in one place.</p>
+    <div class="hero-cards">
+      <a class="hero-card" href="#tier-list">⚔ Class Tier List</a>
+      <a class="hero-card" href="#guides">📖 Guides</a>
+      <a class="hero-card" href="#strategies">🗡 Strategies</a>
+      <a class="hero-card" href="#maps">🗺 Maps</a>
+    </div>
+  </div>
+</section>
+
+<div class="page">
+
+  <!-- TIER LIST -->
+  <section class="section" id="tier-list">
+    <div class="section-head">
+      <h2>CLASS TIER LIST</h2>
+      <div class="section-line"></div>
+      <span class="section-badge">9.10</span>
+    </div>
+    <table class="tier-table">
+      <thead>
+        <tr>
+          <th>TIER</th>
+          <th>CLASS</th>
+          <th>NOTES</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- S TIER -->
+        <tr>
+          <td><span class="tier-badge tier-S">S</span></td>
+          <td><a href="/class/mercenary" style="color:inherit;text-decoration:none;">Mercenary</a></td>
+          <td style="color:var(--text2);font-size:0.88rem">Exceptional damage output and survivability combination.</td>
+        </tr>
+        <tr>
+          <td><span class="tier-badge tier-S">S</span></td>
+          <td><a href="/class/deadeye" style="color:inherit;text-decoration:none;">Deadeye</a></td>
+          <td style="color:var(--text2);font-size:0.88rem">Top-tier ranged DPS with critical strike synergy.</td>
+        </tr>
+        <tr>
+          <td><span class="tier-badge tier-S">S</span></td>
+          <td><a href="/class/slayer" style="color:inherit;text-decoration:none;">Slayer</a></td>
+          <td style="color:var(--text2);font-size:0.88rem">Highest burst damage; dominates PvE and PvP.</td>
+        </tr>
+        <tr>
+          <td><span class="tier-badge tier-S">S</span></td>
+          <td><a href="/class/void-mage" style="color:inherit;text-decoration:none;">Void Mage</a></td>
+          <td style="color:var(--text2);font-size:0.88rem">Incredible AoE damage; essential for group content.</td>
+        </tr>
+        <!-- A TIER -->
+        <tr>
+          <td><span class="tier-badge tier-A">A</span></td>
+          <td><a href="/class/master-breeder" style="color:inherit;text-decoration:none;">Master Breeder</a></td>
+          <td style="color:var(--text2);font-size:0.88rem">Pet synergy specialists; strong in coordinated teams.</td>
+        </tr>
+        <tr>
+          <td><span class="tier-badge tier-A">A</span></td>
+          <td><a href="/class/overlord" style="color:inherit;text-decoration:none;">Overlord</a></td>
+          <td style="color:var(--text2);font-size:0.88rem">Superior survivability and crowd control abilities.</td>
+        </tr>
+        <!-- B TIER -->
+        <tr>
+          <td><span class="tier-badge tier-B">B</span></td>
+          <td><a href="/class/magus" style="color:inherit;text-decoration:none;">Magus</a></td>
+          <td style="color:var(--text2);font-size:0.88rem">Strong elemental magic; good utility for groups.</td>
+        </tr>
+        <tr>
+          <td><span class="tier-badge tier-B">B</span></td>
+          <td><a href="/class/cardinal" style="color:inherit;text-decoration:none;">Cardinal</a></td>
+          <td style="color:var(--text2);font-size:0.88rem">Balanced healer with support capabilities.</td>
+        </tr>
+        <tr>
+          <td><span class="tier-badge tier-B">B</span></td>
+          <td><a href="/class/templar" style="color:inherit;text-decoration:none;">Templar</a></td>
+          <td style="color:var(--text2);font-size:0.88rem">Solid defensive tank with healing support.</td>
+        </tr>
+        <!-- C TIER -->
+        <tr>
+          <td><span class="tier-badge tier-C">C</span></td>
+          <td><a href="/class/berserker" style="color:inherit;text-decoration:none;">Berserker</a></td>
+          <td style="color:var(--text2);font-size:0.88rem">High risk/reward class; requires careful play.</td>
+        </tr>
+        <tr>
+          <td><span class="tier-badge tier-C">C</span></td>
+          <td><a href="/class/beast-master" style="color:inherit;text-decoration:none;">Beast Master</a></td>
+          <td style="color:var(--text2);font-size:0.88rem">Pet-focused playstyle; situational effectiveness.</td>
+        </tr>
+        <tr>
+          <td><span class="tier-badge tier-C">C</span></td>
+          <td><a href="/class/war-kahuna" style="color:inherit;text-decoration:none;">War Kahuna</a></td>
+          <td style="color:var(--text2);font-size:0.88rem">Niche support role; limited endgame viability.</td>
+        </tr>
+        <!-- D TIER -->
+        <tr>
+          <td><span class="tier-badge tier-D">D</span></td>
+          <td><a href="/class/corruptor" style="color:inherit;text-decoration:none;">Corruptor</a></td>
+          <td style="color:var(--text2);font-size:0.88rem">Underperformer; difficult skillset with low damage.</td>
+        </tr>
+        <tr>
+          <td><span class="tier-badge tier-D">D</span></td>
+          <td><a href="/class/marksman" style="color:inherit;text-decoration:none;">Marksman</a></td>
+          <td style="color:var(--text2);font-size:0.88rem">Outclassed by Deadeye; poor scaling late-game.</td>
+        </tr>
+        <tr>
+          <td><span class="tier-badge tier-D">D</span></td>
+          <td><a href="/class/oracle" style="color:inherit;text-decoration:none;">Oracle</a></td>
+          <td style="color:var(--text2);font-size:0.88rem">Weak healing output; limited support utility.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="ornament">✦ · · · · ✦ · · · · ✦</div>
+
+  <!-- GUIDES -->
+  <section class="section" id="guides">
+    <div class="section-head">
+      <h2>GUIDES</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="guide-grid">
+      <a class="guide-card" href="{{ url_for('main.guide_getting_started') }}">
+        <div class="guide-card-tag">BEGINNER · PROGRESSION</div>
+        <h3>Getting Started in Rappelz</h3>
+        <p>Everything a new player needs: early leveling zones, buffs, quests and more.</p>
+        <div class="guide-card-meta"><span>⏱ 12 min read</span><span>Lv 1–50</span></div>
+      </a>
+      <a class="guide-card" href="{{ url_for('main.guide_beyond_master_class') }}">
+        <div class="guide-card-tag">PROGRESSION · GEAR</div>
+        <h3>Beyond Master Class</h3>
+        <p>Gear requirements to move forward before making it to 175.</p>
+        <div class="guide-card-meta"><span>⏱ 15 min read</span><span>Lv 150+</span></div>
+      </a>
+      <a class="guide-card" href="{{ url_for('main.guide_175_and_beyond') }}">
+        <div class="guide-card-tag">ROADMAP · MILESTONES</div>
+        <h3>175 and beyond</h3>
+        <p>Complete progression guide from level 175 to 210 with target gear setups.</p>
+        <div class="guide-card-meta"><span>⏱ 20 min read</span><span>Lv 175+</span></div>
+      </a>
+      <a class="guide-card" href="{{ url_for('main.guide_rupee_farming') }}">
+        <div class="guide-card-tag">ECONOMY · FARMING</div>
+        <h3>Rupee Farming</h3>
+        <p>Luck build and best spots and methods to farm.</p>
+        <div class="guide-card-meta"><span>⏱ 10 min read</span><span>Lv 50+</span></div>
+      </a>
+      <a class="guide-card" href="{{ url_for('main.guide_boss_card_collection') }}">
+        <div class="guide-card-tag">CARDS · PROGRESSION</div>
+        <h3>Boss Card Collection</h3>
+        <p>Cheapest boss cards collection to give you a quick boost to your stats.</p>
+        <div class="guide-card-meta"><span>⏱ 8 min read</span><span>Lv 60+</span></div>
+      </a>
+      <a class="guide-card" href="{{ url_for('main.guide_pet_taming') }}">
+        <div class="guide-card-tag">PET SYSTEM · ADVANCED</div>
+        <h3>Pet Taming</h3>
+        <p>All you need to do about taming, best pets, pet skills to upgrade and more.</p>
+        <div class="guide-card-meta"><span>⏱ 18 min read</span><span>All levels</span></div>
+      </a>
+      <a class="guide-card" href="{{ url_for('main.guide_general_tips') }}">
+        <div class="guide-card-tag">TIPS · OPTIMIZATION</div>
+        <h3>General Tips & Tricks</h3>
+        <p>Essential advice for efficient leveling, survivability, and gameplay optimization.</p>
+        <div class="guide-card-meta"><span>⏱ 10 min read</span><span>All levels</span></div>
+      </a>
+    </div>
+  </section>
+
+  <div class="ornament">✦ · · · · ✦ · · · · ✦</div>
+
+  <!-- STRATEGIES -->
+  <section class="section" id="strategies">
+    <div class="section-head">
+      <h2>STRATEGIES</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="strat-list">
+      <a class="strat-block" href="/strategy/gnoll-buff" style="text-decoration:none;color:inherit;">
+        <div>
+          <h3>Gnoll Buff</h3>
+          <p>Learn how to properly utilize the Gnoll buff system for maximum efficiency in dungeons and raids. Understand buff timing and stacking mechanics.</p>
+        </div>
+        <div class="strat-tags">
+          <span class="strat-tag">BUFF</span>
+          <span class="strat-tag">OPTIMIZATION</span>
+          <span class="strat-tag">TIPS</span>
+        </div>
+      </a>
+      <a class="strat-block" href="/strategy/legendary-gear" style="text-decoration:none;color:inherit;">
+        <div>
+          <h3>Legendary Gear</h3>
+          <p>Tips and tricks for obtaining and optimizing legendary gear. Learn priority strategies and enhancement methods for endgame content.</p>
+        </div>
+        <div class="strat-tags">
+          <span class="strat-tag">GEAR</span>
+          <span class="strat-tag">OPTIMIZATION</span>
+          <span class="strat-tag">TIPS</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <div class="ornament">✦ · · · · ✦ · · · · ✦</div>
+
+  <!-- MAPS -->
+  <section class="section" id="maps">
+    <div class="section-head">
+      <h2>MAPS &amp; ZONES</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="map-grid">
+      <a class="map-card" href="/map/remains-of-the-ancients" style="text-decoration:none;color:inherit;">
+        <div class="map-thumb">⛩</div>
+        <div class="map-info">
+          <h4>Remains of the Ancients</h4>
+          <p>A mysterious zone filled with ancient ruins and powerful creatures. Great for leveling and rare drops.</p>
+          <div class="map-meta">
+            <span class="map-level">LV 120+</span>
+            <div class="diff"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
+          </div>
+        </div>
+      </a>
+      <a class="map-card" href="/map/snowbasin" style="text-decoration:none;color:inherit;">
+        <div class="map-thumb">❄</div>
+        <div class="map-info">
+          <h4>SnowBasin</h4>
+          <p>Frozen tundra with extreme cold. Rich in unique loot and challenging monsters.</p>
+          <div class="map-meta">
+            <span class="map-level">LV 100+</span>
+            <div class="diff"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div>
+          </div>
+        </div>
+      </a>
+      <a class="map-card" href="/map/lake-kaia" style="text-decoration:none;color:inherit;">
+        <div class="map-thumb">🏞</div>
+        <div class="map-info">
+          <h4>Lake Kaia</h4>
+          <p>Beautiful lakeside zone with aquatic creatures. Ideal for intermediate leveling and resource gathering.</p>
+          <div class="map-meta">
+            <span class="map-level">LV 60–90</span>
+            <div class="diff"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></div>
+          </div>
+        </div>
+      </a>
+      <a class="map-card" href="/map/pigs-spot" style="text-decoration:none;color:inherit;">
+        <div class="map-thumb">🐗</div>
+        <div class="map-info">
+          <h4>Pig's Spot</h4>
+          <p>A wild area teeming with boar-type creatures. Popular for early-to-mid game leveling and farming.</p>
+          <div class="map-meta">
+            <span class="map-level">LV 30–60</span>
+            <div class="diff"><span class="on"></span><span class="on"></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <strong>RAPPELZ CODEX</strong> - Fan-made community guide · Not affiliated with Gala Lab or any official publisher<br/>
+  <span style="margin-top:0.4rem;display:block">Content is community-sourced. Contribute corrections via the Discord.</span>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const link = document.querySelector(`nav a[href="#${e.target.id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px' });
+  sections.forEach(s => observer.observe(s));
+
+  document.getElementById('search-input').addEventListener('input', function() {
+    const q = this.value.toLowerCase();
+    document.querySelectorAll('.guide-card, .item-card, .strat-block').forEach(el => {
+      el.style.opacity = (!q || el.textContent.toLowerCase().includes(q)) ? '1' : '0.2';
+    });
+    document.querySelectorAll('.tier-table tbody tr').forEach(row => {
+      row.style.opacity = (!q || row.textContent.toLowerCase().includes(q)) ? '1' : '0.2';
+    });
+  });
+</script>
+</body>
+</html>
+>>>>>>> 5976057 (changes applied)
