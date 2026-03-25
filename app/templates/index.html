@@ -99,6 +99,22 @@
   .search-wrap input::placeholder { color: var(--text3); }
   .search-wrap input:focus { border-color: var(--gold-dim); box-shadow: var(--glow); }
   .search-wrap svg { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); opacity: 0.4; pointer-events: none; }
+  .search-results {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    background: var(--bg1); border: 1px solid var(--border); border-top: none;
+    border-radius: 0 0 4px 4px; max-height: 320px; overflow-y: auto; z-index: 100;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  }
+  .search-results.active { display: block; }
+  .search-result-item {
+    display: block; padding: 0.6rem 0.8rem; text-decoration: none; color: var(--text);
+    border-bottom: 1px solid var(--border); transition: background 0.15s;
+  }
+  .search-result-item:last-child { border-bottom: none; }
+  .search-result-item:hover, .search-result-item.selected { background: var(--bg3); color: var(--gold2); }
+  .search-result-item .sr-title { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.06em; }
+  .search-result-item .sr-cat { font-size: 0.65rem; color: var(--text3); margin-top: 2px; }
+  .search-no-results { padding: 0.8rem; color: var(--text3); font-size: 0.85rem; text-align: center; }
 
   /* HERO */
   #hero {
@@ -403,11 +419,12 @@
       <a href="#maps">Maps</a>
     </nav>
     <div class="search-wrap">
-      <input type="text" placeholder="Search the Codex…" id="search-input"/>    
+      <input type="text" placeholder="Search the Codex…" id="search-input" autocomplete="off"/>
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
         <circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.2"/>
         <line x1="9.5" y1="9.5" x2="13" y2="13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
       </svg>
+      <div class="search-results" id="search-results"></div>
     </div>
   </div>
 </header>
@@ -681,6 +698,74 @@
     document.querySelectorAll('.tier-table tbody tr').forEach(row => {
       row.style.opacity = (!q || row.textContent.toLowerCase().includes(q)) ? '1' : '0.2';
     });
+  });
+
+  // Search dropdown
+  const searchPages = [];
+  document.querySelectorAll('.guide-card[href], .strat-block[href], .map-card[href]').forEach(el => {
+    const h = el.querySelector('h3, h4');
+    const p = el.querySelector('p');
+    const tag = el.querySelector('.guide-card-tag, .strat-tag');
+    if (h) searchPages.push({
+      title: h.textContent.trim(),
+      desc: p ? p.textContent.trim() : '',
+      keywords: (tag ? tag.textContent.trim() : '') + ' ' + (h.textContent.trim()),
+      url: el.getAttribute('href'),
+      cat: el.classList.contains('guide-card') ? 'Guide' : el.classList.contains('strat-block') ? 'Strategy' : 'Map'
+    });
+  });
+  document.querySelectorAll('.tier-table tbody tr').forEach(row => {
+    const cells = row.querySelectorAll('td');
+    if (cells.length >= 2) {
+      const link = cells[1].querySelector('a');
+      if (link) searchPages.push({
+        title: link.textContent.trim(),
+        desc: cells[2] ? cells[2].textContent.trim() : '',
+        keywords: link.textContent.trim() + ' class',
+        url: link.getAttribute('href'),
+        cat: 'Class'
+      });
+    }
+  });
+
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  let selectedIdx = -1;
+
+  searchInput.addEventListener('input', function() {
+    const q = this.value.toLowerCase().trim();
+    selectedIdx = -1;
+    if (!q) { searchResults.classList.remove('active'); searchResults.innerHTML = ''; return; }
+    const matches = searchPages.filter(p =>
+      p.title.toLowerCase().includes(q) ||
+      p.desc.toLowerCase().includes(q) ||
+      p.keywords.toLowerCase().includes(q)
+    ).slice(0, 8);
+    if (matches.length === 0) {
+      searchResults.innerHTML = '<div class="search-no-results">No results found</div>';
+    } else {
+      searchResults.innerHTML = matches.map((m, i) =>
+        '<a class="search-result-item" href="' + m.url + '" data-idx="' + i + '">' +
+        '<div class="sr-title">' + m.title + '</div>' +
+        '<div class="sr-cat">' + m.cat + '</div></a>'
+      ).join('');
+    }
+    searchResults.classList.add('active');
+  });
+
+  searchInput.addEventListener('keydown', function(e) {
+    const items = searchResults.querySelectorAll('.search-result-item');
+    if (!items.length) return;
+    if (e.key === 'ArrowDown') { e.preventDefault(); selectedIdx = Math.min(selectedIdx + 1, items.length - 1); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); selectedIdx = Math.max(selectedIdx - 1, 0); }
+    else if (e.key === 'Enter' && selectedIdx >= 0) { e.preventDefault(); items[selectedIdx].click(); return; }
+    else return;
+    items.forEach(it => it.classList.remove('selected'));
+    if (selectedIdx >= 0) items[selectedIdx].classList.add('selected');
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.search-wrap')) { searchResults.classList.remove('active'); }
   });
 </script>
 </body>
