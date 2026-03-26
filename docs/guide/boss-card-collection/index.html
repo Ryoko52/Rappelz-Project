@@ -49,7 +49,9 @@ table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(
   .stat-patk { color: #ff6b6b; font-weight: 600; font-size: 1.05rem; }
   .stat-matk { color: #6bb5ff; font-weight: 600; font-size: 1.05rem; }
   .stat-other { color: #c084fc; font-weight: 600; font-size: 1.05rem; }
-  table.compact .stat-patk, table.compact .stat-matk, table.compact .stat-other { font-size: 0.88rem; }
+  .stat-critpow { color: #4ade80; font-weight: 600; font-size: 1.05rem; }
+  .stat-critrate { color: #facc15; font-weight: 600; font-size: 1.05rem; }
+  table.compact .stat-patk, table.compact .stat-matk, table.compact .stat-other, table.compact .stat-critpow, table.compact .stat-critrate { font-size: 0.88rem; }
   </style>
 </head>
 <body>
@@ -91,7 +93,7 @@ table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(
       <tr>
         <td>Mephisto</td>
         <td class="card-qty">x5</td>
-        <td><span class="stat-other">+10 Crit Power</span>, <span class="stat-other">+2% Crit Rate</span></td>
+        <td><span class="stat-critpow">+10 Crit Power</span>, <span class="stat-critrate">+2% Crit Rate</span></td>
       </tr>
       <tr>
         <td>Lilith</td>
@@ -121,12 +123,12 @@ table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(
       <tr>
         <td>Devil Reviac</td>
         <td class="card-qty">x3</td>
-        <td><span class="stat-other">+30 Crit Power</span>, <span class="stat-patk">+300 P.ATK</span>, <span class="stat-matk">+300 M.ATK</span></td>
+        <td><span class="stat-critpow">+30 Crit Power</span>, <span class="stat-patk">+300 P.ATK</span>, <span class="stat-matk">+300 M.ATK</span></td>
       </tr>
       <tr>
         <td>Dark Alchemist Saragon</td>
         <td class="card-qty">x3</td>
-        <td><span class="stat-other">+10% Crit Rate</span>, <span class="stat-patk">+450 P.ATK</span>, <span class="stat-matk">+450 M.ATK</span></td>
+        <td><span class="stat-critrate">+10% Crit Rate</span>, <span class="stat-patk">+450 P.ATK</span>, <span class="stat-matk">+450 M.ATK</span></td>
       </tr>
       <tr>
         <td>Bloodthirsty Beast Karmos</td>
@@ -208,7 +210,7 @@ table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(
       <tr><td>Baron Madius</td><td><span class="stat-patk">P Atk +30</span></td></tr>
       <tr><td>Emmanuel Raymond</td><td><span class="stat-other">Cast Spd +2</span></td></tr>
       <tr><td>Ultimate Witch</td><td><span class="stat-other">M Def +30</span></td></tr>
-      <tr><td>Bear Mother</td><td><span class="stat-other">Critical Rate +2</span></td></tr>
+      <tr><td>Bear Mother</td><td><span class="stat-critrate">Critical Rate +2</span></td></tr>
       <tr><td>Oforia</td><td><span class="stat-other">P Def +30</span></td></tr>
       <tr><td>Abhuva</td><td><span class="stat-other">Evasion +5</span></td></tr>
       <tr><td>Primal Scream</td><td><span class="stat-matk">M Atk +50</span></td></tr>
@@ -257,7 +259,7 @@ table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(
       <tr><td>Black Widow</td><td><span class="stat-other">P Def +150</span>, <span class="stat-other">M Def +150</span></td></tr>
       <tr><td>Microraptor</td><td><span class="stat-patk">P Atk +150</span>, <span class="stat-matk">M Atk +150</span></td></tr>
       <tr><td>Bone Dragon</td><td><span class="stat-other">M Def +150</span>, <span class="stat-other">Max MP +300</span></td></tr>
-      <tr><td>Mephisto</td><td><span class="stat-other">Critical Rate +2</span>, <span class="stat-other">Critical Power +10</span></td></tr>
+      <tr><td>Mephisto</td><td><span class="stat-critrate">Critical Rate +2</span>, <span class="stat-critpow">Critical Power +10</span></td></tr>
       <tr><td>Lilith</td><td><span class="stat-patk">P Atk +200</span>, <span class="stat-matk">M Atk +200</span></td></tr>
       <tr><td>Soul of Lunacy</td><td><span class="stat-other">P Def +150</span>, <span class="stat-other">Max HP +500</span></td></tr>
       <tr><td>Ent</td><td><span class="stat-patk">P Atk +150</span>, <span class="stat-other">Atk Spd +2</span></td></tr>
@@ -266,7 +268,7 @@ table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(
       <tr><td>Barga</td><td><span class="stat-other">Evasion +15</span>, <span class="stat-other">M Res +15</span></td></tr>
       <tr><td>Kraken</td><td><span class="stat-other">P Def +150</span>, <span class="stat-other">Max HP +50</span></td></tr>
       <tr><td>Red Eye Troll Hunter</td><td><span class="stat-other">Max HP +2</span>, <span class="stat-other">500</span>, <span class="stat-other">P Def +1</span>, <span class="stat-other">000</span></td></tr>
-      <tr><td>Cruel Troll Hunter</td><td><span class="stat-other">Critical Power +10</span>, <span class="stat-patk">P Atk +250</span>, <span class="stat-matk">M Atk +250</span></td></tr>
+      <tr><td>Cruel Troll Hunter</td><td><span class="stat-critpow">Critical Power +10</span>, <span class="stat-patk">P Atk +250</span>, <span class="stat-matk">M Atk +250</span></td></tr>
     </tbody>
   </table>
 
@@ -287,9 +289,9 @@ table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(
       <tr><td>Stone Gargoyle</td><td><span class="stat-patk">P Atk +200</span>, <span class="stat-matk">M Atk +200</span></td></tr>
       <tr><td>Magma Golem</td><td><span class="stat-other">Max HP +300</span>, <span class="stat-other">Max MP +300</span></td></tr>
       <tr><td>Crazy Hagen</td><td><span class="stat-other">Block Def +300</span>, <span class="stat-other">P Def +100</span>, <span class="stat-other">M Def +100</span></td></tr>
-      <tr><td>Devil Reviac</td><td><span class="stat-other">Critical Power +30</span>, <span class="stat-patk">P Atk +300</span>, <span class="stat-matk">M Atk +300</span></td></tr>
-      <tr><td>Devil Skeleton</td><td><span class="stat-other">Crit Pow +20</span>, <span class="stat-patk">P Atk +350</span>, <span class="stat-matk">M Atk +350</span>, <span class="stat-other">Crit Rate +5</span></td></tr>
-      <tr><td>Dark Alchemist Saragon</td><td><span class="stat-other">Crit Rate +10</span>, <span class="stat-patk">P Atk +450</span>, <span class="stat-matk">M Atk +450</span></td></tr>
+      <tr><td>Devil Reviac</td><td><span class="stat-critpow">Critical Power +30</span>, <span class="stat-patk">P Atk +300</span>, <span class="stat-matk">M Atk +300</span></td></tr>
+      <tr><td>Devil Skeleton</td><td><span class="stat-critpow">Crit Pow +20</span>, <span class="stat-patk">P Atk +350</span>, <span class="stat-matk">M Atk +350</span>, <span class="stat-critrate">Crit Rate +5</span></td></tr>
+      <tr><td>Dark Alchemist Saragon</td><td><span class="stat-critrate">Crit Rate +10</span>, <span class="stat-patk">P Atk +450</span>, <span class="stat-matk">M Atk +450</span></td></tr>
       <tr><td>Bloodthirsty Beast Karmos</td><td><span class="stat-other">VIT +50</span>, <span class="stat-other">P Def +2</span>, <span class="stat-other">000</span></td></tr>
     </tbody>
   </table>
@@ -303,9 +305,9 @@ table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(
     <tbody>
       <tr><td>Chaotic Phoenix: Warrior</td><td><span class="stat-patk">P Atk +5%</span></td></tr>
       <tr><td>Chaotic Phoenix: Magician</td><td><span class="stat-matk">M Atk +5%</span></td></tr>
-      <tr><td>Chaotic Phoenix: Summoner</td><td><span class="stat-other">STR +30</span>, <span class="stat-other">VIT +30</span>, <span class="stat-other">INT +30</span>, <span class="stat-other">Crit Pow +20</span></td></tr>
+      <tr><td>Chaotic Phoenix: Summoner</td><td><span class="stat-other">STR +30</span>, <span class="stat-other">VIT +30</span>, <span class="stat-other">INT +30</span>, <span class="stat-critpow">Crit Pow +20</span></td></tr>
       <tr><td>Shadow of Reaper, Necron</td><td><span class="stat-other">STR +50</span>, <span class="stat-other">INT +50</span></td></tr>
-      <tr><td>Butcher Vulcan</td><td><span class="stat-other">Critical Power +30</span>, <span class="stat-other">P Pierce +500</span>, <span class="stat-other">M Pierce +500</span></td></tr>
+      <tr><td>Butcher Vulcan</td><td><span class="stat-critpow">Critical Power +30</span>, <span class="stat-other">P Pierce +500</span>, <span class="stat-other">M Pierce +500</span></td></tr>
     </tbody>
   </table>
 
