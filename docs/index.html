@@ -353,6 +353,20 @@
   }
   .map-info p { font-size: 0.82rem; color: var(--text2); margin-bottom: 0.5rem; }
   .map-meta { display: flex; gap: 1rem; align-items: center; font-size: 0.78rem; color: var(--text3); }
+
+  /* PET THUMBS */
+  .pet-thumb {
+    height: 120px;
+    background: var(--bg4);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .pet-thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .pet-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 1rem; }
   .map-level { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.1em; color: var(--gold-dim); }
   .diff { display: flex; gap: 3px; align-items: center; }
   .diff span { width: 7px; height: 7px; border-radius: 50%; background: var(--border2); display: inline-block; }
@@ -390,6 +404,7 @@
       <a href="#tier-list">Tier List</a>
       <a href="#guides">Guides</a>
       <a href="#maps">Maps</a>
+      <a href="#pets">Pets</a>
     </nav>
     <div class="search-wrap">
       <input type="text" placeholder="Search guides&hellip;" id="search-input" autocomplete="off"/>
@@ -411,6 +426,7 @@
       <a class="hero-card" href="#tier-list">&#9876; Classes</a>
       <a class="hero-card" href="#guides">&#128214; Guides</a>
       <a class="hero-card" href="#maps">&#128506; Maps</a>
+      <a class="hero-card" href="#pets">&#128062; Pets</a>
     </div>
   </div>
 </section>
@@ -602,6 +618,64 @@
         <div class="map-thumb"><img src="images/maps/pigs.png" alt="Pig's Spot" style="width:100%;height:100%;object-fit:cover;border-radius:6px;"></div>
         <div class="map-info">
           <h4>Pig's Spot</h4>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- PETS -->
+  <section class="section" id="pets">
+    <div class="section-head">
+      <h2>PETS</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="pet-grid">
+      <a class="map-card" href="#" style="text-decoration:none;color:inherit;">
+        <div class="pet-thumb"><img src="images/pets/forestpixie.png" alt="Forest Pixie"></div>
+        <div class="map-info">
+          <h4>Forest Pixie</h4>
+        </div>
+      </a>
+      <a class="map-card" href="#" style="text-decoration:none;color:inherit;">
+        <div class="pet-thumb"><img src="images/pets/Spider.png" alt="Crystal Spider"></div>
+        <div class="map-info">
+          <h4>Crystal Spider</h4>
+        </div>
+      </a>
+      <a class="map-card" href="#" style="text-decoration:none;color:inherit;">
+        <div class="pet-thumb"><img src="images/pets/WP.png" alt="Wind Pixie"></div>
+        <div class="map-info">
+          <h4>Wind Pixie</h4>
+        </div>
+      </a>
+      <a class="map-card" href="#" style="text-decoration:none;color:inherit;">
+        <div class="pet-thumb"><img src="images/pets/EP.png" alt="Ethereal Pixie"></div>
+        <div class="map-info">
+          <h4>Ethereal Pixie</h4>
+        </div>
+      </a>
+      <a class="map-card" href="#" style="text-decoration:none;color:inherit;">
+        <div class="pet-thumb"><img src="images/pets/blood.png" alt="Bloodthirsty Slaughterer"></div>
+        <div class="map-info">
+          <h4>Bloodthirsty Slaughterer</h4>
+        </div>
+      </a>
+      <a class="map-card" href="#" style="text-decoration:none;color:inherit;">
+        <div class="pet-thumb"><img src="images/pets/Hector.png" alt="Grandmaster Hector"></div>
+        <div class="map-info">
+          <h4>Grandmaster Hector</h4>
+        </div>
+      </a>
+      <a class="map-card" href="#" style="text-decoration:none;color:inherit;">
+        <div class="pet-thumb"><img src="images/pets/Crystalgolem.png" alt="Crystal Golem"></div>
+        <div class="map-info">
+          <h4>Crystal Golem</h4>
+        </div>
+      </a>
+      <a class="map-card" href="#" style="text-decoration:none;color:inherit;">
+        <div class="pet-thumb"><img src="images/pets/DG.png" alt="Death Gladiator"></div>
+        <div class="map-info">
+          <h4>Death Gladiator</h4>
         </div>
       </a>
     </div>
