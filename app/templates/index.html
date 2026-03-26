@@ -525,43 +525,43 @@
       <div class="section-line"></div>
     </div>
     <div class="guide-grid">
-      <a class="guide-card" href="{{ url_for('main.guide_getting_started') }}">
+      <a class="guide-card" href="{{ url_for('main.guide_getting_started') }}" data-keywords="Hidden Village Trainee Island Moonlight Dungeon Crystal Valley Koala Class Master Extreme Essence Red Farm Witch Quest Sanctuary Master Class Trials Rondo Guild Katan Guild Horizon Hector Stamina Saver growth potion">
         <div class="guide-card-tag">BEGINNER · PROGRESSION</div>
         <h3>Getting Started in Rappelz</h3>
         <p>Everything a new player needs: early leveling zones, buffs, quests and more.</p>
         <div class="guide-card-meta"><span>⏱ 12 min read</span><span>Lv 1–153</span></div>
       </a>
-      <a class="guide-card" href="{{ url_for('main.guide_beyond_master_class') }}">
+      <a class="guide-card" href="{{ url_for('main.guide_beyond_master_class') }}" data-keywords="UG Quests Snow Basin Labyrinth Dungeon Island of Gods Circus Remains of Ancients Hector Room PW Gear Daman Mach Nemon Skadi Death Tyrant Bear Belt Gaia Asura Deva Wind Pixie Ethereal Pixie Bloodthirster Cirrus Rings Lunacy Mephisto Awakening Stones Mystic Jewel Alvaria City of Ruins Nostra Belt Upgrader Boarding Pass">
         <div class="guide-card-tag">PROGRESSION · GEAR</div>
         <h3>Beyond Master Class</h3>
         <p>Gear requirements to move forward before making it to 175.</p>       
         <div class="guide-card-meta"><span>⏱ 15 min read</span><span>Lv 153–175</span></div>
       </a>
-      <a class="guide-card" href="{{ url_for('main.guide_175_and_beyond') }}">
+      <a class="guide-card" href="{{ url_for('main.guide_175_and_beyond') }}" data-keywords="Devildom DD2 DD3 DD4 DD5 DD6 Kaia chain quest Lava gear Yushiva belt Reviac gear Nusy gear Flumi gear Inferno gear Sand Cloak Devil Skeleton Hector card Sky Set Luciad Iron Mask Advanced Wings Vulcano dailies Dark Cubes Spirit Stone Undead Stone Mecca Stone Beasts Stone Ains Stone Dragons Stone Devils Stone Antique Stone Refresh Scrolls Chaos Stone Maze Shadow Fortress">
         <div class="guide-card-tag">ROADMAP · MILESTONES</div>
         <h3>175 and beyond</h3>
         <p>Complete progression guide from level 175 to 210 with target gear setups.</p>
         <div class="guide-card-meta"><span>⏱ 20 min read</span></div>
       </a>
-      <a class="guide-card" href="{{ url_for('main.guide_rupee_farming') }}">
+      <a class="guide-card" href="{{ url_for('main.guide_rupee_farming') }}" data-keywords="Snow Basin Lake Kaia Pig Spot dragons Lucky Cubes Flea Market Beast Master Harmony of Life Unique Humans Parallel World Wind Pixies Ergon Set Enhanced Glasses Ancient Magic Lab Luminous Feather Snowman Kenta Royal Axe 5B Buff">
         <div class="guide-card-tag">ECONOMY · FARMING</div>
         <h3>Rupee Farming</h3>
         <p>Luck build and best spots and methods to farm.</p>
         <div class="guide-card-meta"><span>⏱ 10 min read</span></div>
       </a>
-      <a class="guide-card" href="{{ url_for('main.guide_boss_card_collection') }}">
+      <a class="guide-card" href="{{ url_for('main.guide_boss_card_collection') }}" data-keywords="Obsidicar MicroRaptor Mephisto Lilith Ent Yushiva Devil Slaughter Stone Gargoyle Devil Reviac Dark Alchemist Saragon Bloodthirsty Beast Karmos Shadow Reaper Necron Baron Madius Emmanuel Raymond Ultimate Witch Bear Mother Oforia Abhuva Primal Scream Taranida Crustalino Likirus Soulseeker Takin Lucius Silex Kiscia Lady Ruina Aurumis Dominatus Queen Eratia Ilrios Betrayal Ashmaw Sand Lord Kynish Draka Queen Eva Vulcanus Butkadah Medusa Black Widow Bone Dragon Soul Lunacy Cruel Tula Lion Barga Kraken Red Eye Troll Cruel Troll Hector Crystal Golem Bloodthirsty Slaughterer Wooden Devil Magma Golem Crazy Hagen Devil Skeleton Chaotic Phoenix Butcher Vulcan">
         <div class="guide-card-tag">CARDS · PROGRESSION</div>
         <h3>Boss Card Collection</h3>
         <p>Cheapest boss cards collection to give you a quick boost to your stats.</p>
         <div class="guide-card-meta"><span>⏱ 8 min read</span></div>
       </a>
-      <a class="guide-card" href="{{ url_for('main.guide_pet_taming') }}">
+      <a class="guide-card" href="{{ url_for('main.guide_pet_taming') }}" data-keywords="Enhanced Glasses Crystal Sword Emblem Luciad Iron Mask Taming Rings Circus Bear Belt DT Buff Helmet Vulcano Boss Card Collection taming chance">
         <div class="guide-card-tag">PET SYSTEM · ADVANCED</div>
         <h3>Pet Taming</h3>
         <p>All you need to do about taming, best pets, pet skills to upgrade and more.</p>
         <div class="guide-card-meta"><span>⏱ 18 min read</span><span>All levels</span></div>
       </a>
-      <a class="guide-card" href="{{ url_for('main.guide_general_tips') }}">
+      <a class="guide-card" href="{{ url_for('main.guide_general_tips') }}" data-keywords="Soul Lunacy Vulc questline helmet Medusa Nusy Remains Ancients RoA Hector room Gnoll Buff Camper Title Weapon Awakening Lava gear Enhanced Crystal Glasses Purse Bright Powers Purse Invocations Traveling Gear Arena Merchant Jana Rondo Black Marketer HRoA Auction House Ancient Cube Distorted gear Ergon Set">
         <div class="guide-card-tag">TIPS · OPTIMIZATION</div>
         <h3>General Tips & Tricks</h3>
         <p>Essential advice for efficient leveling, survivability, and gameplay optimization.</p>
@@ -643,10 +643,11 @@
     const h = el.querySelector('h3, h4');
     const p = el.querySelector('p');
     const tag = el.querySelector('.guide-card-tag');
+    const extra = el.getAttribute('data-keywords') || '';
     if (h) searchPages.push({
       title: h.textContent.trim(),
       desc: p ? p.textContent.trim() : '',
-      keywords: (tag ? tag.textContent.trim() : '') + ' ' + (h.textContent.trim()),
+      keywords: (tag ? tag.textContent.trim() : '') + ' ' + (h.textContent.trim()) + ' ' + extra,
       url: el.getAttribute('href'),
       cat: el.classList.contains('guide-card') ? 'Guide' : 'Map'
     });
