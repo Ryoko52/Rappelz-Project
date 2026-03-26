@@ -323,32 +323,6 @@
   .item-info .item-type { font-size: 0.76rem; color: var(--text3); margin-bottom: 0.25rem; }
   .item-info .item-stats { font-size: 0.8rem; color: var(--teal2); }
 
-  /* STRATEGY */
-  .strat-list { display: flex; flex-direction: column; gap: 1rem; }
-  .strat-block {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 1.3rem 1.7rem;
-    display: grid; grid-template-columns: 1fr auto;
-    gap: 0.5rem 2rem; align-items: start;
-  }
-  .strat-block h3 {
-    font-family: 'Cinzel', serif;
-    font-size: 0.88rem; font-weight: 600;
-    color: var(--gold2); margin-bottom: 0.35rem;
-  }
-  .strat-block p { font-size: 0.9rem; color: var(--text2); line-height: 1.6; }  
-  .strat-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; padding-top: 0.2rem; }
-  .strat-tag {
-    font-family: 'Cinzel', serif;
-    font-size: 0.58rem; letter-spacing: 0.1em;
-    padding: 2px 7px; border-radius: 2px;
-    background: var(--bg4); color: var(--text3);
-    border: 1px solid var(--border);
-    white-space: nowrap;
-  }
-
   /* MAPS */
   .map-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
   .map-card {
@@ -403,7 +377,6 @@
   @media (max-width: 680px) {
     nav { display: none; }
     .search-wrap input { width: 150px; }
-    .strat-block { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -415,7 +388,6 @@
     <nav>
       <a href="#tier-list">Tier List</a>
       <a href="#guides">Guides</a>
-      <a href="#strategies">Strategies</a>
       <a href="#maps">Maps</a>
     </nav>
     <div class="search-wrap">
@@ -433,11 +405,10 @@
   <div style="position:relative;z-index:1">
     <p class="hero-tag">Community Knowledge Base</p>
     <h1>Rappelz Codex</h1>
-    <p class="hero-sub">Tier lists, class guides, tips and tricks, strategies, and maps - all in one place.</p>
+    <p class="hero-sub">Tier lists, class guides, tips and tricks, and maps - all in one place.</p>
     <div class="hero-cards">
       <a class="hero-card" href="#tier-list">⚔ Class Tier List</a>
       <a class="hero-card" href="#guides">📖 Guides</a>
-      <a class="hero-card" href="#strategies">🗡 Strategies</a>
       <a class="hero-card" href="#maps">🗺 Maps</a>
     </div>
   </div>
@@ -601,40 +572,6 @@
 
   <div class="ornament">✦ · · · · ✦ · · · · ✦</div>
 
-  <!-- STRATEGIES -->
-  <section class="section" id="strategies">
-    <div class="section-head">
-      <h2>STRATEGIES</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="strat-list">
-      <a class="strat-block" href="{{ url_for('main.strategy_gnoll_buff') }}" style="text-decoration:none;color:inherit;">
-        <div>
-          <h3>Gnoll Buff</h3>
-          <p>Learn how to properly utilize the Gnoll buff system for maximum efficiency in dungeons and raids. Understand buff timing and stacking mechanics.</p>
-        </div>
-        <div class="strat-tags">
-          <span class="strat-tag">BUFF</span>
-          <span class="strat-tag">OPTIMIZATION</span>
-          <span class="strat-tag">TIPS</span>
-        </div>
-      </a>
-      <a class="strat-block" href="{{ url_for('main.strategy_legendary_gear') }}" style="text-decoration:none;color:inherit;">
-        <div>
-          <h3>Legendary Gear</h3>
-          <p>Tips and tricks for obtaining and optimizing legendary gear. Learn priority strategies and enhancement methods for endgame content.</p>
-        </div>
-        <div class="strat-tags">
-          <span class="strat-tag">GEAR</span>
-          <span class="strat-tag">OPTIMIZATION</span>
-          <span class="strat-tag">TIPS</span>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <div class="ornament">✦ · · · · ✦ · · · · ✦</div>
-
   <!-- MAPS -->
   <section class="section" id="maps">
     <div class="section-head">
@@ -692,7 +629,7 @@
 
   document.getElementById('search-input').addEventListener('input', function() {
     const q = this.value.toLowerCase();
-    document.querySelectorAll('.guide-card, .item-card, .strat-block').forEach(el => {
+    document.querySelectorAll('.guide-card, .item-card').forEach(el => {
       el.style.opacity = (!q || el.textContent.toLowerCase().includes(q)) ? '1' : '0.2';
     });
     document.querySelectorAll('.tier-table tbody tr').forEach(row => {
@@ -702,16 +639,16 @@
 
   // Search dropdown
   const searchPages = [];
-  document.querySelectorAll('.guide-card[href], .strat-block[href], .map-card[href]').forEach(el => {
+  document.querySelectorAll('.guide-card[href], .map-card[href]').forEach(el => {
     const h = el.querySelector('h3, h4');
     const p = el.querySelector('p');
-    const tag = el.querySelector('.guide-card-tag, .strat-tag');
+    const tag = el.querySelector('.guide-card-tag');
     if (h) searchPages.push({
       title: h.textContent.trim(),
       desc: p ? p.textContent.trim() : '',
       keywords: (tag ? tag.textContent.trim() : '') + ' ' + (h.textContent.trim()),
       url: el.getAttribute('href'),
-      cat: el.classList.contains('guide-card') ? 'Guide' : el.classList.contains('strat-block') ? 'Strategy' : 'Map'
+      cat: el.classList.contains('guide-card') ? 'Guide' : 'Map'
     });
   });
   document.querySelectorAll('.tier-table tbody tr').forEach(row => {
