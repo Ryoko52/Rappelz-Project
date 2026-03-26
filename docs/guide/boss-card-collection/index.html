@@ -46,6 +46,10 @@ table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(
   table.compact td { padding: 0.35rem 0.7rem; }
   table.compact .stat-value { font-size: 0.88rem; }
   .collection-section h2 { font-size: 1.15rem; margin: 1.5rem 0 0.5rem; }
+  .stat-patk { color: #ff6b6b; font-weight: 600; font-size: 1.05rem; }
+  .stat-matk { color: #6bb5ff; font-weight: 600; font-size: 1.05rem; }
+  .stat-other { color: #c084fc; font-weight: 600; font-size: 1.05rem; }
+  table.compact .stat-patk, table.compact .stat-matk, table.compact .stat-other { font-size: 0.88rem; }
   </style>
 </head>
 <body>
@@ -77,62 +81,62 @@ table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(
       <tr>
         <td>Obsidicar</td>
         <td class="card-qty">x7</td>
-        <td><span class="stat-value">+200 M.ATK</span></td>
+        <td><span class="stat-matk">+200 M.ATK</span></td>
       </tr>
       <tr>
         <td>MicroRaptor</td>
         <td class="card-qty">x5</td>
-        <td><span class="stat-value">+150 P.ATK, +150 M.ATK</span></td>
+        <td><span class="stat-patk">+150 P.ATK</span>, <span class="stat-matk">+150 M.ATK</span></td>
       </tr>
       <tr>
         <td>Mephisto</td>
         <td class="card-qty">x5</td>
-        <td><span class="stat-value">+10 Crit Power, +2% Crit Rate</span></td>
+        <td><span class="stat-other">+10 Crit Power</span>, <span class="stat-other">+2% Crit Rate</span></td>
       </tr>
       <tr>
         <td>Lilith</td>
         <td class="card-qty">x5</td>
-        <td><span class="stat-value">+200 P.ATK, +200 M.ATK</span></td>
+        <td><span class="stat-patk">+200 P.ATK</span>, <span class="stat-matk">+200 M.ATK</span></td>
       </tr>
       <tr>
         <td>Ent</td>
         <td class="card-qty">x3</td>
-        <td><span class="stat-value">+150 P.ATK</span></td>
+        <td><span class="stat-patk">+150 P.ATK</span></td>
       </tr>
       <tr>
         <td>Yushiva</td>
         <td class="card-qty">x3</td>
-        <td><span class="stat-value">+5000 HP, +5000 MP</span></td>
+        <td><span class="stat-other">+5000 HP</span>, <span class="stat-other">+5000 MP</span></td>
       </tr>
       <tr>
         <td>Devil Slaughter</td>
         <td class="card-qty">x3</td>
-        <td><span class="stat-value">+200 P.ATK, +200 M.ATK</span></td>
+        <td><span class="stat-patk">+200 P.ATK</span>, <span class="stat-matk">+200 M.ATK</span></td>
       </tr>
       <tr>
         <td>Stone Gargoyle</td>
         <td class="card-qty">x3</td>
-        <td><span class="stat-value">+200 P.ATK, +200 M.ATK</span></td>
+        <td><span class="stat-patk">+200 P.ATK</span>, <span class="stat-matk">+200 M.ATK</span></td>
       </tr>
       <tr>
         <td>Devil Reviac</td>
         <td class="card-qty">x3</td>
-        <td><span class="stat-value">+30 Crit Power, +300 P.ATK, +300 M.ATK</span></td>
+        <td><span class="stat-other">+30 Crit Power</span>, <span class="stat-patk">+300 P.ATK</span>, <span class="stat-matk">+300 M.ATK</span></td>
       </tr>
       <tr>
         <td>Dark Alchemist Saragon</td>
         <td class="card-qty">x3</td>
-        <td><span class="stat-value">+10% Crit Rate, +450 P.ATK, +450 M.ATK</span></td>
+        <td><span class="stat-other">+10% Crit Rate</span>, <span class="stat-patk">+450 P.ATK</span>, <span class="stat-matk">+450 M.ATK</span></td>
       </tr>
       <tr>
         <td>Bloodthirsty Beast Karmos</td>
         <td class="card-qty">x3</td>
-        <td><span class="stat-value">+50 VIT, +2000 Max HP</span></td>
+        <td><span class="stat-other">+50 VIT</span>, <span class="stat-other">+2000 Max HP</span></td>
       </tr>
       <tr>
         <td>Shadow of Reaper Necro</td>
         <td class="card-qty">x3</td>
-        <td><span class="stat-value">+50 STR, +50 INT</span></td>
+        <td><span class="stat-other">+50 STR</span>, <span class="stat-other">+50 INT</span></td>
       </tr>
     </tbody>
   </table>
@@ -148,39 +152,39 @@ table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(
     <tbody>
       <tr>
         <td>Physical Attack</td>
-        <td><span class="stat-value">+1650 P.ATK</span></td>
+        <td><span class="stat-patk">+1650 P.ATK</span></td>
       </tr>
       <tr>
         <td>Magic Attack</td>
-        <td><span class="stat-value">+1700 M.ATK</span></td>
+        <td><span class="stat-matk">+1700 M.ATK</span></td>
       </tr>
       <tr>
         <td>Critical Rate</td>
-        <td><span class="stat-value">+12%</span></td>
+        <td><span class="stat-other">+12%</span></td>
       </tr>
       <tr>
         <td>Critical Power</td>
-        <td><span class="stat-value">+40</span></td>
+        <td><span class="stat-other">+40</span></td>
       </tr>
       <tr>
         <td>Max HP</td>
-        <td><span class="stat-value">+7000</span></td>
+        <td><span class="stat-other">+7000</span></td>
       </tr>
       <tr>
         <td>Max MP</td>
-        <td><span class="stat-value">+5000</span></td>
+        <td><span class="stat-other">+5000</span></td>
       </tr>
       <tr>
         <td>Vitality</td>
-        <td><span class="stat-value">+50 VIT</span></td>
+        <td><span class="stat-other">+50 VIT</span></td>
       </tr>
       <tr>
         <td>Strength</td>
-        <td><span class="stat-value">+50 STR</span></td>
+        <td><span class="stat-other">+50 STR</span></td>
       </tr>
       <tr>
         <td>Intelligence</td>
-        <td><span class="stat-value">+50 INT</span></td>
+        <td><span class="stat-other">+50 INT</span></td>
       </tr>
     </tbody>
   </table>
@@ -201,20 +205,20 @@ table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(
       <tr><th>Boss Card</th><th>Bonuses</th></tr>
     </thead>
     <tbody>
-      <tr><td>Baron Madius</td><td><span class="stat-value">P Atk +30</span></td></tr>
-      <tr><td>Emmanuel Raymond</td><td><span class="stat-value">Cast Spd +2</span></td></tr>
-      <tr><td>Ultimate Witch</td><td><span class="stat-value">M Def +30</span></td></tr>
-      <tr><td>Bear Mother</td><td><span class="stat-value">Critical Rate +2</span></td></tr>
-      <tr><td>Oforia</td><td><span class="stat-value">P Def +30</span></td></tr>
-      <tr><td>Abhuva</td><td><span class="stat-value">Evasion +5</span></td></tr>
-      <tr><td>Primal Scream</td><td><span class="stat-value">M Atk +50</span></td></tr>
-      <tr><td>Taranida</td><td><span class="stat-value">P Atk +50</span></td></tr>
-      <tr><td>Crustalino</td><td><span class="stat-value">Atk Spd +3</span></td></tr>
-      <tr><td>Likirus</td><td><span class="stat-value">M Atk +80</span></td></tr>
-      <tr><td>Soulseeker</td><td><span class="stat-value">P Acc +5</span></td></tr>
-      <tr><td>Takin</td><td><span class="stat-value">Max Weight +100</span></td></tr>
-      <tr><td>Lucius</td><td><span class="stat-value">M Acc +5</span></td></tr>
-      <tr><td>Silex the Giant</td><td><span class="stat-value">Max HP +150</span></td></tr>
+      <tr><td>Baron Madius</td><td><span class="stat-patk">P Atk +30</span></td></tr>
+      <tr><td>Emmanuel Raymond</td><td><span class="stat-other">Cast Spd +2</span></td></tr>
+      <tr><td>Ultimate Witch</td><td><span class="stat-other">M Def +30</span></td></tr>
+      <tr><td>Bear Mother</td><td><span class="stat-other">Critical Rate +2</span></td></tr>
+      <tr><td>Oforia</td><td><span class="stat-other">P Def +30</span></td></tr>
+      <tr><td>Abhuva</td><td><span class="stat-other">Evasion +5</span></td></tr>
+      <tr><td>Primal Scream</td><td><span class="stat-matk">M Atk +50</span></td></tr>
+      <tr><td>Taranida</td><td><span class="stat-patk">P Atk +50</span></td></tr>
+      <tr><td>Crustalino</td><td><span class="stat-other">Atk Spd +3</span></td></tr>
+      <tr><td>Likirus</td><td><span class="stat-matk">M Atk +80</span></td></tr>
+      <tr><td>Soulseeker</td><td><span class="stat-other">P Acc +5</span></td></tr>
+      <tr><td>Takin</td><td><span class="stat-other">Max Weight +100</span></td></tr>
+      <tr><td>Lucius</td><td><span class="stat-other">M Acc +5</span></td></tr>
+      <tr><td>Silex the Giant</td><td><span class="stat-other">Max HP +150</span></td></tr>
     </tbody>
   </table>
 
@@ -225,19 +229,19 @@ table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(
       <tr><th>Boss Card</th><th>Bonuses</th></tr>
     </thead>
     <tbody>
-      <tr><td>Kiscia the Beautiful</td><td><span class="stat-value">P Atk +80, P Acc +5</span></td></tr>
-      <tr><td>Lady Ruina</td><td><span class="stat-value">P Acc +10</span></td></tr>
-      <tr><td>Aurumis</td><td><span class="stat-value">P Atk +100</span></td></tr>
-      <tr><td>Dominatus the Mad</td><td><span class="stat-value">M Atk +80, M Acc +5</span></td></tr>
-      <tr><td>Queen Eratia</td><td><span class="stat-value">M Def +100</span></td></tr>
-      <tr><td>Ilrios</td><td><span class="stat-value">Max HP +200, Max Weight +200</span></td></tr>
-      <tr><td>Betrayal</td><td><span class="stat-value">Max HP +200, Max MP +100</span></td></tr>
-      <tr><td>Ashmaw the Devourer</td><td><span class="stat-value">M Atk +100, Cast Spd +3</span></td></tr>
-      <tr><td>Sand Lord Kynish</td><td><span class="stat-value">P Def +100</span></td></tr>
-      <tr><td>Draka</td><td><span class="stat-value">Atk Spd +3, Max HP +100</span></td></tr>
-      <tr><td>Queen Eva</td><td><span class="stat-value">Evasion +10, P Acc +5</span></td></tr>
-      <tr><td>Obsidicar</td><td><span class="stat-value">M Atk +200</span></td></tr>
-      <tr><td>Vulcanus</td><td><span class="stat-value">Creature Taming +1 Lvl</span></td></tr>
+      <tr><td>Kiscia the Beautiful</td><td><span class="stat-patk">P Atk +80</span>, <span class="stat-other">P Acc +5</span></td></tr>
+      <tr><td>Lady Ruina</td><td><span class="stat-other">P Acc +10</span></td></tr>
+      <tr><td>Aurumis</td><td><span class="stat-patk">P Atk +100</span></td></tr>
+      <tr><td>Dominatus the Mad</td><td><span class="stat-matk">M Atk +80</span>, <span class="stat-other">M Acc +5</span></td></tr>
+      <tr><td>Queen Eratia</td><td><span class="stat-other">M Def +100</span></td></tr>
+      <tr><td>Ilrios</td><td><span class="stat-other">Max HP +200</span>, <span class="stat-other">Max Weight +200</span></td></tr>
+      <tr><td>Betrayal</td><td><span class="stat-other">Max HP +200</span>, <span class="stat-other">Max MP +100</span></td></tr>
+      <tr><td>Ashmaw the Devourer</td><td><span class="stat-matk">M Atk +100</span>, <span class="stat-other">Cast Spd +3</span></td></tr>
+      <tr><td>Sand Lord Kynish</td><td><span class="stat-other">P Def +100</span></td></tr>
+      <tr><td>Draka</td><td><span class="stat-other">Atk Spd +3</span>, <span class="stat-other">Max HP +100</span></td></tr>
+      <tr><td>Queen Eva</td><td><span class="stat-other">Evasion +10</span>, <span class="stat-other">P Acc +5</span></td></tr>
+      <tr><td>Obsidicar</td><td><span class="stat-matk">M Atk +200</span></td></tr>
+      <tr><td>Vulcanus</td><td><span class="stat-other">Creature Taming +1 Lvl</span></td></tr>
     </tbody>
   </table>
 
@@ -248,21 +252,21 @@ table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(
       <tr><th>Boss Card</th><th>Bonuses</th></tr>
     </thead>
     <tbody>
-      <tr><td>Butkadah</td><td><span class="stat-value">M Def +150, M Acc +5</span></td></tr>
-      <tr><td>Medusa</td><td><span class="stat-value">Block Def +200, P Def +150</span></td></tr>
-      <tr><td>Black Widow</td><td><span class="stat-value">P Def +150, M Def +150</span></td></tr>
-      <tr><td>Microraptor</td><td><span class="stat-value">P Atk +150, M Atk +150</span></td></tr>
-      <tr><td>Bone Dragon</td><td><span class="stat-value">M Def +150, Max MP +300</span></td></tr>
-      <tr><td>Mephisto</td><td><span class="stat-value">Critical Rate +2, Critical Power +10</span></td></tr>
-      <tr><td>Lilith</td><td><span class="stat-value">P Atk +200, M Atk +200</span></td></tr>
-      <tr><td>Soul of Lunacy</td><td><span class="stat-value">P Def +150, Max HP +500</span></td></tr>
-      <tr><td>Ent</td><td><span class="stat-value">P Atk +150, Atk Spd +2</span></td></tr>
-      <tr><td>Cruel Tula</td><td><span class="stat-value">HP Recovery +200, MP Recovery +200</span></td></tr>
-      <tr><td>Lion</td><td><span class="stat-value">Max HP +100, Max MP +100</span></td></tr>
-      <tr><td>Barga</td><td><span class="stat-value">Evasion +15, M Res +15</span></td></tr>
-      <tr><td>Kraken</td><td><span class="stat-value">P Def +150, Max HP +50</span></td></tr>
-      <tr><td>Red Eye Troll Hunter</td><td><span class="stat-value">Max HP +2,500, P Def +1,000</span></td></tr>
-      <tr><td>Cruel Troll Hunter</td><td><span class="stat-value">Critical Power +10, P Atk +250, M Atk +250</span></td></tr>
+      <tr><td>Butkadah</td><td><span class="stat-other">M Def +150</span>, <span class="stat-other">M Acc +5</span></td></tr>
+      <tr><td>Medusa</td><td><span class="stat-other">Block Def +200</span>, <span class="stat-other">P Def +150</span></td></tr>
+      <tr><td>Black Widow</td><td><span class="stat-other">P Def +150</span>, <span class="stat-other">M Def +150</span></td></tr>
+      <tr><td>Microraptor</td><td><span class="stat-patk">P Atk +150</span>, <span class="stat-matk">M Atk +150</span></td></tr>
+      <tr><td>Bone Dragon</td><td><span class="stat-other">M Def +150</span>, <span class="stat-other">Max MP +300</span></td></tr>
+      <tr><td>Mephisto</td><td><span class="stat-other">Critical Rate +2</span>, <span class="stat-other">Critical Power +10</span></td></tr>
+      <tr><td>Lilith</td><td><span class="stat-patk">P Atk +200</span>, <span class="stat-matk">M Atk +200</span></td></tr>
+      <tr><td>Soul of Lunacy</td><td><span class="stat-other">P Def +150</span>, <span class="stat-other">Max HP +500</span></td></tr>
+      <tr><td>Ent</td><td><span class="stat-patk">P Atk +150</span>, <span class="stat-other">Atk Spd +2</span></td></tr>
+      <tr><td>Cruel Tula</td><td><span class="stat-other">HP Recovery +200</span>, <span class="stat-other">MP Recovery +200</span></td></tr>
+      <tr><td>Lion</td><td><span class="stat-other">Max HP +100</span>, <span class="stat-other">Max MP +100</span></td></tr>
+      <tr><td>Barga</td><td><span class="stat-other">Evasion +15</span>, <span class="stat-other">M Res +15</span></td></tr>
+      <tr><td>Kraken</td><td><span class="stat-other">P Def +150</span>, <span class="stat-other">Max HP +50</span></td></tr>
+      <tr><td>Red Eye Troll Hunter</td><td><span class="stat-other">Max HP +2</span>, <span class="stat-other">500</span>, <span class="stat-other">P Def +1</span>, <span class="stat-other">000</span></td></tr>
+      <tr><td>Cruel Troll Hunter</td><td><span class="stat-other">Critical Power +10</span>, <span class="stat-patk">P Atk +250</span>, <span class="stat-matk">M Atk +250</span></td></tr>
     </tbody>
   </table>
 
@@ -273,20 +277,20 @@ table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(
       <tr><th>Boss Card</th><th>Bonuses</th></tr>
     </thead>
     <tbody>
-      <tr><td>Courage of Grand Master Hector</td><td><span class="stat-value">P Atk +500, Max HP +500, P Acc +15</span></td></tr>
-      <tr><td>Knowledge of Grand Master Hector</td><td><span class="stat-value">M Atk +500, Max MP +300, M Acc +15</span></td></tr>
-      <tr><td>Crystal Golem</td><td><span class="stat-value">P Def +500, M Def +200, Max HP +1,500</span></td></tr>
-      <tr><td>Bloodthirsty Slaughterer</td><td><span class="stat-value">M Def +500, P Def +200, Max MP +1,000</span></td></tr>
-      <tr><td>Yushiva</td><td><span class="stat-value">Max HP +5,000, Max MP +3,000, Max Weight +500</span></td></tr>
-      <tr><td>Wooden Devil</td><td><span class="stat-value">P Pierce +150, M Pierce +150</span></td></tr>
-      <tr><td>Devil Slaughterer</td><td><span class="stat-value">P Atk +200, M Atk +200</span></td></tr>
-      <tr><td>Stone Gargoyle</td><td><span class="stat-value">P Atk +200, M Atk +200</span></td></tr>
-      <tr><td>Magma Golem</td><td><span class="stat-value">Max HP +300, Max MP +300</span></td></tr>
-      <tr><td>Crazy Hagen</td><td><span class="stat-value">Block Def +300, P Def +100, M Def +100</span></td></tr>
-      <tr><td>Devil Reviac</td><td><span class="stat-value">Critical Power +30, P Atk +300, M Atk +300</span></td></tr>
-      <tr><td>Devil Skeleton</td><td><span class="stat-value">Crit Pow +20, P Atk +350, M Atk +350, Crit Rate +5</span></td></tr>
-      <tr><td>Dark Alchemist Saragon</td><td><span class="stat-value">Crit Rate +10, P Atk +450, M Atk +450</span></td></tr>
-      <tr><td>Bloodthirsty Beast Karmos</td><td><span class="stat-value">VIT +50, P Def +2,000</span></td></tr>
+      <tr><td>Courage of Grand Master Hector</td><td><span class="stat-patk">P Atk +500</span>, <span class="stat-other">Max HP +500</span>, <span class="stat-other">P Acc +15</span></td></tr>
+      <tr><td>Knowledge of Grand Master Hector</td><td><span class="stat-matk">M Atk +500</span>, <span class="stat-other">Max MP +300</span>, <span class="stat-other">M Acc +15</span></td></tr>
+      <tr><td>Crystal Golem</td><td><span class="stat-other">P Def +500</span>, <span class="stat-other">M Def +200</span>, <span class="stat-other">Max HP +1</span>, <span class="stat-other">500</span></td></tr>
+      <tr><td>Bloodthirsty Slaughterer</td><td><span class="stat-other">M Def +500</span>, <span class="stat-other">P Def +200</span>, <span class="stat-other">Max MP +1</span>, <span class="stat-other">000</span></td></tr>
+      <tr><td>Yushiva</td><td><span class="stat-other">Max HP +5</span>, <span class="stat-other">000</span>, <span class="stat-other">Max MP +3</span>, <span class="stat-other">000</span>, <span class="stat-other">Max Weight +500</span></td></tr>
+      <tr><td>Wooden Devil</td><td><span class="stat-other">P Pierce +150</span>, <span class="stat-other">M Pierce +150</span></td></tr>
+      <tr><td>Devil Slaughterer</td><td><span class="stat-patk">P Atk +200</span>, <span class="stat-matk">M Atk +200</span></td></tr>
+      <tr><td>Stone Gargoyle</td><td><span class="stat-patk">P Atk +200</span>, <span class="stat-matk">M Atk +200</span></td></tr>
+      <tr><td>Magma Golem</td><td><span class="stat-other">Max HP +300</span>, <span class="stat-other">Max MP +300</span></td></tr>
+      <tr><td>Crazy Hagen</td><td><span class="stat-other">Block Def +300</span>, <span class="stat-other">P Def +100</span>, <span class="stat-other">M Def +100</span></td></tr>
+      <tr><td>Devil Reviac</td><td><span class="stat-other">Critical Power +30</span>, <span class="stat-patk">P Atk +300</span>, <span class="stat-matk">M Atk +300</span></td></tr>
+      <tr><td>Devil Skeleton</td><td><span class="stat-other">Crit Pow +20</span>, <span class="stat-patk">P Atk +350</span>, <span class="stat-matk">M Atk +350</span>, <span class="stat-other">Crit Rate +5</span></td></tr>
+      <tr><td>Dark Alchemist Saragon</td><td><span class="stat-other">Crit Rate +10</span>, <span class="stat-patk">P Atk +450</span>, <span class="stat-matk">M Atk +450</span></td></tr>
+      <tr><td>Bloodthirsty Beast Karmos</td><td><span class="stat-other">VIT +50</span>, <span class="stat-other">P Def +2</span>, <span class="stat-other">000</span></td></tr>
     </tbody>
   </table>
 
@@ -297,11 +301,11 @@ table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(
       <tr><th>Boss Card</th><th>Bonuses</th></tr>
     </thead>
     <tbody>
-      <tr><td>Chaotic Phoenix: Warrior</td><td><span class="stat-value">P Atk +5%</span></td></tr>
-      <tr><td>Chaotic Phoenix: Magician</td><td><span class="stat-value">M Atk +5%</span></td></tr>
-      <tr><td>Chaotic Phoenix: Summoner</td><td><span class="stat-value">STR +30, VIT +30, INT +30, Crit Pow +20</span></td></tr>
-      <tr><td>Shadow of Reaper, Necron</td><td><span class="stat-value">STR +50, INT +50</span></td></tr>
-      <tr><td>Butcher Vulcan</td><td><span class="stat-value">Critical Power +30, P Pierce +500, M Pierce +500</span></td></tr>
+      <tr><td>Chaotic Phoenix: Warrior</td><td><span class="stat-patk">P Atk +5%</span></td></tr>
+      <tr><td>Chaotic Phoenix: Magician</td><td><span class="stat-matk">M Atk +5%</span></td></tr>
+      <tr><td>Chaotic Phoenix: Summoner</td><td><span class="stat-other">STR +30</span>, <span class="stat-other">VIT +30</span>, <span class="stat-other">INT +30</span>, <span class="stat-other">Crit Pow +20</span></td></tr>
+      <tr><td>Shadow of Reaper, Necron</td><td><span class="stat-other">STR +50</span>, <span class="stat-other">INT +50</span></td></tr>
+      <tr><td>Butcher Vulcan</td><td><span class="stat-other">Critical Power +30</span>, <span class="stat-other">P Pierce +500</span>, <span class="stat-other">M Pierce +500</span></td></tr>
     </tbody>
   </table>
 
@@ -312,30 +316,30 @@ table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(
       <tr><th>Stat</th><th>Value</th></tr>
     </thead>
     <tbody>
-      <tr><td>STR</td><td><span class="stat-value">80</span></td></tr>
-      <tr><td>INT</td><td><span class="stat-value">80</span></td></tr>
-      <tr><td>VIT</td><td><span class="stat-value">80</span></td></tr>
-      <tr><td>Physical Attack</td><td><span class="stat-value">3,010 + 5%</span></td></tr>
-      <tr><td>Magical Attack</td><td><span class="stat-value">3,220 + 5%</span></td></tr>
-      <tr><td>Physical Defense</td><td><span class="stat-value">4,530</span></td></tr>
-      <tr><td>Magical Defense</td><td><span class="stat-value">1,380</span></td></tr>
-      <tr><td>Physical Accuracy</td><td><span class="stat-value">40</span></td></tr>
-      <tr><td>Magical Accuracy</td><td><span class="stat-value">30</span></td></tr>
-      <tr><td>Attack Speed</td><td><span class="stat-value">8</span></td></tr>
-      <tr><td>Cast Speed</td><td><span class="stat-value">5</span></td></tr>
-      <tr><td>Max HP</td><td><span class="stat-value">11,100</span></td></tr>
-      <tr><td>Max MP</td><td><span class="stat-value">5,100</span></td></tr>
-      <tr><td>HP Recovery</td><td><span class="stat-value">200</span></td></tr>
-      <tr><td>MP Recovery</td><td><span class="stat-value">200</span></td></tr>
-      <tr><td>Critical Rate</td><td><span class="stat-value">19</span></td></tr>
-      <tr><td>Critical Power</td><td><span class="stat-value">90</span></td></tr>
-      <tr><td>Evasion</td><td><span class="stat-value">30</span></td></tr>
-      <tr><td>M Res</td><td><span class="stat-value">15</span></td></tr>
-      <tr><td>P Pierce</td><td><span class="stat-value">650</span></td></tr>
-      <tr><td>M Pierce</td><td><span class="stat-value">650</span></td></tr>
-      <tr><td>Block Defense</td><td><span class="stat-value">500</span></td></tr>
-      <tr><td>Max Weight</td><td><span class="stat-value">800</span></td></tr>
-      <tr><td>Creature Taming</td><td><span class="stat-value">+1 Lvl</span></td></tr>
+      <tr><td>STR</td><td><span class="stat-other">80</span></td></tr>
+      <tr><td>INT</td><td><span class="stat-other">80</span></td></tr>
+      <tr><td>VIT</td><td><span class="stat-other">80</span></td></tr>
+      <tr><td>Physical Attack</td><td><span class="stat-patk">3,010 + 5%</span></td></tr>
+      <tr><td>Magical Attack</td><td><span class="stat-matk">3,220 + 5%</span></td></tr>
+      <tr><td>Physical Defense</td><td><span class="stat-other">4</span>, <span class="stat-other">530</span></td></tr>
+      <tr><td>Magical Defense</td><td><span class="stat-other">1</span>, <span class="stat-other">380</span></td></tr>
+      <tr><td>Physical Accuracy</td><td><span class="stat-other">40</span></td></tr>
+      <tr><td>Magical Accuracy</td><td><span class="stat-other">30</span></td></tr>
+      <tr><td>Attack Speed</td><td><span class="stat-other">8</span></td></tr>
+      <tr><td>Cast Speed</td><td><span class="stat-other">5</span></td></tr>
+      <tr><td>Max HP</td><td><span class="stat-other">11</span>, <span class="stat-other">100</span></td></tr>
+      <tr><td>Max MP</td><td><span class="stat-other">5</span>, <span class="stat-other">100</span></td></tr>
+      <tr><td>HP Recovery</td><td><span class="stat-other">200</span></td></tr>
+      <tr><td>MP Recovery</td><td><span class="stat-other">200</span></td></tr>
+      <tr><td>Critical Rate</td><td><span class="stat-other">19</span></td></tr>
+      <tr><td>Critical Power</td><td><span class="stat-other">90</span></td></tr>
+      <tr><td>Evasion</td><td><span class="stat-other">30</span></td></tr>
+      <tr><td>M Res</td><td><span class="stat-other">15</span></td></tr>
+      <tr><td>P Pierce</td><td><span class="stat-other">650</span></td></tr>
+      <tr><td>M Pierce</td><td><span class="stat-other">650</span></td></tr>
+      <tr><td>Block Defense</td><td><span class="stat-other">500</span></td></tr>
+      <tr><td>Max Weight</td><td><span class="stat-other">800</span></td></tr>
+      <tr><td>Creature Taming</td><td><span class="stat-other">+1 Lvl</span></td></tr>
     </tbody>
   </table>
 
