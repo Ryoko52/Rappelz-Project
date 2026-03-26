@@ -24,8 +24,18 @@
   h1 { font-family: 'Cinzel', serif; font-size: 2.5rem; font-weight: 700; color: var(--gold3); margin-bottom: 1rem; }
   h2 { font-family: 'Cinzel', serif; font-size: 1.5rem; color: var(--gold2); margin: 2rem 0 1rem; }
   p { margin-bottom: 1rem; color: var(--text2); }
+  ul { color: var(--text2); padding-left: 1.5rem; margin-bottom: 1.5rem; }
+  ul li { margin-bottom: 0.6rem; }
   .back-link { font-family: 'Cinzel', serif; font-size: 0.8rem; color: var(--gold-dim); text-decoration: none; margin-bottom: 2rem; display: inline-block; }
   .back-link:hover { color: var(--gold2); }
+  .guide-img { max-width: 350px; height: auto; border-radius: 4px; border: 1px solid var(--border); margin: 0.5rem 0; display: inline-block; vertical-align: middle; }
+  .guide-img-small { max-width: 250px; height: auto; border-radius: 4px; border: 1px solid var(--border); margin: 0.5rem 0.5rem 0.5rem 0; display: inline-block; vertical-align: middle; }
+  .setup-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+  .setup-table th, .setup-table td { border: 1px solid var(--border); padding: 0.75rem 1rem; text-align: left; color: var(--text2); }
+  .setup-table th { background: var(--bg3); color: var(--gold2); font-family: 'Cinzel', serif; font-size: 0.85rem; letter-spacing: 0.05em; }
+  .setup-table td { background: var(--bg2); }
+  a.gold-link { color: var(--gold2); text-decoration: underline; }
+  a.gold-link:hover { color: var(--gold3); }
   footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--text3); font-size: 0.82rem; font-style: italic; margin-top: 4rem; }
 </style>
 </head>
@@ -43,7 +53,73 @@
 <div class="page">
   <a class="back-link" href="/">← Back to Home</a>
   <h1>Rupee Farming</h1>
-  <p style="font-size:1rem;color:var(--gold2);background:rgba(201,168,76,0.1);padding:1rem;border-left:3px solid var(--gold2);margin-bottom:2rem;">⚠ In Progress - This guide is being updated.</p>
+
+  <p>There are different ways to farm rupees in the game.</p>
+
+  <ul>
+    <li>Snow Basin — Kill dragons and sell Lucky Cubes at the Flea Market.</li>
+    <li>Farming at <a class="gold-link" href="{{ url_for('main.map_lake_kaia') }}">Lake Kaia</a> or <a class="gold-link" href="{{ url_for('main.map_pigs_spot') }}">Pig's Spot</a>.</li>
+  </ul>
+
+  <h2>The Farming Principle</h2>
+
+  <p>The principle of farming is very simple: the more Luck stat you have, the more drops you get. This is why Beast Master is the best class to farm rupees — its skill <strong>Harmony of Life</strong> allows you to transform into your summoned pet and gain bonus stats, including <strong>Luck</strong>.</p>
+
+  <p>Try taming Unique Humans in the Parallel World dungeon and stage the one you get as a tank pet (it has the highest stats). Then you can summon 2 Wind Pixies S0 Lv160, equipped with 2H Maces + Shield.</p>
+
+  <h2>Target Setup for Farming</h2>
+
+  <table class="setup-table">
+    <thead>
+      <tr>
+        <th>Slot</th>
+        <th>Item / Pet</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Main Pet</td>
+        <td>Human Tank S5 (you can start with an S0 or any pet just to get going)</td>
+      </tr>
+      <tr>
+        <td>Summons</td>
+        <td>2 Wind Pixies Lv160 — for better gear equipment options</td>
+      </tr>
+      <tr>
+        <td>Helmet</td>
+        <td>Enhanced Glasses<br><img class="guide-img-small" src="{{ url_for('static', filename='images/guides/enhanced_glasses.png') }}" alt="Enhanced Glasses"></td>
+      </tr>
+      <tr>
+        <td>Rings</td>
+        <td>+40 Luck Rings x2 (droppable at Lake Kaia)</td>
+      </tr>
+      <tr>
+        <td>Armor Set</td>
+        <td>Ergon Set — droppable in Ancient Magic Lab (Fanatics), gives 10% Luck<br><img class="guide-img-small" src="{{ url_for('static', filename='images/guides/Ergon_set.png') }}" alt="Ergon Set"><img class="guide-img-small" src="{{ url_for('static', filename='images/guides/AncientMagicLab.png') }}" alt="Ancient Magic Lab Entrance"></td>
+      </tr>
+      <tr>
+        <td>Accessory</td>
+        <td>Luminous Feather (+50 Luck)</td>
+      </tr>
+      <tr>
+        <td>Belt Pets</td>
+        <td>2x Snowman S0 Lv90 + 2x Kenta S0 Lv90</td>
+      </tr>
+      <tr>
+        <td>Weapons</td>
+        <td>2x Royal Axe<br><img class="guide-img-small" src="{{ url_for('static', filename='images/guides/royal_axe.png') }}" alt="Royal Axe"></td>
+      </tr>
+      <tr>
+        <td>Buff</td>
+        <td>5B Buff from other players — provides more stats to you and your pets, including more Luck. You'll earn back the 5B in 2 to 3 hours, then use Refresh Scrolls on yourself and your pets.<br><em style="color:var(--gold2);">This step is not mandatory, but I highly recommend it!</em></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Playstyle</h2>
+
+  <p>Your Beast Master will be running through mobs — they will keep dying before you even reach them, because the 2 Wind Pixies auto-attack from range. Perma running, no stopping, easier looting.</p>
+
 </div>
 
 <footer>
