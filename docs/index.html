@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Rappelz Codex - Player Guide</title>
+<title>Rappelz Guidelines - Player Guide</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
 <style>
@@ -120,19 +120,19 @@
   /* HERO */
   #hero {
     position: relative; overflow: hidden;
-    min-height: 400px;
+    min-height: 480px;
     display: flex; align-items: center; justify-content: center;
     text-align: center;
     padding: 5rem 2rem 4rem;
     border-bottom: 1px solid var(--border);
+    background: url('images/guides/Rappelz.png') center center / cover no-repeat;
   }
   #hero::before {
     content: '';
     position: absolute; inset: 0;
     background:
-      radial-gradient(ellipse 70% 60% at 50% 30%, rgba(120,80,10,0.22) 0%, transparent 65%),
-      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(42,110,112,0.1) 0%, transparent 60%),
-      radial-gradient(ellipse 40% 40% at 80% 70%, rgba(163,59,42,0.1) 0%, transparent 60%);
+      linear-gradient(to bottom, rgba(10,9,7,0.55) 0%, rgba(10,9,7,0.75) 50%, rgba(10,9,7,0.92) 100%),
+      radial-gradient(ellipse 70% 60% at 50% 30%, rgba(120,80,10,0.15) 0%, transparent 65%);
     pointer-events: none;
   }
   #hero::after {
@@ -385,14 +385,14 @@
 
 <header>
   <div class="header-inner">
-    <a class="logo" href="#hero">RAPPELZ<span>CODEX</span></a>
+    <a class="logo" href="#hero">RAPPELZ<span>GUIDELINES</span></a>
     <nav>
       <a href="#tier-list">Tier List</a>
       <a href="#guides">Guides</a>
       <a href="#maps">Maps</a>
     </nav>
     <div class="search-wrap">
-      <input type="text" placeholder="Search the Codex&hellip;" id="search-input" autocomplete="off"/>
+      <input type="text" placeholder="Search guides&hellip;" id="search-input" autocomplete="off"/>
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
         <circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.2"/>
         <line x1="9.5" y1="9.5" x2="13" y2="13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
@@ -405,10 +405,10 @@
 <section id="hero">
   <div style="position:relative;z-index:1">
     <p class="hero-tag">Community Knowledge Base</p>
-    <h1>Rappelz Codex</h1>
+    <h1>Rappelz Guidelines</h1>
     <p class="hero-sub">Tier lists, class guides, tips and tricks, and maps - all in one place.</p>
     <div class="hero-cards">
-      <a class="hero-card" href="#tier-list">&#9876; Class Tier List</a>
+      <a class="hero-card" href="#tier-list">&#9876; Classes</a>
       <a class="hero-card" href="#guides">&#128214; Guides</a>
       <a class="hero-card" href="#maps">&#128506; Maps</a>
     </div>
@@ -420,7 +420,7 @@
   <!-- TIER LIST -->
   <section class="section" id="tier-list">
     <div class="section-head">
-      <h2>CLASS TIER LIST</h2>
+      <h2>CLASSES</h2>
       <div class="section-line"></div>
       <span class="section-badge">9.10</span>
     </div>
@@ -610,7 +610,7 @@
 </div>
 
 <footer>
-  <strong>RAPPELZ CODEX</strong> - Fan-made community guide &middot; Not affiliated with Gala Lab or any official publisher<br/>
+  <strong>RAPPELZ GUIDELINES</strong> - Fan-made community guide &middot; Not affiliated with Gala Lab or any official publisher<br/>
   <span style="margin-top:0.4rem;display:block">Content is community-sourced. Contribute corrections via the Discord.</span>
 </footer>
 
