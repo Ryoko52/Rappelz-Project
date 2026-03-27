@@ -259,7 +259,15 @@
   .role-dps  { background: rgba(163,59,42,0.2); color: #d96050; }
   .role-heal { background: rgba(100,160,80,0.18); color: #8bc87a; }
   .role-supp { background: rgba(120,100,200,0.15); color: #a090e0; }
-  .race-tag { color: var(--text3); font-size: 0.85rem; font-style: italic; }    
+  .race-tag { color: var(--text3); font-size: 0.85rem; font-style: italic; }
+  .race-tag a {
+    color: #a090e0;
+    text-decoration: underline;
+    transition: color 0.18s;
+  }
+  .race-tag a:hover {
+    color: #c2a6ff;
+  }
 
   /* GUIDE CARDS */
   .guide-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.1rem; }
@@ -629,50 +637,62 @@
       <h2>PETS</h2>
       <div class="section-line"></div>
     </div>
-    <div style="margin-bottom:2.2rem">
-      <h3 style="color:var(--gold2);margin-bottom:0.7rem;">Legendary</h3>
-      <div class="pet-grid">
-        <a class="map-card" href="pet/grandmaster-hector.html" style="text-decoration:none;color:inherit;">
-          <div class="pet-thumb"><img src="images/pets/Hector.png" alt="Grandmaster Hector"></div>
-          <div class="map-info"><h4>Grandmaster Hector</h4></div>
-        </a>
-        <a class="map-card" href="pet/death-gladiator.html" style="text-decoration:none;color:inherit;">
-          <div class="pet-thumb"><img src="images/pets/DG.png" alt="Death Gladiator"></div>
-          <div class="map-info"><h4>Death Gladiator</h4></div>
-        </a>
+    <div style="margin-bottom:2.2rem;display:flex;flex-direction:column;gap:1.5rem;">
+      <div style="display:flex;gap:2.5rem;flex-wrap:wrap;">
+        <div style="flex:1 1 0;min-width:220px;">
+          <h3 style="color:var(--gold2);margin-bottom:0.7rem;">Legendary</h3>
+          <div class="pet-grid">
+            <a class="map-card" href="pet/grandmaster-hector.html" style="text-decoration:none;color:inherit;">
+              <div class="pet-thumb"><img src="images/pets/Hector.png" alt="Grandmaster Hector"></div>
+              <div class="map-info"><h4>Grandmaster Hector</h4></div>
+            </a>
+            <a class="map-card" href="pet/death-gladiator.html" style="text-decoration:none;color:inherit;">
+              <div class="pet-thumb"><img src="images/pets/DG.png" alt="Death Gladiator"></div>
+              <div class="map-info"><h4>Death Gladiator</h4></div>
+            </a>
+          </div>
+        </div>
+        <div style="flex:1 1 0;min-width:220px;">
+          <h3 style="color:var(--gold2);margin-bottom:0.7rem;">Unique</h3>
+          <div style="display:flex;gap:0.5rem;flex-wrap:nowrap;justify-content:flex-start;">
+            <a class="map-card" href="pet/crystal-golem.html" style="text-decoration:none;color:inherit;flex:1 1 0;min-width:0;">
+              <div class="pet-thumb"><img src="images/pets/Crystalgolem.png" alt="Crystal Golem"></div>
+              <div class="map-info"><h4 style="word-break:break-word;white-space:normal;">Crystal Golem</h4></div>
+            </a>
+            <a class="map-card" href="pet/bloodthirsty-slaughterer.html" style="text-decoration:none;color:inherit;flex:1 1 0;min-width:0;">
+              <div class="pet-thumb"><img src="images/pets/blood.png" alt="Bloodthirsty Slaughterer"></div>
+              <div class="map-info"><h4 style="word-break:break-word;white-space:normal;font-size:0.7em;">Bloodthirsty Slaughterer</h4></div>
+            </a>
+            <a class="map-card" href="pet/ethereal-pixie.html" style="text-decoration:none;color:inherit;flex:1 1 0;min-width:0;">
+              <div class="pet-thumb"><img src="images/pets/EP.png?v=2" alt="Ethereal Pixie"></div>
+              <div class="map-info"><h4 style="word-break:break-word;white-space:normal;">Ethereal Pixie</h4></div>
+            </a>
+            <a class="map-card" href="pet/wind-pixie.html" style="text-decoration:none;color:inherit;flex:1 1 0;min-width:0;">
+              <div class="pet-thumb"><img src="images/pets/WP.png?v=2" alt="Wind Pixie"></div>
+              <div class="map-info"><h4 style="word-break:break-word;white-space:normal;">Wind Pixie</h4></div>
+            </a>
+          </div>
+        </div>
       </div>
-      <h3 style="color:var(--gold2);margin:1.5rem 0 0.7rem;">Unique</h3>
-      <div class="pet-grid">
-        <a class="map-card" href="pet/crystal-golem.html" style="text-decoration:none;color:inherit;">
-          <div class="pet-thumb"><img src="images/pets/Crystalgolem.png" alt="Crystal Golem"></div>
-          <div class="map-info"><h4>Crystal Golem</h4></div>
-        </a>
-        <a class="map-card" href="pet/bloodthirsty-slaughterer.html" style="text-decoration:none;color:inherit;">
-          <div class="pet-thumb"><img src="images/pets/blood.png" alt="Bloodthirsty Slaughterer"></div>
-          <div class="map-info"><h4>Bloodthirsty Slaughterer</h4></div>
-        </a>
-        <a class="map-card" href="pet/ethereal-pixie.html" style="text-decoration:none;color:inherit;">
-          <div class="pet-thumb"><img src="images/pets/EP.png?v=2" alt="Ethereal Pixie"></div>
-          <div class="map-info"><h4>Ethereal Pixie</h4></div>
-        </a>
-        <a class="map-card" href="pet/wind-pixie.html" style="text-decoration:none;color:inherit;">
-          <div class="pet-thumb"><img src="images/pets/WP.png?v=2" alt="Wind Pixie"></div>
-          <div class="map-info"><h4>Wind Pixie</h4></div>
-        </a>
-      </div>
-      <h3 style="color:var(--gold2);margin:1.5rem 0 0.7rem;">Rare</h3>
-      <div class="pet-grid">
-        <a class="map-card" href="pet/crystal-spider.html" style="text-decoration:none;color:inherit;">
-          <div class="pet-thumb"><img src="images/pets/Spider.png" alt="Crystal Spider"></div>
-          <div class="map-info"><h4>Crystal Spider</h4></div>
-        </a>
-      </div>
-      <h3 style="color:var(--gold2);margin:1.5rem 0 0.7rem;">Common</h3>
-      <div class="pet-grid">
-        <a class="map-card" href="pet/forest-pixie.html" style="text-decoration:none;color:inherit;">
-          <div class="pet-thumb"><img src="images/pets/forestpixie.png" alt="Forest Pixie"></div>
-          <div class="map-info"><h4>Forest Pixie</h4></div>
-        </a>
+      <div style="display:flex;gap:2.5rem;flex-wrap:wrap;">
+        <div style="flex:1 1 0;min-width:220px;">
+          <h3 style="color:var(--gold2);margin-bottom:0.7rem;">Rare</h3>
+          <div class="pet-grid">
+            <a class="map-card" href="pet/crystal-spider.html" style="text-decoration:none;color:inherit;">
+              <div class="pet-thumb"><img src="images/pets/Spider.png" alt="Crystal Spider"></div>
+              <div class="map-info"><h4>Crystal Spider</h4></div>
+            </a>
+          </div>
+        </div>
+        <div style="flex:1 1 0;min-width:220px;">
+          <h3 style="color:var(--gold2);margin-bottom:0.7rem;">Common</h3>
+          <div class="pet-grid">
+            <a class="map-card" href="pet/forest-pixie.html" style="text-decoration:none;color:inherit;">
+              <div class="pet-thumb"><img src="images/pets/forestpixie.png" alt="Forest Pixie"></div>
+              <div class="map-info"><h4>Forest Pixie</h4></div>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
