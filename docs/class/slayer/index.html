@@ -10,7 +10,7 @@
   :root { --bg0: #0a0907; --bg1: #111009; --bg2: #1a1710; --bg3: #242015; --gold: #c9a84c; --gold2: #e8c96a; --gold3: #f5e098; --gold-dim: #7a6330; --text: #d4c9a8; --text2: #a09070; --text3: #6a5f45; --border: rgba(201,168,76,0.18); }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body { background: var(--bg0); color: var(--text); font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; line-height: 1.65; min-height: 100vh; }
+  body { background: var(--bg0); color: var(--text); font-family: 'Crimson Pro', Georgia, serif; font-size: 20px; line-height: 1.75; min-height: 100vh; }
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: var(--bg1); }
   ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
@@ -33,6 +33,7 @@
   .info-table td { color: var(--text2); }
   .info-table td:first-child { color: var(--text); font-weight: 600; white-space: nowrap; width: 160px; }
   h3 { font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--gold-dim); margin: 1.5rem 0 0.5rem; }
+  ul { padding-left: 2.2rem; }
   .placeholder { color: var(--text3); font-style: italic; }
   .priority-list { color: var(--text2); padding-left: 1.5rem; margin-bottom: 1.5rem; }
   .priority-list li { margin-bottom: 0.5rem; }
@@ -58,34 +59,49 @@
 
   <h2>Overview</h2>
   <table class="info-table">
-    <tr><td><strong>Role</strong></td><td>&mdash;</td></tr>
-    <tr><td><strong>Difficulty</strong></td><td>&mdash;</td></tr>
-    <tr><td><strong>Strengths</strong></td><td>&mdash;</td></tr>
-    <tr><td><strong>Weaknesses</strong></td><td>&mdash;</td></tr>
-    <tr><td><strong>Why Play It</strong></td><td>&mdash;</td></tr>
+    <tr><td><strong>Role</strong></td><td>DPS / subtank</td></tr>
+    <tr><td><strong>Difficulty</strong></td><td>Easy</td></tr>
+    <tr><td><strong>Strengths</strong></td><td>Has burst damage and amazing sustain</td></tr>
+    <tr><td><strong>Weaknesses</strong></td><td>Only 3 main damage skills with ~30sec CD (can go lower with helmet+24 and + cards)</td></tr>
+    <tr><td><strong>Why Play It</strong></td><td>If you like cool sword animations, easy to progress melee character, this is the class!</td></tr>
   </table>
 
   <h2>Skills</h2>
   <h3>Main Skills</h3>
-  <p class="placeholder">&mdash;</p>
+  <ul style="color: var(--text2);">
+    <li><span style="color: var(--text2);">Phantasm</span> <img src="../../images/classes/slayer/Phantasm.jpg" alt="Phantasm" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li><span style="color: var(--text2);">Hellstorm</span> <img src="../../images/classes/slayer/HellStorm.jpg" alt="Hellstorm" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li><span style="color: var(--text2);">Deadly Dancing</span> <img src="../../images/classes/slayer/Deadlydancing.jpg" alt="Deadly Dancing" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li><span style="color: var(--text2);">Apocalypse</span> <img src="../../images/classes/slayer/Apocalypse.jpg" alt="Apocalypse" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li><img src="../../images/classes/slayer/phaseblades.jpg" alt="Phase Blades" style="height:32px;vertical-align:middle;margin-right:8px;"/><span style="color: var(--text2);font-weight:bold;">Phase Blades</span> (this is the skill you aim to have in all your gear)</li>
+  </ul>
   <h3>Useful Skills</h3>
-  <p class="placeholder">&mdash;</p>
-  <h3>Defensive &amp; Utility</h3>
-  <p class="placeholder">&mdash;</p>
+  <ul style="color: var(--text2);">
+    <li>Gloom Aura <img src="../../images/classes/slayer/Gloom.jpg" alt="Gloom Aura" style="height:32px;vertical-align:middle;margin-left:8px;"/> for pulling</li>
+    <li>Binding Dust <img src="../../images/classes/slayer/BlindingDust.jpg" alt="Binding Dust" style="height:32px;vertical-align:middle;margin-left:8px;"/> and Smoke Bomb <img src="../../images/classes/slayer/SmokeBomb.jpg" alt="Smoke Bomb" style="height:32px;vertical-align:middle;margin-left:8px;"/> for more dodging and tanking capabilities</li>
+    <li>Phase Rush <img src="../../images/classes/slayer/phaserush.jpg" alt="Phase Rush" style="height:32px;vertical-align:middle;margin-left:8px;"/> for maximum speeeeeeeeeeed!</li>
+  </ul>
+  <h3>Defensive Buffs</h3>
+  <ul style="color: var(--text2);">
+    <li>Pact with Darkness <img src="../../images/classes/slayer/pact.jpg" alt="Pact with Darkness" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li>Shadowforged Plating <img src="../../images/classes/slayer/shadowforgedplates.jpg" alt="Shadowforged Plating" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li>Cloak of Shadows <img src="../../images/classes/slayer/cloak.jpg" alt="Cloak of Shadows" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li>Distortion <img src="../../images/classes/slayer/distortion.jpg" alt="Distortion" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+  </ul>
 
   <h2>Rotations</h2>
   <h3>Single Target</h3>
-  <p class="placeholder">&mdash;</p>
+  <p>Phantasm annihilates bosses.</p>
   <h3>AoE / Multi-Target</h3>
-  <p class="placeholder">&mdash;</p>
+  <p>Hellstorm, Deadly Dancing, Apocalypse.</p>
 
   <h2>Talent Build</h2>
   <table class="info-table">
     <thead><tr><th>Points</th><th>Allocation</th></tr></thead>
     <tbody>
-      <tr><td>5 TP</td><td>&mdash;</td></tr>
-      <tr><td>6 TP</td><td>&mdash;</td></tr>
-      <tr><td>7 TP</td><td>&mdash;</td></tr>
+      <tr><td>5 TP</td><td>2 | 2 | 1</td></tr>
+      <tr><td>6 TP</td><td>2 | 2 | 2</td></tr>
+      <tr><td>7 TP</td><td>2 | 2 | 3</td></tr>
     </tbody>
   </table>
 
@@ -93,9 +109,8 @@
   <table class="info-table">
     <thead><tr><th>Priority</th><th>Stats</th></tr></thead>
     <tbody>
-      <tr><td>Damage</td><td>&mdash;</td></tr>
-      <tr><td>Defense</td><td>&mdash;</td></tr>
-      <tr><td>Caps</td><td>&mdash;</td></tr>
+      <tr><td>Damage</td><td>100% critical rate, Critical Power (CP), STR &rarr; ordered by priority</td></tr>
+      <tr><td>Defense</td><td>Agility &rarr; more Agility means more HP and Evasion</td></tr>
     </tbody>
   </table>
 
@@ -103,8 +118,7 @@
   <table class="info-table">
     <thead><tr><th>Setup</th><th>Accessories</th></tr></thead>
     <tbody>
-      <tr><td>Damage</td><td>&mdash;</td></tr>
-      <tr><td>Defense</td><td>&mdash;</td></tr>
+      <tr><td>Damage</td><td>Rings with 40+ STR/20+ CP, the 3rd stat could be movement speed, Evasion, P.atk depends on what you need.</td></tr>
     </tbody>
   </table>
 
@@ -112,37 +126,61 @@
   <table class="info-table">
     <thead><tr><th>Slot</th><th>Recommendation</th></tr></thead>
     <tbody>
-      <tr><td>Best in Slot</td><td>&mdash;</td></tr>
-      <tr><td>Budget</td><td>&mdash;</td></tr>
+      <tr><td>Belt pets</td><td>
+        <strong>Cheap setup:</strong> 2 unicorn S3, 2 kenta s0, Snowman &rarr; worth sacrificing 1 unicorn for P.hector card<br>
+        <strong>Normal setup:</strong> 3 Mino S3, 2 unicorns S5, Snowman<br>
+        <strong>Expensive setup:</strong> 3 x Death Gladiators S0, 2 snowman/2 cubes/2 S3 picks (depends on what you need)
+      </td></tr>
+      <tr><td>Summoned pet</td><td>
+        <a class="content-link" href="../../pet/bloodthirsty-slaughterer.html">Bloodthirsty Slaughterer</a> or <a class="content-link" href="../../pet/wind-pixie.html">Wind Pixie</a> (depends on the content)
+      </td></tr>
     </tbody>
   </table>
 
   <h2>Gear</h2>
   <h3>Progression Path</h3>
-  <p class="placeholder">&mdash;</p>
+  <ol class="priority-list">
+    <li>R2 helmet +20 (all skills +1)</li>
+    <li>R6 +15 gear from hidden sanctuary</li>
+    <li>Circus weapons and accessories from Circus dungeon</li>
+    <li>Parallel World gear (either trash stats 2 slots with Phase blades, or max slots in each gear but trash skill, depends on what you could find)</li>
+    <li>Island of gods weapons and rings</li>
+    <li>DD Accessories and Yushiva belt</li>
+    <li>Lava gear (boots, gloves, armor, helmet)</li>
+    <li>Medal</li>
+    <li>Emblem</li>
+  </ol>
   <h3>Optimization</h3>
-  <p class="placeholder">&mdash;</p>
+  <p>You upgrade the above when it's applicable e.g., more slots in belt, +24 weapon, +24 medusa helmet, better stats on gear. You always prioritize stats like the following item:</p>
+  <img src="../../images/classes/slayer/perfectsword.png" alt="Perfect Sword Example" style="max-width:320px;display:block;margin:1rem 0;"/>
+  <p>Example of purple stats you look for:</p>
+  <ul>
+    <li>Evasion and movement speed on boots | Evasion or CP on armor, Emblem, Medal</li>
+    <li>Accuracy on gloves, medal or emblem</li>
+  </ul>
 
   <h2>Upgrade Priority</h2>
-  <ol class="priority-list">
-    <li>&mdash;</li>
-    <li>&mdash;</li>
-    <li>&mdash;</li>
-  </ol>
+  <!-- Upgrade priority section removed as requested -->
 
   <h2>Leveling Progression</h2>
-  <p class="placeholder">&mdash;</p>
+  <!-- Leveling progression section removed as requested -->
 
   <h2>Tips</h2>
-  <p class="placeholder">&mdash;</p>
+  <ul>
+    <li>You can always switch your <a class="content-link" href="../../pet/bloodthirsty-slaughterer.html">Bloodthirsty Slaughterer</a> with a <a class="content-link" href="../../pet/wind-pixie.html">Wind Pixie</a> if you find issues tanking.</li>
+    <li>Lvl 2 potion of the above mentioned pets is a huge boost.</li>
+    <li>When you rotate through rooms in DD6 for example, use Dancing Steel in a room then Apocalypse + Hellstorm in the other room. Don't use all AOEs in 1 room or you'll end up losing so much time in the next one (this is of course if you can afford killing mobs with 1 or 2 skills only).</li>
+    <li>If you ever pulled mobs by mistake don't run, you have Cloak of Shadows and Distortion!</li>
+    <li>Use Gloom Aura to pull 1 room, then Smoke Bomb to pull the next one.</li>
+    <li>To be continued</li>
+  </ul>
 
   <h2>Endgame</h2>
   <table class="info-table">
     <thead><tr><th>Aspect</th><th>Rating</th></tr></thead>
     <tbody>
-      <tr><td>Performance</td><td>&mdash;</td></tr>
-      <tr><td>Solo Ability</td><td>&mdash;</td></tr>
-      <tr><td>Budget Friendliness</td><td>&mdash;</td></tr>
+      <tr><td>Performance</td><td>9/10</td></tr>
+      <tr><td>Solo Ability</td><td>10/10</td></tr>
     </tbody>
   </table>
 
