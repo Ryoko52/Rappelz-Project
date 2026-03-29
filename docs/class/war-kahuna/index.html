@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>War Kahuna Class Guide</title>
@@ -11,6 +14,48 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body { background: var(--bg0); color: var(--text); font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; line-height: 1.65; min-height: 100vh; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg1); }
+  ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+  header { position: sticky; top: 0; z-index: 100; background: rgba(10,9,7,0.92); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); padding: 0 2rem; }
+  .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 2rem; height: 58px; }
+  .logo { font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700; color: var(--gold2); letter-spacing: 0.12em; text-decoration: none; white-space: nowrap; text-shadow: 0 0 20px rgba(201,168,76,0.4); }
+  nav { display: flex; gap: 0; flex: 1; }
+  nav a { font-family: 'Cinzel', serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; color: var(--text2); text-decoration: none; padding: 0 1rem; height: 58px; display: flex; align-items: center; border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s; }
+  nav a:hover { color: var(--gold2); border-bottom-color: var(--gold); }
+  .page { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+  h1 { font-family: 'Cinzel', serif; font-size: 2.5rem; font-weight: 700; color: var(--gold3); margin-bottom: 1rem; }
+  h2 { font-family: 'Cinzel', serif; font-size: 1.5rem; color: var(--gold2); margin: 2rem 0 1rem; }
+  p { margin-bottom: 1rem; color: var(--text2); }
+  .back-link { font-family: 'Cinzel', serif; font-size: 0.8rem; color: var(--gold-dim); text-decoration: none; margin-bottom: 2rem; display: inline-block; }
+  .back-link:hover { color: var(--gold2); }
+  .tier-badge { display: inline-block; background: var(--bg3); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 3px; color: var(--text2); font-size: 0.9rem; margin-bottom: 1rem; }
+  .info-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+  .info-table th, .info-table td { padding: 0.5rem 0.8rem; border: 1px solid var(--border); font-size: 0.92rem; }
+  .info-table th { background: var(--bg3); color: var(--gold2); font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.08em; text-align: left; }
+  .info-table td { color: var(--text2); }
+  .info-table td:first-child { color: var(--text); font-weight: 600; white-space: nowrap; width: 160px; }
+  h3 { font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--gold-dim); margin: 1.5rem 0 0.5rem; }
+  .placeholder { color: var(--text3); font-style: italic; }
+  .priority-list { color: var(--text2); padding-left: 1.5rem; margin-bottom: 1.5rem; }
+  .priority-list li { margin-bottom: 0.5rem; }
+  .priority-list li::marker { color: var(--gold2); font-weight: 600; }
+  footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--text3); font-size: 0.82rem; font-style: italic; margin-top: 4rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="../../">RAPPELZ<span style="color:var(--text3);font-weight:400;font-size:0.75rem;margin-left:4px;">GUIDELINES</span></a>
+    <nav>
+      <a href="../../">&larr; Back to Home</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+  <a class="back-link" href="../../">&larr; Back to Home</a>
 
   <h1>War Kahuna</h1>
   <span class="tier-badge">Tier S</span>
@@ -58,8 +103,6 @@
     <thead><tr><th>Points</th><th>Allocation</th></tr></thead>
     <tbody>
       <tr><td>5 TP</td><td>2 | 2 | 1</td></tr>
-      <tr><td>6 TP</td><td>2 | 2 | 2</td></tr>
-      <tr><td>7 TP</td><td>2 | 2 | 3</td></tr>
     </tbody>
   </table>
 
@@ -141,9 +184,12 @@
 
   <h2>Leveling Progression</h2>
   <ul>
-     <li><a class="content-link" href="../../guide/getting-started/">Starting with Rappelz</a></li>
-     <li><a class="content-link" href="../../guide/beyond-master-class/">Master Class and Beyond</a></li>
-     <li><a class="content-link" href="../../guide/175-and-beyond/">175 and Beyond</a></li>
+    <li><a class="content-link" href="../../guides/getting_started.html">Starting with Rappelz</a></li>
+    <li><a class="content-link" href="../../guides/beyond_master_class.html">Master Class and Beyond</a></li>
+    <li><a class="content-link" href="../../guides/175_and_beyond.html">175 and Beyond</a></li>
+      <li><a class="content-link" href="../../guide/getting-started/index.html">Starting with Rappelz</a></li>
+      <li><a class="content-link" href="../../guide/beyond-master-class/index.html">Master Class and Beyond</a></li>
+      <li><a class="content-link" href="../../guide/175-and-beyond/index.html">175 and Beyond</a></li>
   </ul>
 
   <h2>Tips</h2>
@@ -164,56 +210,7 @@
       <tr><td>Solo Ability</td><td>10/10</td></tr>
     </tbody>
   </table>
-  </table>
 
-  <h2>Pets &amp; Belt</h2>
-  <table class="info-table">
-    <thead><tr><th>Slot</th><th>Recommendation</th></tr></thead>
-    <tbody>
-      <tr><td>Belt pets</td><td>&mdash;</td></tr>
-      <tr><td>Summoned pet</td><td>&mdash;</td></tr>
-    </tbody>
-  </table>
-
-  <h2>Gear</h2>
-  <h3>Progression Path</h3>
-  <ol class="priority-list"><li>&mdash;</li></ol>
-  <h3>Optimization</h3>
-  <p class="placeholder">&mdash;</p>
-  <table class="info-table" style="margin-top:1.2rem;">
-    <thead>
-      <tr><th colspan="2">Stat Targets &amp; Item Stat Info</th></tr>
-    </thead>
-    <tbody>
-      <tr><td colspan="2" style="color:var(--gold2);font-weight:600;">Accuracy Target</td></tr>
-      <tr><td>RoA</td><td>&mdash;</td></tr>
-      <tr><td>Hidden RoA</td><td>&mdash;</td></tr>
-      <tr><td>DD6 (level 180)</td><td>&mdash;</td></tr>
-      <tr><td>SF (level 200)</td><td>&mdash;</td></tr>
-      <tr><td colspan="2" style="color:var(--gold2);font-weight:600;">Evasion Target</td></tr>
-      <tr><td>RoA / Hroa</td><td>&mdash;</td></tr>
-      <tr><td>DD6</td><td>&mdash;</td></tr>
-      <tr><td colspan="2" style="font-size:0.98em;">&rArr; This is an approximate target stats !!</td></tr>
-      <tr><td colspan="2" style="color:var(--gold2);font-weight:600;">Item Stat Examples</td></tr>
-      <tr><td>Accuracy</td><td>&mdash;</td></tr>
-      <tr><td>Evasion</td><td>&mdash;</td></tr>
-      <tr><td>Movement Speed</td><td>&mdash;</td></tr>
-      <tr><td colspan="2"><em>You can find the exact min/max stats on the Discord channel (to be imported here soon).</em></td></tr>
-    </tbody>
-  </table>
-
-
-  <h2>Leveling Progression</h2>
-  <ul>
-    <li><a class="content-link" href="../../guides/getting_started.html">Starting with Rappelz</a></li>
-    <li><a class="content-link" href="../../guides/beyond_master_class.html">Master Class and Beyond</a></li>
-    <li><a class="content-link" href="../../guides/175_and_beyond.html">175 and Beyond</a></li>
-  </ul>
-
-  <h2>Tips</h2>
-  <ul>
-    <li class="placeholder">&mdash;</li>
-  </ul>
 </div>
 
 <footer>
