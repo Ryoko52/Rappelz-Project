@@ -7,6 +7,70 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
 <style>
+    /* USEFUL TOOLS ENHANCED */
+    .tools-table-wrap {
+      max-width: 900px;
+      margin: 2.5rem auto 0 auto;
+      background: linear-gradient(120deg, rgba(232,201,106,0.10) 0%, rgba(10,9,7,0.85) 100%);
+      border-radius: 18px;
+      box-shadow: 0 4px 32px rgba(201,168,76,0.10), 0 1.5px 0 rgba(201,168,76,0.10);
+      padding: 2.2rem 2.5rem 2.5rem 2.5rem;
+      border: 2.5px solid var(--gold2);
+    }
+    .tools-table-title {
+      font-family: 'Cinzel', serif;
+      font-size: 2.1rem;
+      color: var(--gold2);
+      letter-spacing: 0.08em;
+      margin-bottom: 1.2rem;
+      text-align: center;
+      text-shadow: 0 2px 12px rgba(201,168,76,0.13);
+    }
+    .tools-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 0.7rem;
+    }
+    .tools-table th {
+      font-size: 1.18rem;
+      color: var(--gold2);
+      background: none;
+      border: none;
+      padding-bottom: 0.7rem;
+      text-align: left;
+      letter-spacing: 0.04em;
+    }
+    .tools-table td {
+      background: rgba(255,255,255,0.04);
+      border-radius: 10px;
+      padding: 1.2rem 1.3rem;
+      font-size: 1.18rem;
+      color: var(--text);
+      border: none;
+      vertical-align: middle;
+      box-shadow: 0 1.5px 8px rgba(201,168,76,0.07);
+    }
+    .tools-link {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gold2) !important;
+      text-decoration: underline;
+      transition: color 0.18s, text-shadow 0.18s;
+      text-shadow: 0 1px 8px rgba(201,168,76,0.13);
+      display: flex;
+      align-items: center;
+      gap: 0.7em;
+    }
+    .tools-link:hover {
+      color: var(--gold3) !important;
+      text-shadow: 0 2px 16px rgba(201,168,76,0.22);
+    }
+    .tools-link-icon {
+      font-size: 1.35em;
+      vertical-align: middle;
+      margin-right: 0.18em;
+      filter: drop-shadow(0 1px 2px rgba(201,168,76,0.13));
+    }
   :root {
     --bg0: #0a0907;
     --bg1: #111009;
@@ -408,6 +472,7 @@
 <header>
   <div class="header-inner">
     <a class="logo" href="#hero">RAPPELZ<span>GUIDELINES</span></a>
+    <a href="#useful-tools" style="margin-left:0.7rem;display:inline-block;padding:0.32em 1em;background:var(--gold2);color:var(--bg0);border-radius:4px;font-family:'Cinzel',serif;font-size:0.82rem;font-weight:600;text-decoration:none;box-shadow:0 1px 4px rgba(0,0,0,0.07);transition:background 0.18s;vertical-align:middle;">&#9881; Tools</a>
     <nav>
       <a href="#tier-list">Tier List</a>
       <a href="#guides">Guides</a>
@@ -699,22 +764,10 @@
 
     <div class="ornament">&#10022; &middot; &middot; &middot; &middot; &#10022; &middot; &middot; &middot; &middot; &#10022;</div>
 
-    <!-- ARCHIVE -->
-    <section class="section" id="archive">
-      <div class="section-head">
-        <h2>ARCHIVE</h2>
-        <div class="section-line"></div>
-      </div>
-      <div>
-        <p>This section contains information on previous Epics, including patch notes, major changes, and historical content.</p>
-        <ul style="color:var(--text2);font-size:0.98rem;line-height:1.7;">
-          <li><strong>Epic 9.9</strong> – <span class="race-tag">Summary of changes, new features, and balance updates.</span></li>
-          <li><strong>Epic 9.8</strong> – <span class="race-tag">Major pet system overhaul, new dungeons, and more.</span></li>
-          <li><strong>Epic 9.7</strong> – <span class="race-tag">Class rebalancing, new gear, and events.</span></li>
-          <!-- Add more as needed -->
-        </ul>
-      </div>
-    </section>
+
+
+
+    <!-- USEFUL TOOLS -->
 
     <!-- EVENTS -->
     <section class="section" id="events">
@@ -733,12 +786,98 @@
       </div>
     </section>
 
+
+
+    <!-- ARCHIVE -->
+    <section class="section" id="archive">
+      <div class="section-head">
+        <h2>ARCHIVE</h2>
+        <div class="section-line"></div>
+      </div>
+      <div>
+        <p>This section contains information on previous Epics, including patch notes, major changes, and historical content.</p>
+        <ul style="color:var(--text2);font-size:0.98rem;line-height:1.7;">
+          <li><strong>Epic 9.9</strong> – <span class="race-tag">Summary of changes, new features, and balance updates.</span></li>
+          <li><strong>Epic 9.8</strong> – <span class="race-tag">Major pet system overhaul, new dungeons, and more.</span></li>
+          <li><strong>Epic 9.7</strong> – <span class="race-tag">Class rebalancing, new gear, and events.</span></li>
+          <!-- Add more as needed -->
+        </ul>
+      </div>
+    </section>
+
+
 </div>
 
 <footer>
-  <strong>RAPPELZ GUIDELINES</strong> - Fan-made community guide &middot; Not affiliated with Gala Lab or any official publisher<br/>
-  <span style="margin-top:0.4rem;display:block">Content is community-sourced. Contribute corrections via the Discord.</span>
-</footer>
+      <div style="text-align:center;color:var(--text3);font-size:1.01rem;margin:2.5rem 0 1.2rem 0;line-height:1.7;">
+      </div>
+    </footer>
+    <section class="section" id="useful-tools">
+      <div class="tools-table-wrap">
+        <div class="tools-table-title">&#9881; Useful Tools</div>
+        <table class="tools-table">
+          <thead>
+            <tr>
+              <th style="min-width:200px;">Tool</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a class="tools-link" href="https://7thsyndicate.co.uk/arcm/skillresource.aspx" target="_blank" rel="noopener"><span class="tools-link-icon">🧬</span>Class Skill Trees &amp; Modifiers</a></td>
+              <td style="color:var(--text2);font-size:1.13rem;">See all classes, their skill trees, and skill modifiers.</td>
+            </tr>
+            <tr>
+              <td><a class="tools-link" href="https://rappelz.pro/" target="_blank" rel="noopener"><span class="tools-link-icon">🗺️</span>Rappelz Map</a></td>
+              <td style="color:var(--text2);font-size:1.13rem;">Useful for events, boss tracking, etc.</td>
+            </tr>
+            <tr>
+              <td><a class="tools-link" href="https://bluemystical.github.io/Rappelz_BeltCalculator/" target="_blank" rel="noopener"><span class="tools-link-icon">🧮</span>Belt Calculator</a></td>
+              <td style="color:var(--text2);font-size:1.13rem;">Calculate belt setups and stats.</td>
+            </tr>
+            <tr>
+              <td><a class="tools-link" href="https://rappelz.fandom.com/wiki/" target="_blank" rel="noopener"><span class="tools-link-icon">📚</span>Rappelz Wiki</a></td>
+              <td style="color:var(--text2);font-size:1.13rem;">Contains useful information about the game.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <div style="text-align:center;color:var(--text3);font-size:1.01rem;margin:2.5rem 0 1.2rem 0;line-height:1.7;">
+      <strong>RAPPELZ GUIDELINES</strong> - Fan-made community guide &middot; Not affiliated with Gala Lab or any official publisher<br>
+      Content is community-sourced. Contribute corrections via the Discord.
+    </div>
+    <section class="section" id="useful-tools">
+      <div class="tools-table-wrap">
+        <div class="tools-table-title">&#9881; Useful Tools</div>
+        <table class="tools-table">
+          <thead>
+            <tr>
+              <th style="min-width:200px;">Tool</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a class="tools-link" href="https://7thsyndicate.co.uk/arcm/skillresource.aspx" target="_blank" rel="noopener"><span class="tools-link-icon">🧬</span>Class Skill Trees &amp; Modifiers</a></td>
+              <td style="color:var(--text2);font-size:1.13rem;">See all classes, their skill trees, and skill modifiers.</td>
+            </tr>
+            <tr>
+              <td><a class="tools-link" href="https://rappelz.pro/" target="_blank" rel="noopener"><span class="tools-link-icon">🗺️</span>Rappelz Map</a></td>
+              <td style="color:var(--text2);font-size:1.13rem;">Useful for events, boss tracking, etc.</td>
+            </tr>
+            <tr>
+              <td><a class="tools-link" href="https://bluemystical.github.io/Rappelz_BeltCalculator/" target="_blank" rel="noopener"><span class="tools-link-icon">🧮</span>Belt Calculator</a></td>
+              <td style="color:var(--text2);font-size:1.13rem;">Calculate belt setups and stats.</td>
+            </tr>
+            <tr>
+              <td><a class="tools-link" href="https://rappelz.fandom.com/wiki/" target="_blank" rel="noopener"><span class="tools-link-icon">📚</span>Rappelz Wiki</a></td>
+              <td style="color:var(--text2);font-size:1.13rem;">Contains useful information about the game.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
 <script src="js/search-index.js?v=8"></script>
 <script>
