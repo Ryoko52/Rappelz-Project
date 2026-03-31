@@ -132,6 +132,66 @@
     text-shadow: 0 0 20px rgba(201,168,76,0.4);
   }
   .logo span { color: var(--text3); font-weight: 400; font-size: 0.75rem; margin-left: 4px; }
+  /* ── FAQ ── */
+  .faq-list { display: flex; flex-direction: column; gap: 10px; }
+  .faq-item {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .faq-item:hover { border-color: var(--border2); }
+  .faq-item.open { border-color: var(--gold-dim); }
+  .faq-q {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 20px; cursor: pointer;
+    font-family: 'Cinzel', serif;
+    font-size: 0.82rem; font-weight: 600;
+    letter-spacing: 0.05em; color: var(--text);
+    gap: 12px; user-select: none; transition: color 0.2s;
+  }
+  .faq-item.open .faq-q { color: var(--gold2); }
+  .faq-q-text { flex: 1; }
+  .faq-q-tag {
+    font-size: 0.58rem; letter-spacing: 0.14em;
+    padding: 3px 8px; border: 1px solid var(--border);
+    border-radius: 3px; color: var(--text3);
+    white-space: nowrap; flex-shrink: 0; font-weight: 600;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .faq-item.open .faq-q-tag { border-color: var(--gold-dim); color: var(--gold-dim); }
+  .faq-chevron {
+    width: 14px; height: 14px; flex-shrink: 0;
+    color: var(--text3); transition: transform 0.3s, color 0.2s;
+  }
+  .faq-item.open .faq-chevron { transform: rotate(180deg); color: var(--gold); }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.2s;
+    padding: 0 20px;
+    font-size: 0.95rem; color: var(--text2); line-height: 1.7;
+  }
+  .faq-item.open .faq-a { max-height: 600px; padding: 0 20px 18px; }
+  .faq-a strong { color: var(--gold-dim); font-weight: 600; }
+  .faq-a a {
+    color: var(--gold2); text-decoration: underline;
+    transition: color 0.15s;
+  }
+  .faq-a a:hover { color: var(--gold3); }
+  .faq-categories {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;
+  }
+  .faq-cat-btn {
+    font-family: 'Cinzel', serif; font-size: 0.62rem;
+    letter-spacing: 0.1em; font-weight: 600;
+    padding: 6px 14px; background: var(--bg2);
+    border: 1px solid var(--border); border-radius: 3px;
+    color: var(--text2); cursor: pointer; transition: all 0.2s;
+  }
+  .faq-cat-btn:hover { border-color: var(--gold-dim); color: var(--gold2); }
+  .faq-cat-btn.active { border-color: var(--gold); color: var(--gold2); background: var(--bg3); }
+
   nav { display: flex; gap: 0; flex: 1; }
   nav a {
     font-family: 'Cinzel', serif;
@@ -768,57 +828,154 @@
     <!-- FAQ -->
     <section class="section" id="faq">
       <div class="section-head">
-        <h2>FAQ</h2>
+        <h2>FREQUENTLY ASKED QUESTIONS</h2>
         <div class="section-line"></div>
+        <span class="section-badge">PLAYER HELP</span>
       </div>
-      <div>
-        <p style="color:var(--text2);margin-bottom:0.8rem;">Common questions and quick guides to help players get unstuck.</p>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.9rem;">
-          <a class="faq-card" href="guide/faq/how-to-craft-lava-gear/" style="text-decoration:none;color:inherit;display:block;padding:0.75rem;border:1px solid var(--border);border-radius:6px;background:var(--bg2);">
-            <h3 style="font-family:'Cinzel',serif;color:var(--gold2);margin:0 0 0.25rem 0;font-size:0.92rem;">How to craft Lava gear</h3>
-            <p style="color:var(--text2);font-size:0.86rem;margin:0;">Quick steps and materials required to craft Lava equipment.</p>
-          </a>
-          <a class="faq-card" href="guide/faq/how-to-craft-medal/" style="text-decoration:none;color:inherit;display:block;padding:0.75rem;border:1px solid var(--border);border-radius:6px;background:var(--bg2);">
-            <h3 style="font-family:'Cinzel',serif;color:var(--gold2);margin:0 0 0.25rem 0;font-size:0.92rem;">How to craft Medal</h3>
-            <p style="color:var(--text2);font-size:0.86rem;margin:0;">Short guide to crafting medals and optimizing bonuses.</p>
-          </a>
-          <a class="faq-card" href="guide/faq/what-is-plus24-16-32-40-40/" style="text-decoration:none;color:inherit;display:block;padding:0.75rem;border:1px solid var(--border);border-radius:6px;background:var(--bg2);">
-            <h3 style="font-family:'Cinzel',serif;color:var(--gold2);margin:0 0 0.25rem 0;font-size:0.92rem;">What is +24 / +16 / +32 / +40?</h3>
-            <p style="color:var(--text2);font-size:0.86rem;margin:0;">Explains enhancement tiers and their impact on stats.</p>
-          </a>
-          <a class="faq-card" href="guide/faq/how-to-make-teardrops-5-10/" style="text-decoration:none;color:inherit;display:block;padding:0.75rem;border:1px solid var(--border);border-radius:6px;background:var(--bg2);">
-            <h3 style="font-family:'Cinzel',serif;color:var(--gold2);margin:0 0 0.25rem 0;font-size:0.92rem;">How to make Teardrops (5–10)</h3>
-            <p style="color:var(--text2);font-size:0.86rem;margin:0;">Tips for efficiently farming and producing teardrops.</p>
-          </a>
-          <a class="faq-card" href="guide/faq/how-to-enter-remains-of-the-ancients/" style="text-decoration:none;color:inherit;display:block;padding:0.75rem;border:1px solid var(--border);border-radius:6px;background:var(--bg2);">
-            <h3 style="font-family:'Cinzel',serif;color:var(--gold2);margin:0 0 0.25rem 0;font-size:0.92rem;">How to enter Remains of the Ancients</h3>
-            <p style="color:var(--text2);font-size:0.86rem;margin:0;">Requirements and portal locations to reach RoA.</p>
-          </a>
-          <a class="faq-card" href="guide/faq/how-to-make-lvl2-potion/" style="text-decoration:none;color:inherit;display:block;padding:0.75rem;border:1px solid var(--border);border-radius:6px;background:var(--bg2);">
-            <h3 style="font-family:'Cinzel',serif;color:var(--gold2);margin:0 0 0.25rem 0;font-size:0.92rem;">How to make Level 2 potion</h3>
-            <p style="color:var(--text2);font-size:0.86rem;margin:0;">Ingredients and crafting steps for Lvl 2 potions.</p>
-          </a>
-          <a class="faq-card" href="guide/faq/how-to-make-belt-8-slots/" style="text-decoration:none;color:inherit;display:block;padding:0.75rem;border:1px solid var(--border);border-radius:6px;background:var(--bg2);">
-            <h3 style="font-family:'Cinzel',serif;color:var(--gold2);margin:0 0 0.25rem 0;font-size:0.92rem;">How to make Belt (8 slots)</h3>
-            <p style="color:var(--text2);font-size:0.86rem;margin:0;">Crafting or upgrading belts to reach 8 inventory slots.</p>
-          </a>
-          <a class="faq-card" href="guide/faq/how-to-move-my-pets/" style="text-decoration:none;color:inherit;display:block;padding:0.75rem;border:1px solid var(--border);border-radius:6px;background:var(--bg2);">
-            <h3 style="font-family:'Cinzel',serif;color:var(--gold2);margin:0 0 0.25rem 0;font-size:0.92rem;">How to move my pets</h3>
-            <p style="color:var(--text2);font-size:0.86rem;margin:0;">Instructions for moving pets between characters and servers.</p>
-          </a>
-          <a class="faq-card" href="guide/faq/how-to-make-pure-white-weapon/" style="text-decoration:none;color:inherit;display:block;padding:0.75rem;border:1px solid var(--border);border-radius:6px;background:var(--bg2);">
-            <h3 style="font-family:'Cinzel',serif;color:var(--gold2);margin:0 0 0.25rem 0;font-size:0.92rem;">How to make Pure White weapon</h3>
-            <p style="color:var(--text2);font-size:0.86rem;margin:0;">Steps to produce Pure White weapons and required materials.</p>
-          </a>
-          <a class="faq-card" href="guide/faq/how-to-use-luciad-power-armor/" style="text-decoration:none;color:inherit;display:block;padding:0.75rem;border:1px solid var(--border);border-radius:6px;background:var(--bg2);">
-            <h3 style="font-family:'Cinzel',serif;color:var(--gold2);margin:0 0 0.25rem 0;font-size:0.92rem;">How to use Luciad Power: Armor</h3>
-            <p style="color:var(--text2);font-size:0.86rem;margin:0;">How Luciad armor power works and how to apply it.</p>
-          </a>
-          <a class="faq-card" href="guide/faq/what-is-maximum-attack-speed/" style="text-decoration:none;color:inherit;display:block;padding:0.75rem;border:1px solid var(--border);border-radius:6px;background:var(--bg2);">
-            <h3 style="font-family:'Cinzel',serif;color:var(--gold2);margin:0 0 0.25rem 0;font-size:0.92rem;">What is the maximum attack speed?</h3>
-            <p style="color:var(--text2);font-size:0.86rem;margin:0;">Explains caps on attack speed and how to reach them.</p>
-          </a>
+
+      <div class="faq-categories">
+        <button class="faq-cat-btn active" data-cat="all">All</button>
+        <button class="faq-cat-btn" data-cat="gear">Gear &amp; Crafting</button>
+        <button class="faq-cat-btn" data-cat="enhancement">Enhancement</button>
+        <button class="faq-cat-btn" data-cat="dungeons">Dungeons</button>
+        <button class="faq-cat-btn" data-cat="pets">Pets</button>
+        <button class="faq-cat-btn" data-cat="combat">Combat</button>
+      </div>
+
+      <div class="faq-list">
+
+        <div class="faq-item" data-cat="gear">
+          <div class="faq-q">
+            <span class="faq-q-tag">GEAR &amp; CRAFTING</span>
+            <span class="faq-q-text">How to craft Lava gear</span>
+            <svg class="faq-chevron" viewBox="0 0 14 14" fill="none"><path d="M2 4.5l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a">
+            Quick steps and materials required to craft Lava equipment.<br><br>
+            <a href="guide/faq/how-to-craft-lava-gear/">→ Read the full Lava Gear crafting guide</a>
+          </div>
         </div>
+
+        <div class="faq-item" data-cat="gear">
+          <div class="faq-q">
+            <span class="faq-q-tag">GEAR &amp; CRAFTING</span>
+            <span class="faq-q-text">How to craft Medal</span>
+            <svg class="faq-chevron" viewBox="0 0 14 14" fill="none"><path d="M2 4.5l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a">
+            Short guide to crafting medals and optimizing bonuses.<br><br>
+            <a href="guide/faq/how-to-craft-medal/">→ Read the full Medal crafting guide</a>
+          </div>
+        </div>
+
+        <div class="faq-item" data-cat="gear">
+          <div class="faq-q">
+            <span class="faq-q-tag">GEAR &amp; CRAFTING</span>
+            <span class="faq-q-text">How to make Pure White weapon</span>
+            <svg class="faq-chevron" viewBox="0 0 14 14" fill="none"><path d="M2 4.5l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a">
+            Steps to produce Pure White weapons and required materials.<br><br>
+            <a href="guide/faq/how-to-make-pure-white-weapon/">→ Read the full Pure White Weapon guide</a>
+          </div>
+        </div>
+
+        <div class="faq-item" data-cat="gear">
+          <div class="faq-q">
+            <span class="faq-q-tag">GEAR &amp; CRAFTING</span>
+            <span class="faq-q-text">How to make Belt (8 slots)</span>
+            <svg class="faq-chevron" viewBox="0 0 14 14" fill="none"><path d="M2 4.5l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a">
+            Crafting or upgrading belts to reach 8 inventory slots.<br><br>
+            <a href="guide/faq/how-to-make-belt-8-slots/">→ Read the full Belt (8 slots) guide</a>
+          </div>
+        </div>
+
+        <div class="faq-item" data-cat="gear">
+          <div class="faq-q">
+            <span class="faq-q-tag">GEAR &amp; CRAFTING</span>
+            <span class="faq-q-text">How to make Level 2 potion</span>
+            <svg class="faq-chevron" viewBox="0 0 14 14" fill="none"><path d="M2 4.5l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a">
+            Ingredients and crafting steps for Lvl 2 potions.<br><br>
+            <a href="guide/faq/how-to-make-lvl2-potion/">→ Read the full Level 2 Potion guide</a>
+          </div>
+        </div>
+
+        <div class="faq-item" data-cat="enhancement">
+          <div class="faq-q">
+            <span class="faq-q-tag">ENHANCEMENT</span>
+            <span class="faq-q-text">What is +24 / +16 / +32 / +40?</span>
+            <svg class="faq-chevron" viewBox="0 0 14 14" fill="none"><path d="M2 4.5l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a">
+            Explains enhancement tiers and their impact on stats.<br><br>
+            <a href="guide/faq/what-is-plus24-16-32-40-40/">→ Read the full Enhancement Tiers guide</a>
+          </div>
+        </div>
+
+        <div class="faq-item" data-cat="enhancement">
+          <div class="faq-q">
+            <span class="faq-q-tag">ENHANCEMENT</span>
+            <span class="faq-q-text">How to make Teardrops (5–10)</span>
+            <svg class="faq-chevron" viewBox="0 0 14 14" fill="none"><path d="M2 4.5l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a">
+            Tips for efficiently farming and producing teardrops.<br><br>
+            <a href="guide/faq/how-to-make-teardrops-5-10/">→ Read the full Teardrops guide</a>
+          </div>
+        </div>
+
+        <div class="faq-item" data-cat="dungeons">
+          <div class="faq-q">
+            <span class="faq-q-tag">DUNGEONS</span>
+            <span class="faq-q-text">How to enter Remains of the Ancients</span>
+            <svg class="faq-chevron" viewBox="0 0 14 14" fill="none"><path d="M2 4.5l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a">
+            Requirements and portal locations to reach RoA.<br><br>
+            <a href="guide/faq/how-to-enter-remains-of-the-ancients/">→ Read the full Remains of the Ancients guide</a>
+          </div>
+        </div>
+
+        <div class="faq-item" data-cat="pets">
+          <div class="faq-q">
+            <span class="faq-q-tag">PETS</span>
+            <span class="faq-q-text">How to move my pets</span>
+            <svg class="faq-chevron" viewBox="0 0 14 14" fill="none"><path d="M2 4.5l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a">
+            Instructions for moving pets between characters and servers.<br><br>
+            <a href="guide/faq/how-to-move-my-pets/">→ Read the full Pet Moving guide</a>
+          </div>
+        </div>
+
+        <div class="faq-item" data-cat="combat">
+          <div class="faq-q">
+            <span class="faq-q-tag">COMBAT</span>
+            <span class="faq-q-text">How to use Luciad Power: Armor</span>
+            <svg class="faq-chevron" viewBox="0 0 14 14" fill="none"><path d="M2 4.5l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a">
+            How Luciad armor power works and how to apply it.<br><br>
+            <a href="guide/faq/how-to-use-luciad-power-armor/">→ Read the full Luciad Power: Armor guide</a>
+          </div>
+        </div>
+
+        <div class="faq-item" data-cat="combat">
+          <div class="faq-q">
+            <span class="faq-q-tag">COMBAT</span>
+            <span class="faq-q-text">What is the maximum attack speed?</span>
+            <svg class="faq-chevron" viewBox="0 0 14 14" fill="none"><path d="M2 4.5l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a">
+            Explains caps on attack speed and how to reach them.<br><br>
+            <a href="guide/faq/what-is-maximum-attack-speed/">→ Read the full Attack Speed guide</a>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -960,6 +1117,29 @@
 
   document.addEventListener('click', function(e) {
     if (!e.target.closest('.search-wrap')) { searchResults.classList.remove('active'); }
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // FAQ category filter
+  document.querySelectorAll('.faq-cat-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.faq-cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.dataset.cat;
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.style.display = (cat === 'all' || item.dataset.cat === cat) ? '' : 'none';
+        item.classList.remove('open');
+      });
+    });
   });
 </script>
 </body>
