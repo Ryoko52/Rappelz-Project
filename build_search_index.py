@@ -15,6 +15,8 @@ CAT_MAP = {
     'class': 'Class',
     'guide': 'Guide',
     'map': 'Map',
+    'pet': 'Pet',
+    'strategy': 'Strategy',
 }
 
 def strip_html(raw):
@@ -43,7 +45,7 @@ entries = []
 
 for root, dirs, files in os.walk(DOCS):
     for fname in files:
-        if fname != 'index.html':
+        if not fname.endswith('.html'):
             continue
         fpath = os.path.join(root, fname)
         rel = os.path.relpath(fpath, DOCS).replace('\\', '/')
@@ -61,18 +63,17 @@ for root, dirs, files in os.walk(DOCS):
         if not cat:
             continue
 
-        # URL is the folder path relative to docs/
-        url = '/'.join(parts[:-1]) + '/'
+        # URL is the path relative to docs/
+        if fname == 'index.html':
+            url = '/'.join(parts[:-1]) + '/'
+        else:
+            url = rel
 
         with open(fpath, 'r', encoding='utf-8') as f:
             raw = f.read()
 
         title = get_title(raw)
         text = strip_html(raw)
-
-        # Truncate very long texts to keep the JS file reasonable (max ~5000 chars)
-        if len(text) > 5000:
-            text = text[:5000]
 
         if title:
             entries.append({
@@ -82,8 +83,8 @@ for root, dirs, files in os.walk(DOCS):
                 'text': text,
             })
 
-# Sort: Classes first, then Guides, then Maps
-order = {'Class': 0, 'Guide': 1, 'Map': 2}
+# Sort: Classes first, then Guides, then Maps, Pets, Strategies
+order = {'Class': 0, 'Guide': 1, 'Map': 2, 'Pet': 3, 'Strategy': 4}
 entries.sort(key=lambda e: (order.get(e['cat'], 9), e['title']))
 
 js = 'const SEARCH_INDEX = ' + json.dumps(entries, ensure_ascii=False) + ';\n'

@@ -1079,14 +1079,19 @@
     selectedIdx = -1;
     if (!q || q.length < 2) { searchResults.classList.remove('active'); searchResults.innerHTML = ''; return; }
 
+    const words = q.split(/\s+/).filter(w => w.length > 0);
     const matches = [];
     for (const p of SEARCH_INDEX) {
-      const titleMatch = p.title.toLowerCase().includes(q);
-      const textMatch = p.text.toLowerCase().includes(q);
-      if (titleMatch || textMatch) {
-        matches.push({ ...p, titleMatch, snippet: textMatch ? getSnippet(p.text, q) : '' });
-      }
-      if (matches.length >= 8) break;
+      const titleLower = p.title.toLowerCase();
+      const textLower = p.text.toLowerCase();
+      const combined = titleLower + ' ' + textLower;
+      const allMatch = words.every(w => combined.includes(w));
+      if (!allMatch) continue;
+      const titleMatch = words.some(w => titleLower.includes(w));
+      const firstWord = words[0];
+      const snippet = textLower.includes(firstWord) ? getSnippet(p.text, firstWord) : '';
+      matches.push({ ...p, titleMatch, snippet });
+      if (matches.length >= 12) break;
     }
 
     // Sort: title matches first
