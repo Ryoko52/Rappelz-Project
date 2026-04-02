@@ -5,41 +5,169 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>How to craft lava gear?</title>
   <link rel="stylesheet" href="../../../../css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
   <style>
-    body{padding:2rem;font-family:Georgia,serif;color:#d4c9a8;background:#0a0907} a{color:#e8c96a}
+    :root {
+      --bg:           #0a0907;
+      --bg-card:      #111009;
+      --bg-row-odd:   #1a1710;
+      --bg-row-even:  #15120b;
+      --bg-th:        #1f1a0f;
+      --border:       #c9a84c33;
+      --border-hi:    #c9a84c88;
+      --gold:         #e8c96a;
+      --gold-dim:     #b89940;
+      --text:         #d4c9a8;
+      --text-dim:     #9a8f72;
+      --lava:         #c9501a;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      padding: 2.5rem 2rem 4rem;
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text);
+      background: var(--bg);
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    a { color: var(--gold); }
+    a:hover { color: #fff; }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1.8rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      text-decoration: none;
+    }
+    .back-link:hover { color: var(--gold); }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      margin: 0 0 0.25rem;
+      border-bottom: 2px solid var(--lava);
+      padding-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin: 2.4rem 0 0.8rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border-hi);
+    }
+
+    h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      color: var(--gold-dim);
+      letter-spacing: 0.04em;
+      margin: 1.6rem 0 0.6rem;
+    }
+
+    h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 1.2rem 0 0.4rem;
+    }
+
+    p { margin-bottom: 0.75rem; }
+    strong { color: var(--gold); }
+    ul, ol { padding-left: 1.4rem; margin-bottom: 0.75rem; }
+    li { margin-bottom: 0.2rem; }
+
+    /* TOC */
+    .toc {
+      background: var(--bg-card);
+      border: 1px solid var(--border-hi);
+      border-left: 3px solid var(--lava);
+      padding: 1.2rem 1.6rem;
+      margin-bottom: 2.4rem;
+    }
+    .toc h2 {
+      font-size: 0.85rem !important;
+      margin: 0 0 0.75rem !important;
+      border: none !important;
+      padding: 0 !important;
+      text-transform: uppercase;
+    }
+    .toc ul {
+      list-style: none !important;
+      padding-left: 0 !important;
+      columns: 2;
+      column-gap: 2rem;
+    }
+    @media (max-width: 500px) { .toc ul { columns: 1; } }
+    .toc li { padding: 0.12rem 0; margin: 0; }
+    .toc a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 0.93rem;
+      transition: color 0.15s;
+    }
+    .toc a:hover { color: var(--gold); }
+
+    /* Tables */
     .setup-table {
       width: 100%;
       border-collapse: collapse;
-      margin: 1.5rem 0;
-      background: #1a1710;
-      color: #d4c9a8;
-      font-size: 1rem;
+      margin: 1rem 0 1.6rem;
+      background: var(--bg-card);
+      color: var(--text);
+      font-size: 0.96rem;
     }
-    .setup-table th, .setup-table td {
-      border: 1px solid #c9a84c44;
-      padding: 0.75rem 1rem;
+    .setup-table th,
+    .setup-table td {
+      border: 1px solid var(--border);
+      padding: 0.6rem 1rem;
       text-align: left;
     }
     .setup-table th {
-      background: #242015;
-      color: #e8c96a;
+      background: var(--bg-th);
+      color: var(--gold);
       font-family: 'Cinzel', serif;
-      font-size: 0.95rem;
-      letter-spacing: 0.05em;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--border-hi);
     }
-    .setup-table tr:nth-child(even) td {
-      background: #18150e;
-    }
-    .setup-table tr:nth-child(odd) td {
-      background: #1a1710;
-    }
-    .setup-table img {
-      vertical-align: middle;
+    .setup-table tbody tr:nth-child(odd)  td { background: var(--bg-row-odd); }
+    .setup-table tbody tr:nth-child(even) td { background: var(--bg-row-even); }
+    .setup-table tbody tr:hover td { background: #211c10; }
+    .setup-table img { vertical-align: middle; }
+
+    .guide-img-small {
+      display: block;
+      max-width: 100%;
+      margin: 0.8rem 0;
+      border: 1px solid var(--border);
     }
   </style>
 </head>
 <body>
-  <a href="../../../index.html">← Back</a>
+  <a class="back-link" href="../../../index.html">← Back</a>
   <h1>How to craft lava gear?</h1>
   <nav class="toc" style="margin-bottom:2rem;">
     <h2 style="font-size:1.2rem;color:#e8c96a;margin-bottom:0.5rem;">Table of Contents</h2>
@@ -139,50 +267,50 @@
   <table class="setup-table">
     <thead><tr><th>Item</th><th>Materials</th></tr></thead>
     <tbody>
-      <tr><td>Typhon crystal</td><td>Typhon shard + 20 x M.Atk Granting TP Card Pack (from Merchant)</td></tr>
-      <tr><td>lava cube</td><td>1 lava drop + 1 Typhon crystal</td></tr>
-      <tr><td>Lava Feather</td><td>5 lava Drops + 5 Typhon Crystals</td></tr>
-      <tr><td>Typhon Scroll</td><td>1000 lak Souls</td></tr>
+      <tr><td>Typhon crystal <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/></td><td><span class="mat-qty">Typhon shard <img src="/docs/images/faq/lava/typhonshard.png" alt="Typhon Shard" style="height:1.2em;vertical-align:middle;"/> + <span class="mat-qty">20</span> x M.Atk Granting TP Card Pack (from Merchant)</span></td></tr>
+      <tr><td>lava cube</td><td><span class="mat-qty">1</span> lava drop <img src="/docs/images/faq/lava/lavadrop.png" alt="Lava Drop" style="height:1.2em;vertical-align:middle;"/> + <span class="mat-qty">1</span> Typhon crystal <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/></td></tr>
+      <tr><td>Lava Feather</td><td><span class="mat-qty">5</span> lava Drops <img src="/docs/images/faq/lava/lavadrop.png" alt="Lava Drop" style="height:1.2em;vertical-align:middle;"/> + <span class="mat-qty">5</span> Typhon Crystals <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/></td></tr>
+      <tr><td>Typhon Scroll <img src="/docs/images/faq/lava/blessedtyphonscroll.png" alt="Typhon Scroll" style="height:1.2em;vertical-align:middle;"/></td><td><span class="mat-qty">1000</span> lak Souls</td></tr>
     </tbody>
   </table>
   <h2 id="weapons-crafting">Lava Weapons Crafting</h2>
   <table class="setup-table">
     <thead><tr><th>Item</th><th>Materials</th></tr></thead>
     <tbody>
-      <tr><td>Lava Spear</td><td>75 Lava Drops + 75 Typhon Crystals + Behemoth's Spear</td></tr>
-      <tr><td>Lava One-Handed Axe</td><td>75 Lava Drops + 75 Typhon Crystals + Demonic Axe</td></tr>
-      <tr><td>Lava Two-Handed Axe</td><td>75 Lava Drops + 75 Typhon Crystals + Rhegium's Outlaw</td></tr>
-      <tr><td>Lava One-Handed Mace</td><td>75 Lava Drops + 75 Typhon Crystals + Stroder's Blessing</td></tr>
-      <tr><td>Lava Two-Handed Mace</td><td>75 Lava Drops + 75 Typhon Crystals + Hermes's Hammer</td></tr>
-      <tr><td>Lava One-Handed Wand</td><td>75 Lava Drops + 75 Typhon Crystals + Mark's Stick</td></tr>
-      <tr><td>Lava Two-Handed Wand</td><td>75 Lava Drops + 75 Typhon Crystals + Branium's Staff</td></tr>
-      <tr><td>Lava Dagger</td><td>75 Lava Drops + 75 Typhon Crystals + Deadly Poison Dagger</td></tr>
-      <tr><td>Lava Two-Handed Long Sword</td><td>75 Lava Drops + 75 Typhon Crystals + Bellatrix's Sword</td></tr>
-      <tr><td>Lava One-Handed Long Sword</td><td>75 Lava Drops + 75 Typhon Crystals + Gladius</td></tr>
-      <tr><td>Lava Long Bow</td><td>75 Lava Drops + 75 Typhon Crystals + Lartis's Bow</td></tr>
-      <tr><td>Lava Crossbow</td><td>75 Lava Drops + 75 Typhon Crystals + Lycan's Cross bow</td></tr>
-      <tr><td>Lava Shield</td><td>75 Lava Drops + 75 Typhon Crystals + Shield of Janua</td></tr>
-      <tr><td>Lava Magic Shield</td><td>75 Lava Drops + 75 Typhon Crystals + Mirror of Janua</td></tr>
+      <tr><td>Lava Spear</td><td><span class="mat-qty">75</span> Lava Drops <img src="/docs/images/faq/lava/lavadrop.png" alt="Lava Drop" style="height:1.2em;vertical-align:middle;"/> + <span class="mat-qty">75</span> Typhon Crystals <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/> + Behemoth's Spear</td></tr>
+      <tr><td>Lava One-Handed Axe</td><td><span class="mat-qty">75</span> Lava Drops <img src="/docs/images/faq/lava/lavadrop.png" alt="Lava Drop" style="height:1.2em;vertical-align:middle;"/> + <span class="mat-qty">75</span> Typhon Crystals <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/> + Demonic Axe</td></tr>
+      <tr><td>Lava Two-Handed Axe</td><td><span class="mat-qty">75</span> Lava Drops <img src="/docs/images/faq/lava/lavadrop.png" alt="Lava Drop" style="height:1.2em;vertical-align:middle;"/> + <span class="mat-qty">75</span> Typhon Crystals <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/> + Rhegium's Outlaw</td></tr>
+      <tr><td>Lava One-Handed Mace</td><td><span class="mat-qty">75</span> Lava Drops <img src="/docs/images/faq/lava/lavadrop.png" alt="Lava Drop" style="height:1.2em;vertical-align:middle;"/> + <span class="mat-qty">75</span> Typhon Crystals <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/> + Stroder's Blessing</td></tr>
+      <tr><td>Lava Two-Handed Mace</td><td><span class="mat-qty">75</span> Lava Drops <img src="/docs/images/faq/lava/lavadrop.png" alt="Lava Drop" style="height:1.2em;vertical-align:middle;"/> + <span class="mat-qty">75</span> Typhon Crystals <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/> + Hermes's Hammer</td></tr>
+      <tr><td>Lava One-Handed Wand</td><td><span class="mat-qty">75</span> Lava Drops <img src="/docs/images/faq/lava/lavadrop.png" alt="Lava Drop" style="height:1.2em;vertical-align:middle;"/> + <span class="mat-qty">75</span> Typhon Crystals <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/> + Mark's Stick</td></tr>
+      <tr><td>Lava Two-Handed Wand</td><td><span class="mat-qty">75</span> Lava Drops <img src="/docs/images/faq/lava/lavadrop.png" alt="Lava Drop" style="height:1.2em;vertical-align:middle;"/> + <span class="mat-qty">75</span> Typhon Crystals <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/> + Branium's Staff</td></tr>
+      <tr><td>Lava Dagger</td><td><span class="mat-qty">75</span> Lava Drops <img src="/docs/images/faq/lava/lavadrop.png" alt="Lava Drop" style="height:1.2em;vertical-align:middle;"/> + <span class="mat-qty">75</span> Typhon Crystals <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/> + Deadly Poison Dagger</td></tr>
+      <tr><td>Lava Two-Handed Long Sword</td><td><span class="mat-qty">75</span> Lava Drops <img src="/docs/images/faq/lava/lavadrop.png" alt="Lava Drop" style="height:1.2em;vertical-align:middle;"/> + <span class="mat-qty">75</span> Typhon Crystals <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/> + Bellatrix's Sword</td></tr>
+      <tr><td>Lava One-Handed Long Sword</td><td><span class="mat-qty">75</span> Lava Drops <img src="/docs/images/faq/lava/lavadrop.png" alt="Lava Drop" style="height:1.2em;vertical-align:middle;"/> + <span class="mat-qty">75</span> Typhon Crystals <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/> + Gladius</td></tr>
+      <tr><td>Lava Long Bow</td><td><span class="mat-qty">75</span> Lava Drops <img src="/docs/images/faq/lava/lavadrop.png" alt="Lava Drop" style="height:1.2em;vertical-align:middle;"/> + <span class="mat-qty">75</span> Typhon Crystals <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/> + Lartis's Bow</td></tr>
+      <tr><td>Lava Crossbow</td><td><span class="mat-qty">75</span> Lava Drops <img src="/docs/images/faq/lava/lavadrop.png" alt="Lava Drop" style="height:1.2em;vertical-align:middle;"/> + <span class="mat-qty">75</span> Typhon Crystals <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/> + Lycan's Cross bow</td></tr>
+      <tr><td>Lava Shield</td><td><span class="mat-qty">75</span> Lava Drops <img src="/docs/images/faq/lava/lavadrop.png" alt="Lava Drop" style="height:1.2em;vertical-align:middle;"/> + <span class="mat-qty">75</span> Typhon Crystals <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/> + Shield of Janua</td></tr>
+      <tr><td>Lava Magic Shield</td><td><span class="mat-qty">75</span> Lava Drops <img src="/docs/images/faq/lava/lavadrop.png" alt="Lava Drop" style="height:1.2em;vertical-align:middle;"/> + <span class="mat-qty">75</span> Typhon Crystals <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/> + Mirror of Janua</td></tr>
     </tbody>
   </table>
   <h2 id="equipment-crafting">Equipment Crafting</h2>
   <table class="setup-table">
     <thead><tr><th>Item</th><th>Materials</th></tr></thead>
     <tbody>
-      <tr><td>Lava Helmet</td><td>35 Lava Drops + 35 Typhon Crystals + Nusylites Helmet</td></tr>
-      <tr><td>Lava Boots</td><td>35 Lava Drops + 35 Typhon Crystals + Nusylites Boots</td></tr>
-      <tr><td>Lava Gloves</td><td>35 Lava Drops + 35 Typhon Crystals + Nusylites Gloves</td></tr>
-      <tr><td>Lava Armor</td><td>35 Lava Drops + 35 Typhon Crystals + Nusylites Armor</td></tr>
+      <tr><td>Lava Helmet</td><td><span class="mat-qty">35</span> Lava Drops <img src="/docs/images/faq/lava/lavadrop.png" alt="Lava Drop" style="height:1.2em;vertical-align:middle;"/> + <span class="mat-qty">35</span> Typhon Crystals <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/> + Nusylites Helmet</td></tr>
+      <tr><td>Lava Boots</td><td><span class="mat-qty">35</span> Lava Drops <img src="/docs/images/faq/lava/lavadrop.png" alt="Lava Drop" style="height:1.2em;vertical-align:middle;"/> + <span class="mat-qty">35</span> Typhon Crystals <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/> + Nusylites Boots</td></tr>
+      <tr><td>Lava Gloves</td><td><span class="mat-qty">35</span> Lava Drops <img src="/docs/images/faq/lava/lavadrop.png" alt="Lava Drop" style="height:1.2em;vertical-align:middle;"/> + <span class="mat-qty">35</span> Typhon Crystals <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/> + Nusylites Gloves</td></tr>
+      <tr><td>Lava Armor</td><td><span class="mat-qty">35</span> Lava Drops <img src="/docs/images/faq/lava/lavadrop.png" alt="Lava Drop" style="height:1.2em;vertical-align:middle;"/> + <span class="mat-qty">35</span> Typhon Crystals <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/> + Nusylites Armor</td></tr>
     </tbody>
   </table>
   <h2 id="wings-crafting">Wings Crafting</h2>
   <table class="setup-table">
     <thead><tr><th>Item</th><th>Materials</th></tr></thead>
     <tbody>
-      <tr><td>Lava Physical Wings</td><td>100 Lava Drops + 500 White Steel + 350 Lava Physical Shard + 100 Typhon Crystals</td></tr>
-      <tr><td>Lava Magic Wings</td><td>100 Lava Drops + 500 White Steel + 350 Lava Magical Shard + 100 Typhon Crystals</td></tr>
-      <tr><td>Lava Defence Wings</td><td>100 Lava Drops + 500 White Steel + 350 Lava Defence Shard + 100 Typhon Crystals</td></tr>
-      <tr><td>Advanced Lava Wings</td><td>Lava Physical Wings +10 + Lava Magic Wings +10 + Lava Defence Wings +10 + 100 Typhon Crystals</td></tr>
+      <tr><td>Lava Physical Wings</td><td><span class="mat-qty">100</span> Lava Drops <img src="/docs/images/faq/lava/lavadrop.png" alt="Lava Drop" style="height:1.2em;vertical-align:middle;"/> + 500 White Steel + <span class="mat-qty">350</span> Lava Physical Shard <img src="/docs/images/faq/lava/physicalshard.png" alt="Lava Physical Shard" style="height:1.2em;vertical-align:middle;"/> + <span class="mat-qty">100</span> Typhon Crystals <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/></td></tr>
+      <tr><td>Lava Magic Wings</td><td><span class="mat-qty">100</span> Lava Drops <img src="/docs/images/faq/lava/lavadrop.png" alt="Lava Drop" style="height:1.2em;vertical-align:middle;"/> + 500 White Steel + <span class="mat-qty">350</span> Lava Magical Shard <img src="/docs/images/faq/lava/magicalshard.png" alt="Lava Magical Shard" style="height:1.2em;vertical-align:middle;"/> + <span class="mat-qty">100</span> Typhon Crystals <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/></td></tr>
+      <tr><td>Lava Defence Wings</td><td><span class="mat-qty">100</span> Lava Drops <img src="/docs/images/faq/lava/lavadrop.png" alt="Lava Drop" style="height:1.2em;vertical-align:middle;"/> + 500 White Steel + <span class="mat-qty">350</span> Lava Defence Shard <img src="/docs/images/faq/lava/defenceshard.png" alt="Lava Defence Shard" style="height:1.2em;vertical-align:middle;"/> + <span class="mat-qty">100</span> Typhon Crystals <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/></td></tr>
+      <tr><td>Advanced Lava Wings</td><td>Lava Physical Wings +10 + Lava Magic Wings +10 + Lava Defence Wings +10 + <span class="mat-qty">100</span> Typhon Crystals <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/></td></tr>
     </tbody>
   </table>
   <h2 id="lava-stats">Lava Stats</h2>
@@ -204,9 +332,37 @@
     </tbody>
   </table>
   <h4>Magical</h4>
-  <p>Same as physical but M.ATK instead of P.ATK</p>
+  <table class="setup-table">
+    <thead><tr><th>Upgrade</th><th>M.ATK</th><th>Move.SPD</th><th>Creature DMG Reduction</th><th>Additional Stats</th><th>Enhancement Item</th></tr></thead>
+    <tbody>
+      <tr><td>+1</td><td>1%</td><td>50</td><td>1%</td><td>1%</td><td>Lava Cube</td></tr>
+      <tr><td>+2</td><td>2%</td><td>50</td><td>2%</td><td>1%</td><td>Lava Cube</td></tr>
+      <tr><td>+3</td><td>3%</td><td>50</td><td>3%</td><td>2%</td><td>Lava Cube</td></tr>
+      <tr><td>+4</td><td>4%</td><td>50</td><td>4%</td><td>2%</td><td>Lava Cube</td></tr>
+      <tr><td>+5</td><td>5%</td><td>50</td><td>5%</td><td>3%</td><td>Lava Cube</td></tr>
+      <tr><td>+6</td><td>6%</td><td>50</td><td>6%</td><td>3%</td><td>Lava Cube</td></tr>
+      <tr><td>+7</td><td>7%</td><td>50</td><td>7%</td><td>4%</td><td>Lava Cube</td></tr>
+      <tr><td>+8</td><td>8%</td><td>50</td><td>8%</td><td>4%</td><td>Lava Cube</td></tr>
+      <tr><td>+9</td><td>9%</td><td>50</td><td>9%</td><td>5%</td><td>Lava Cube</td></tr>
+      <tr><td>+10</td><td>10%</td><td>50</td><td>10%</td><td>5%</td><td>Lava Cube</td></tr>
+    </tbody>
+  </table>
   <h4>Defense</h4>
-  <p>Same but MaxHP/MaxMP, P.def/Mdef instead of M.ATK</p>
+  <table class="setup-table">
+    <thead><tr><th>Upgrade</th><th>Max HP/MP</th><th>P.def/M.def</th><th>Move.SPD</th><th>Creature DMG Reduction</th><th>Additional Stats</th><th>Enhancement Item</th></tr></thead>
+    <tbody>
+      <tr><td>+1</td><td>1%</td><td>1%</td><td>50</td><td>1%</td><td>1%</td><td>Lava Cube</td></tr>
+      <tr><td>+2</td><td>2%</td><td>2%</td><td>50</td><td>2%</td><td>1%</td><td>Lava Cube</td></tr>
+      <tr><td>+3</td><td>3%</td><td>3%</td><td>50</td><td>3%</td><td>2%</td><td>Lava Cube</td></tr>
+      <tr><td>+4</td><td>4%</td><td>4%</td><td>50</td><td>4%</td><td>2%</td><td>Lava Cube</td></tr>
+      <tr><td>+5</td><td>5%</td><td>5%</td><td>50</td><td>5%</td><td>3%</td><td>Lava Cube</td></tr>
+      <tr><td>+6</td><td>6%</td><td>6%</td><td>50</td><td>6%</td><td>3%</td><td>Lava Cube</td></tr>
+      <tr><td>+7</td><td>7%</td><td>7%</td><td>50</td><td>7%</td><td>4%</td><td>Lava Cube</td></tr>
+      <tr><td>+8</td><td>8%</td><td>8%</td><td>50</td><td>8%</td><td>4%</td><td>Lava Cube</td></tr>
+      <tr><td>+9</td><td>9%</td><td>9%</td><td>50</td><td>9%</td><td>5%</td><td>Lava Cube</td></tr>
+      <tr><td>+10</td><td>10%</td><td>10%</td><td>50</td><td>10%</td><td>5%</td><td>Lava Cube</td></tr>
+    </tbody>
+  </table>
   <h3>Advanced Wings Stats</h3>
   <table class="setup-table">
     <thead><tr><th>Upgrade</th><th>M.ATK+P.ATK+Max HP+Max MP+M.def+P.def</th><th>Move.SPD</th><th>Creature DMG Reduction</th><th>Additional Stats</th><th>Enhancement Item</th></tr></thead>
@@ -237,26 +393,35 @@
   <table class="setup-table">
     <thead><tr><th>Material</th><th>Amount</th></tr></thead>
     <tbody>
-      <tr><td>lava drop</td><td>300</td></tr>
-      <tr><td>Typhon Crystal</td><td>300</td></tr>
-      <tr><td>Soul Bead of White Dragon</td><td>100</td></tr>
-      <tr><td>Lava Physical Shard</td><td>1000</td></tr>
-      <tr><td>Lava Magical Shard</td><td>1000</td></tr>
-      <tr><td>Lava Deffence Shard</td><td>1000</td></tr>
+      <tr><td>lava drop <img src="/docs/images/faq/lava/lavadrop.png" alt="Lava Drop" style="height:1.2em;vertical-align:middle;"/></td><td><span class="mat-qty">300</span></td></tr>
+      <tr><td>Typhon Crystal <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/></td><td><span class="mat-qty">300</span></td></tr>
+      <tr><td>Soul Bead of White Dragon</td><td><span class="mat-qty">100</span></td></tr>
+      <tr><td>Lava Physical Shard <img src="/docs/images/faq/lava/physicalshard.png" alt="Lava Physical Shard" style="height:1.2em;vertical-align:middle;"/></td><td><span class="mat-qty">1000</span></td></tr>
+      <tr><td>Lava Magical Shard <img src="/docs/images/faq/lava/magicalshard.png" alt="Lava Magical Shard" style="height:1.2em;vertical-align:middle;"/></td><td><span class="mat-qty">1000</span></td></tr>
+      <tr><td>Lava Deffence Shard <img src="/docs/images/faq/lava/defenceshard.png" alt="Lava Defence Shard" style="height:1.2em;vertical-align:middle;"/></td><td><span class="mat-qty">1000</span></td></tr>
     </tbody>
   </table>
   <h2 id="cloak-crafting">Lava Cloak Crafting</h2>
   <table class="setup-table">
     <thead><tr><th>Material</th><th>Amount</th></tr></thead>
     <tbody>
-      <tr><td>lava drop</td><td>300</td></tr>
-      <tr><td>Typhon Crystal</td><td>300</td></tr>
-      <tr><td>Soul Bead of Black Dragon</td><td>100</td></tr>
-      <tr><td>Lava Physical Shard</td><td>1000</td></tr>
-      <tr><td>Lava Magical Shard</td><td>1000</td></tr>
-      <tr><td>Lava Deffence Shard</td><td>1000</td></tr>
+      <tr><td>lava drop <img src="/docs/images/faq/lava/lavadrop.png" alt="Lava Drop" style="height:1.2em;vertical-align:middle;"/></td><td><span class="mat-qty">300</span></td></tr>
+      <tr><td>Typhon Crystal <img src="/docs/images/faq/lava/typhoncrystal.png" alt="Typhon Crystal" style="height:1.2em;vertical-align:middle;"/></td><td><span class="mat-qty">300</span></td></tr>
+      <tr><td>Soul Bead of Black Dragon</td><td><span class="mat-qty">100</span></td></tr>
+      <tr><td>Lava Physical Shard <img src="/docs/images/faq/lava/physicalshard.png" alt="Lava Physical Shard" style="height:1.2em;vertical-align:middle;"/></td><td><span class="mat-qty">1000</span></td></tr>
+      <tr><td>Lava Magical Shard <img src="/docs/images/faq/lava/magicalshard.png" alt="Lava Magical Shard" style="height:1.2em;vertical-align:middle;"/></td><td><span class="mat-qty">1000</span></td></tr>
+      <tr><td>Lava Deffence Shard <img src="/docs/images/faq/lava/defenceshard.png" alt="Lava Defence Shard" style="height:1.2em;vertical-align:middle;"/></td><td><span class="mat-qty">1000</span></td></tr>
     </tbody>
   </table>
+  <style>
+    .mat-qty {
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
+      font-size: 0.98em;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+    }
+  </style>
   <h3>Lava Mask Stats</h3>
   <ul><li>5% all stats</li></ul>
   <h3 id="cloak-stats">Lava Cloak Stats</h3>
@@ -286,7 +451,7 @@
     </tbody>
   </table>
   <p>The mask and the cloak will give you the second set bonus:</p>
-  <h3>Set For Mask and Cloak</h2>
+  <img class="guide-img-small" src="/docs/images/faq/lava/lavaset2.png" alt="Lava Set Bonus 2" onerror="this.style.display='inline';this.alt='[Image not found: lavaset2.png]'"/>
   <ul>
     <li>DMG All Types: 10%</li>
     <li>DMG Reduce All Types: 5%</li>
