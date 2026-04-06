@@ -9,8 +9,9 @@
 <style>
   :root { --bg0: #0a0907; --bg1: #111009; --bg2: #1a1710; --bg3: #242015; --gold: #c9a84c; --gold2: #e8c96a; --gold3: #f5e098; --gold-dim: #7a6330; --text: #d4c9a8; --text2: #a09070; --text3: #6a5f45; --border: rgba(201,168,76,0.18); }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  ul, ol { padding-left: 3.2rem; }
   html { scroll-behavior: smooth; }
-  body { background: var(--bg0); color: var(--text); font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; line-height: 1.65; min-height: 100vh; }
+  body { background: var(--bg0); color: var(--text); font-family: 'Crimson Pro', Georgia, serif; font-size: 20px; line-height: 1.65; min-height: 100vh; }
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: var(--bg1); }
   ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
@@ -28,7 +29,7 @@
   .back-link:hover { color: var(--gold2); }
   .tier-badge { display: inline-block; background: var(--bg3); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 3px; color: var(--text2); font-size: 0.9rem; margin-bottom: 1rem; }
   .info-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
-  .info-table th, .info-table td { padding: 0.5rem 0.8rem; border: 1px solid var(--border); font-size: 0.92rem; }
+  .info-table th, .info-table td { padding: 0.5rem 0.8rem; border: 1px solid var(--border); font-size: 1.05em; }
   .info-table th { background: var(--bg3); color: var(--gold2); font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.08em; text-align: left; }
   .info-table td { color: var(--text2); }
   .info-table td:first-child { color: var(--text); font-weight: 600; white-space: nowrap; width: 160px; }
@@ -38,6 +39,9 @@
   .priority-list li { margin-bottom: 0.5rem; }
   .priority-list li::marker { color: var(--gold2); font-weight: 600; }
   footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--text3); font-size: 0.82rem; font-style: italic; margin-top: 4rem; }
+  .note-box { background: var(--bg3); border: 1px solid var(--border); border-radius: 5px; padding: 0.8rem 1rem; margin: 1rem 0; color: var(--gold2); font-size: 0.95rem; }
+  a.content-link { color: var(--gold2); text-decoration: underline; }
+  a.content-link:hover { color: var(--gold3); }
 </style>
 </head>
 <body>
@@ -55,155 +59,191 @@
   <a class="back-link" href="../../">&larr; Back to Home</a>
 
   <h1>Master Breeder</h1>
-  <span class="tier-badge">Tier S</span>
+  <span class="tier-badge">Summoner Pet Class</span>
 
   <h2>Overview</h2>
   <table class="info-table">
-    <tr><td><strong>Role</strong></td><td>DPS / subtank</td></tr>
+    <tr><td><strong>Role</strong></td><td>DPS / Tank / Heal (thanks to pets)</td></tr>
     <tr><td><strong>Difficulty</strong></td><td>Easy</td></tr>
-    <tr><td><strong>Strengths</strong></td><td>Has burst damage and amazing sustain</td></tr>
-    <tr><td><strong>Weaknesses</strong></td><td>Only 3 main damage skills with ~30sec CD (can go lower with helmet+24 and + cards)</td></tr>
-    <tr><td><strong>Why Play It</strong></td><td>If you like cool sword animations, easy to progress melee character, this is the class!</td></tr>
+    <tr><td><strong>Strengths</strong></td><td>Very strong early game thanks to amazing synergy with Ethereal Pixie and Crystal Golem</td></tr>
+    <tr><td><strong>Weaknesses</strong></td><td>Once you reach 220 contents, the performance drops significantly</td></tr>
+    <tr><td><strong>Why Play It</strong></td><td>If you want to experience the summoner theme of the game, this is the class!</td></tr>
   </table>
 
+  <!-- ───────────── SKILLS ───────────── -->
   <h2>Skills</h2>
-  <h3>Main Skills</h3>
-  <ul style="color: var(--text2);">
-    <li><span style="color: var(--text2);">Phantasm</span></li>
-    <li><span style="color: var(--text2);">Hellstorm</span></li>
-    <li><span style="color: var(--text2);">Deadly Dancing</span></li>
-    <li><span style="color: var(--text2);">Apocalypse</span></li>
-    <li><span style="color: var(--text2);font-weight:bold;">Phase Blades</span> (this is the skill you aim to have in all your gear)</li>
+
+  <div style="color: var(--text2);">
+  <b>Active:</b>
+  <ul style="line-height:2.4;">
+    <li style="margin-bottom:0.5rem;">Summon Mastery <img src="../../images/classes/overlord/summon_mastery.jpg" alt="Summon Mastery" style="height:32px;vertical-align:middle;margin-left:8px;"/> Allows you to summon 2 pets at the same time</li>
+    <li style="margin-bottom:0.5rem;">Bestial Cry <img src="../../images/classes/masterbreeder/bestialcry.jpg" alt="Bestial Cry" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li style="margin-bottom:0.5rem;">Grim Desire <img src="../../images/classes/masterbreeder/grim.jpg" alt="Grim Desire" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li style="margin-bottom:0.5rem;">Defense Mastery <img src="../../images/classes/masterbreeder/defensemastery.jpg" alt="Defense Mastery" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li style="margin-bottom:0.5rem;">Trait Mastery <img src="../../images/classes/masterbreeder/traitmastery.jpg" alt="Trait Mastery" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li style="margin-bottom:0.5rem;">Empowering Scent <img src="../../images/classes/masterbreeder/scent.jpg" alt="Empowering Scent" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li style="margin-bottom:0.5rem;">Elemental Resistances <img src="../../images/classes/masterbreeder/elemntalresistances.png" alt="Elemental Resistances" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
   </ul>
-  <h3>Useful Skills</h3>
-  <ul style="color: var(--text2);">
-    <li>Gloom Aura for pulling</li>
-    <li>Binding Dust and Smoke Bomb for more dodging and tanking capabilities</li>
-    <li>Sudden Rush for maximum speeeeeeeeeeed!</li>
+  <b>Passive:</b>
+  <ul style="line-height:2.4;">
+    <li style="margin-bottom:0.5rem;">Creature Mastery <img src="../../images/classes/overlord/creaturemastery.jpg" alt="Creature Mastery" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li style="margin-bottom:0.5rem;">Breeder&rsquo;s Synergy <img src="../../images/classes/masterbreeder/breedersynergy.jpg" alt="Breeder's Synergy" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li style="margin-bottom:0.5rem;">Expert Caretaker <img src="../../images/classes/masterbreeder/caretaker.jpg" alt="Expert Caretaker" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li style="margin-bottom:0.5rem;">Holy Link <img src="../../images/classes/masterbreeder/holylink.png" alt="Holy Link" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li style="margin-bottom:0.5rem;">Potency <img src="../../images/classes/masterbreeder/potency.jpg" alt="Potency" style="height:32px;vertical-align:middle;margin-left:8px;"/> this is your main skill in gear!</li>
   </ul>
-  <h3>Defensive Buffs</h3>
+  </div>
+
+  <!-- ───────────── ROTATION ───────────── -->
+  <h2>Rotation</h2>
+  <p>Potency <img src="../../images/classes/masterbreeder/potency.jpg" alt="Potency" style="height:32px;vertical-align:middle;margin-left:4px;margin-right:4px;"/> makes Master Breeder excel with 2 types of pets:</p>
   <ul style="color: var(--text2);">
-    <li>Pact with Darkness</li>
-    <li>Shadowforged Plating</li>
-    <li>Cloak of Shadows</li>
-    <li>Distortion</li>
+    <li>Pets that scale with Max Mana</li>
+    <li>Pets that scale with Max HP</li>
+  </ul>
+  <p>Which is why the most famous combo for Master Breeder is <a class="content-link" href="../../pet/ethereal-pixie.html">Ethereal Pixie</a> + <a class="content-link" href="../../pet/crystal-golem.html">Crystal Golem</a>.</p>
+  <ul style="color: var(--text2);">
+    <li><strong>Ethereal Pixie</strong> is your main DPS</li>
+    <li><strong>Crystal Golem</strong> is your tank</li>
   </ul>
 
-  <h2>Rotations</h2>
-  <h3>Single Target</h3>
-  <p>Phantasm annihilates bosses.</p>
-  <h3>AoE / Multi-Target</h3>
-  <p>Hellstorm, Deadly Dancing, Apocalypse.</p>
+  <!-- ───────────── PET SKILLS ───────────── -->
+  <h2>Main Skills of Pets</h2>
 
+  <h3>Best Skills to Use on Ethereal Pixie</h3>
+  <ul style="color: var(--text2); line-height:2.4;">
+    <li style="margin-bottom:0.5rem;">Elemental Harmony <img src="../../images/classes/masterbreeder/elementalharmony.png" alt="Elemental Harmony" style="height:32px;vertical-align:middle;margin-left:8px;"/> Staged toggle skill</li>
+    <li style="margin-bottom:0.5rem;">Blazing Storm <img src="../../images/classes/masterbreeder/blazingstorm.png" alt="Blazing Storm" style="height:32px;vertical-align:middle;margin-left:8px;"/> AoE spell with DoT</li>
+    <li style="margin-bottom:0.5rem;">Steam Bomb <img src="../../images/classes/masterbreeder/steambomb.png" alt="Steam Bomb" style="height:32px;vertical-align:middle;margin-left:8px;"/> AoE spell</li>
+    <li style="margin-bottom:0.5rem;">Scalding Rain <img src="../../images/classes/masterbreeder/scaldingrain.png" alt="Scalding Rain" style="height:32px;vertical-align:middle;margin-left:8px;"/> AoE spell</li>
+    <li style="margin-bottom:0.5rem;">Phoenix Impact <img src="../../images/classes/masterbreeder/pheoniximpact.png" alt="Phoenix Impact" style="height:32px;vertical-align:middle;margin-left:8px;"/> Triggers Kindling passive that boosts INT/M.Atk</li>
+    <li style="margin-bottom:0.5rem;">Shadow Illusion <img src="../../images/classes/overlord/shadowillusion.png" alt="Shadow Illusion" style="height:32px;vertical-align:middle;margin-left:8px;"/> Dethreat skill</li>
+    <li style="margin-bottom:0.5rem;">Encouragement <img src="../../images/classes/overlord/Encouragement.png" alt="Encouragement" style="height:32px;vertical-align:middle;margin-left:8px;"/> +200% INT</li>
+    <li style="margin-bottom:0.5rem;">Healing spells: Purifying Flames, Phoenix Embrace, Undine Blessing</li>
+  </ul>
+  <p style="color: var(--text2);"><strong>Important passives:</strong> Otherworldly Wisdom, Mysticism (Staged), Kindling <img src="../../images/classes/masterbreeder/kindling.png" alt="Kindling" style="height:32px;vertical-align:middle;margin-left:4px;"/></p>
+
+  <h3>Best Skills to Use on Crystal Golem</h3>
+  <ul style="color: var(--text2); line-height:2.4;">
+    <li style="margin-bottom:0.5rem;">Ruby Eruption <img src="../../images/classes/masterbreeder/rubyeruption.png" alt="Ruby Eruption" style="height:32px;vertical-align:middle;margin-left:8px;"/> High threat AoE</li>
+    <li style="margin-bottom:0.5rem;">Topaz Tantrum <img src="../../images/classes/masterbreeder/topaztantrum.png" alt="Topaz Tantrum" style="height:32px;vertical-align:middle;margin-left:8px;"/> AoE stun</li>
+    <li style="margin-bottom:0.5rem;">Diamond Dust <img src="../../images/classes/masterbreeder/diamonddust.png" alt="Diamond Dust" style="height:32px;vertical-align:middle;margin-left:8px;"/> AoE</li>
+    <li style="margin-bottom:0.5rem;">Titanite <img src="../../images/classes/masterbreeder/titanite.png" alt="Titanite" style="height:32px;vertical-align:middle;margin-left:8px;"/> Toggle that increases Threat, HP and Vitality</li>
+    <li style="margin-bottom:0.5rem;">Wonderstone <img src="../../images/classes/masterbreeder/wonderstone.png" alt="Wonderstone" style="height:32px;vertical-align:middle;margin-left:8px;"/> Damage taken removed from Mana</li>
+    <li style="margin-bottom:0.5rem;">Threatening Essence <img src="../../images/classes/masterbreeder/threatening.png" alt="Threatening Essence" style="height:32px;vertical-align:middle;margin-left:8px;"/> Threat toggle</li>
+    <li style="margin-bottom:0.5rem;">Encouragement <img src="../../images/classes/overlord/Encouragement.png" alt="Encouragement" style="height:32px;vertical-align:middle;margin-left:8px;"/> +100% STR/VIT</li>
+  </ul>
+  <p style="color: var(--text2);"><strong>Important passives:</strong> Rhodochrosite Might, Diamond Skin, Razor Sharp Iolite, Peridot Pain (Staged)</p>
+
+  <!-- ───────────── TALENT BUILD ───────────── -->
   <h2>Talent Build</h2>
   <table class="info-table">
     <thead><tr><th>Points</th><th>Allocation</th></tr></thead>
     <tbody>
-      <tr><td>5 TP</td><td>2 | 2 | 1</td></tr>
-      <tr><td>6 TP</td><td>2 | 2 | 2</td></tr>
+      <tr><td>5 TP</td><td>2 | 0 | 3</td></tr>
+      <tr><td>6 TP</td><td>2 | 1 | 3</td></tr>
       <tr><td>7 TP</td><td>2 | 2 | 3</td></tr>
     </tbody>
   </table>
 
+  <!-- ───────────── STATS ───────────── -->
   <h2>Stats</h2>
   <table class="info-table">
-    <thead><tr><th>Priority</th><th>Stats</th></tr></thead>
+    <thead><tr><th>Priority</th><th>Stat</th></tr></thead>
     <tbody>
-      <tr><td>Damage</td><td>100% critical rate, Critical Power (CP), STR &rarr; ordered by priority</td></tr>
-      <tr><td>Defense</td><td>Agility &rarr; more Agility means more HP and Evasion</td></tr>
+      <tr><td>Main Stat</td><td>Critical Power</td></tr>
+      <tr><td>Sub Stat</td><td>Critical Power (140 CP stones stack with 160 CP stones)</td></tr>
     </tbody>
   </table>
 
+  <!-- ───────────── ACCESSORIES ───────────── -->
   <h2>Accessories</h2>
-  <table class="info-table">
-    <thead><tr><th>Setup</th><th>Accessories</th></tr></thead>
-    <tbody>
-      <tr><td>Damage</td><td>Rings with 40+ STR/20+ CP, the 3rd stat could be movement speed, Evasion, P.atk depends on what you need.</td></tr>
-    </tbody>
-  </table>
-
-  <h2>Pets &amp; Belt</h2>
   <table class="info-table">
     <thead><tr><th>Slot</th><th>Recommendation</th></tr></thead>
     <tbody>
-      <tr><td>Belt pets</td><td>
-        <strong>Cheap setup:</strong> 2 unicorn S3, 2 kenta s0, Snowman &rarr; worth sacrificing 1 unicorn for P.hector card<br>
-        <strong>Normal setup:</strong> 3 Mino S3, 2 unicorns S5, Snowman<br>
-        <strong>Expensive setup:</strong> 3 x Death Gladiators S0, 2 snowman/2 cubes/2 S3 picks (depends on what you need)
-      </td></tr>
-      <tr><td>Summoned pet</td><td>
-        <a class="content-link" href="../../pet/bloodthirsty-slaughterer.html">Bloodthirsty Slaughterer</a> or <a class="content-link" href="../../pet/wind-pixie.html">Wind Pixie</a> (depends on the content)
-      </td></tr>
+      <tr><td>Rings</td><td>2 &times; Rings +5 Creature Mastery from Circus / 170 rings (+20 CP) awakened with CP</td></tr>
+      <tr><td>Belt</td><td>All passives and Magical/Beneficial Deva</td></tr>
     </tbody>
   </table>
 
+  <!-- ───────────── PETS & BELT ───────────── -->
+  <h2>Pets &amp; Belt</h2>
+  <table class="info-table">
+    <thead><tr><th>Setup</th><th>Details</th></tr></thead>
+    <tbody>
+      <tr><td>Early Setup</td><td>3 White Dragons S1 + Lion boss card</td></tr>
+      <tr><td>Full Setup</td><td>3 White Dragons + 2 Snowman + Reviac + Mephisto + Lion / Butcher</td></tr>
+      <tr><td>Summoned Pets</td><td><a class="content-link" href="../../pet/ethereal-pixie.html">Ethereal Pixie</a> + <a class="content-link" href="../../pet/crystal-golem.html">Crystal Golem</a></td></tr>
+    </tbody>
+  </table>
+
+  <!-- ───────────── GEAR ───────────── -->
   <h2>Gear</h2>
   <h3>Progression Path</h3>
   <ol class="priority-list">
     <li>R2 helmet +20 (all skills +1)</li>
-    <li>R6 +15 gear from hidden sanctuary</li>
-    <li>Circus weapons and accessories from Circus dungeon</li>
-    <li>Parallel World gear (either trash stats 2 slots with Phase blades, or max slots in each gear but trash skill, depends on what you could find)</li>
-    <li>Island of gods weapons and rings</li>
-    <li>DD Accessories and Yushiva belt</li>
-    <li>Lava gear (boots, gloves, armor, helmet)</li>
-    <li>Medal</li>
-    <li>Emblem</li>
+    <li>1 Crossbow with 6% P.Atk, 120 STR + Magewall with 6% INT</li>
+    <li>+5 Creature Mastery ring and Bear belt from Circus</li>
+    <li>Parallel World gear (either max slots with trash skill, or Potency gear with trash stats / low slots whatever you can find in the Auction House)</li>
+    <li>Island of Gods 2H Staff for your Ethereal Pixie (1300+ M.Atk, 38+ CP), 2H Mace 6% P.Atk, max HP for Crystal Golem</li>
+    <li>Crit Power Deco set from Altar or Lava Gear</li>
+    <li>Yushiva set for increased stats and more Crit Power</li>
+    <li>Medal with Potency</li>
+    <li>Emblem with Potency</li>
   </ol>
+
   <h3>Optimization</h3>
-  <p>You upgrade the above when it's applicable e.g., more slots in belt, +24 weapon, +24 medusa helmet, better stats on gear. You always prioritize stats like the following item:</p>
-  <p><em>Perfect Sword Example (image removed)</em></p>
-  <p>Example of purple stats you look for:</p>
+  <p>The list above is a high-level overview. For maximum efficiency, follow this upgrade order:</p>
+  <ol class="priority-list">
+    <li>S5 Ethereal Pixie</li>
+    <li>S5 Crystal Golem</li>
+    <li>Boots +24 as soon as possible (+25 if you can afford it)</li>
+    <li>Helmet +24</li>
+    <li>+24 weapon on Ethereal Pixie</li>
+    <li>Necklace with % increased damage vs type</li>
+    <li>Sand Cloak +20</li>
+    <li>Yushiva Belt on both pets if Stage 5</li>
+  </ol>
+
+  <!-- ───────────── LEVELING ───────────── -->
+  <h2>Leveling Progression</h2>
   <ul>
-    <li>Evasion and movement speed on boots | Evasion or CP on armor, Emblem, Medal</li>
-    <li>Accuracy on gloves, medal or emblem</li>
+    <li><a class="content-link" href="../../guide/getting-started/">Starting with Rappelz</a></li>
+    <li><a class="content-link" href="../../guide/beyond-master-class/">Master Class and Beyond</a></li>
+    <li><a class="content-link" href="../../guide/175-and-beyond/">175 and Beyond</a></li>
   </ul>
-  <table class="info-table" style="margin-top:1.2rem;">
-    <thead>
-      <tr><th colspan="2">Stat Targets &amp; Item Stat Info</th></tr>
-    </thead>
+
+  <!-- ───────────── TITLES ───────────── -->
+  <h2 id="titles">Titles</h2>
+  <p>Aim for titles with INT from Underground Dungeons Stage 4:</p>
+  <table class="info-table">
+    <thead><tr><th>Title</th><th>Location</th><th>Intelligence</th><th>Wisdom</th></tr></thead>
     <tbody>
-      <tr><td colspan="2" style="color:var(--gold2);font-weight:600;">Accuracy Target</td></tr>
-      <tr><td>RoA</td><td>1000+ Accuracy</td></tr>
-      <tr><td>Hidden RoA</td><td>1200+ Accuracy</td></tr>
-      <tr><td>DD6 (level 180)</td><td>1500+ Accuracy</td></tr>
-      <tr><td>SF (level 200)</td><td>2000+ Accuracy</td></tr>
-      <tr><td colspan="2" style="color:var(--gold2);font-weight:600;">Evasion Target</td></tr>
-      <tr><td>RoA / Hroa</td><td>3000+ Evasion</td></tr>
-      <tr><td>DD6</td><td>8000+ Evasion</td></tr>
-      <tr><td colspan="2" style="font-size:0.98em;">&rArr; This is an approximate target stats !!</td></tr>
-      <tr><td colspan="2" style="color:var(--gold2);font-weight:600;">Item Stat Examples</td></tr>
-      <tr><td>Accuracy</td><td>~200+ on gloves, emblem, or medal</td></tr>
-      <tr><td>Evasion</td><td>~160+ on boots, armor, medal, or emblem</td></tr>
-      <tr><td>Movement Speed</td><td>~17+ on boots, 30+ on rings</td></tr>
-      <tr><td colspan="2"><em>You can find the exact min/max stats on the Discord channel (to be imported here soon).</em></td></tr>
+      <tr><td>Akt IV, Scene IV Presto</td><td>Palmir Plateau</td><td>+28</td><td>+23</td></tr>
+      <tr><td>Akt IV, Scene IV Vivace</td><td>Palmir Plateau</td><td>+23</td><td>+19</td></tr>
+      <tr><td>Akt IV, Scene IV Moderato</td><td>Palmir Plateau</td><td>+19</td><td>+16</td></tr>
+      <tr><td>Akt IV, Scene III Presto</td><td>Crystal Valley</td><td>+22</td><td>+18</td></tr>
     </tbody>
   </table>
 
+  <!-- ───────────── TIPS ───────────── -->
+  <h2 id="tips">Tips</h2>
+  <ol>
+    <li>Get a Defense Mastery set to increase the damage reduction on your buff.</li>
+    <li>Awaken all your accessories and Crossbow/Magewall with CP.</li>
+    <li>If you want to farm Rupees in Lake Kaia, it is better to have 2 Wind Pixies S0.</li>
+    <li>Move your pets with <strong>Shift + Left Click</strong>.</li>
+    <li>Purse of Invocation from the Cash Shop is a huge boost to your pets (500 coins).</li>
+    <li>If your pets are Stage 5, you can put a Yushiva Belt on them to increase all skills by 1 level.</li>
+  </ol>
 
-  <h2>Leveling Progression</h2>
-  <ul>
-      <li><a class="content-link" href="../../guide/getting-started/">Starting with Rappelz</a></li>
-      <li><a class="content-link" href="../../guide/beyond-master-class/">Master Class and Beyond</a></li>
-      <li><a class="content-link" href="../../guide/175-and-beyond/">175 and Beyond</a></li>
-  </ul>
-
-  <h2>Tips</h2>
-  <ul>
-    <li>You can always switch your <a class="content-link" href="../../pet/bloodthirsty-slaughterer.html">Bloodthirsty Slaughterer</a> with a <a class="content-link" href="../../pet/wind-pixie.html">Wind Pixie</a> if you find issues tanking.</li>
-    <li>Lvl 2 potion of the above mentioned pets is a huge boost.</li>
-    <li>When you rotate through rooms in DD6 for example, use Deadly Dancing in a room then Apocalypse + Hellstorm in the other room. Don't use all AOEs in 1 room or you'll end up losing so much time in the next one (this is of course if you can afford killing mobs with 1 or 2 skills only).</li>
-    <li>If you ever pulled mobs by mistake don't run, you have Cloak of Shadows and Distortion!</li>
-    <li>Use Gloom Aura to pull 1 room, then Smoke Bomb to pull the next one.</li>
-    <li>To be continued</li>
-  </ul>
-
+  <!-- ───────────── ENDGAME ───────────── -->
   <h2>Endgame</h2>
   <table class="info-table">
     <thead><tr><th>Aspect</th><th>Rating</th></tr></thead>
     <tbody>
-      <tr><td>Performance</td><td>9/10</td></tr>
-      <tr><td>Solo Ability</td><td>10/10</td></tr>
+      <tr><td>Performance</td><td>7/10</td></tr>
+      <tr><td>Solo Ability</td><td>8/10</td></tr>
     </tbody>
   </table>
 
