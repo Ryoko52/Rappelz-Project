@@ -9,8 +9,11 @@
 <style>
   :root { --bg0: #0a0907; --bg1: #111009; --bg2: #1a1710; --bg3: #242015; --gold: #c9a84c; --gold2: #e8c96a; --gold3: #f5e098; --gold-dim: #7a6330; --text: #d4c9a8; --text2: #a09070; --text3: #6a5f45; --border: rgba(201,168,76,0.18); }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  ul, ol { padding-left: 3.2rem; }
+  a.content-link { color: var(--gold2); text-decoration: underline; }
+  a.content-link:hover { color: var(--gold3); }
   html { scroll-behavior: smooth; }
-  body { background: var(--bg0); color: var(--text); font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; line-height: 1.65; min-height: 100vh; }
+  body { background: var(--bg0); color: var(--text); font-family: 'Crimson Pro', Georgia, serif; font-size: 20px; line-height: 1.75; min-height: 100vh; }
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: var(--bg1); }
   ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
@@ -28,7 +31,7 @@
   .back-link:hover { color: var(--gold2); }
   .tier-badge { display: inline-block; background: var(--bg3); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 3px; color: var(--text2); font-size: 0.9rem; margin-bottom: 1rem; }
   .info-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
-  .info-table th, .info-table td { padding: 0.5rem 0.8rem; border: 1px solid var(--border); font-size: 0.92rem; }
+  .info-table th, .info-table td { padding: 0.5rem 0.8rem; border: 1px solid var(--border); font-size: 1.05em; }
   .info-table th { background: var(--bg3); color: var(--gold2); font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.08em; text-align: left; }
   .info-table td { color: var(--text2); }
   .info-table td:first-child { color: var(--text); font-weight: 600; white-space: nowrap; width: 160px; }
@@ -55,105 +58,133 @@
   <a class="back-link" href="../../">&larr; Back to Home</a>
 
   <h1>Mercenary</h1>
-  <span class="tier-badge">Tier A</span>
+  <span class="tier-badge">A Tier</span>
 
   <h2>Overview</h2>
   <table class="info-table">
-    <tr><td><strong>Role</strong></td><td>DPS / subtank</td></tr>
+    <tr><td><strong>Role</strong></td><td>DPS / Tank</td></tr>
     <tr><td><strong>Difficulty</strong></td><td>Easy</td></tr>
-    <tr><td><strong>Strengths</strong></td><td>Has burst damage and amazing sustain</td></tr>
-    <tr><td><strong>Weaknesses</strong></td><td>Only 3 main damage skills with ~30sec CD (can go lower with helmet+24 and + cards)</td></tr>
-    <tr><td><strong>Why Play It</strong></td><td>If you like cool sword animations, easy to progress melee character, this is the class!</td></tr>
+    <tr><td><strong>Strengths</strong></td><td>Easy survivability in early game</td></tr>
+    <tr><td><strong>Weaknesses</strong></td><td>A jack of all trades, master of none!</td></tr>
+    <tr><td><strong>Why Play It</strong></td><td>The typical Excalibur class, just with a Spear (which is still cool)</td></tr>
   </table>
 
+  <!-- ───────────── SKILLS ───────────── -->
   <h2>Skills</h2>
-  <h3>Main Skills</h3>
-  <ul style="color: var(--text2);">
-    <li><span style="color: var(--text2);">Phantasm</span></li>
-    <li><span style="color: var(--text2);">Hellstorm</span></li>
-    <li><span style="color: var(--text2);">Deadly Dancing</span></li>
-    <li><span style="color: var(--text2);">Apocalypse</span></li>
-    <li><span style="color: var(--text2);font-weight:bold;">Phase Blades</span> (this is the skill you aim to have in all your gear)</li>
-  </ul>
-  <h3>Useful Skills</h3>
-  <ul style="color: var(--text2);">
-    <li>Gloom Aura for pulling</li>
-    <li>Binding Dust and Smoke Bomb for more dodging and tanking capabilities</li>
-    <li>Sudden Rush for maximum speeeeeeeeeeed!</li>
-  </ul>
-  <h3>Defensive Buffs</h3>
-  <ul style="color: var(--text2);">
-    <li>Pact with Darkness</li>
-    <li>Shadowforged Plating</li>
-    <li>Cloak of Shadows</li>
-    <li>Distortion</li>
+
+  <h3>Toggles / Buffs</h3>
+  <ul style="color: var(--text2); line-height:2.4;">
+    <li style="margin-bottom:0.5rem;">Blessing <img src="../../images/classes/Mercenary/blessing.jpg" alt="Blessing" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li style="margin-bottom:0.5rem;">Divine Cluster <img src="../../images/classes/Mercenary/divineclsuter.jpg" alt="Divine Cluster" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li style="margin-bottom:0.5rem;">Holy Aura <img src="../../images/classes/Mercenary/holyaura.jpg" alt="Holy Aura" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li style="margin-bottom:0.5rem;">Defensive Stance <img src="../../images/classes/Mercenary/defstance.jpg" alt="Defensive Stance" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li style="margin-bottom:0.5rem;">Invigorating Essence <img src="../../images/classes/Mercenary/Invigaura.jpg" alt="Invigorating Essence" style="height:32px;vertical-align:middle;margin-left:8px;"/> your main skill in gear!</li>
   </ul>
 
-  <h2>Rotations</h2>
   <h3>Single Target</h3>
-  <p>Phantasm annihilates bosses.</p>
-  <h3>AoE / Multi-Target</h3>
-  <p>Hellstorm, Deadly Dancing, Apocalypse.</p>
+  <ul style="color: var(--text2); line-height:2.4;">
+    <li style="margin-bottom:0.5rem;">Divine Cross <img src="../../images/classes/Mercenary/divinecross.jpg" alt="Divine Cross" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li style="margin-bottom:0.5rem;">Laser Blade <img src="../../images/classes/Mercenary/laserblade.jpg" alt="Laser Blade" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+  </ul>
 
+  <h3>AoE</h3>
+  <ul style="color: var(--text2); line-height:2.4;">
+    <li style="margin-bottom:0.5rem;">Wild Stream <img src="../../images/classes/Mercenary/wildstream.jpg" alt="Wild Stream" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li style="margin-bottom:0.5rem;">Dual Strike <img src="../../images/classes/Mercenary/dualstrike.jpg" alt="Dual Strike" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li style="margin-bottom:0.5rem;">Deathblow <img src="../../images/classes/Mercenary/deathblow.jpg" alt="Deathblow" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+  </ul>
+
+  <h3>Utility</h3>
+  <ul style="color: var(--text2); line-height:2.4;">
+    <li style="margin-bottom:0.5rem;">Hate Aura <img src="../../images/classes/Mercenary/hateaura.jpg" alt="Hate Aura" style="height:32px;vertical-align:middle;margin-left:8px;"/> for pulling</li>
+    <li style="margin-bottom:0.5rem;">Light Speed <img src="../../images/classes/Mercenary/lightspeed.jpg" alt="Light Speed" style="height:32px;vertical-align:middle;margin-left:8px;"/> for&hellip; speeeeeeeed</li>
+    <li style="margin-bottom:0.5rem;">Immortality <img src="../../images/classes/Mercenary/immortality.jpg" alt="Immortality" style="height:32px;vertical-align:middle;margin-left:8px;"/> you will not die at 1 HP for a few seconds</li>
+    <li style="margin-bottom:0.5rem;">Provocation <img src="../../images/classes/Mercenary/provocation.jpg" alt="Provocation" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+  </ul>
+
+  <h3>Breakers</h3>
+  <ul style="color: var(--text2); line-height:2.4;">
+    <li style="margin-bottom:0.5rem;">Offense Breaker <img src="../../images/classes/Mercenary/offensebreaker.jpg" alt="Offense Breaker" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li style="margin-bottom:0.5rem;">Defense Breaker <img src="../../images/classes/Mercenary/defensebreaker.jpg" alt="Defense Breaker" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li style="margin-bottom:0.5rem;">Mental Breaker <img src="../../images/classes/Mercenary/mentalbreaker.jpg" alt="Mental Breaker" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+  </ul>
+
+  <h3>Passives</h3>
+  <ul style="color: var(--text2); line-height:2.4;">
+    <li style="margin-bottom:0.5rem;">Lust for Blood <img src="../../images/classes/Mercenary/lustforblood.jpg" alt="Lust for Blood" style="height:32px;vertical-align:middle;margin-left:8px;"/> your alternative skill on gear if you cannot find Invigorating Essence</li>
+    <li style="margin-bottom:0.5rem;">Desperate Deflection <img src="../../images/classes/Mercenary/deflection.jpg" alt="Desperate Deflection" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li style="margin-bottom:0.5rem;">Frantic Defense <img src="../../images/classes/Mercenary/franticdefense.jpg" alt="Frantic Defense" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li style="margin-bottom:0.5rem;">Reckless Vivacity <img src="../../images/classes/Mercenary/recklessvivacity.jpg" alt="Reckless Vivacity" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+    <li style="margin-bottom:0.5rem;">Accelerated Casting <img src="../../images/classes/Mercenary/acceleratedcasting.jpg" alt="Accelerated Casting" style="height:32px;vertical-align:middle;margin-left:8px;"/> requires a 2H weapon equipped</li>
+  </ul>
+
+  <!-- ───────────── GAMEPLAY ───────────── -->
+  <h2>Gameplay</h2>
+  <p>The playstyle of Mercenary is one of if not the easiest in the game, which is why it is always recommended to start with this class as a new player.</p>
+  <p>You activate your buffs and toggles, use Hate Aura <img src="../../images/classes/Mercenary/hateaura.jpg" alt="Hate Aura" style="height:28px;vertical-align:middle;margin:0 4px;"/> to pull mobs, then use your main AoE skills Wild Stream <img src="../../images/classes/Mercenary/wildstream.jpg" alt="Wild Stream" style="height:28px;vertical-align:middle;margin:0 4px;"/> and Dual Strike <img src="../../images/classes/Mercenary/dualstrike.jpg" alt="Dual Strike" style="height:28px;vertical-align:middle;margin:0 4px;"/>.</p>
+  <p>You do not have to worry much about healing and defenses thanks to Desperate Deflection <img src="../../images/classes/Mercenary/deflection.jpg" alt="Desperate Deflection" style="height:28px;vertical-align:middle;margin:0 4px;"/>, Frantic Defense <img src="../../images/classes/Mercenary/franticdefense.jpg" alt="Frantic Defense" style="height:28px;vertical-align:middle;margin:0 4px;"/>, and Reckless Vivacity <img src="../../images/classes/Mercenary/recklessvivacity.jpg" alt="Reckless Vivacity" style="height:28px;vertical-align:middle;margin:0 4px;"/> which boost your P.Def, HP, and damage reduction, combined with Lunacy boss card.</p>
+  <p>You must equip a 2H weapon (preferably Spear 170) to activate your passive Accelerated Casting <img src="../../images/classes/Mercenary/acceleratedcasting.jpg" alt="Accelerated Casting" style="height:28px;vertical-align:middle;margin:0 4px;"/>, which reduces the cooldown of your skills by 45.5% at level 12 (with R2 Helmet +20, DT buff, and Bear Belt).</p>
+
+  <!-- ───────────── TALENT BUILD ───────────── -->
   <h2>Talent Build</h2>
   <table class="info-table">
     <thead><tr><th>Points</th><th>Allocation</th></tr></thead>
     <tbody>
-      <tr><td>5 TP</td><td>2 | 2 | 1</td></tr>
-      <tr><td>6 TP</td><td>2 | 2 | 2</td></tr>
-      <tr><td>7 TP</td><td>2 | 2 | 3</td></tr>
+      <tr><td>5 TP</td><td>3 | 2 | 0</td></tr>
+      <tr><td>6 TP</td><td>3 | 3 | 0</td></tr>
+      <tr><td>7 TP</td><td>3 | 3 | 1</td></tr>
+      <tr><td>9 TP</td><td>3 | 3 | 3</td></tr>
     </tbody>
   </table>
 
+  <!-- ───────────── STATS ───────────── -->
   <h2>Stats</h2>
   <table class="info-table">
     <thead><tr><th>Priority</th><th>Stats</th></tr></thead>
     <tbody>
-      <tr><td>Damage</td><td>100% critical rate, Critical Power (CP), STR &rarr; ordered by priority</td></tr>
-      <tr><td>Defense</td><td>Agility &rarr; more Agility means more HP and Evasion</td></tr>
+      <tr><td>Damage</td><td>Critical Rate, Critical Power, STR</td></tr>
+      <tr><td>Defense</td><td>Vitality &mdash; more Vitality means more HP and P.Def</td></tr>
     </tbody>
   </table>
 
+  <!-- ───────────── ACCESSORIES ───────────── -->
   <h2>Accessories</h2>
   <table class="info-table">
     <thead><tr><th>Setup</th><th>Accessories</th></tr></thead>
     <tbody>
-      <tr><td>Damage</td><td>Rings with 40+ STR/20+ CP, the 3rd stat could be movement speed, Evasion, P.atk depends on what you need.</td></tr>
+      <tr><td>Damage</td><td>Rings with 40+ STR / 20+ CP, the 3rd stat could be movement speed, Evasion, or P.Atk depending on what you need.</td></tr>
+      <tr><td>Defense</td><td>Rings with 40+ Vitality / 20+ CP, the 3rd stat could be movement speed, Evasion, or P.Atk depending on what you need.</td></tr>
     </tbody>
   </table>
 
+  <!-- ───────────── PETS & BELT ───────────── -->
   <h2>Pets &amp; Belt</h2>
   <table class="info-table">
-    <thead><tr><th>Slot</th><th>Recommendation</th></tr></thead>
+    <thead><tr><th>Setup</th><th>Details</th></tr></thead>
     <tbody>
-      <tr><td>Belt pets</td><td>
-        <strong>Cheap setup:</strong> 2 unicorn S3, 2 kenta s0, Snowman &rarr; worth sacrificing 1 unicorn for P.hector card<br>
-        <strong>Normal setup:</strong> 3 Mino S3, 2 unicorns S5, Snowman<br>
-        <strong>Expensive setup:</strong> 3 x Death Gladiators S0, 2 snowman/2 cubes/2 S3 picks (depends on what you need)
-      </td></tr>
-      <tr><td>Summoned pet</td><td>
-        <a class="content-link" href="../../pet/bloodthirsty-slaughterer.html">Bloodthirsty Slaughterer</a> or <a class="content-link" href="../../pet/wind-pixie.html">Wind Pixie</a> (depends on the content)
-      </td></tr>
+      <tr><td>Early Setup</td><td>2 Kenta + 1 Cube + Lunacy</td></tr>
+      <tr><td>Normal Setup</td><td>3 Mino S1 + Lunacy</td></tr>
+      <tr><td>Full Setup</td><td>3 Mino S1 + 2 Snowman + Reviac + Lunacy / P.Hector + Devil Skeleton</td></tr>
+      <tr><td>Equipped Belt</td><td>All passives and Physical Deva</td></tr>
     </tbody>
   </table>
 
+  <!-- ───────────── GEAR ───────────── -->
   <h2>Gear</h2>
   <h3>Progression Path</h3>
   <ol class="priority-list">
     <li>R2 helmet +20 (all skills +1)</li>
-    <li>R6 +15 gear from hidden sanctuary</li>
+    <li>R6 +15 gear from Hidden Sanctuary</li>
     <li>Circus weapons and accessories from Circus dungeon</li>
-    <li>Parallel World gear (either trash stats 2 slots with Phase blades, or max slots in each gear but trash skill, depends on what you could find)</li>
-    <li>Island of gods weapons and rings</li>
+    <li>Parallel World gear (either trash stats 2 slots with Invigorating Aura, or max slots in each gear but trash skill, depends on what you could find)</li>
+    <li>Island of Gods weapons and rings</li>
     <li>DD Accessories and Yushiva belt</li>
     <li>Lava gear (boots, gloves, armor, helmet)</li>
     <li>Medal</li>
     <li>Emblem</li>
   </ol>
   <h3>Optimization</h3>
-  <p>You upgrade the above when it's applicable e.g., more slots in belt, +24 weapon, +24 medusa helmet, better stats on gear. You always prioritize stats like the following item:</p>
-  <p><em>Perfect Sword Example (image removed)</em></p>
-  <p>Example of purple stats you look for:</p>
+  <p>You upgrade the above when applicable e.g., more slots in belt, +24 weapon, +24 Medusa helmet, better stats on gear. You always prioritize stats like the following:</p>
   <ul>
     <li>Evasion and movement speed on boots | Evasion or CP on armor, Emblem, Medal</li>
     <li>Accuracy on gloves, medal or emblem</li>
@@ -168,10 +199,6 @@
       <tr><td>Hidden RoA</td><td>1200+ Accuracy</td></tr>
       <tr><td>DD6 (level 180)</td><td>1500+ Accuracy</td></tr>
       <tr><td>SF (level 200)</td><td>2000+ Accuracy</td></tr>
-      <tr><td colspan="2" style="color:var(--gold2);font-weight:600;">Evasion Target</td></tr>
-      <tr><td>RoA / Hroa</td><td>3000+ Evasion</td></tr>
-      <tr><td>DD6</td><td>8000+ Evasion</td></tr>
-      <tr><td colspan="2" style="font-size:0.98em;">&rArr; This is an approximate target stats !!</td></tr>
       <tr><td colspan="2" style="color:var(--gold2);font-weight:600;">Item Stat Examples</td></tr>
       <tr><td>Accuracy</td><td>~200+ on gloves, emblem, or medal</td></tr>
       <tr><td>Evasion</td><td>~160+ on boots, armor, medal, or emblem</td></tr>
@@ -181,29 +208,52 @@
   </table>
 
 
+  <!-- ───────────── TITLES ───────────── -->
+  <h2>Titles</h2>
+  <ul>
+    <li><b>Title for Reduced Damage:</b> <span style="color:var(--gold2);">Camper</span><br/>
+      <span style="color:var(--text2);">(Purchase a tent from the Merchant in Hidden Village)</span>
+    </li>
+    <li><b>Titles from Underground Dungeons Stage 2:</b>
+      <table class="info-table" style="margin-top:0.7em;max-width:600px;">
+        <thead>
+          <tr><th>Title</th><th>Location</th><th>Strength</th><th>Vitality</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Akt II, Scene IV Allegro</td><td>Palmir Plateau</td><td>+28</td><td>+23</td></tr>
+          <tr><td>Akt II, Scene IV Moderato</td><td>Palmir Plateau</td><td>+23</td><td>+19</td></tr>
+          <tr><td>Akt II, Scene IV Andante</td><td>Palmir Plateau</td><td>+19</td><td>+16</td></tr>
+          <tr><td>Akt II, Scene III Allegro</td><td>Crystal Valley</td><td>+22</td><td>+18</td></tr>
+        </tbody>
+      </table>
+    </li>
+  </ul>
+
+  <!-- ───────────── LEVELING ───────────── -->
   <h2>Leveling Progression</h2>
   <ul>
-        <li><a class="content-link" href="../../guide/getting-started/">Starting with Rappelz</a></li>
-        <li><a class="content-link" href="../../guide/beyond-master-class/">Master Class and Beyond</a></li>
-        <li><a class="content-link" href="../../guide/175-and-beyond/">175 and Beyond</a></li>
+    <li><a class="content-link" href="../../guide/getting-started/">Starting with Rappelz</a></li>
+    <li><a class="content-link" href="../../guide/beyond-master-class/">Master Class and Beyond</a></li>
+    <li><a class="content-link" href="../../guide/175-and-beyond/">175 and Beyond</a></li>
   </ul>
 
+  <!-- ───────────── TIPS ───────────── -->
   <h2>Tips</h2>
   <ul>
-    <li>You can always switch your <a class="content-link" href="../../pet/bloodthirsty-slaughterer.html">Bloodthirsty Slaughterer</a> with a <a class="content-link" href="../../pet/wind-pixie.html">Wind Pixie</a> if you find issues tanking.</li>
-    <li>Lvl 2 potion of the above mentioned pets is a huge boost.</li>
-    <li>When you rotate through rooms in DD6 for example, use Deadly Dancing in a room then Apocalypse + Hellstorm in the other room. Don't use all AOEs in 1 room or you'll end up losing so much time in the next one (this is of course if you can afford killing mobs with 1 or 2 skills only).</li>
-    <li>If you ever pulled mobs by mistake don't run, you have Cloak of Shadows and Distortion!</li>
-    <li>Use Gloom Aura to pull 1 room, then Smoke Bomb to pull the next one.</li>
-    <li>To be continued</li>
+    <li>Use the Bloodthirsty Slaughterer potion for a big damage boost.</li>
+    <li>After using both AoEs, you can kite mobs if you have a hard time tanking.</li>
+    <li>Save Immortality <img src="../../images/classes/Mercenary/immortality.jpg" alt="Immortality" style="height:28px;vertical-align:middle;margin:0 4px;"/> during boss encounters like the Reviac room.</li>
+    <li>Lunacy card is your best friend.</li>
+    <li>You can switch to a shield to activate Deflecting Shield, then switch back to your Spear during hard encounters.</li>
   </ul>
 
+  <!-- ───────────── ENDGAME ───────────── -->
   <h2>Endgame</h2>
   <table class="info-table">
     <thead><tr><th>Aspect</th><th>Rating</th></tr></thead>
     <tbody>
-      <tr><td>Performance</td><td>9/10</td></tr>
-      <tr><td>Solo Ability</td><td>10/10</td></tr>
+      <tr><td>Performance</td><td>7/10</td></tr>
+      <tr><td>Solo Ability</td><td>6/10</td></tr>
     </tbody>
   </table>
 
