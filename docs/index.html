@@ -845,6 +845,7 @@
         <button class="faq-cat-btn" data-cat="gear">Gear &amp; Crafting</button>
         <button class="faq-cat-btn" data-cat="enhancement">Enhancement</button>
         <button class="faq-cat-btn" data-cat="dungeons">Dungeons</button>
+        <button class="faq-cat-btn" data-cat="progression">Progression</button>
         <button class="faq-cat-btn" data-cat="pets">Pets</button>
         <button class="faq-cat-btn" data-cat="combat">Combat</button>
       </div>
@@ -958,6 +959,18 @@
             See also: <a href="guide/faq/what-is-plus24-16-32-40-40/">Luciad's Power &amp; Enchantment Guide</a>
           </div>
         </div>
+        <div class="faq-item" data-cat="progression">
+          <div class="faq-q">
+            <span class="faq-q-tag">PROGRESSION</span>
+            <span class="faq-q-text">What to do once I'm 105?</span>
+            <svg class="faq-chevron" viewBox="0 0 14 14" fill="none"><path d="M2 4.5l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a">
+            Key activities at level 105: daily quests, Red Farm, Witch Quests, and more.<br><br>
+            <a href="guide/faq/what-to-do-at-105/">&rarr; Read the full Level 105 guide</a>
+          </div>
+        </div>
+
         <div class="faq-item" data-cat="combat">
           <div class="faq-q">
             <span class="faq-q-tag">COMBAT</span>
@@ -1074,22 +1087,25 @@
     if (!q || q.length < 2) { searchResults.classList.remove('active'); searchResults.innerHTML = ''; return; }
 
     const words = q.split(/\s+/).filter(w => w.length > 0);
-    const matches = [];
+    const scored = [];
     for (const p of SEARCH_INDEX) {
       const titleLower = p.title.toLowerCase();
       const textLower = p.text.toLowerCase();
       const combined = titleLower + ' ' + textLower;
-      const allMatch = words.every(w => combined.includes(w));
-      if (!allMatch) continue;
-      const titleMatch = words.some(w => titleLower.includes(w));
-      const firstWord = words[0];
-      const snippet = textLower.includes(firstWord) ? getSnippet(p.text, firstWord) : '';
-      matches.push({ ...p, titleMatch, snippet });
-      if (matches.length >= 12) break;
+      // Count how many query words match (any-word / OR logic)
+      const matchingWords = words.filter(w => combined.includes(w));
+      if (matchingWords.length === 0) continue;
+      const titleMatchCount = words.filter(w => titleLower.includes(w)).length;
+      const firstMatchedWord = matchingWords[0];
+      const snippet = textLower.includes(firstMatchedWord) ? getSnippet(p.text, firstMatchedWord) : '';
+      scored.push({ ...p, matchCount: matchingWords.length, titleMatchCount, snippet });
     }
 
-    // Sort: title matches first
-    matches.sort((a, b) => (b.titleMatch ? 1 : 0) - (a.titleMatch ? 1 : 0));
+    // Sort: most words matched first, then title matches first
+    scored.sort((a, b) =>
+      (b.matchCount - a.matchCount) || (b.titleMatchCount - a.titleMatchCount)
+    );
+    const matches = scored.slice(0, 12);
 
     if (matches.length === 0) {
       searchResults.innerHTML = '<div class="search-no-results">No results found</div>';
