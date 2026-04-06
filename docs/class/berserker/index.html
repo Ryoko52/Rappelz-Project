@@ -41,6 +41,14 @@
   .priority-list li { margin-bottom: 0.5rem; }
   .priority-list li::marker { color: var(--gold2); font-weight: 600; }
   footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--text3); font-size: 0.82rem; font-style: italic; margin-top: 4rem; }
+  .toc { background: var(--bg2); border: 1px solid rgba(201,168,76,0.5); border-left: 3px solid var(--gold); padding: 1.2rem 1.6rem; margin-bottom: 2.5rem; }
+  .toc h2.toc-heading { font-family: 'Cinzel', serif; font-size: 0.85rem; font-weight: 600; color: var(--gold2); letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 0.75rem; border: none; padding: 0; }
+  .toc ul { list-style: none; padding-left: 0; margin: 0; columns: 2; column-gap: 2rem; }
+  @media (max-width: 500px) { .toc ul { columns: 1; } }
+  .toc li { padding: 0.2rem 0; margin: 0; }
+  .toc a { color: var(--gold-dim); text-decoration: none; font-size: 0.93rem; transition: color 0.15s, border-color 0.15s; border-bottom: 1px dashed rgba(201,168,76,0.5); padding-bottom: 1px; }
+  .toc a::before { content: '\25B8\00A0'; color: var(--gold); font-size: 0.75em; }
+  .toc a:hover { color: var(--gold3); border-bottom-color: var(--gold2); }
 </style>
 </head>
 <body>
@@ -59,7 +67,26 @@
   <h1>Berserker</h1>
   <span class="tier-badge">B Tier</span>
 
-  <h2>Overview</h2>
+  <nav class="toc" aria-label="Table of contents">
+    <h2 class="toc-heading">Table of Contents</h2>
+    <ul>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#gameplay">Gameplay</a></li>
+      <li><a href="#talent-build">Talent Build</a></li>
+      <li><a href="#stats">Stats</a></li>
+      <li><a href="#accessories">Accessories</a></li>
+      <li><a href="#pets-and-belt">Pets &amp; Belt</a></li>
+      <li><a href="#gear">Gear</a></li>
+      <li><a href="#titles">Titles</a></li>
+      <li><a href="#leveling-progression">Leveling Progression</a></li>
+      <li><a href="#tips">Tips</a></li>
+      <li><a href="#endgame">Endgame</a></li>
+    </ul>
+  </nav>
+
+
+  <h2 id="overview">Overview</h2>
   <table class="info-table">
     <tr><td><strong>Role</strong></td><td>DPS / Subtank</td></tr>
     <tr><td><strong>Difficulty</strong></td><td>Medium</td></tr>
@@ -68,54 +95,54 @@
     <tr><td><strong>Why Play It</strong></td><td>Barbarian-feel class, thirsty to cut something with an Axe!</td></tr>
   </table>
 
-  <h2>Skills</h2>
+  <h2 id="skills">Skills</h2>
 
   <h3>Single Target</h3>
-  <ul style="color: var(--text2); line-height:2.4;">
-    <li style="margin-bottom:0.5rem;">Spinning Blow <img src="../../images/classes/Warkahuna/spinningblow.jpg" alt="Spinning Blow" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Blasting Rock Cut <img src="../../images/classes/Warkahuna/rockcut.jpg" alt="Blasting Rock Cut" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+  <ul style="padding-left:2.2rem;">
+    <li><img src="../../images/classes/Warkahuna/spinningblow.jpg" alt="Spinning Blow" style="height:28px;vertical-align:middle;margin-right:8px;"/>Spinning Blow</li>
+    <li><img src="../../images/classes/Warkahuna/rockcut.jpg" alt="Blasting Rock Cut" style="height:28px;vertical-align:middle;margin-right:8px;"/>Blasting Rock Cut</li>
   </ul>
 
   <h3>AoE</h3>
-  <ul style="color: var(--text2); line-height:2.4;">
-    <li style="margin-bottom:0.5rem;">Shuddering Flame <img src="../../images/classes/Warkahuna/shuddering.jpg" alt="Shuddering Flame" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Thunderbolt Wind Cut <img src="../../images/classes/Berserker/windcut.jpg" alt="Thunderbolt Wind Cut" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Whirlwind Assault <img src="../../images/classes/Berserker/whirlwind.jpg" alt="Whirlwind Assault" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Energy Bomb <img src="../../images/classes/Berserker/energybomb.jpg" alt="Energy Bomb" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Zephyr Strike <img src="../../images/classes/Berserker/zephyrstrike.jpg" alt="Zephyr Strike" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+  <ul style="padding-left:2.2rem;">
+    <li><img src="../../images/classes/Warkahuna/shuddering.jpg" alt="Shuddering Flame" style="height:28px;vertical-align:middle;margin-right:8px;"/>Shuddering Flame</li>
+    <li><img src="../../images/classes/Berserker/windcut.jpg" alt="Thunderbolt Wind Cut" style="height:28px;vertical-align:middle;margin-right:8px;"/>Thunderbolt Wind Cut</li>
+    <li><img src="../../images/classes/Berserker/whirlwind.jpg" alt="Whirlwind Assault" style="height:28px;vertical-align:middle;margin-right:8px;"/>Whirlwind Assault</li>
+    <li><img src="../../images/classes/Berserker/energybomb.jpg" alt="Energy Bomb" style="height:28px;vertical-align:middle;margin-right:8px;"/>Energy Bomb</li>
+    <li><img src="../../images/classes/Berserker/zephyrstrike.jpg" alt="Zephyr Strike" style="height:28px;vertical-align:middle;margin-right:8px;"/>Zephyr Strike</li>
   </ul>
 
   <h3>Toggles / Buffs</h3>
-  <ul style="color: var(--text2); line-height:2.4;">
-    <li style="margin-bottom:0.5rem;"><strong>Steel Presence</strong> <img src="../../images/classes/Berserker/steelpresence.jpg" alt="Steel Presence" style="height:32px;vertical-align:middle;margin-left:8px;"/>  <span style="color:var(--gold2);">this is the skill you aim to have in all your gear</span></li>
-    <li style="margin-bottom:0.5rem;">Spiracle of Vitality <img src="../../images/classes/Berserker/spiraclevitality.jpg" alt="Spiracle of Vitality" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Behemoth Force <img src="../../images/classes/Berserker/force.jpg" alt="Behemoth Force" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Provocation <img src="../../images/classes/Berserker/provocation.jpg" alt="Provocation" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Essence of Thunder <img src="../../images/classes/Berserker/essencethunder.jpg" alt="Essence of Thunder" style="height:32px;vertical-align:middle;margin-left:8px;"/>  reduces single target enemy attack speed by 30%</li>
-    <li style="margin-bottom:0.5rem;">Essence of Invulnerability <img src="../../images/classes/Berserker/essencevuln.jpg" alt="Essence of Invulnerability" style="height:32px;vertical-align:middle;margin-left:8px;"/>  you receive 0 damage for a short duration</li>
-    <li style="margin-bottom:0.5rem;">Barbarian Rage <img src="../../images/classes/Berserker/barbarianrage.jpg" alt="Barbarian Rage" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Berserker Rage <img src="../../images/classes/Berserker/bersrage.jpg" alt="Berserker Rage" style="height:32px;vertical-align:middle;margin-left:8px;"/> triggers automatically</li>
+  <ul style="padding-left:2.2rem;">
+    <li><img src="../../images/classes/Berserker/steelpresence.jpg" alt="Steel Presence" style="height:28px;vertical-align:middle;margin-right:8px;"/><strong>Steel Presence</strong> <span style="color:var(--gold2);">this is the skill you aim to have in all your gear</span></li>
+    <li><img src="../../images/classes/Berserker/spiraclevitality.jpg" alt="Spiracle of Vitality" style="height:28px;vertical-align:middle;margin-right:8px;"/>Spiracle of Vitality</li>
+    <li><img src="../../images/classes/Berserker/force.jpg" alt="Behemoth Force" style="height:28px;vertical-align:middle;margin-right:8px;"/>Behemoth Force</li>
+    <li><img src="../../images/classes/Berserker/provocation.jpg" alt="Provocation" style="height:28px;vertical-align:middle;margin-right:8px;"/>Provocation</li>
+    <li><img src="../../images/classes/Berserker/essencethunder.jpg" alt="Essence of Thunder" style="height:28px;vertical-align:middle;margin-right:8px;"/>Essence of Thunder reduces single target enemy attack speed by 30%</li>
+    <li><img src="../../images/classes/Berserker/essencevuln.jpg" alt="Essence of Invulnerability" style="height:28px;vertical-align:middle;margin-right:8px;"/>Essence of Invulnerability you receive 0 damage for a short duration</li>
+    <li><img src="../../images/classes/Berserker/barbarianrage.jpg" alt="Barbarian Rage" style="height:28px;vertical-align:middle;margin-right:8px;"/>Barbarian Rage</li>
+    <li><img src="../../images/classes/Berserker/bersrage.jpg" alt="Berserker Rage" style="height:28px;vertical-align:middle;margin-right:8px;"/>Berserker Rage triggers automatically</li>
   </ul>
 
   <h3>Healing</h3>
-  <ul style="color: var(--text2); line-height:2.4;">
-    <li style="margin-bottom:0.5rem;">Energy Charge <img src="../../images/classes/Berserker/energygaia.jpg" alt="Energy Charge" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Spiracle Rush <img src="../../images/classes/Berserker/spiricalerush.jpg" alt="Spiracle Rush" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+  <ul style="padding-left:2.2rem;">
+    <li><img src="../../images/classes/Berserker/energygaia.jpg" alt="Energy Charge" style="height:28px;vertical-align:middle;margin-right:8px;"/>Energy Charge</li>
+    <li><img src="../../images/classes/Berserker/spiricalerush.jpg" alt="Spiracle Rush" style="height:28px;vertical-align:middle;margin-right:8px;"/>Spiracle Rush</li>
   </ul>
 
   <h3>Racial</h3>
-  <ul style="color: var(--text2); line-height:2.4;">
-    <li style="margin-bottom:0.5rem;">Mental Concentration <img src="../../images/classes/Warkahuna/mentalconcentration.jpg" alt="Mental Concentration" style="height:32px;vertical-align:middle;margin-left:8px;"/>  Gaia racial skill</li>
+  <ul style="padding-left:2.2rem;">
+    <li><img src="../../images/classes/Warkahuna/mentalconcentration.jpg" alt="Mental Concentration" style="height:28px;vertical-align:middle;margin-right:8px;"/>Mental Concentration Gaia racial skill</li>
   </ul>
 
-  <h2>Gameplay</h2>
+  <h2 id="gameplay">Gameplay</h2>
   <p><strong>Weapon choice:</strong> 2H Axe for more skill damage.</p>
   <p>Use Zephyr Strike <img src="../../images/classes/Berserker/zephyrstrike.jpg" alt="Zephyr Strike" style="height:28px;vertical-align:middle;margin:0 4px;"/> or Earth Shaker <img src="../../images/classes/Berserker/earthshaker.jpg" alt="Earth Shaker" style="height:28px;vertical-align:middle;margin:0 4px;"/> to apply Tactical Advantage, then use your AoE skills.</p>
   <p><strong>Rotation 1:</strong> Earth Shaker <img src="../../images/classes/Berserker/earthshaker.jpg" alt="Earth Shaker" style="height:28px;vertical-align:middle;margin:0 4px;"/> + Thunderbolt Wind Cut <img src="../../images/classes/Berserker/windcut.jpg" alt="Thunderbolt Wind Cut" style="height:28px;vertical-align:middle;margin:0 4px;"/> + Shuddering Flame <img src="../../images/classes/Warkahuna/shuddering.jpg" alt="Shuddering Flame" style="height:28px;vertical-align:middle;margin:0 4px;"/></p>
   <p><strong>Rotation 2:</strong> Zephyr Strike <img src="../../images/classes/Berserker/zephyrstrike.jpg" alt="Zephyr Strike" style="height:28px;vertical-align:middle;margin:0 4px;"/> + Whirlwind Assault <img src="../../images/classes/Berserker/whirlwind.jpg" alt="Whirlwind Assault" style="height:28px;vertical-align:middle;margin:0 4px;"/> + Energy Bomb <img src="../../images/classes/Berserker/energybomb.jpg" alt="Energy Bomb" style="height:28px;vertical-align:middle;margin:0 4px;"/> + Thunderbolt Wind Cut <img src="../../images/classes/Berserker/windcut.jpg" alt="Thunderbolt Wind Cut" style="height:28px;vertical-align:middle;margin:0 4px;"/></p>
   <p><strong>Healing order:</strong> Always use Energy Charge <img src="../../images/classes/Berserker/energygaia.jpg" alt="Energy Charge" style="height:28px;vertical-align:middle;margin:0 4px;"/> first to consume all Spiracles, <em>then</em> use Spiracle Rush <img src="../../images/classes/Berserker/spiricalerush.jpg" alt="Spiracle Rush" style="height:28px;vertical-align:middle;margin:0 4px;"/>. If you use Spiracle Rush while you still have Spiracles, you will not heal anything.</p>
 
-  <h2>Talent Build</h2>
+  <h2 id="talent-build">Talent Build</h2>
   <table class="info-table">
     <thead><tr><th>Points</th><th>Allocation</th></tr></thead>
     <tbody>
@@ -125,7 +152,7 @@
     </tbody>
   </table>
 
-  <h2>Stats</h2>
+  <h2 id="stats">Stats</h2>
   <table class="info-table">
     <thead><tr><th>Priority</th><th>Stats</th></tr></thead>
     <tbody>
@@ -134,7 +161,7 @@
     </tbody>
   </table>
 
-  <h2>Accessories</h2>
+  <h2 id="accessories">Accessories</h2>
   <table class="info-table">
     <thead><tr><th>Setup</th><th>Accessories</th></tr></thead>
     <tbody>
@@ -142,7 +169,7 @@
     </tbody>
   </table>
 
-  <h2>Pets &amp; Belt</h2>
+  <h2 id="pets-and-belt">Pets &amp; Belt</h2>
   <table class="info-table">
     <thead><tr><th>Slot</th><th>Recommendation</th></tr></thead>
     <tbody>
@@ -157,7 +184,7 @@
     </tbody>
   </table>
 
-  <h2>Gear</h2>
+  <h2 id="gear">Gear</h2>
   <h3>Progression Path</h3>
   <ol class="priority-list">
     <li>R2 helmet +20 (all skills +1)</li>
@@ -200,7 +227,7 @@
   </table>
 
 
-  <h2>Titles</h2>
+  <h2 id="titles">Titles</h2>
   <ul>
     <li><b>Title for Reduced Damage:</b> <span style="color:var(--gold2);">Camper</span> <br/>
       <span style="color:var(--text2);">(Purchase a tent from Merchant in Hidden Village)</span>
@@ -219,7 +246,7 @@
       </table>
     </li>
   </ul>
-  <h2>Leveling Progression</h2>
+  <h2 id="leveling-progression">Leveling Progression</h2>
   <ul>
       <li><a class="content-link" href="../../guide/getting-started/">Starting with Rappelz</a></li>
       <li><a class="content-link" href="../../guide/beyond-master-class/">Master Class and Beyond</a></li>
@@ -227,13 +254,13 @@
   </ul>
 
 
-  <h2>Tips</h2>
+  <h2 id="tips">Tips</h2>
   <ul>
     <li style="margin-bottom:0.5em;">Even if this class is not Agility based, Evasion helps tremendously , don't hesitate to try <a class="content-link" href="../../pet/wind-pixie.html">Wind Pixie</a> + Wind Pixie pot if you want more survival.</li>
     <li style="margin-bottom:0.5em;">Save your Essence of Invulnerability <img src="../../images/classes/Berserker/essencevuln.jpg" alt="Essence of Invulnerability" style="height:28px;vertical-align:middle;margin:0 4px;"/> for boss encounters like the Reviac room.</li>
   </ul>
 
-  <h2>Endgame</h2>
+  <h2 id="endgame">Endgame</h2>
   <table class="info-table">
     <thead><tr><th>Aspect</th><th>Rating</th></tr></thead>
     <tbody>

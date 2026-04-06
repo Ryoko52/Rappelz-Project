@@ -41,6 +41,14 @@
   .priority-list li { margin-bottom: 0.5rem; }
   .priority-list li::marker { color: var(--gold2); font-weight: 600; }
   footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--text3); font-size: 0.82rem; font-style: italic; margin-top: 4rem; }
+  .toc { background: var(--bg2); border: 1px solid rgba(201,168,76,0.5); border-left: 3px solid var(--gold); padding: 1.2rem 1.6rem; margin-bottom: 2.5rem; }
+  .toc h2.toc-heading { font-family: 'Cinzel', serif; font-size: 0.85rem; font-weight: 600; color: var(--gold2); letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 0.75rem; border: none; padding: 0; }
+  .toc ul { list-style: none; padding-left: 0; margin: 0; columns: 2; column-gap: 2rem; }
+  @media (max-width: 500px) { .toc ul { columns: 1; } }
+  .toc li { padding: 0.2rem 0; margin: 0; }
+  .toc a { color: var(--gold-dim); text-decoration: none; font-size: 0.93rem; transition: color 0.15s, border-color 0.15s; border-bottom: 1px dashed rgba(201,168,76,0.5); padding-bottom: 1px; }
+  .toc a::before { content: '\25B8\00A0'; color: var(--gold); font-size: 0.75em; }
+  .toc a:hover { color: var(--gold3); border-bottom-color: var(--gold2); }
 </style>
 </head>
 <body>
@@ -61,7 +69,26 @@
       <h1>Void Mage</h1>
       <span class="tier-badge">Tier S</span>
 
-      <h2>Overview</h2>
+      <nav class="toc" aria-label="Table of contents">
+        <h2 class="toc-heading">Table of Contents</h2>
+        <ul>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#rotation">Rotation</a></li>
+          <li><a href="#talent-build">Talent Build</a></li>
+          <li><a href="#stats">Stats</a></li>
+          <li><a href="#accessories">Accessories</a></li>
+          <li><a href="#pets-and-belt">Pets &amp; Belt</a></li>
+          <li><a href="#gear">Gear</a></li>
+          <li><a href="#titles">Titles</a></li>
+          <li><a href="#leveling-progression">Leveling Progression</a></li>
+          <li><a href="#tips">Tips</a></li>
+          <li><a href="#endgame">Endgame</a></li>
+        </ul>
+      </nav>
+
+
+      <h2 id="overview">Overview</h2>
       <table class="info-table">
         <tr><td><strong>Role</strong></td><td>DPS</td></tr>
         <tr><td><strong>Difficulty</strong></td><td>Hard</td></tr>
@@ -70,58 +97,58 @@
         <tr><td><strong>Why Play It</strong></td><td>Cool animations, a lot of AOEs, this is your wizard-like class!</td></tr>
       </table>
 
-      <h2>Skills</h2>
+      <h2 id="skills">Skills</h2>
       <h3>Main Skills</h3>
       <b>Active:</b>
       <ul style="padding-left:2.2rem;">
-        <li style="margin-bottom:0.7em;"><b>Spammables:</b>
+        <li><img src="../../images/classes/voidmage/chaninlightning.jpg" alt="Chain Lightning" style="height:28px;vertical-align:middle;margin-right:8px;"/><b>Spammables:</b>
           <ul style="padding-left:2.2rem;">
-            <li style="margin-bottom:0.5em;">Chain Lightning <img src="../../images/classes/voidmage/chaninlightning.jpg" alt="Chain Lightning" style="height:28px;vertical-align:middle;"/></li>
-            <li style="margin-bottom:0.5em;">Inferno Fire Arrow <img src="../../images/classes/voidmage/infernofirearrow.jpg" alt="Inferno Fire Arrow" style="height:28px;vertical-align:middle;"/></li>
-            <li style="margin-bottom:0.5em;">Maelstrom Bolt <img src="../../images/classes/voidmage/maelstormbolt.jpg" alt="Maelstrom Bolt" style="height:28px;vertical-align:middle;"/></li>
-            <li style="margin-bottom:0.5em;">Fireball <img src="../../images/classes/voidmage/Fireball.jpg" alt="Fireball" style="height:28px;vertical-align:middle;"/></li>
-            <li style="margin-bottom:0.5em;">Flame Burn <img src="../../images/classes/voidmage/flameburn.jpg" alt="Flame Burn" style="height:28px;vertical-align:middle;"/></li>
+            <li style="margin-bottom:0.5em;">Chain Lightning</li>
+            <li><img src="../../images/classes/voidmage/infernofirearrow.jpg" alt="Inferno Fire Arrow" style="height:28px;vertical-align:middle;margin-right:8px;"/>Inferno Fire Arrow</li>
+            <li><img src="../../images/classes/voidmage/maelstormbolt.jpg" alt="Maelstrom Bolt" style="height:28px;vertical-align:middle;margin-right:8px;"/>Maelstrom Bolt</li>
+            <li><img src="../../images/classes/voidmage/Fireball.jpg" alt="Fireball" style="height:28px;vertical-align:middle;margin-right:8px;"/>Fireball</li>
+            <li><img src="../../images/classes/voidmage/flameburn.jpg" alt="Flame Burn" style="height:28px;vertical-align:middle;margin-right:8px;"/>Flame Burn</li>
           </ul>
         </li>
-        <li style="margin-bottom:0.7em;"><b>AoE Spells:</b>
+        <li><img src="../../images/classes/voidmage/lightningfield.jpg" alt="Lightning Field" style="height:28px;vertical-align:middle;margin-right:8px;"/><b>AoE Spells:</b>
           <ul style="padding-left:2.2rem;">
-            <li style="margin-bottom:0.5em;">Lightning Field <img src="../../images/classes/voidmage/lightningfield.jpg" alt="Lightning Field" style="height:28px;vertical-align:middle;"/></li>
-            <li style="margin-bottom:0.5em;">Fire Field <img src="../../images/classes/voidmage/firefield.jpg" alt="Fire Field" style="height:28px;vertical-align:middle;"/></li>
-            <li style="margin-bottom:0.5em;">Fire Storm <img src="../../images/classes/voidmage/firestorm.jpg" alt="Fire Storm" style="height:28px;vertical-align:middle;"/></li>
+            <li style="margin-bottom:0.5em;">Lightning Field</li>
+            <li><img src="../../images/classes/voidmage/firefield.jpg" alt="Fire Field" style="height:28px;vertical-align:middle;margin-right:8px;"/>Fire Field</li>
+            <li><img src="../../images/classes/voidmage/firestorm.jpg" alt="Fire Storm" style="height:28px;vertical-align:middle;margin-right:8px;"/>Fire Storm</li>
           </ul>
         </li>
-        <li style="margin-bottom:0.7em;"><b>AoE Control Spells:</b>
+        <li><img src="../../images/classes/voidmage/metero.jpg" alt="Meteor Shower" style="height:28px;vertical-align:middle;margin-right:8px;"/><b>AoE Control Spells:</b>
           <ul style="padding-left:2.2rem;">
-            <li style="margin-bottom:0.5em;">Meteor Shower <img src="../../images/classes/voidmage/metero.jpg" alt="Meteor Shower" style="height:28px;vertical-align:middle;"/></li>
-            <li style="margin-bottom:0.5em;">Abyssal Grip <img src="../../images/classes/voidmage/abysall.jpg" alt="Abyssal Grip" style="height:28px;vertical-align:middle;"/></li>
-            <li style="margin-bottom:0.5em;">Heaven's Breaker <img src="../../images/classes/voidmage/heavenbreaker.jpg" alt="Heaven's Breaker" style="height:28px;vertical-align:middle;"/></li>
-            <li style="margin-bottom:0.5em;">Splash Thunder <img src="../../images/classes/voidmage/splashthunder.jpg" alt="Splash Thunder" style="height:28px;vertical-align:middle;"/></li>
+            <li style="margin-bottom:0.5em;">Meteor Shower</li>
+            <li><img src="../../images/classes/voidmage/abysall.jpg" alt="Abyssal Grip" style="height:28px;vertical-align:middle;margin-right:8px;"/>Abyssal Grip</li>
+            <li><img src="../../images/classes/voidmage/heavenbreaker.jpg" alt="Heaven's Breaker" style="height:28px;vertical-align:middle;margin-right:8px;"/>Heaven's Breaker</li>
+            <li><img src="../../images/classes/voidmage/splashthunder.jpg" alt="Splash Thunder" style="height:28px;vertical-align:middle;margin-right:8px;"/>Splash Thunder</li>
           </ul>
         </li>
-        <li style="margin-bottom:0.7em;"><b>Cooldown Resetter:</b> Dark Spiral <img src="../../images/classes/voidmage/darkspiral.jpg" alt="Dark Spiral" style="height:28px;vertical-align:middle;"/></li>
-        <li style="margin-bottom:0.7em;"><b>Healing Spell:</b> Life Leech <img src="../../images/classes/voidmage/life leech.jpg" alt="Life Leech" style="height:28px;vertical-align:middle;"/></li>
-        <li style="margin-bottom:0.7em;"><b>Self Buffs:</b>
+        <li><img src="../../images/classes/voidmage/darkspiral.jpg" alt="Dark Spiral" style="height:28px;vertical-align:middle;margin-right:8px;"/><b>Cooldown Resetter:</b> Dark Spiral</li>
+        <li><img src="../../images/classes/voidmage/life leech.jpg" alt="Life Leech" style="height:28px;vertical-align:middle;margin-right:8px;"/><b>Healing Spell:</b> Life Leech</li>
+        <li><img src="../../images/classes/voidmage/spiritfire.jpg" alt="Spirit of Fire" style="height:28px;vertical-align:middle;margin-right:8px;"/><b>Self Buffs:</b>
           <ul style="padding-left:2.2rem;">
-            <li style="margin-bottom:0.5em;">Spirit of Fire <img src="../../images/classes/voidmage/spiritfire.jpg" alt="Spirit of Fire" style="height:28px;vertical-align:middle;"/></li>
-            <li style="margin-bottom:0.5em;">Tempest <img src="../../images/classes/voidmage/Tempest.jpg" alt="Tempest" style="height:28px;vertical-align:middle;"/></li>
-            <li style="margin-bottom:0.5em;">Heed of the Conjuror <img src="../../images/classes/voidmage/heedofcojurer.jpg" alt="Heed of the Conjuror" style="height:28px;vertical-align:middle;"/></li>
-            <li style="margin-bottom:0.5em;">Grim Attrition <img src="../../images/classes/voidmage/grimattrition.jpg" alt="Grim Attrition" style="height:28px;vertical-align:middle;"/></li>
+            <li style="margin-bottom:0.5em;">Spirit of Fire</li>
+            <li><img src="../../images/classes/voidmage/Tempest.jpg" alt="Tempest" style="height:28px;vertical-align:middle;margin-right:8px;"/>Tempest</li>
+            <li><img src="../../images/classes/voidmage/heedofcojurer.jpg" alt="Heed of the Conjuror" style="height:28px;vertical-align:middle;margin-right:8px;"/>Heed of the Conjuror</li>
+            <li><img src="../../images/classes/voidmage/grimattrition.jpg" alt="Grim Attrition" style="height:28px;vertical-align:middle;margin-right:8px;"/>Grim Attrition</li>
           </ul>
         </li>
-        <li style="margin-bottom:0.7em;"><b>Defensive Buffs:</b>
+        <li><img src="../../images/classes/voidmage/neutralize magic.jpg" alt="Neutralize Magic" style="height:28px;vertical-align:middle;margin-right:8px;"/><b>Defensive Buffs:</b>
           <ul style="padding-left:2.2rem;">
-            <li style="margin-bottom:0.5em;">Neutralize Magic <img src="../../images/classes/voidmage/neutralize magic.jpg" alt="Neutralize Magic" style="height:28px;vertical-align:middle;"/></li>
-            <li style="margin-bottom:0.5em;">Magic Skin <img src="../../images/classes/voidmage/magicskin.jpg" alt="Magic Skin" style="height:28px;vertical-align:middle;"/></li>
+            <li style="margin-bottom:0.5em;">Neutralize Magic</li>
+            <li><img src="../../images/classes/voidmage/magicskin.jpg" alt="Magic Skin" style="height:28px;vertical-align:middle;margin-right:8px;"/>Magic Skin</li>
           </ul>
         </li>
       </ul>
       <b>Passive:</b>
       <ul style="padding-left:2.2rem;">
-        <li style="margin-bottom:0.5em;">Crystal Aura <img src="../../images/classes/voidmage/crystalaura.jpg" alt="Crystal Aura" style="height:28px;vertical-align:middle;"/> <span style="color:var(--gold2);">your main skill in gear</span></li>
-        <li style="margin-bottom:0.5em;">Timelapse <img src="../../images/classes/voidmage/timelapse.jpg" alt="Timelapse" style="height:28px;vertical-align:middle;"/></li>
+        <li><img src="../../images/classes/voidmage/crystalaura.jpg" alt="Crystal Aura" style="height:28px;vertical-align:middle;margin-right:8px;"/>Crystal Aura <span style="color:var(--gold2);">your main skill in gear</span></li>
+        <li><img src="../../images/classes/voidmage/timelapse.jpg" alt="Timelapse" style="height:28px;vertical-align:middle;margin-right:8px;"/>Timelapse</li>
       </ul>
 
-      <h2>Rotation</h2>
+      <h2 id="rotation">Rotation</h2>
       <b>Single Target:</b>
       <ul>
         <li>Use spammable spells above</li>
@@ -140,7 +167,7 @@
       </ul>
       <p>Sometimes you will not reset your fields with Dark Spiral or you cast Fields but Dark Spiral is not ready, in this scenario keep spamming Chain Lightning <img src="../../images/classes/voidmage/chaninlightning.jpg" alt="Chain Lightning" style="height:28px;vertical-align:middle;"/> until your spells are ready to be cast again.</p>
 
-      <h2>Talent Build</h2>
+      <h2 id="talent-build">Talent Build</h2>
       <table class="info-table">
         <thead><tr><th>Points</th><th>Allocation</th></tr></thead>
         <tbody>
@@ -150,7 +177,7 @@
         </tbody>
       </table>
 
-      <h2>Stats</h2>
+      <h2 id="stats">Stats</h2>
       <table class="info-table">
         <thead><tr><th>Priority</th><th>Stats</th></tr></thead>
         <tbody>
@@ -159,7 +186,7 @@
         </tbody>
       </table>
 
-      <h2>Accessories</h2>
+      <h2 id="accessories">Accessories</h2>
       <table class="info-table">
         <thead><tr><th>Setup</th><th>Accessories</th></tr></thead>
         <tbody>
@@ -167,7 +194,7 @@
         </tbody>
       </table>
 
-      <h2>Pets &amp; Belt</h2>
+      <h2 id="pets-and-belt">Pets &amp; Belt</h2>
       <table class="info-table">
         <thead><tr><th>Slot</th><th>Recommendation</th></tr></thead>
         <tbody>
@@ -179,7 +206,7 @@
         </tbody>
       </table>
 
-      <h2>Gear</h2>
+      <h2 id="gear">Gear</h2>
       <h3>Progression Path</h3>
       <ol class="priority-list">
         <li>R2 helmet +20 (all skills +1)</li>
@@ -228,7 +255,7 @@
         </tbody>
       </table>
 
-      <h2>Titles</h2>
+      <h2 id="titles">Titles</h2>
       <ul>
         <li><b>Title for Reduced Damage:</b> <span style="color:var(--gold2);">Camper</span> <br/>
           <span style="color:var(--text2);">(Purchase a tent from Merchant in Hidden Village)</span>
@@ -247,7 +274,7 @@
           </table>
         </li>
       </ul>
-      <h2>Leveling Progression</h2>
+      <h2 id="leveling-progression">Leveling Progression</h2>
       <ul>
           <li style="margin-bottom:0.5em;"><a class="content-link" href="../../guide/getting-started/">Starting with Rappelz</a></li>
           <li style="margin-bottom:0.5em;"><a class="content-link" href="../../guide/beyond-master-class/">Master Class and Beyond</a></li>
@@ -255,7 +282,7 @@
       </ul>
 
 
-      <h2>Tips</h2>
+      <h2 id="tips">Tips</h2>
       <ul>
         <li style="margin-bottom:0.5em;">Honey water, mana scroll, and mana potions will be very useful early game.</li>
         <li style="margin-bottom:0.5em;">Make sure to always use <a class="content-link" href="../../pet/wind-pixie.html">Wind Pixie</a> potion for better survivability.</li>
@@ -266,7 +293,7 @@
         <li style="margin-bottom:0.5em;">At SF level, once you become able to solo buffalos, the 1h legendary staff 110 is used instead of your main weapon (same damage and less Freeze and durability problems).</li>
       </ul>
 
-      <h2>Endgame</h2>
+      <h2 id="endgame">Endgame</h2>
       <table class="info-table">
         <thead><tr><th>Aspect</th><th>Rating</th></tr></thead>
         <tbody>

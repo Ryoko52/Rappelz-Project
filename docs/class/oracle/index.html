@@ -41,6 +41,14 @@
   .priority-list li { margin-bottom: 0.5rem; }
   .priority-list li::marker { color: var(--gold2); font-weight: 600; }
   footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--text3); font-size: 0.82rem; font-style: italic; margin-top: 4rem; }
+  .toc { background: var(--bg2); border: 1px solid rgba(201,168,76,0.5); border-left: 3px solid var(--gold); padding: 1.2rem 1.6rem; margin-bottom: 2.5rem; }
+  .toc h2.toc-heading { font-family: 'Cinzel', serif; font-size: 0.85rem; font-weight: 600; color: var(--gold2); letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 0.75rem; border: none; padding: 0; }
+  .toc ul { list-style: none; padding-left: 0; margin: 0; columns: 2; column-gap: 2rem; }
+  @media (max-width: 500px) { .toc ul { columns: 1; } }
+  .toc li { padding: 0.2rem 0; margin: 0; }
+  .toc a { color: var(--gold-dim); text-decoration: none; font-size: 0.93rem; transition: color 0.15s, border-color 0.15s; border-bottom: 1px dashed rgba(201,168,76,0.5); padding-bottom: 1px; }
+  .toc a::before { content: '\25B8\00A0'; color: var(--gold); font-size: 0.75em; }
+  .toc a:hover { color: var(--gold3); border-bottom-color: var(--gold2); }
 </style>
 </head>
 <body>
@@ -60,7 +68,26 @@
   <h1>Oracle</h1>
   <span class="tier-badge">C Tier</span>
 
-  <h2>Overview</h2>
+  <nav class="toc" aria-label="Table of contents">
+    <h2 class="toc-heading">Table of Contents</h2>
+    <ul>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#gameplay">Gameplay</a></li>
+      <li><a href="#talent-build">Talent Build</a></li>
+      <li><a href="#stats">Stats</a></li>
+      <li><a href="#accessories">Accessories</a></li>
+      <li><a href="#pets-and-belt">Pets &amp; Belt</a></li>
+      <li><a href="#gear">Gear</a></li>
+      <li><a href="#titles">Titles</a></li>
+      <li><a href="#leveling-progression">Leveling Progression</a></li>
+      <li><a href="#tips">Tips</a></li>
+      <li><a href="#endgame">Endgame</a></li>
+    </ul>
+  </nav>
+
+
+  <h2 id="overview">Overview</h2>
   <table class="info-table">
     <tr><td><strong>Role</strong></td><td>Healer / Sub DPS</td></tr>
     <tr><td><strong>Difficulty</strong></td><td>Easy</td></tr>
@@ -69,7 +96,7 @@
     <tr><td><strong>Why Play It</strong></td><td>“Keeping idiots alive”</td></tr>
   </table>
 
-  <h2>Skills</h2>
+  <h2 id="skills">Skills</h2>
   <h3>Active</h3>
   <b>Single Target</b>
   <ul style="padding-left:2.2rem;">
@@ -99,13 +126,13 @@
     <li><img src="../../images/classes/Oracle/guardianangel.jpg" alt="Guardian Angel" style="height:28px;vertical-align:middle;margin-right:8px;"/>Guardian Angel <span style="color:var(--gold2);">(free revive)</span></li>
   </ul>
 
-  <h2>Gameplay</h2>
+  <h2 id="gameplay">Gameplay</h2>
   <p>Very simple class, no big brain moves.</p>
   <p><strong>Opener:</strong> <img src="../../images/classes/Oracle/radiantflare.jpg" alt="Radiant Flare" style="height:24px;vertical-align:middle;margin-right:6px;"/>Radiant Flare</p>
   <p>Use <img src="../../images/classes/Oracle/massrepentence.jpg" alt="Mass Repentance" style="height:24px;vertical-align:middle;margin-right:6px;"/>Mass Repentance and <img src="../../images/classes/Oracle/shiningcross.jpg" alt="Shining Cross" style="height:24px;vertical-align:middle;margin-right:6px;"/>Shining Cross, they have very low CD. <img src="../../images/classes/Oracle/shiningbuster.jpg" alt="Shining Buster" style="height:24px;vertical-align:middle;margin-right:6px;"/>Shining Buster is an insane burst, save it for bosses.</p>
   <p>Use <img src="../../images/classes/Oracle/divineshield.jpg" alt="Divine Shield" style="height:24px;vertical-align:middle;margin-right:6px;"/>Divine Shield during boss encounters!</p>
 
-  <h2>Talent Build</h2>
+  <h2 id="talent-build">Talent Build</h2>
   <table class="info-table">
     <thead><tr><th>Points</th><th>Allocation</th></tr></thead>
     <tbody>
@@ -115,7 +142,7 @@
     </tbody>
   </table>
 
-  <h2>Stats</h2>
+  <h2 id="stats">Stats</h2>
   <table class="info-table">
     <thead><tr><th>Priority</th><th>Stats</th></tr></thead>
     <tbody>
@@ -124,7 +151,7 @@
     </tbody>
   </table>
 
-  <h2>Accessories</h2>
+  <h2 id="accessories">Accessories</h2>
   <table class="info-table">
     <thead><tr><th>Setup</th><th>Accessories</th></tr></thead>
     <tbody>
@@ -132,7 +159,7 @@
     </tbody>
   </table>
 
-  <h2>Pets &amp; Belt</h2>
+  <h2 id="pets-and-belt">Pets &amp; Belt</h2>
   <table class="info-table">
     <thead><tr><th>Slot</th><th>Recommendation</th></tr></thead>
     <tbody>
@@ -144,7 +171,7 @@
     </tbody>
   </table>
 
-  <h2>Gear</h2>
+  <h2 id="gear">Gear</h2>
   <h3>Progression Path</h3>
   <ol class="priority-list">
     <li>R2 helmet +20 (all skills +1)</li>
@@ -182,7 +209,7 @@
     </tbody>
   </table>
 
-  <h2>Titles</h2>
+  <h2 id="titles">Titles</h2>
   <ul>
     <li><b>Title for Reduced Damage:</b> <span style="color:var(--gold2);">Camper</span> <br/>
       <span style="color:var(--text2);">(Purchase a tent from Merchant in Hidden Village)</span>
@@ -201,20 +228,20 @@
       </table>
     </li>
   </ul>
-  <h2>Leveling Progression</h2>
+  <h2 id="leveling-progression">Leveling Progression</h2>
   <ul>
       <li><a class="content-link" href="../../guide/getting-started/">Starting with Rappelz</a></li>
       <li><a class="content-link" href="../../guide/beyond-master-class/">Master Class and Beyond</a></li>
       <li><a class="content-link" href="../../guide/175-and-beyond/">175 and Beyond</a></li>
   </ul>
 
-  <h2>Tips</h2>
+  <h2 id="tips">Tips</h2>
   <ul>
     <li>Use Light Saver to remove your threat by 100%</li>
     <li>Heal!</li>
   </ul>
 
-  <h2>Endgame</h2>
+  <h2 id="endgame">Endgame</h2>
   <table class="info-table">
     <thead><tr><th>Aspect</th><th>Rating</th></tr></thead>
     <tbody>

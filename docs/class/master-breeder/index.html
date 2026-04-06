@@ -42,6 +42,14 @@
   .note-box { background: var(--bg3); border: 1px solid var(--border); border-radius: 5px; padding: 0.8rem 1rem; margin: 1rem 0; color: var(--gold2); font-size: 0.95rem; }
   a.content-link { color: var(--gold2); text-decoration: underline; }
   a.content-link:hover { color: var(--gold3); }
+  .toc { background: var(--bg2); border: 1px solid rgba(201,168,76,0.5); border-left: 3px solid var(--gold); padding: 1.2rem 1.6rem; margin-bottom: 2.5rem; }
+  .toc h2.toc-heading { font-family: 'Cinzel', serif; font-size: 0.85rem; font-weight: 600; color: var(--gold2); letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 0.75rem; border: none; padding: 0; }
+  .toc ul { list-style: none; padding-left: 0; margin: 0; columns: 2; column-gap: 2rem; }
+  @media (max-width: 500px) { .toc ul { columns: 1; } }
+  .toc li { padding: 0.2rem 0; margin: 0; }
+  .toc a { color: var(--gold-dim); text-decoration: none; font-size: 0.93rem; transition: color 0.15s, border-color 0.15s; border-bottom: 1px dashed rgba(201,168,76,0.5); padding-bottom: 1px; }
+  .toc a::before { content: '\25B8\00A0'; color: var(--gold); font-size: 0.75em; }
+  .toc a:hover { color: var(--gold3); border-bottom-color: var(--gold2); }
 </style>
 </head>
 <body>
@@ -61,7 +69,28 @@
   <h1>Master Breeder</h1>
   <span class="tier-badge">A Tier</span>
 
-  <h2>Overview</h2>
+  <nav class="toc" aria-label="Table of contents">
+    <h2 class="toc-heading">Table of Contents</h2>
+    <ul>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#rotation">Rotation</a></li>
+      <li><a href="#main-skills-of-pets">Main Skills of Pets</a></li>
+      <li><a href="#talent-build">Talent Build</a></li>
+      <li><a href="#stats">Stats</a></li>
+      <li><a href="#accessories">Accessories</a></li>
+      <li><a href="#pets-and-belt">Pets &amp; Belt</a></li>
+      <li><a href="#gear">Gear</a></li>
+      <li><a href="#leveling-progression">Leveling Progression</a></li>
+      <li><a href="#pet-farm">Pet Farm</a></li>
+      <li><a href="#titles">Titles</a></li>
+      <li><a href="#tips">Tips</a></li>
+      <li><a href="#endgame">Endgame</a></li>
+    </ul>
+  </nav>
+
+
+  <h2 id="overview">Overview</h2>
   <table class="info-table">
     <tr><td><strong>Role</strong></td><td>DPS / Tank / Heal (thanks to pets)</td></tr>
     <tr><td><strong>Difficulty</strong></td><td>Easy</td></tr>
@@ -71,31 +100,31 @@
   </table>
 
   <!-- ───────────── SKILLS ───────────── -->
-  <h2>Skills</h2>
+  <h2 id="skills">Skills</h2>
 
   <div style="color: var(--text2);">
   <b>Active:</b>
-  <ul style="line-height:2.4;">
-    <li style="margin-bottom:0.5rem;">Summon Mastery <img src="../../images/classes/overlord/summon_mastery.jpg" alt="Summon Mastery" style="height:32px;vertical-align:middle;margin-left:8px;"/> Allows you to summon 2 pets at the same time</li>
-    <li style="margin-bottom:0.5rem;">Bestial Cry <img src="../../images/classes/masterbreeder/bestialcry.jpg" alt="Bestial Cry" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Grim Desire <img src="../../images/classes/masterbreeder/grim.jpg" alt="Grim Desire" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Defense Mastery <img src="../../images/classes/masterbreeder/defensemastery.jpg" alt="Defense Mastery" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Trait Mastery <img src="../../images/classes/masterbreeder/traitmastery.jpg" alt="Trait Mastery" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Empowering Scent <img src="../../images/classes/masterbreeder/scent.jpg" alt="Empowering Scent" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Elemental Resistances <img src="../../images/classes/masterbreeder/elemntalresistances.png" alt="Elemental Resistances" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+  <ul style="padding-left:2.2rem;">
+    <li><img src="../../images/classes/overlord/summon_mastery.jpg" alt="Summon Mastery" style="height:28px;vertical-align:middle;margin-right:8px;"/>Summon Mastery Allows you to summon 2 pets at the same time</li>
+    <li><img src="../../images/classes/masterbreeder/bestialcry.jpg" alt="Bestial Cry" style="height:28px;vertical-align:middle;margin-right:8px;"/>Bestial Cry</li>
+    <li><img src="../../images/classes/masterbreeder/grim.jpg" alt="Grim Desire" style="height:28px;vertical-align:middle;margin-right:8px;"/>Grim Desire</li>
+    <li><img src="../../images/classes/masterbreeder/defensemastery.jpg" alt="Defense Mastery" style="height:28px;vertical-align:middle;margin-right:8px;"/>Defense Mastery</li>
+    <li><img src="../../images/classes/masterbreeder/traitmastery.jpg" alt="Trait Mastery" style="height:28px;vertical-align:middle;margin-right:8px;"/>Trait Mastery</li>
+    <li><img src="../../images/classes/masterbreeder/scent.jpg" alt="Empowering Scent" style="height:28px;vertical-align:middle;margin-right:8px;"/>Empowering Scent</li>
+    <li><img src="../../images/classes/masterbreeder/elemntalresistances.png" alt="Elemental Resistances" style="height:28px;vertical-align:middle;margin-right:8px;"/>Elemental Resistances</li>
   </ul>
   <b>Passive:</b>
-  <ul style="line-height:2.4;">
-    <li style="margin-bottom:0.5rem;">Creature Mastery <img src="../../images/classes/overlord/creaturemastery.jpg" alt="Creature Mastery" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Breeder&rsquo;s Synergy <img src="../../images/classes/masterbreeder/breedersynergy.jpg" alt="Breeder's Synergy" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Expert Caretaker <img src="../../images/classes/masterbreeder/caretaker.jpg" alt="Expert Caretaker" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Holy Link <img src="../../images/classes/masterbreeder/holylink.png" alt="Holy Link" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Potency <img src="../../images/classes/masterbreeder/potency.jpg" alt="Potency" style="height:32px;vertical-align:middle;margin-left:8px;"/> this is your main skill in gear!</li>
+  <ul style="padding-left:2.2rem;">
+    <li><img src="../../images/classes/overlord/creaturemastery.jpg" alt="Creature Mastery" style="height:28px;vertical-align:middle;margin-right:8px;"/>Creature Mastery</li>
+    <li><img src="../../images/classes/masterbreeder/breedersynergy.jpg" alt="Breeder's Synergy" style="height:28px;vertical-align:middle;margin-right:8px;"/>Breeder&rsquo;s Synergy</li>
+    <li><img src="../../images/classes/masterbreeder/caretaker.jpg" alt="Expert Caretaker" style="height:28px;vertical-align:middle;margin-right:8px;"/>Expert Caretaker</li>
+    <li><img src="../../images/classes/masterbreeder/holylink.png" alt="Holy Link" style="height:28px;vertical-align:middle;margin-right:8px;"/>Holy Link</li>
+    <li><img src="../../images/classes/masterbreeder/potency.jpg" alt="Potency" style="height:28px;vertical-align:middle;margin-right:8px;"/>Potency this is your main skill in gear!</li>
   </ul>
   </div>
 
   <!-- ───────────── ROTATION ───────────── -->
-  <h2>Rotation</h2>
+  <h2 id="rotation">Rotation</h2>
   <p>Potency <img src="../../images/classes/masterbreeder/potency.jpg" alt="Potency" style="height:32px;vertical-align:middle;margin-left:4px;margin-right:4px;"/> makes Master Breeder excel with 2 types of pets:</p>
   <ul style="color: var(--text2);">
     <li>Pets that scale with Max Mana</li>
@@ -108,7 +137,7 @@
   </ul>
 
   <!-- ───────────── PET SKILLS ───────────── -->
-  <h2>Main Skills of Pets</h2>
+  <h2 id="main-skills-of-pets">Main Skills of Pets</h2>
 
   <h3>Best Skills to Use on Ethereal Pixie</h3>
   <ul style="color: var(--text2); line-height:2.4;">
@@ -136,7 +165,7 @@
   <p style="color: var(--text2);"><strong>Important passives:</strong> Rhodochrosite Might, Diamond Skin, Razor Sharp Iolite, Peridot Pain (Staged)</p>
 
   <!-- ───────────── TALENT BUILD ───────────── -->
-  <h2>Talent Build</h2>
+  <h2 id="talent-build">Talent Build</h2>
   <table class="info-table">
     <thead><tr><th>Points</th><th>Allocation</th></tr></thead>
     <tbody>
@@ -147,7 +176,7 @@
   </table>
 
   <!-- ───────────── STATS ───────────── -->
-  <h2>Stats</h2>
+  <h2 id="stats">Stats</h2>
   <table class="info-table">
     <thead><tr><th>Priority</th><th>Stat</th></tr></thead>
     <tbody>
@@ -157,7 +186,7 @@
   </table>
 
   <!-- ───────────── ACCESSORIES ───────────── -->
-  <h2>Accessories</h2>
+  <h2 id="accessories">Accessories</h2>
   <table class="info-table">
     <thead><tr><th>Slot</th><th>Recommendation</th></tr></thead>
     <tbody>
@@ -167,7 +196,7 @@
   </table>
 
   <!-- ───────────── PETS & BELT ───────────── -->
-  <h2>Pets &amp; Belt</h2>
+  <h2 id="pets-and-belt">Pets &amp; Belt</h2>
   <table class="info-table">
     <thead><tr><th>Setup</th><th>Details</th></tr></thead>
     <tbody>
@@ -178,7 +207,7 @@
   </table>
 
   <!-- ───────────── GEAR ───────────── -->
-  <h2>Gear</h2>
+  <h2 id="gear">Gear</h2>
   <h3>Progression Path</h3>
   <ol class="priority-list">
     <li>R2 helmet +20 (all skills +1)</li>
@@ -206,14 +235,14 @@
   </ol>
 
   <!-- ───────────── LEVELING ───────────── -->
-  <h2>Leveling Progression</h2>
+  <h2 id="leveling-progression">Leveling Progression</h2>
   <ul>
     <li><a class="content-link" href="../../guide/getting-started/">Starting with Rappelz</a></li>
     <li><a class="content-link" href="../../guide/beyond-master-class/">Master Class and Beyond</a></li>
     <li><a class="content-link" href="../../guide/175-and-beyond/">175 and Beyond</a></li>
   </ul>
 
-  <h2>Pet Farm</h2>
+  <h2 id="pet-farm">Pet Farm</h2>
   <p>You can level your pets using the <a class="content-link" href="../../guide/pet-farm/">Pet Farm</a>. Place your pet in the farm for 12 hours with the basic pass to gain <strong style="color:var(--gold2);">15% exp</strong>, or use the <strong style="color:var(--gold2);">Premium Pass</strong> for <strong style="color:var(--gold2);">60%</strong>. A <strong style="color:var(--gold2);">Creature Farm Cracker</strong> increases the exp earned by an additional <strong style="color:var(--gold2);">100%</strong>.</p>
 
   <!-- ───────────── TITLES ───────────── -->
@@ -241,7 +270,7 @@
   </ol>
 
   <!-- ───────────── ENDGAME ───────────── -->
-  <h2>Endgame</h2>
+  <h2 id="endgame">Endgame</h2>
   <table class="info-table">
     <thead><tr><th>Aspect</th><th>Rating</th></tr></thead>
     <tbody>

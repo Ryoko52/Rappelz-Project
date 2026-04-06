@@ -41,6 +41,14 @@
   .priority-list li { margin-bottom: 0.5rem; }
   .priority-list li::marker { color: var(--gold2); font-weight: 600; }
   footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--text3); font-size: 0.82rem; font-style: italic; margin-top: 4rem; }
+  .toc { background: var(--bg2); border: 1px solid rgba(201,168,76,0.5); border-left: 3px solid var(--gold); padding: 1.2rem 1.6rem; margin-bottom: 2.5rem; }
+  .toc h2.toc-heading { font-family: 'Cinzel', serif; font-size: 0.85rem; font-weight: 600; color: var(--gold2); letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 0.75rem; border: none; padding: 0; }
+  .toc ul { list-style: none; padding-left: 0; margin: 0; columns: 2; column-gap: 2rem; }
+  @media (max-width: 500px) { .toc ul { columns: 1; } }
+  .toc li { padding: 0.2rem 0; margin: 0; }
+  .toc a { color: var(--gold-dim); text-decoration: none; font-size: 0.93rem; transition: color 0.15s, border-color 0.15s; border-bottom: 1px dashed rgba(201,168,76,0.5); padding-bottom: 1px; }
+  .toc a::before { content: '\25B8\00A0'; color: var(--gold); font-size: 0.75em; }
+  .toc a:hover { color: var(--gold3); border-bottom-color: var(--gold2); }
 </style>
 </head>
 <body>
@@ -61,7 +69,26 @@
       <h1>Magus</h1>
       <span class="tier-badge">A Tier</span>
 
-      <h2>Overview</h2>
+      <nav class="toc" aria-label="Table of contents">
+        <h2 class="toc-heading">Table of Contents</h2>
+        <ul>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#gameplay">Gameplay</a></li>
+          <li><a href="#talent-build">Talent Build</a></li>
+          <li><a href="#stats">Stats</a></li>
+          <li><a href="#accessories">Accessories</a></li>
+          <li><a href="#pets-and-belt">Pets &amp; Belt</a></li>
+          <li><a href="#gear">Gear</a></li>
+          <li><a href="#titles">Titles</a></li>
+          <li><a href="#leveling-progression">Leveling Progression</a></li>
+          <li><a href="#tips">Tips</a></li>
+          <li><a href="#endgame">Endgame</a></li>
+        </ul>
+      </nav>
+
+
+      <h2 id="overview">Overview</h2>
       <table class="info-table">
         <tr><td><strong>Role</strong></td><td>DPS / Subheal</td></tr>
         <tr><td><strong>Difficulty</strong></td><td>Intermediate</td></tr>
@@ -70,51 +97,51 @@
         <tr><td><strong>Why Play It</strong></td><td>Channel the forces of nature as a druid-like caster, wielding earth, fire, and wind to devastate entire groups of enemies</td></tr>
       </table>
 
-      <h2>Skills</h2>
+      <h2 id="skills">Skills</h2>
 
       <h3>Passives</h3>
-      <ul style="color: var(--text2); line-height:2.4;">
-        <li style="margin-bottom:0.5rem;">Cyclone Lord's Blessing <img src="../../images/classes/Magus/cyclonelordblessing.jpg" alt="Cyclone Lord's Blessing" style="height:32px;vertical-align:middle;margin-left:8px;"/> <span style="color:var(--gold2);">your main skill in gear</span></li>
-        <li style="margin-bottom:0.5rem;">Mental Link <img src="../../images/classes/Magus/mentallink.jpg" alt="Mental Link" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+      <ul style="padding-left:2.2rem;">
+        <li><img src="../../images/classes/Magus/cyclonelordblessing.jpg" alt="Cyclone Lord's Blessing" style="height:28px;vertical-align:middle;margin-right:8px;"/>Cyclone Lord's Blessing <span style="color:var(--gold2);">your main skill in gear</span></li>
+        <li><img src="../../images/classes/Magus/mentallink.jpg" alt="Mental Link" style="height:28px;vertical-align:middle;margin-right:8px;"/>Mental Link</li>
       </ul>
 
       <h3>Single Target</h3>
-      <ul style="color: var(--text2); line-height:2.4;">
-        <li style="margin-bottom:0.5rem;">Explosion of Petrifaction <img src="../../images/classes/Magus/explosionofpetrifaction.jpg" alt="Explosion of Petrifaction" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-        <li style="margin-bottom:0.5rem;">Tectonic Spike <img src="../../images/classes/Magus/tectonicspike.jpg" alt="Tectonic Spike" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-        <li style="margin-bottom:0.5rem;">Scorching Flame <img src="../../images/classes/Magus/scrochingflame.jpg" alt="Scorching Flame" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-        <li style="margin-bottom:0.5rem;">Shackle of the Ground <img src="../../images/classes/Magus/shackle.jpg" alt="Shackle of the Ground" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-        <li style="margin-bottom:0.5rem;">Bleak Squall <img src="../../images/classes/Magus/bleaksquall.jpg" alt="Bleak Squall" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+      <ul style="padding-left:2.2rem;">
+        <li><img src="../../images/classes/Magus/explosionofpetrifaction.jpg" alt="Explosion of Petrifaction" style="height:28px;vertical-align:middle;margin-right:8px;"/>Explosion of Petrifaction</li>
+        <li><img src="../../images/classes/Magus/tectonicspike.jpg" alt="Tectonic Spike" style="height:28px;vertical-align:middle;margin-right:8px;"/>Tectonic Spike</li>
+        <li><img src="../../images/classes/Magus/scrochingflame.jpg" alt="Scorching Flame" style="height:28px;vertical-align:middle;margin-right:8px;"/>Scorching Flame</li>
+        <li><img src="../../images/classes/Magus/shackle.jpg" alt="Shackle of the Ground" style="height:28px;vertical-align:middle;margin-right:8px;"/>Shackle of the Ground</li>
+        <li><img src="../../images/classes/Magus/bleaksquall.jpg" alt="Bleak Squall" style="height:28px;vertical-align:middle;margin-right:8px;"/>Bleak Squall</li>
       </ul>
 
       <h3>AoE Spells</h3>
-      <ul style="color: var(--text2); line-height:2.4;">
-        <li style="margin-bottom:0.5rem;">Eternal Pillar of Fire <img src="../../images/classes/Magus/pillaroffire.jpg" alt="Eternal Pillar of Fire" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-        <li style="margin-bottom:0.5rem;">Root of Mother Nature <img src="../../images/classes/Magus/mothernature.jpg" alt="Root of Mother Nature" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-        <li style="margin-bottom:0.5rem;">Vacuum Shockwave <img src="../../images/classes/Magus/vacuum.jpg" alt="Vacuum Shockwave" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-        <li style="margin-bottom:0.5rem;">Spear of Flame <img src="../../images/classes/Magus/spearofflame.jpg" alt="Spear of Flame" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-        <li style="margin-bottom:0.5rem;">Huge Rock Fall <img src="../../images/classes/Magus/rockfall.jpg" alt="Huge Rock Fall" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+      <ul style="padding-left:2.2rem;">
+        <li><img src="../../images/classes/Magus/pillaroffire.jpg" alt="Eternal Pillar of Fire" style="height:28px;vertical-align:middle;margin-right:8px;"/>Eternal Pillar of Fire</li>
+        <li><img src="../../images/classes/Magus/mothernature.jpg" alt="Root of Mother Nature" style="height:28px;vertical-align:middle;margin-right:8px;"/>Root of Mother Nature</li>
+        <li><img src="../../images/classes/Magus/vacuum.jpg" alt="Vacuum Shockwave" style="height:28px;vertical-align:middle;margin-right:8px;"/>Vacuum Shockwave</li>
+        <li><img src="../../images/classes/Magus/spearofflame.jpg" alt="Spear of Flame" style="height:28px;vertical-align:middle;margin-right:8px;"/>Spear of Flame</li>
+        <li><img src="../../images/classes/Magus/rockfall.jpg" alt="Huge Rock Fall" style="height:28px;vertical-align:middle;margin-right:8px;"/>Huge Rock Fall</li>
       </ul>
 
       <h3>Utility</h3>
-      <ul style="color: var(--text2); line-height:2.4;">
-        <li style="margin-bottom:0.5rem;">Tears of Gaia <img src="../../images/classes/Magus/tearsofgaia.jpg" alt="Tears of Gaia" style="height:32px;vertical-align:middle;margin-left:8px;"/> free revive while keeping your buffs</li>
-        <li style="margin-bottom:0.5rem;">Enchant Weapon: Water <img src="../../images/classes/Magus/enchantweaponwater.jpg" alt="Enchant Weapon: Water" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-        <li style="margin-bottom:0.5rem;">Focused Gust <img src="../../images/classes/Magus/gust.jpg" alt="Focused Gust" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-        <li style="margin-bottom:0.5rem;">Arcane Swell <img src="../../images/classes/Magus/arcaneswell.jpg" alt="Arcane Swell" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-        <li style="margin-bottom:0.5rem;">Recklessness of Earth <img src="../../images/classes/Magus/recklessearth.jpg" alt="Recklessness of Earth" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-        <li style="margin-bottom:0.5rem;">Recklessness of Thunder <img src="../../images/classes/Magus/recklessthunder.jpg" alt="Recklessness of Thunder" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-        <li style="margin-bottom:0.5rem;">Recklessness of Fire <img src="../../images/classes/Magus/recklessfire.jpg" alt="Recklessness of Fire" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-        <li style="margin-bottom:0.5rem;">Recklessness of Water <img src="../../images/classes/Magus/recklesswater.jpg" alt="Recklessness of Water" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+      <ul style="padding-left:2.2rem;">
+        <li><img src="../../images/classes/Magus/tearsofgaia.jpg" alt="Tears of Gaia" style="height:28px;vertical-align:middle;margin-right:8px;"/>Tears of Gaia free revive while keeping your buffs</li>
+        <li><img src="../../images/classes/Magus/enchantweaponwater.jpg" alt="Enchant Weapon: Water" style="height:28px;vertical-align:middle;margin-right:8px;"/>Enchant Weapon: Water</li>
+        <li><img src="../../images/classes/Magus/gust.jpg" alt="Focused Gust" style="height:28px;vertical-align:middle;margin-right:8px;"/>Focused Gust</li>
+        <li><img src="../../images/classes/Magus/arcaneswell.jpg" alt="Arcane Swell" style="height:28px;vertical-align:middle;margin-right:8px;"/>Arcane Swell</li>
+        <li><img src="../../images/classes/Magus/recklessearth.jpg" alt="Recklessness of Earth" style="height:28px;vertical-align:middle;margin-right:8px;"/>Recklessness of Earth</li>
+        <li><img src="../../images/classes/Magus/recklessthunder.jpg" alt="Recklessness of Thunder" style="height:28px;vertical-align:middle;margin-right:8px;"/>Recklessness of Thunder</li>
+        <li><img src="../../images/classes/Magus/recklessfire.jpg" alt="Recklessness of Fire" style="height:28px;vertical-align:middle;margin-right:8px;"/>Recklessness of Fire</li>
+        <li><img src="../../images/classes/Magus/recklesswater.jpg" alt="Recklessness of Water" style="height:28px;vertical-align:middle;margin-right:8px;"/>Recklessness of Water</li>
       </ul>
 
-      <h2>Gameplay</h2>
+      <h2 id="gameplay">Gameplay</h2>
       <p><strong>Weapon choice:</strong> Cyclone Lord's Blessing <img src="../../images/classes/Magus/cyclonelordblessing.jpg" alt="Cyclone Lord's Blessing" style="height:28px;vertical-align:middle;margin:0 4px;"/> converts P.Atk to M.Atk. Combined with Two-Handed Axe Training <img src="../../images/classes/Magus/axetraining.jpg" alt="Two-Handed Axe Training" style="height:28px;vertical-align:middle;margin:0 4px;"/> and Tactical Advantage <img src="../../images/classes/Magus/tacticaladvantage.jpg" alt="Tactical Advantage" style="height:28px;vertical-align:middle;margin:0 4px;"/>, a 2H Axe is the obvious weapon choice (this may change at level 220+, to be confirmed).</p>
       <p><strong>Basic rotation:</strong> Pull mobs with Bleak Squall <img src="../../images/classes/Magus/bleaksquall.jpg" alt="Bleak Squall" style="height:28px;vertical-align:middle;margin:0 4px;"/> &rarr; stack mobs &rarr; cast Root of Mother Nature <img src="../../images/classes/Magus/mothernature.jpg" alt="Root of Mother Nature" style="height:28px;vertical-align:middle;margin:0 4px;"/> to root them in place &rarr; then unleash your AoEs: Eternal Pillar of Fire <img src="../../images/classes/Magus/pillaroffire.jpg" alt="Eternal Pillar of Fire" style="height:28px;vertical-align:middle;margin:0 4px;"/>, Vacuum Shockwave <img src="../../images/classes/Magus/vacuum.jpg" alt="Vacuum Shockwave" style="height:28px;vertical-align:middle;margin:0 4px;"/>, Spear of Flame <img src="../../images/classes/Magus/spearofflame.jpg" alt="Spear of Flame" style="height:28px;vertical-align:middle;margin:0 4px;"/>.</p>
       <p>Once your damage is high enough, alternate between Eternal Pillar of Fire <img src="../../images/classes/Magus/pillaroffire.jpg" alt="Eternal Pillar of Fire" style="height:28px;vertical-align:middle;margin:0 4px;"/> and Root of Mother Nature <img src="../../images/classes/Magus/mothernature.jpg" alt="Root of Mother Nature" style="height:28px;vertical-align:middle;margin:0 4px;"/> across pulls, both have huge damage modifiers, so using both in the same pull wastes potential.</p>
       <p>Magus is the only class that benefits enormously from summoning a pet thanks to <strong>Mental Link</strong> <img src="../../images/classes/Magus/mentallink.jpg" alt="Mental Link" style="height:28px;vertical-align:middle;margin:0 4px;"/>, which lets you inherit INT and Wisdom from your summoned pet. This is why <a class="content-link" href="../../pet/ethereal-pixie.html">Ethereal Pixie</a> is a must-have and will boost your damage by an insane amount.</p>
 
-      <h2>Talent Build</h2>
+      <h2 id="talent-build">Talent Build</h2>
       <table class="info-table">
         <thead><tr><th>Points</th><th>Allocation</th></tr></thead>
         <tbody>
@@ -124,7 +151,7 @@
         </tbody>
       </table>
 
-      <h2>Stats</h2>
+      <h2 id="stats">Stats</h2>
       <table class="info-table">
         <thead><tr><th>Priority</th><th>Stats</th></tr></thead>
         <tbody>
@@ -133,7 +160,7 @@
         </tbody>
       </table>
 
-      <h2>Accessories</h2>
+      <h2 id="accessories">Accessories</h2>
       <table class="info-table">
         <thead><tr><th>Setup</th><th>Accessories</th></tr></thead>
         <tbody>
@@ -142,7 +169,7 @@
         </tbody>
       </table>
 
-      <h2>Pets &amp; Belt</h2>
+      <h2 id="pets-and-belt">Pets &amp; Belt</h2>
       <table class="info-table">
         <thead><tr><th>Slot</th><th>Recommendation</th></tr></thead>
         <tbody>
@@ -153,7 +180,7 @@
         </tbody>
       </table>
 
-      <h2>Gear</h2>
+      <h2 id="gear">Gear</h2>
       <h3>Progression Path</h3>
       <ol class="priority-list">
         <li>R2 helmet +20 (all skills +1)</li>
@@ -192,7 +219,7 @@
         </tbody>
       </table>
 
-      <h2>Titles</h2>
+      <h2 id="titles">Titles</h2>
       <ul>
         <li><b>Title for Reduced Damage:</b> <span style="color:var(--gold2);">Camper</span> <br/>
           <span style="color:var(--text2);">(Purchase a tent from Merchant in Hidden Village)</span>
@@ -211,7 +238,7 @@
           </table>
         </li>
       </ul>
-      <h2>Leveling Progression</h2>
+      <h2 id="leveling-progression">Leveling Progression</h2>
       <ul>
           <li style="margin-bottom:0.5em;"><a class="content-link" href="../../guide/getting-started/">Starting with Rappelz</a></li>
           <li style="margin-bottom:0.5em;"><a class="content-link" href="../../guide/beyond-master-class/">Master Class and Beyond</a></li>
@@ -219,7 +246,7 @@
       </ul>
 
 
-      <h2>Tips</h2>
+      <h2 id="tips">Tips</h2>
       <ul>
         <li style="margin-bottom:0.5em;">Kiting is very important with this class &mdash; prioritize movement speed in rings.</li>
         <li style="margin-bottom:0.5em;">Stage <a class="content-link" href="../../pet/ethereal-pixie.html">Ethereal Pixie</a> to Stage 5 as soon as possible and equip a Yushiva belt on her &mdash; huge boost to your M.Atk.</li>
@@ -229,7 +256,7 @@
         <li style="margin-bottom:0.5em;">Use all Recklessness skills and Arcane Swell during boss encounters for a significant damage burst.</li>
       </ul>
 
-      <h2>Endgame</h2>
+      <h2 id="endgame">Endgame</h2>
       <table class="info-table">
         <thead><tr><th>Aspect</th><th>Rating</th></tr></thead>
         <tbody>

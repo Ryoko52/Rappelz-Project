@@ -41,6 +41,14 @@
   .priority-list li { margin-bottom: 0.5rem; }
   .priority-list li::marker { color: var(--gold2); font-weight: 600; }
   footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--text3); font-size: 0.82rem; font-style: italic; margin-top: 4rem; }
+  .toc { background: var(--bg2); border: 1px solid rgba(201,168,76,0.5); border-left: 3px solid var(--gold); padding: 1.2rem 1.6rem; margin-bottom: 2.5rem; }
+  .toc h2.toc-heading { font-family: 'Cinzel', serif; font-size: 0.85rem; font-weight: 600; color: var(--gold2); letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 0.75rem; border: none; padding: 0; }
+  .toc ul { list-style: none; padding-left: 0; margin: 0; columns: 2; column-gap: 2rem; }
+  @media (max-width: 500px) { .toc ul { columns: 1; } }
+  .toc li { padding: 0.2rem 0; margin: 0; }
+  .toc a { color: var(--gold-dim); text-decoration: none; font-size: 0.93rem; transition: color 0.15s, border-color 0.15s; border-bottom: 1px dashed rgba(201,168,76,0.5); padding-bottom: 1px; }
+  .toc a::before { content: '\25B8\00A0'; color: var(--gold); font-size: 0.75em; }
+  .toc a:hover { color: var(--gold3); border-bottom-color: var(--gold2); }
 </style>
 </head>
 <body>
@@ -60,7 +68,25 @@
   <h1>Mercenary</h1>
   <span class="tier-badge">A Tier</span>
 
-  <h2>Overview</h2>
+  <nav class="toc" aria-label="Table of contents">
+    <h2 class="toc-heading">Table of Contents</h2>
+    <ul>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#gameplay">Gameplay</a></li>
+      <li><a href="#talent-build">Talent Build</a></li>
+      <li><a href="#stats">Stats</a></li>
+      <li><a href="#accessories">Accessories</a></li>
+      <li><a href="#pets-belt">Pets &amp; Belt</a></li>
+      <li><a href="#gear">Gear</a></li>
+      <li><a href="#titles">Titles</a></li>
+      <li><a href="#leveling">Leveling Progression</a></li>
+      <li><a href="#tips">Tips</a></li>
+      <li><a href="#endgame">Endgame</a></li>
+    </ul>
+  </nav>
+
+  <h2 id="overview">Overview</h2>
   <table class="info-table">
     <tr><td><strong>Role</strong></td><td>DPS / Tank</td></tr>
     <tr><td><strong>Difficulty</strong></td><td>Easy</td></tr>
@@ -70,64 +96,64 @@
   </table>
 
   <!-- ───────────── SKILLS ───────────── -->
-  <h2>Skills</h2>
+  <h2 id="skills">Skills</h2>
 
   <h3>Toggles / Buffs</h3>
-  <ul style="color: var(--text2); line-height:2.4;">
-    <li style="margin-bottom:0.5rem;">Blessing <img src="../../images/classes/Mercenary/blessing.jpg" alt="Blessing" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Divine Cluster <img src="../../images/classes/Mercenary/divineclsuter.jpg" alt="Divine Cluster" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Holy Aura <img src="../../images/classes/Mercenary/holyaura.jpg" alt="Holy Aura" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Defensive Stance <img src="../../images/classes/Mercenary/defstance.jpg" alt="Defensive Stance" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Invigorating Essence <img src="../../images/classes/Mercenary/Invigaura.jpg" alt="Invigorating Essence" style="height:32px;vertical-align:middle;margin-left:8px;"/> your main skill in gear!</li>
+  <ul style="padding-left:2.2rem;">
+    <li><img src="../../images/classes/Mercenary/blessing.jpg" alt="Blessing" style="height:28px;vertical-align:middle;margin-right:8px;"/>Blessing</li>
+    <li><img src="../../images/classes/Mercenary/divineclsuter.jpg" alt="Divine Cluster" style="height:28px;vertical-align:middle;margin-right:8px;"/>Divine Cluster</li>
+    <li><img src="../../images/classes/Mercenary/holyaura.jpg" alt="Holy Aura" style="height:28px;vertical-align:middle;margin-right:8px;"/>Holy Aura</li>
+    <li><img src="../../images/classes/Mercenary/defstance.jpg" alt="Defensive Stance" style="height:28px;vertical-align:middle;margin-right:8px;"/>Defensive Stance</li>
+    <li><img src="../../images/classes/Mercenary/Invigaura.jpg" alt="Invigorating Essence" style="height:28px;vertical-align:middle;margin-right:8px;"/>Invigorating Essence your main skill in gear!</li>
   </ul>
 
   <h3>Single Target</h3>
-  <ul style="color: var(--text2); line-height:2.4;">
-    <li style="margin-bottom:0.5rem;">Divine Cross <img src="../../images/classes/Mercenary/divinecross.jpg" alt="Divine Cross" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Laser Blade <img src="../../images/classes/Mercenary/laserblade.jpg" alt="Laser Blade" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+  <ul style="padding-left:2.2rem;">
+    <li><img src="../../images/classes/Mercenary/divinecross.jpg" alt="Divine Cross" style="height:28px;vertical-align:middle;margin-right:8px;"/>Divine Cross</li>
+    <li><img src="../../images/classes/Mercenary/laserblade.jpg" alt="Laser Blade" style="height:28px;vertical-align:middle;margin-right:8px;"/>Laser Blade</li>
   </ul>
 
   <h3>AoE</h3>
-  <ul style="color: var(--text2); line-height:2.4;">
-    <li style="margin-bottom:0.5rem;">Wild Stream <img src="../../images/classes/Mercenary/wildstream.jpg" alt="Wild Stream" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Dual Strike <img src="../../images/classes/Mercenary/dualstrike.jpg" alt="Dual Strike" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Deathblow <img src="../../images/classes/Mercenary/deathblow.jpg" alt="Deathblow" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+  <ul style="padding-left:2.2rem;">
+    <li><img src="../../images/classes/Mercenary/wildstream.jpg" alt="Wild Stream" style="height:28px;vertical-align:middle;margin-right:8px;"/>Wild Stream</li>
+    <li><img src="../../images/classes/Mercenary/dualstrike.jpg" alt="Dual Strike" style="height:28px;vertical-align:middle;margin-right:8px;"/>Dual Strike</li>
+    <li><img src="../../images/classes/Mercenary/deathblow.jpg" alt="Deathblow" style="height:28px;vertical-align:middle;margin-right:8px;"/>Deathblow</li>
   </ul>
 
   <h3>Utility</h3>
-  <ul style="color: var(--text2); line-height:2.4;">
-    <li style="margin-bottom:0.5rem;">Hate Aura <img src="../../images/classes/Mercenary/hateaura.jpg" alt="Hate Aura" style="height:32px;vertical-align:middle;margin-left:8px;"/> for pulling</li>
-    <li style="margin-bottom:0.5rem;">Light Speed <img src="../../images/classes/Mercenary/lightspeed.jpg" alt="Light Speed" style="height:32px;vertical-align:middle;margin-left:8px;"/> for&hellip; speeeeeeeed</li>
-    <li style="margin-bottom:0.5rem;">Immortality <img src="../../images/classes/Mercenary/immortality.jpg" alt="Immortality" style="height:32px;vertical-align:middle;margin-left:8px;"/> you will not die at 1 HP for a few seconds</li>
-    <li style="margin-bottom:0.5rem;">Provocation <img src="../../images/classes/Mercenary/provocation.jpg" alt="Provocation" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Divine Flash <img src="../../images/classes/Mercenary/divineflash.jpg" alt="Divine Flash" style="height:32px;vertical-align:middle;margin-left:8px;"/> prevents mobs from attacking for 2 seconds</li>
+  <ul style="padding-left:2.2rem;">
+    <li><img src="../../images/classes/Mercenary/hateaura.jpg" alt="Hate Aura" style="height:28px;vertical-align:middle;margin-right:8px;"/>Hate Aura for pulling</li>
+    <li><img src="../../images/classes/Mercenary/lightspeed.jpg" alt="Light Speed" style="height:28px;vertical-align:middle;margin-right:8px;"/>Light Speed for&hellip; speeeeeeeed</li>
+    <li><img src="../../images/classes/Mercenary/immortality.jpg" alt="Immortality" style="height:28px;vertical-align:middle;margin-right:8px;"/>Immortality you will not die at 1 HP for a few seconds</li>
+    <li><img src="../../images/classes/Mercenary/provocation.jpg" alt="Provocation" style="height:28px;vertical-align:middle;margin-right:8px;"/>Provocation</li>
+    <li><img src="../../images/classes/Mercenary/divineflash.jpg" alt="Divine Flash" style="height:28px;vertical-align:middle;margin-right:8px;"/>Divine Flash prevents mobs from attacking for 2 seconds</li>
   </ul>
 
   <h3>Breakers</h3>
-  <ul style="color: var(--text2); line-height:2.4;">
-    <li style="margin-bottom:0.5rem;">Offense Breaker <img src="../../images/classes/Mercenary/offensebreaker.jpg" alt="Offense Breaker" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Defense Breaker <img src="../../images/classes/Mercenary/defensebreaker.jpg" alt="Defense Breaker" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Mental Breaker <img src="../../images/classes/Mercenary/mentalbreaker.jpg" alt="Mental Breaker" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
+  <ul style="padding-left:2.2rem;">
+    <li><img src="../../images/classes/Mercenary/offensebreaker.jpg" alt="Offense Breaker" style="height:28px;vertical-align:middle;margin-right:8px;"/>Offense Breaker</li>
+    <li><img src="../../images/classes/Mercenary/defensebreaker.jpg" alt="Defense Breaker" style="height:28px;vertical-align:middle;margin-right:8px;"/>Defense Breaker</li>
+    <li><img src="../../images/classes/Mercenary/mentalbreaker.jpg" alt="Mental Breaker" style="height:28px;vertical-align:middle;margin-right:8px;"/>Mental Breaker</li>
   </ul>
 
   <h3>Passives</h3>
-  <ul style="color: var(--text2); line-height:2.4;">
-    <li style="margin-bottom:0.5rem;">Lust for Blood <img src="../../images/classes/Mercenary/lustforblood.jpg" alt="Lust for Blood" style="height:32px;vertical-align:middle;margin-left:8px;"/> your alternative skill on gear if you cannot find Invigorating Essence</li>
-    <li style="margin-bottom:0.5rem;">Desperate Deflection <img src="../../images/classes/Mercenary/deflection.jpg" alt="Desperate Deflection" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Frantic Defense <img src="../../images/classes/Mercenary/franticdefense.jpg" alt="Frantic Defense" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Reckless Vivacity <img src="../../images/classes/Mercenary/recklessvivacity.jpg" alt="Reckless Vivacity" style="height:32px;vertical-align:middle;margin-left:8px;"/></li>
-    <li style="margin-bottom:0.5rem;">Accelerated Casting <img src="../../images/classes/Mercenary/acceleratedcasting.jpg" alt="Accelerated Casting" style="height:32px;vertical-align:middle;margin-left:8px;"/> requires a 2H weapon equipped</li>
+  <ul style="padding-left:2.2rem;">
+    <li><img src="../../images/classes/Mercenary/lustforblood.jpg" alt="Lust for Blood" style="height:28px;vertical-align:middle;margin-right:8px;"/>Lust for Blood your alternative skill on gear if you cannot find Invigorating Essence</li>
+    <li><img src="../../images/classes/Mercenary/deflection.jpg" alt="Desperate Deflection" style="height:28px;vertical-align:middle;margin-right:8px;"/>Desperate Deflection</li>
+    <li><img src="../../images/classes/Mercenary/franticdefense.jpg" alt="Frantic Defense" style="height:28px;vertical-align:middle;margin-right:8px;"/>Frantic Defense</li>
+    <li><img src="../../images/classes/Mercenary/recklessvivacity.jpg" alt="Reckless Vivacity" style="height:28px;vertical-align:middle;margin-right:8px;"/>Reckless Vivacity</li>
+    <li><img src="../../images/classes/Mercenary/acceleratedcasting.jpg" alt="Accelerated Casting" style="height:28px;vertical-align:middle;margin-right:8px;"/>Accelerated Casting requires a 2H weapon equipped</li>
   </ul>
 
   <!-- ───────────── GAMEPLAY ───────────── -->
-  <h2>Gameplay</h2>
+  <h2 id="gameplay">Gameplay</h2>
   <p>The playstyle of Mercenary is one of if not the easiest in the game, which is why it is always recommended to start with this class as a new player.</p>
   <p>You activate your buffs and toggles, use Hate Aura <img src="../../images/classes/Mercenary/hateaura.jpg" alt="Hate Aura" style="height:28px;vertical-align:middle;margin:0 4px;"/> to pull mobs, then cast Defense Breaker <img src="../../images/classes/Mercenary/defensebreaker.jpg" alt="Defense Breaker" style="height:28px;vertical-align:middle;margin:0 4px;"/> before your main AoE. This way you benefit from both Tactical Advantage and Lust for Blood <img src="../../images/classes/Mercenary/lustforblood.jpg" alt="Lust for Blood" style="height:28px;vertical-align:middle;margin:0 4px;"/> in case your Holy Aura has not procced yet. Then use your main AoE skills: Wild Stream <img src="../../images/classes/Mercenary/wildstream.jpg" alt="Wild Stream" style="height:28px;vertical-align:middle;margin:0 4px;"/> and Dual Strike <img src="../../images/classes/Mercenary/dualstrike.jpg" alt="Dual Strike" style="height:28px;vertical-align:middle;margin:0 4px;"/>. Use Divine Flash <img src="../../images/classes/Mercenary/divineflash.jpg" alt="Divine Flash" style="height:28px;vertical-align:middle;margin:0 4px;"/> to prevent mobs from attacking for 2 seconds, giving you a safe window to finish them off.</p>
   <p>You do not have to worry much about healing and defenses thanks to Desperate Deflection <img src="../../images/classes/Mercenary/deflection.jpg" alt="Desperate Deflection" style="height:28px;vertical-align:middle;margin:0 4px;"/>, Frantic Defense <img src="../../images/classes/Mercenary/franticdefense.jpg" alt="Frantic Defense" style="height:28px;vertical-align:middle;margin:0 4px;"/>, and Reckless Vivacity <img src="../../images/classes/Mercenary/recklessvivacity.jpg" alt="Reckless Vivacity" style="height:28px;vertical-align:middle;margin:0 4px;"/> which boost your P.Def, HP, and damage reduction, combined with Lunacy boss card.</p>
   <p>You must equip a 2H weapon (preferably Spear 170) to activate your passive Accelerated Casting <img src="../../images/classes/Mercenary/acceleratedcasting.jpg" alt="Accelerated Casting" style="height:28px;vertical-align:middle;margin:0 4px;"/>, which reduces the cooldown of your skills by 45.5% at level 13 (with R2 Helmet +20, DT buff, and Bear Belt).</p>
 
   <!-- ───────────── TALENT BUILD ───────────── -->
-  <h2>Talent Build</h2>
+  <h2 id="talent-build">Talent Build</h2>
   <table class="info-table">
     <thead><tr><th>Points</th><th>Allocation</th></tr></thead>
     <tbody>
@@ -139,7 +165,7 @@
   </table>
 
   <!-- ───────────── STATS ───────────── -->
-  <h2>Stats</h2>
+  <h2 id="stats">Stats</h2>
   <table class="info-table">
     <thead><tr><th>Priority</th><th>Stats</th></tr></thead>
     <tbody>
@@ -149,7 +175,7 @@
   </table>
 
   <!-- ───────────── ACCESSORIES ───────────── -->
-  <h2>Accessories</h2>
+  <h2 id="accessories">Accessories</h2>
   <table class="info-table">
     <thead><tr><th>Setup</th><th>Accessories</th></tr></thead>
     <tbody>
@@ -159,7 +185,7 @@
   </table>
 
   <!-- ───────────── PETS & BELT ───────────── -->
-  <h2>Pets &amp; Belt</h2>
+  <h2 id="pets-belt">Pets &amp; Belt</h2>
   <table class="info-table">
     <thead><tr><th>Setup</th><th>Details</th></tr></thead>
     <tbody>
@@ -172,7 +198,7 @@
   </table>
 
   <!-- ───────────── GEAR ───────────── -->
-  <h2>Gear</h2>
+  <h2 id="gear">Gear</h2>
   <h3>Progression Path</h3>
   <ol class="priority-list">
     <li>R2 helmet +20 (all skills +1)</li>
@@ -211,7 +237,7 @@
 
 
   <!-- ───────────── TITLES ───────────── -->
-  <h2>Titles</h2>
+  <h2 id="titles">Titles</h2>
   <ul>
     <li><b>Title for Reduced Damage:</b> <span style="color:var(--gold2);">Camper</span><br/>
       <span style="color:var(--text2);">(Purchase a tent from the Merchant in Hidden Village)</span>
@@ -232,7 +258,7 @@
   </ul>
 
   <!-- ───────────── LEVELING ───────────── -->
-  <h2>Leveling Progression</h2>
+  <h2 id="leveling">Leveling Progression</h2>
   <ul>
     <li><a class="content-link" href="../../guide/getting-started/">Starting with Rappelz</a></li>
     <li><a class="content-link" href="../../guide/beyond-master-class/">Master Class and Beyond</a></li>
@@ -240,7 +266,7 @@
   </ul>
 
   <!-- ───────────── TIPS ───────────── -->
-  <h2>Tips</h2>
+  <h2 id="tips">Tips</h2>
   <ul>
     <li>Use the Bloodthirsty Slaughterer potion for a big damage boost.</li>
     <li>After using both AoEs, you can kite mobs if you have a hard time tanking.</li>
@@ -250,7 +276,7 @@
   </ul>
 
   <!-- ───────────── ENDGAME ───────────── -->
-  <h2>Endgame</h2>
+  <h2 id="endgame">Endgame</h2>
   <table class="info-table">
     <thead><tr><th>Aspect</th><th>Rating</th></tr></thead>
     <tbody>
