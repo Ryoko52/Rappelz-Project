@@ -97,6 +97,31 @@
       font-size: 0.97rem;
     }
     .note strong { color: var(--gold); font-style: normal; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 0.6rem;
+    }
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-hi);
+      border-radius: 4px;
+      padding: 1rem 1.2rem;
+    }
+    .stat-card-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.6rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .stat-card ul { margin: 0; padding-left: 1.2rem; }
+    .stat-card li { font-size: 0.97rem; color: var(--text); margin-bottom: 0.2rem; }
+    .stat-val { color: var(--gold); font-weight: 600; }
   </style>
 </head>
 <body>
@@ -147,6 +172,39 @@
       <li><strong>+0 to +20</strong> requires a <strong>Medal Cube</strong>. If the enchantment fails, it can be repaired with an <strong>E-Repair Powder: Medal</strong>.</li>
       <li>To increase beyond +20, use <strong>Luciad's Power: Medal</strong>.</li>
     </ul>
+  </div>
+
+  <h2>Medal Basic Stats</h2>
+  <p>Each medal type provides the following base stats regardless of enchantment level:</p>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-card-title">Ordinary Medal</div>
+      <ul>
+        <li><span class="stat-val">+5%</span> Basic Stats <em style="color:var(--text-dim);font-size:0.9em;">(Except Luck)</em></li>
+      </ul>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-title">Enhanced Health Medal</div>
+      <ul>
+        <li><span class="stat-val">+15%</span> Max HP / Max MP</li>
+        <li><span class="stat-val">+15%</span> P. Def / M. Def</li>
+        <li><span class="stat-val">+15%</span> HP Recov.</li>
+      </ul>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-title">Enhanced Strength Medal</div>
+      <ul>
+        <li><span class="stat-val">+20%</span> P. Atk.</li>
+        <li><span class="stat-val">+20</span> Crit. Pow.</li>
+      </ul>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-title">Enhanced Intelligence Medal</div>
+      <ul>
+        <li><span class="stat-val">+20%</span> M. Atk.</li>
+        <li><span class="stat-val">+20</span> Crit. Pow.</li>
+      </ul>
+    </div>
   </div>
 
 </body>
