@@ -122,6 +122,11 @@
     .stat-card ul { margin: 0; padding-left: 1.2rem; }
     .stat-card li { font-size: 0.97rem; color: var(--text); margin-bottom: 0.2rem; }
     .stat-val { color: var(--gold); font-weight: 600; }
+    .c-green  { color: #6ecf7e; font-weight: 600; }
+    .c-red    { color: #e06060; font-weight: 600; }
+    .c-blue   { color: #6aadea; font-weight: 600; }
+    .c-pink   { color: #e87fbf; font-weight: 600; }
+    .c-purple { color: #b08ae0; font-weight: 600; }
   </style>
 </head>
 <body>
@@ -138,7 +143,7 @@
     </ul>
   </div>
   <div class="note">
-    If it fails, you will receive <strong>1 Medal Shard</strong>. Combining <strong>10 Medal Shards</strong> will give you an Ordinary Medal.<br>
+    If it fails, you will receive <strong>1 Medal Shard</strong>. Combining <strong>10 Medal Shards</strong> will give you an <span class="c-purple">Ordinary Medal</span>.<br>
     Alternatively, adding <strong>x1 Naha's Advanced Medal Shard</strong> to the combination will <strong>guarantee success</strong>.
   </div>
 
@@ -156,9 +161,9 @@
   <p>Once identified, combine the medal with a gem to get an enhanced version:</p>
   <div class="step-box">
     <ul>
-      <li><strong>Health Gem</strong> &rarr; Enhanced Health Medal</li>
-      <li><strong>Strength Gem</strong> &rarr; Enhanced Strength Medal</li>
-      <li><strong>Intelligence Gem</strong> &rarr; Enhanced Intelligence Medal</li>
+      <li><span class="c-green">Health Gem</span> &rarr; <span class="c-green">Enhanced Health Medal</span></li>
+      <li><span class="c-red">Strength Gem</span> &rarr; <span class="c-red">Enhanced Strength Medal</span></li>
+      <li><span class="c-blue">Intelligence Gem</span> &rarr; <span class="c-blue">Enhanced Intelligence Medal</span></li>
     </ul>
   </div>
   <div class="note">
@@ -169,7 +174,7 @@
   <p>All 4 medal types can be enchanted up to <strong>+32 Luciad Power</strong>.</p>
   <div class="step-box">
     <ul>
-      <li><strong>+0 to +20</strong> requires a <strong>Medal Cube</strong>. If the enchantment fails, it can be repaired with an <strong>E-Repair Powder: Medal</strong>.</li>
+      <li><strong>+0 to +20</strong> requires a <span class="c-pink">Medal Cube</span>. If the enchantment fails, it can be repaired with an <span class="c-pink">E-Repair Powder: Medal</span>.</li>
       <li>To increase beyond +20, use <strong>Luciad's Power: Medal</strong>.</li>
     </ul>
   </div>
@@ -178,13 +183,13 @@
   <p>Each medal type provides the following base stats regardless of enchantment level:</p>
   <div class="stats-grid">
     <div class="stat-card">
-      <div class="stat-card-title">Ordinary Medal</div>
+      <div class="stat-card-title" style="color:#b08ae0;">Ordinary Medal</div>
       <ul>
         <li><span class="stat-val">+5%</span> Basic Stats <em style="color:var(--text-dim);font-size:0.9em;">(Except Luck)</em></li>
       </ul>
     </div>
     <div class="stat-card">
-      <div class="stat-card-title">Enhanced Health Medal</div>
+      <div class="stat-card-title" style="color:#6ecf7e;">Enhanced Health Medal</div>
       <ul>
         <li><span class="stat-val">+15%</span> Max HP / Max MP</li>
         <li><span class="stat-val">+15%</span> P. Def / M. Def</li>
@@ -192,14 +197,14 @@
       </ul>
     </div>
     <div class="stat-card">
-      <div class="stat-card-title">Enhanced Strength Medal</div>
+      <div class="stat-card-title" style="color:#e06060;">Enhanced Strength Medal</div>
       <ul>
         <li><span class="stat-val">+20%</span> P. Atk.</li>
         <li><span class="stat-val">+20</span> Crit. Pow.</li>
       </ul>
     </div>
     <div class="stat-card">
-      <div class="stat-card-title">Enhanced Intelligence Medal</div>
+      <div class="stat-card-title" style="color:#6aadea;">Enhanced Intelligence Medal</div>
       <ul>
         <li><span class="stat-val">+20%</span> M. Atk.</li>
         <li><span class="stat-val">+20</span> Crit. Pow.</li>
