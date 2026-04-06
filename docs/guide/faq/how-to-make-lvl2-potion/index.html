@@ -3,13 +3,123 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>How to make Level 2 potion</title>
-  <link rel="stylesheet" href="../../../../css/style.css" />
-  <style>body{padding:2rem;font-family:Georgia,serif;color:#d4c9a8;background:#0a0907} a{color:#e8c96a}</style>
+  <title>How to Make a Level 2 Potion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:          #0a0907;
+      --bg-card:     #111009;
+      --bg-th:       #1f1a0f;
+      --border:      #c9a84c33;
+      --border-hi:   #c9a84c88;
+      --gold:        #e8c96a;
+      --gold-dim:    #b89940;
+      --text:        #d4c9a8;
+      --text-dim:    #9a8f72;
+      --accent:      #c9a84c;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      padding: 2.5rem 2rem 4rem;
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text);
+      background: var(--bg);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    a { color: var(--gold); }
+    a:hover { color: #fff; }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1.8rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      text-decoration: none;
+    }
+    .back-link:hover { color: var(--gold); }
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      margin: 0 0 0.25rem;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.5rem;
+    }
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      margin: 2.2rem 0 0.8rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border-hi);
+    }
+    p { margin-bottom: 0.75rem; color: var(--text-dim); }
+    strong { color: var(--gold); }
+    ul { padding-left: 1.6rem; margin-bottom: 0.75rem; }
+    li { margin-bottom: 0.3rem; color: var(--text-dim); }
+    li::marker { color: var(--accent); }
+    .step-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-hi);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 1rem 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .note {
+      background: rgba(201,168,76,0.08);
+      border: 1px solid var(--border-hi);
+      border-radius: 4px;
+      padding: 0.6rem 1rem;
+      color: var(--text-dim);
+      font-style: italic;
+      margin: 0.5rem 0 1rem;
+      font-size: 0.97rem;
+    }
+    .note strong { color: var(--gold); font-style: normal; }
+    .result-box {
+      background: rgba(201,168,76,0.07);
+      border: 1px solid var(--border-hi);
+      border-radius: 4px;
+      padding: 0.65rem 1rem;
+      color: var(--gold);
+      margin: 0.5rem 0 1rem;
+    }
+  </style>
 </head>
 <body>
-  <a href="../../../index.html">← Back</a>
-  <h1>How to make Level 2 potion</h1>
-  <p>Placeholder: recipe, materials, NPCs and tips to craft Level 2 potions.</p>
+  <a class="back-link" href="../../../index.html">&larr; Back to Home</a>
+  <h1>How to Make a Level 2 Potion</h1>
+
+  <h2>Requirements</h2>
+  <div class="step-box">
+    <ul>
+      <li><strong>1 &times; Empty Level 2 Potion</strong> &mdash; dropped during certain events</li>
+      <li><strong>1 &times; Level 90 Pet</strong></li>
+    </ul>
+  </div>
+
+  <div class="note">
+    The <strong>Empty Level 2 Potion</strong> is not available from regular merchants &mdash; it is only obtainable as a drop from specific in-game events.
+  </div>
+
+  <h2>How It Works</h2>
+  <p>When your pet reaches <strong>level 90</strong>, it unlocks a <strong>Level 2 Creation</strong> skill. Make sure you have an <strong>Empty Level 2 Potion</strong> in your bag, then use that skill to fill it.</p>
+
+  <div class="result-box">
+    &#10003;&nbsp; <strong>Result:</strong> Level 2 Potion
+  </div>
+
 </body>
 </html>

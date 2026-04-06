@@ -3,13 +3,145 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>How to make Belt (8 slots)</title>
-  <link rel="stylesheet" href="../../../../css/style.css" />
-  <style>body{padding:2rem;font-family:Georgia,serif;color:#d4c9a8;background:#0a0907} a{color:#e8c96a}</style>
+  <title>How to Make Belt (8 Slots)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:          #0a0907;
+      --bg-card:     #111009;
+      --bg-th:       #1f1a0f;
+      --border:      #c9a84c33;
+      --border-hi:   #c9a84c88;
+      --gold:        #e8c96a;
+      --gold-dim:    #b89940;
+      --text:        #d4c9a8;
+      --text-dim:    #9a8f72;
+      --accent:      #c9a84c;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      padding: 2.5rem 2rem 4rem;
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text);
+      background: var(--bg);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    a { color: var(--gold); }
+    a:hover { color: #fff; }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1.8rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      text-decoration: none;
+    }
+    .back-link:hover { color: var(--gold); }
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      margin: 0 0 0.25rem;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.5rem;
+    }
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      margin: 2.2rem 0 0.8rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border-hi);
+    }
+    p { margin-bottom: 0.75rem; }
+    strong { color: var(--gold); }
+    ul, ol { padding-left: 1.6rem; margin-bottom: 0.75rem; }
+    li { margin-bottom: 0.3rem; color: var(--text-dim); }
+    li::marker { color: var(--accent); }
+    .step-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-hi);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 1rem 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .step-box ol { margin: 0.4rem 0 0; }
+    .note {
+      background: rgba(201,168,76,0.08);
+      border: 1px solid var(--border-hi);
+      border-radius: 4px;
+      padding: 0.6rem 1rem;
+      color: var(--text-dim);
+      font-style: italic;
+      margin: 0.5rem 0 1rem;
+      font-size: 0.97rem;
+    }
+    .note strong { color: var(--gold); font-style: normal; }
+    .warn {
+      background: rgba(180,40,40,0.12);
+      border: 1px solid rgba(220,80,80,0.4);
+      border-radius: 4px;
+      padding: 0.65rem 1rem;
+      color: #e07070;
+      margin: 1rem 0;
+      font-size: 1rem;
+    }
+    .warn strong { color: #f09090; }
+    .result-box {
+      background: rgba(201,168,76,0.07);
+      border: 1px solid var(--border-hi);
+      border-radius: 4px;
+      padding: 0.65rem 1rem;
+      color: var(--gold);
+      margin: 0.5rem 0 1rem;
+      font-size: 1rem;
+    }
+  </style>
 </head>
 <body>
-  <a href="../../../index.html">← Back</a>
-  <h1>How to make Belt (8 slots)</h1>
-  <p>Placeholder: methods to craft or upgrade belts to 8 slots (enhancement, NPCs, materials).</p>
+  <a class="back-link" href="../../../index.html">&larr; Back to Home</a>
+  <h1>How to Make Belt (8 Slots)</h1>
+  <p>Guide to upgrading your belt from slot 5 up to slot 8 using the <strong>Ultimate Belt Upgrade Kit</strong>.</p>
+
+  <div class="warn">
+    &#9888;&nbsp; <strong>Important:</strong> The Ultimate Belt Upgrade Kit is only used for slots <strong>5, 6, 7, and 8</strong>.<br>
+    Lower slots (1&ndash;4) require the regular <strong>Belt Upgrade Kit</strong>, which can be purchased from a merchant in <strong>Hidden Village</strong> or dropped from mobs.
+  </div>
+
+  <h2>Overview</h2>
+  <p>The Ultimate Belt Upgrade Kit is used to upgrade belts from <strong>slot 5 &rarr; slot 8</strong>, one slot at a time.</p>
+
+  <h2>Requirements</h2>
+  <ul>
+    <li>The belt you want to upgrade (placed in the <strong>target slot</strong>)</li>
+    <li><strong>1 &times; Ultimate Belt Upgrade Kit</strong> (placed in the <strong>material slot</strong>)</li>
+  </ul>
+
+  <h2>How It Works</h2>
+  <div class="step-box">
+    <ol>
+      <li>Place the belt in the <strong>target slot</strong>.</li>
+      <li>Place <strong>1 Ultimate Belt Upgrade Kit</strong> in the <strong>material slot</strong>.</li>
+      <li>Attempt the upgrade.</li>
+    </ol>
+  </div>
+
+  <h2>Result</h2>
+  <div class="result-box">
+    &#10003;&nbsp; <strong>Success:</strong> The belt gains one additional slot.
+  </div>
+
 </body>
 </html>

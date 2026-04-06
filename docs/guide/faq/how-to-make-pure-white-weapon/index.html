@@ -3,13 +3,167 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>How to make Pure White weapon</title>
-  <link rel="stylesheet" href="../../../../css/style.css" />
-  <style>body{padding:2rem;font-family:Georgia,serif;color:#d4c9a8;background:#0a0907} a{color:#e8c96a}</style>
+  <title>How to Make a Pure White Weapon / Shield</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:          #0a0907;
+      --bg-card:     #111009;
+      --bg-row-odd:  #1a1710;
+      --bg-row-even: #15120b;
+      --bg-th:       #1f1a0f;
+      --border:      #c9a84c33;
+      --border-hi:   #c9a84c88;
+      --gold:        #e8c96a;
+      --gold-dim:    #b89940;
+      --text:        #d4c9a8;
+      --text-dim:    #9a8f72;
+      --accent:      #c9a84c;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      padding: 2.5rem 2rem 4rem;
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text);
+      background: var(--bg);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    a { color: var(--gold); }
+    a:hover { color: #fff; }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1.8rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      text-decoration: none;
+    }
+    .back-link:hover { color: var(--gold); }
+    .patch-tag {
+      display: inline-block;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.35);
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      padding: 0.2rem 0.7rem;
+      border-radius: 3px;
+      margin-bottom: 0.8rem;
+    }
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      margin: 0 0 0.25rem;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.5rem;
+    }
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      margin: 2.2rem 0 0.8rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border-hi);
+    }
+    p { margin-bottom: 0.75rem; }
+    strong { color: var(--gold); }
+    ul, ol { padding-left: 1.6rem; margin-bottom: 0.75rem; }
+    li { margin-bottom: 0.3rem; }
+    .step-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-hi);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 1rem 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .step-box ul { margin: 0.4rem 0 0; }
+    .qty { color: var(--gold); font-weight: 600; }
+    .note {
+      background: rgba(201,168,76,0.08);
+      border: 1px solid var(--border-hi);
+      border-radius: 4px;
+      padding: 0.6rem 1rem;
+      color: var(--text-dim);
+      font-style: italic;
+      margin: 0.5rem 0 1rem;
+      font-size: 0.97rem;
+    }
+    .note strong { color: var(--gold); font-style: normal; }
+    .warn {
+      background: rgba(180,40,40,0.12);
+      border: 1px solid rgba(220,80,80,0.4);
+      border-radius: 4px;
+      padding: 0.65rem 1rem;
+      color: #e07070;
+      margin: 0.5rem 0 1rem;
+      font-size: 1rem;
+    }
+    .warn strong { color: #f09090; }
+    .info-table { width: 100%; border-collapse: collapse; margin: 0.8rem 0 1.2rem; }
+    .info-table th, .info-table td { padding: 0.45rem 0.8rem; border: 1px solid var(--border); font-size: 1rem; }
+    .info-table th { background: var(--bg-th); color: var(--gold); font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.08em; text-align: left; }
+    .info-table td { color: var(--text-dim); }
+    .info-table td:first-child { color: var(--text); font-weight: 600; }
+    .guide-img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border-hi); margin: 1rem 0; display: block; }
+  </style>
 </head>
 <body>
-  <a href="../../../index.html">← Back</a>
-  <h1>How to make Pure White weapon</h1>
-  <p>Placeholder: guide to creating Pure White weapons, required materials, and methods.</p>
+  <a class="back-link" href="../../../index.html">&larr; Back to Home</a>
+  <div class="patch-tag">PATCH 9.8</div>
+  <h1>How to Make a Pure White Weapon / Shield</h1>
+
+  <p>With patch 9.8 you can now obtain an upgrade for your weapons from the <strong>Island of Forgotten Gods</strong> and shields from <strong>Devildom</strong>.</p>
+
+  <h2>Crafting a Pure White Weapon / Shield</h2>
+  <p>Combine the following three items at the upgrade NPC:</p>
+  <div class="step-box">
+    <ul>
+      <li><span class="qty">x1</span> Island of Forgotten Gods Weapon <em>or</em> Devildom Shield (your existing item)</li>
+      <li><span class="qty">x1</span> Clean Circus Dungeon Weapon <em>or</em> Shield (same type)</li>
+      <li><strong>Pure Luciad&rsquo;s Energy</strong> &mdash; <span class="qty">25</span> for a 1-handed weapon / shield &nbsp;&bull;&nbsp; <span class="qty">50</span> for a 2-handed weapon</li>
+    </ul>
+  </div>
+
+  <img class="guide-img" src="../../../images/faq/whiteweapon/white%20weapon.png" alt="Pure White Weapon crafting"/>
+
+  <h2>Luciad&rsquo;s Power — New Maximum</h2>
+  <p>Once upgraded, the maximum enchantment level via <strong>Luciad&rsquo;s Power</strong> is increased from <strong>+32</strong> to <strong>+40</strong>.</p>
+  <table class="info-table">
+    <thead><tr><th>Range</th><th>Material Required</th></tr></thead>
+    <tbody>
+      <tr><td>+0 &rarr; +32</td><td>Luciad&rsquo;s Power (standard)</td></tr>
+      <tr><td>+32 &rarr; +40</td><td>Luciad&rsquo;s Advanced Cube — low drop chance from the new dungeon</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Upgrade Retention</h2>
+  <p>When upgrading your existing weapon or shield, <strong>everything is preserved</strong>:</p>
+  <ul>
+    <li>Enchantment level</li>
+    <li>Awakening</li>
+    <li>Random options</li>
+    <li>Soulstones</li>
+    <li>Weapon shards</li>
+  </ul>
+
+  <h2>Requirement</h2>
+  <div class="warn">
+    &#9888;&nbsp; <strong>Level 210 required.</strong> When upgrading to a Pure White Weapon or Shield, the level requirement to equip the item is raised to <strong>Level 210</strong>.
+  </div>
+
 </body>
 </html>

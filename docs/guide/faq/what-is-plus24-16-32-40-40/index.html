@@ -3,13 +3,143 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>What is +24, 16/32 and 40/40 ?</title>
-  <link rel="stylesheet" href="../../../../css/style.css" />
-  <style>body{padding:2rem;font-family:Georgia,serif;color:#d4c9a8;background:#0a0907} a{color:#e8c96a}</style>
+  <title>Luciad's Power &amp; Enchantment Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:          #0a0907;
+      --bg-card:     #111009;
+      --bg-th:       #1f1a0f;
+      --border:      #c9a84c33;
+      --border-hi:   #c9a84c88;
+      --gold:        #e8c96a;
+      --gold-dim:    #b89940;
+      --text:        #d4c9a8;
+      --text-dim:    #9a8f72;
+      --accent:      #c9a84c;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      padding: 2.5rem 2rem 4rem;
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text);
+      background: var(--bg);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    a { color: var(--gold); }
+    a:hover { color: #fff; }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1.8rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      text-decoration: none;
+    }
+    .back-link:hover { color: var(--gold); }
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      margin: 0 0 0.25rem;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.5rem;
+    }
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      margin: 2.2rem 0 0.8rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border-hi);
+    }
+    p { margin-bottom: 0.75rem; color: var(--text-dim); }
+    strong { color: var(--gold); }
+    ul { padding-left: 1.6rem; margin-bottom: 0.75rem; }
+    li { margin-bottom: 0.3rem; color: var(--text-dim); }
+    li::marker { color: var(--accent); }
+    .step-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-hi);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 1rem 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .note {
+      background: rgba(201,168,76,0.08);
+      border: 1px solid var(--border-hi);
+      border-radius: 4px;
+      padding: 0.6rem 1rem;
+      color: var(--text-dim);
+      font-style: italic;
+      margin: 0.5rem 0 1rem;
+      font-size: 0.97rem;
+    }
+    .note strong { color: var(--gold); font-style: normal; }
+    .img-block { margin: 1.2rem 0; }
+    .img-block img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border-hi); display: block; }
+    .img-caption { font-size: 0.88rem; color: var(--text-dim); font-style: italic; margin-top: 0.4rem; }
+  </style>
 </head>
 <body>
-  <a href="../../../index.html">← Back</a>
-  <h1>What is +24, 16/32 and 40/40 ?</h1>
-  <p>Placeholder explanation: +24 means helmet enhancement, 16/32 and 40/40 refer to upgrade chance/slots — expand with exact game mechanics.</p>
+  <a class="back-link" href="../../../index.html">&larr; Back to Home</a>
+  <h1>Luciad&rsquo;s Power &amp; Enchantment Guide</h1>
+
+  <p>Enchantment above <strong>+20</strong> has changed. Existing equipment at +21 and higher was converted automatically &mdash; stats remain the same.</p>
+
+  <h2>Reaching +20</h2>
+  <p>When a <strong>Rank 7</strong> piece of equipment reaches <strong>+20</strong>, it gains <strong>x1 Luciad&rsquo;s Power</strong>.</p>
+
+  <h2>Increasing Further (Beyond +20)</h2>
+  <p>To increase stats past +20, combine:</p>
+  <div class="step-box">
+    <ul>
+      <li><strong>Luciad&rsquo;s Power Stone: Weapon</strong> <em>or</em> <strong>Luciad&rsquo;s Power Stone: Armor</strong></li>
+      <li><strong>Luciad&rsquo;s Pure Cube</strong> — drops from all bosses level 150 or above</li>
+    </ul>
+  </div>
+
+  <div class="img-block">
+    <img src="../../../images/faq/whiteweapon/enchantementchanges2.png" alt="Combination process"/>
+    <div class="img-caption">Combination — using Luciad&rsquo;s Power Stone + Luciad&rsquo;s Pure Cube</div>
+  </div>
+
+  <h2>Obtaining Luciad&rsquo;s Power Stones</h2>
+  <p>Luciad&rsquo;s Power Stones are obtained by extracting Luciad&rsquo;s Power from a <strong>+20 food item</strong> using a <strong>Luciad&rsquo;s Power Extractor</strong> (purchased from the Smithy for <strong>200,000,000 Rupees</strong>).</p>
+
+  <div class="note">
+    <strong>Extraction rules:</strong>
+    <ul style="margin-top:0.4rem;">
+      <li>One Extractor is needed per 1 Luciad&rsquo;s Power stored in the equipment.</li>
+      <li>32 Luciad&rsquo;s Power stored = 32 Extractors needed.</li>
+      <li>The equipment used to extract will be <strong>destroyed</strong> after extraction.</li>
+      <li>You can only extract the <strong>full amount</strong> of Luciad&rsquo;s Power stored — partial extraction is not possible.</li>
+    </ul>
+  </div>
+
+  <div class="img-block">
+    <img src="../../../images/faq/whiteweapon/enchantementchanges1.png" alt="Extraction process"/>
+    <div class="img-caption">Extraction — converting a +20 food item into a Luciad&rsquo;s Power Stone</div>
+  </div>
+
+  <h2>Enchantment Changes Overview</h2>
+
+  <div class="img-block">
+    <img src="../../../images/faq/whiteweapon/enchantementchanges3.png" alt="Enchantment changes overview"/>
+    <div class="img-caption">Summary of enchantment changes</div>
+  </div>
+
 </body>
 </html>
