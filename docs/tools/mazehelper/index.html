@@ -282,12 +282,12 @@
         </div>
         <span class="sq-detail" id="sq-even-d">—</span>
       </div>
-      <div class="sq" id="sq-squer" style="grid-column:2;grid-row:2">
+      <div class="sq" id="sq-square" style="grid-column:2;grid-row:2">
         <div class="sq-top">
-          <span class="sq-name">Squer</span>
+          <span class="sq-name">Square</span>
           <span class="sq-pos">bottom right</span>
         </div>
-        <span class="sq-detail" id="sq-squer-d">—</span>
+        <span class="sq-detail" id="sq-square-d">—</span>
       </div>
       <div class="nothing-circle" id="nothing-circle">
         <span class="nc-label">NONE</span>
@@ -391,19 +391,19 @@
       }
       const circle = document.getElementById('nothing-circle');
       if (count === 0) {
-        ['even', 'squer', 'prime', 'fib'].forEach(k => {
+        ['even', 'square', 'prime', 'fib'].forEach(k => {
           document.getElementById('sq-' + k).classList.remove('sq-yes', 'sq-no');
           document.getElementById('sq-' + k + '-d').textContent = '—';
         });
         circle.classList.remove('lit');
       } else {
         const even  = total % 2 === 0;
-        const squer = SQUERS.has(total);
+        const square = SQUERS.has(total);
         const prime = PRIMES.has(total);
         const fib   = FIBS.has(total);
         const none  = !even && !squer && !prime && !fib;
         setSq('even',  even,  even  ? '✓ click it' : `${total} is odd — skip`);
-        setSq('squer', squer, squer ? '✓ click it' : `not a perfect square — skip`);
+        setSq('square', square, square ? '✓ click it' : `not a perfect square — skip`);
         setSq('prime', prime, prime ? '✓ click it' : `${total} is not prime — skip`);
         setSq('fib',   fib,   fib   ? '✓ click it' : `not in Fibonacci — skip`);
         circle.classList.toggle('lit', none);
