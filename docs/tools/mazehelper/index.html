@@ -443,7 +443,7 @@
         const square = SQUERS.has(total);
         const prime = PRIMES.has(total);
         const fib   = FIBS.has(total);
-        const none  = !even && !squer && !prime && !fib;
+        const none  = !even && !square && !prime && !fib;
         setSq('even',  even,  even  ? '✓ click it' : `${total} is odd — skip`);
         setSq('square', square, square ? '✓ click it' : `not a perfect square — skip`);
         setSq('prime', prime, prime ? '✓ click it' : `${total} is not prime — skip`);
