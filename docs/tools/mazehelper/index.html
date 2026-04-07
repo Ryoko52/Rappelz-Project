@@ -6,44 +6,81 @@
   <title>Maze Helper – Rappelz Guidelines</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg:        #0d0c0a;
-      --bg2:       #13110e;
-      --bg3:       #1a1712;
-      --bg4:       #221f18;
+      --bg:        #141210;
+      --bg2:       #1c1a15;
+      --bg3:       #252118;
+      --bg4:       #302c22;
       --gold:      #c9a84c;
-      --gold-dim:  #8a6e2f;
-      --gold-glow: rgba(201,168,76,0.18);
-      --text:      #e8dfc8;
-      --text-dim:  #9a9080;
-      --text-hint: #5c5548;
-      --border:    rgba(201,168,76,0.2);
-      --border-hi: rgba(201,168,76,0.5);
+      --gold-dim:  #a08840;
+      --gold-glow: rgba(201,168,76,0.22);
+      --text:      #ede5ce;
+      --text-dim:  #b0a898;
+      --text-hint: #7a7060;
+      --border:    rgba(201,168,76,0.28);
+      --border-hi: rgba(201,168,76,0.6);
       --success:   #4a7c4e;
-      --success-bg:#0f2211;
-      --success-border: rgba(74,124,78,0.6);
+      --success-bg:#162d1a;
+      --success-border: rgba(74,124,78,0.7);
       --warn:      #b87a2a;
-      --warn-bg:   #1e1208;
-      --warn-border: rgba(184,122,42,0.6);
+      --warn-bg:   #28190a;
+      --warn-border: rgba(184,122,42,0.7);
       --radius:    10px;
       --radius-lg: 14px;
     }
     html { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; }
-    nav {
-      background: var(--bg2);
-      border-bottom: 1px solid var(--border);
-      padding: 0 2rem;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 56px;
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: rgba(13,12,10,0.85);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      backdrop-filter: blur(20px) saturate(1.5);
+      padding: 0 2.5rem;
     }
-    .nav-back {
-      font-size: 13px; color: var(--text-dim);
-      text-decoration: none; transition: color 0.2s;
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      height: 60px;
     }
-    .nav-back:hover { color: var(--gold); }
+    .logo {
+      font-family: 'Cinzel', serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.2em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .logo span {
+      color: var(--text-hint);
+      font-weight: 400;
+      font-size: 0.65rem;
+      margin-left: 6px;
+      letter-spacing: 0.15em;
+    }
+    nav.topnav a {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--text-dim);
+      text-decoration: none;
+      padding: 0 1.2rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      text-transform: uppercase;
+    }
+    nav.topnav a:hover { color: var(--gold); border-bottom-color: var(--gold); }
     .hero {
       text-align: center;
       padding: 3rem 1rem 2rem;
@@ -234,9 +271,14 @@
   </style>
 </head>
 <body>
-  <nav>
-    <a class="nav-back" href="https://ryoko52.github.io/Rappelz-Project/">← Back to homepage</a>
-  </nav>
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="../../">RAPPELZ<span>GUIDELINES</span></a>
+      <nav class="topnav">
+        <a href="../../">← Back to Home</a>
+      </nav>
+    </div>
+  </header>
   <div class="hero">
     <p class="hero-tag">Tools · Maze</p>
     <h1>Maze Helper</h1>
