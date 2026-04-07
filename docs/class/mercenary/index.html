@@ -3,250 +3,1215 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Mercenary Class Guide</title>
+<title>Mercenary — Rappelz Guidelines</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
 <style>
-  :root { --bg0: #0a0907; --bg1: #111009; --bg2: #1a1710; --bg3: #242015; --gold: #c9a84c; --gold2: #e8c96a; --gold3: #f5e098; --gold-dim: #7a6330; --text: #d4c9a8; --text2: #a09070; --text3: #6a5f45; --border: rgba(201,168,76,0.18); }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  ul, ol { padding-left: 3.2rem; }
-  a.content-link { color: var(--gold2); text-decoration: underline; }
-  a.content-link:hover { color: var(--gold3); }
-  html { scroll-behavior: smooth; }
-  body { background: var(--bg0); color: var(--text); font-family: 'Crimson Pro', Georgia, serif; font-size: 20px; line-height: 1.75; min-height: 100vh; }
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: var(--bg1); }
-  ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
-  header { position: sticky; top: 0; z-index: 100; background: rgba(10,9,7,0.92); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); padding: 0 2rem; }
-  .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 2rem; height: 58px; }
-  .logo { font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700; color: var(--gold2); letter-spacing: 0.12em; text-decoration: none; white-space: nowrap; text-shadow: 0 0 20px rgba(201,168,76,0.4); }
-  nav { display: flex; gap: 0; flex: 1; }
-  nav a { font-family: 'Cinzel', serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; color: var(--text2); text-decoration: none; padding: 0 1rem; height: 58px; display: flex; align-items: center; border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s; }
-  nav a:hover { color: var(--gold2); border-bottom-color: var(--gold); }
-  .page { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
-  h1 { font-family: 'Cinzel', serif; font-size: 2.5rem; font-weight: 700; color: var(--gold3); margin-bottom: 1rem; }
-  h2 { font-family: 'Cinzel', serif; font-size: 1.5rem; color: var(--gold2); margin: 2rem 0 1rem; }
-  p { margin-bottom: 1rem; color: var(--text2); }
-  .back-link { font-family: 'Cinzel', serif; font-size: 0.8rem; color: var(--gold-dim); text-decoration: none; margin-bottom: 2rem; display: inline-block; }
-  .back-link:hover { color: var(--gold2); }
-  .tier-badge { display: inline-block; background: var(--bg3); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 3px; color: var(--text2); font-size: 0.9rem; margin-bottom: 1rem; }
-  .info-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
-  .info-table th, .info-table td { padding: 0.5rem 0.8rem; border: 1px solid var(--border); font-size: 1.05em; }
-  .info-table th { background: var(--bg3); color: var(--gold2); font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.08em; text-align: left; }
-  .info-table td { color: var(--text2); }
-  .info-table td:first-child { color: var(--text); font-weight: 600; white-space: nowrap; width: 160px; }
-  h3 { font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--gold-dim); margin: 1.5rem 0 0.5rem; }
-  .placeholder { color: var(--text3); font-style: italic; }
-  .priority-list { color: var(--text2); padding-left: 1.5rem; margin-bottom: 1.5rem; }
-  .priority-list li { margin-bottom: 0.5rem; }
-  .priority-list li::marker { color: var(--gold2); font-weight: 600; }
-  footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--text3); font-size: 0.82rem; font-style: italic; margin-top: 4rem; }
-  .toc { background: var(--bg2); border: 1px solid rgba(201,168,76,0.5); border-left: 3px solid var(--gold); padding: 1.2rem 1.6rem; margin-bottom: 2.5rem; }
-  .toc h2.toc-heading { font-family: 'Cinzel', serif; font-size: 0.85rem; font-weight: 600; color: var(--gold2); letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 0.75rem; border: none; padding: 0; }
-  .toc ul { list-style: none; padding-left: 0; margin: 0; columns: 2; column-gap: 2rem; }
-  @media (max-width: 500px) { .toc ul { columns: 1; } }
-  .toc li { padding: 0.2rem 0; margin: 0; }
-  .toc a { color: var(--gold-dim); text-decoration: none; font-size: 0.93rem; transition: color 0.15s, border-color 0.15s; border-bottom: 1px dashed rgba(201,168,76,0.5); padding-bottom: 1px; }
-  .toc a::before { content: '\25B8\00A0'; color: var(--gold); font-size: 0.75em; }
-  .toc a:hover { color: var(--gold3); border-bottom-color: var(--gold2); }
+/* ── TOKENS ─────────────────────────────────────────── */
+:root {
+  --bg0: #141219;
+  --bg1: #1b1925;
+  --bg2: #222033;
+  --bg3: #2c2a40;
+  --gold: #c9a84c;
+  --gold2: #e8c96a;
+  --gold3: #f5e098;
+  --gold-dim: #9a7d40;
+  --crimson: #a02020;
+  --crimson2: #c0392b;
+  --blood: #6e1515;
+  --steel: #94a3b8;
+  --steel2: #64748b;
+  --text: #ede5d0;
+  --text2: #c0ae96;
+  --text3: #7a6e58;
+  --border: rgba(201,168,76,0.2);
+  --glow: rgba(201,168,76,0.35);
+  --red-glow: rgba(192,57,43,0.4);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg0);
+  color: var(--text);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.8;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── ANIMATED BACKGROUND ────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(160,32,32,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 100%, rgba(201,168,76,0.09) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 10% 60%, rgba(40,30,75,0.35) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Animated noise grain overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: -200%;
+  width: 400%;
+  height: 400%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+  animation: grain 8s steps(10) infinite;
+}
+@keyframes grain {
+  0%,100% { transform: translate(0,0); }
+  10% { transform: translate(-5%,-10%); }
+  20% { transform: translate(-15%,5%); }
+  30% { transform: translate(7%,-25%); }
+  40% { transform: translate(-5%,25%); }
+  50% { transform: translate(-15%,10%); }
+  60% { transform: translate(15%,0%); }
+  70% { transform: translate(0%,15%); }
+  80% { transform: translate(3%,35%); }
+  90% { transform: translate(-10%,10%); }
+}
+
+/* ── SCROLLBAR ──────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg1); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--crimson2), var(--gold-dim));
+  border-radius: 3px;
+}
+
+/* ── HEADER ─────────────────────────────────────────── */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: rgba(6,5,10,0.85);
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+  backdrop-filter: blur(20px) saturate(1.5);
+  padding: 0 2.5rem;
+}
+
+.header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  height: 60px;
+}
+
+.logo {
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--gold2);
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.logo span {
+  color: var(--text3);
+  font-weight: 400;
+  font-size: 0.65rem;
+  margin-left: 6px;
+  letter-spacing: 0.15em;
+}
+
+nav.topnav a {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--text3);
+  text-decoration: none;
+  padding: 0 1.2rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  text-transform: uppercase;
+}
+nav.topnav a:hover { color: var(--gold2); border-bottom-color: var(--gold); }
+
+/* ── HERO BANNER ────────────────────────────────────── */
+.hero {
+  position: relative;
+  padding: 5rem 2.5rem 4rem;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(139,26,26,0.15), transparent 70%),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 60px,
+      rgba(201,168,76,0.015) 60px,
+      rgba(201,168,76,0.015) 61px
+    );
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.breadcrumb {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 2rem;
+}
+.breadcrumb a { color: var(--gold-dim); text-decoration: none; }
+.breadcrumb a:hover { color: var(--gold2); }
+.breadcrumb .sep { margin: 0 0.6rem; color: var(--text3); }
+
+.hero-title-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+/* Big decorative letter */
+.hero-letter {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 11rem;
+  font-weight: 900;
+  line-height: 0.85;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(201,168,76,0.2);
+  background: linear-gradient(135deg, rgba(201,168,76,0.6) 0%, rgba(139,26,26,0.4) 50%, transparent 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  user-select: none;
+  filter: drop-shadow(0 0 40px rgba(201,168,76,0.15));
+  flex-shrink: 0;
+  animation: pulse-letter 4s ease-in-out infinite;
+}
+@keyframes pulse-letter {
+  0%,100% { opacity: 0.85; }
+  50% { opacity: 1; }
+}
+
+.hero-text { padding-top: 0.5rem; }
+
+.class-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--crimson2);
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.class-eyebrow::before,
+.class-eyebrow::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 30px;
+  background: var(--crimson);
+}
+
+h1.class-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--gold3);
+  line-height: 1.1;
+  text-shadow:
+    0 0 80px rgba(201,168,76,0.5),
+    0 0 20px rgba(201,168,76,0.2);
+  margin-bottom: 1rem;
+  letter-spacing: 0.04em;
+}
+
+.tier-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, rgba(139,26,26,0.4), rgba(90,15,15,0.6));
+  border: 1px solid rgba(192,57,43,0.4);
+  border-radius: 2px;
+  padding: 0.3rem 1rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #e07070;
+  text-transform: uppercase;
+  box-shadow: 0 0 20px rgba(192,57,43,0.2), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+.tier-pill .tier-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--crimson2);
+  box-shadow: 0 0 8px var(--crimson2);
+  animation: blink 2s ease-in-out infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+.hero-meta {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+.meta-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.meta-chip .label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text3);
+}
+.meta-chip .value {
+  font-size: 1rem;
+  color: var(--text);
+  font-weight: 600;
+}
+.meta-divider {
+  width: 1px;
+  background: var(--border);
+  align-self: stretch;
+}
+
+/* ── HORIZONTAL RULE ────────────────────────────────── */
+.divider {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-dim), var(--crimson), var(--gold-dim), transparent);
+  opacity: 0.4;
+}
+
+/* ── LAYOUT ─────────────────────────────────────────── */
+.page-body {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem 2.5rem 5rem;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* ── STICKY SIDEBAR TOC ─────────────────────────────── */
+.sidebar {
+  position: sticky;
+  top: 80px;
+}
+
+.toc-card {
+  background: linear-gradient(160deg, var(--bg2), var(--bg1));
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--gold-dim);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.toc-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 80px; height: 80px;
+  background: radial-gradient(circle at top right, rgba(201,168,76,0.08), transparent 70%);
+}
+
+.toc-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.toc-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.toc-list { list-style: none; }
+.toc-list li { }
+.toc-list a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.35rem 0;
+  font-size: 0.82rem;
+  color: var(--text3);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, padding-left 0.15s;
+  font-family: 'Crimson Pro', serif;
+  border-left: 2px solid transparent;
+  padding-left: 0.5rem;
+}
+.toc-list a::before {
+  content: '◆';
+  font-size: 0.4rem;
+  color: var(--gold-dim);
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+.toc-list a:hover {
+  color: var(--gold2);
+  padding-left: 0.8rem;
+  border-left-color: var(--gold-dim);
+}
+.toc-list a:hover::before { color: var(--gold); }
+
+/* ── MAIN CONTENT ───────────────────────────────────── */
+.content > * { animation: fadeUp 0.5s ease both; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* section headings */
+.section-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold2);
+  margin: 3rem 0 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  scroll-margin-top: 80px;
+}
+.section-heading::before {
+  content: '';
+  width: 3px;
+  height: 1.4em;
+  background: linear-gradient(to bottom, var(--crimson2), var(--gold-dim));
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.section-heading::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--border), transparent);
+}
+
+.sub-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin: 1.8rem 0 0.8rem;
+  opacity: 0.9;
+}
+
+p {
+  color: var(--text2);
+  margin-bottom: 1rem;
+  max-width: 72ch;
+}
+
+/* ── OVERVIEW CARDS ─────────────────────────────────── */
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.overview-cell {
+  background: var(--bg1);
+  padding: 1rem 1.2rem;
+  transition: background 0.2s;
+}
+.overview-cell:hover { background: var(--bg2); }
+
+.overview-cell .ov-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 0.3rem;
+}
+.overview-cell .ov-value {
+  font-size: 1rem;
+  color: var(--text);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* ── SKILL LISTS ────────────────────────────────────── */
+.skill-category {
+  margin-bottom: 1.5rem;
+}
+
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.55rem 1rem;
+  background: linear-gradient(90deg, var(--bg2), var(--bg1));
+  border: 1px solid transparent;
+  border-left: 2px solid transparent;
+  border-radius: 2px;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  cursor: default;
+}
+.skill-item:hover {
+  background: linear-gradient(90deg, var(--bg3), var(--bg2));
+  border-left-color: var(--gold-dim);
+  border-color: rgba(201,168,76,0.1);
+  transform: translateX(3px);
+}
+
+.skill-icon-wrap {
+  width: 32px; height: 32px;
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 3px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--bg0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.skill-icon-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9) saturate(0.8);
+  transition: filter 0.2s;
+}
+.skill-item:hover .skill-icon-wrap img {
+  filter: brightness(1.1) saturate(1.1);
+}
+
+/* placeholder icon for missing images */
+.skill-icon-placeholder {
+  width: 32px; height: 32px;
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 3px;
+  background: var(--bg3);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  color: var(--gold-dim);
+  font-family: 'Cinzel', serif;
+}
+
+.skill-name {
+  font-size: 1rem;
+  color: var(--text);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.skill-note {
+  font-size: 0.85rem;
+  color: var(--text3);
+  font-style: italic;
+  margin-left: 0.3rem;
+}
+
+/* ── INFO TABLE ─────────────────────────────────────── */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.data-table thead tr {
+  background: linear-gradient(90deg, rgba(139,26,26,0.25), rgba(90,15,15,0.1));
+}
+
+.data-table th {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold2);
+  padding: 0.7rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(192,57,43,0.3);
+  font-weight: 600;
+}
+
+.data-table td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--text2);
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.data-table td:first-child {
+  color: var(--text);
+  font-weight: 600;
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  width: 160px;
+}
+
+.data-table tr:hover td { background: rgba(201,168,76,0.02); }
+
+.data-table td[colspan] {
+  color: var(--gold2) !important;
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding-top: 1rem;
+  border-bottom-color: rgba(201,168,76,0.15);
+}
+
+/* ── ORDERED LIST / PROGRESSION ─────────────────────── */
+.gear-steps {
+  list-style: none;
+  counter-reset: step;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+.gear-steps li {
+  counter-increment: step;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.8rem 1.1rem;
+  background: var(--bg1);
+  border: 1px solid rgba(255,255,255,0.03);
+  border-radius: 2px;
+  color: var(--text2);
+  font-size: 0.95rem;
+  position: relative;
+  transition: background 0.2s, border-color 0.2s;
+}
+.gear-steps li:hover {
+  background: var(--bg2);
+  border-color: var(--border);
+}
+.gear-steps li::before {
+  content: counter(step, decimal-leading-zero);
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--gold-dim);
+  letter-spacing: 0.1em;
+  flex-shrink: 0;
+  padding-top: 0.1em;
+  min-width: 24px;
+}
+
+/* bullet lists */
+.bullet-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1.5rem;
+}
+.bullet-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  color: var(--text2);
+  font-size: 0.95rem;
+  padding: 0.2rem 0;
+}
+.bullet-list li::before {
+  content: '▸';
+  color: var(--gold-dim);
+  font-size: 0.75em;
+  flex-shrink: 0;
+  padding-top: 0.25em;
+}
+
+/* ── TIPS CARDS ─────────────────────────────────────── */
+.tips-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+.tip-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  background: linear-gradient(135deg, rgba(201,168,76,0.04), rgba(139,26,26,0.06));
+  border: 1px solid rgba(201,168,76,0.08);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: 2px;
+  transition: border-left-color 0.2s;
+}
+.tip-card:hover { border-left-color: var(--gold2); }
+.tip-num {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: rgba(201,168,76,0.15);
+  flex-shrink: 0;
+  line-height: 1.2;
+  min-width: 2rem;
+  text-align: center;
+}
+.tip-text {
+  color: var(--text2);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding-top: 0.1rem;
+}
+
+/* ── ENDGAME RATINGS ─────────────────────────────────── */
+.ratings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.rating-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  padding: 1.2rem 1.4rem;
+  text-align: center;
+}
+.rating-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 0.5rem;
+}
+.rating-score {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--gold2);
+  line-height: 1;
+  text-shadow: 0 0 30px rgba(201,168,76,0.3);
+}
+.rating-score sub {
+  font-size: 1rem;
+  color: var(--text3);
+  vertical-align: baseline;
+}
+.rating-bar {
+  margin-top: 0.7rem;
+  height: 3px;
+  background: var(--bg3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.rating-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(to right, var(--crimson), var(--gold2));
+  transition: width 1s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* ── LINKS ──────────────────────────────────────────── */
+a.content-link {
+  color: var(--gold2);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201,168,76,0.3);
+  transition: color 0.15s, border-color 0.15s;
+}
+a.content-link:hover {
+  color: var(--gold3);
+  border-bottom-color: var(--gold3);
+}
+
+/* ── TITLES SECTION ─────────────────────────────────── */
+.title-group { margin-bottom: 1.5rem; }
+.title-group-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 0.6rem;
+  padding-left: 0.8rem;
+  border-left: 2px solid var(--gold-dim);
+}
+
+/* ── GAMEPLAY PROSE ─────────────────────────────────── */
+.gameplay-block {
+  background: linear-gradient(135deg, rgba(255,255,255,0.015), transparent);
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 1rem;
+  border-radius: 2px;
+  position: relative;
+}
+.gameplay-block p { color: var(--text2); margin: 0; }
+.gameplay-block p + p { margin-top: 0.8rem; }
+
+/* inline skill icon within text */
+.inline-icon {
+  height: 24px;
+  vertical-align: middle;
+  margin: 0 3px;
+  border-radius: 2px;
+  opacity: 0.9;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+.footer-logo {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 0.85rem;
+  color: var(--gold-dim);
+  letter-spacing: 0.25em;
+  margin-bottom: 0.4rem;
+}
+.footer-sub {
+  font-size: 0.75rem;
+  color: var(--text3);
+  font-style: italic;
+}
+
+/* ── BACK LINK ──────────────────────────────────────── */
+.back-link {
+  display: none; /* handled by breadcrumb */
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────── */
+@media (max-width: 900px) {
+  .page-body {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .sidebar { position: static; margin-bottom: 2rem; }
+  h1.class-title { font-size: 2.6rem; }
+  .hero-letter { font-size: 7rem; }
+  .ratings-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .hero { padding: 3rem 1.2rem 2.5rem; }
+  .page-body { padding: 2rem 1.2rem; }
+  h1.class-title { font-size: 2rem; }
+  .hero-letter { display: none; }
+  .overview-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── SECTION SCROLL ANIMATION ───────────────────────── */
+[data-section] { scroll-margin-top: 80px; }
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
   <div class="header-inner">
-    <a class="logo" href="../../">RAPPELZ<span style="color:var(--text3);font-weight:400;font-size:0.75rem;margin-left:4px;">GUIDELINES</span></a>
-    <nav>
-      <a href="../../">&larr; Back to Home</a>
+    <a class="logo" href="../../">RAPPELZ<span>GUIDELINES</span></a>
+    <nav class="topnav">
+      <a href="../../">← Back to Home</a>
     </nav>
   </div>
 </header>
 
-<div class="page">
-  <a class="back-link" href="../../">&larr; Back to Home</a>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="breadcrumb">
+      <a href="../../">Home</a>
+      <span class="sep">›</span>
+      Classes
+      <span class="sep">›</span>
+      Mercenary
+    </div>
 
-  <h1>Mercenary</h1>
-  <span class="tier-badge">A Tier</span>
+    <div class="hero-title-block">
+      <div class="hero-letter">M</div>
+      <div class="hero-text">
+        <div class="class-eyebrow">Class Guide</div>
+        <h1 class="class-title">Mercenary</h1>
+        <div class="tier-pill">
+          <span class="tier-dot"></span>
+          A Tier
+        </div>
+        <div class="hero-meta">
+          <div class="meta-chip">
+            <span class="label">Role</span>
+            <span class="value">DPS / Tank</span>
+          </div>
+          <div class="meta-divider"></div>
+          <div class="meta-chip">
+            <span class="label">Difficulty</span>
+            <span class="value">Easy</span>
+          </div>
+          <div class="meta-divider"></div>
+          <div class="meta-chip">
+            <span class="label">Weapon</span>
+            <span class="value">Spear (2H)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <nav class="toc" aria-label="Table of contents">
-    <h2 class="toc-heading">Table of Contents</h2>
-    <ul>
-      <li><a href="#overview">Overview</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#gameplay">Gameplay</a></li>
-      <li><a href="#talent-build">Talent Build</a></li>
-      <li><a href="#stats">Stats</a></li>
-      <li><a href="#accessories">Accessories</a></li>
-      <li><a href="#pets-belt">Pets &amp; Belt</a></li>
-      <li><a href="#gear">Gear</a></li>
-      <li><a href="#titles">Titles</a></li>
-      <li><a href="#leveling">Leveling Progression</a></li>
-      <li><a href="#tips">Tips</a></li>
-      <li><a href="#endgame">Endgame</a></li>
+<div class="divider"></div>
+
+<!-- BODY -->
+<div class="page-body">
+
+  <!-- SIDEBAR TOC -->
+  <aside class="sidebar">
+    <nav class="toc-card" aria-label="Table of contents">
+      <div class="toc-title">Contents</div>
+      <ul class="toc-list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#gameplay">Gameplay</a></li>
+        <li><a href="#talent-build">Talent Build</a></li>
+        <li><a href="#stats">Stats</a></li>
+        <li><a href="#accessories">Accessories</a></li>
+        <li><a href="#pets-belt">Pets &amp; Belt</a></li>
+        <li><a href="#gear">Gear</a></li>
+        <li><a href="#titles">Titles</a></li>
+        <li><a href="#leveling">Leveling</a></li>
+        <li><a href="#tips">Tips</a></li>
+        <li><a href="#endgame">Endgame</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- OVERVIEW -->
+    <h2 class="section-heading" id="overview" data-section>Overview</h2>
+    <div class="overview-grid">
+      <div class="overview-cell">
+        <div class="ov-label">Role</div>
+        <div class="ov-value">DPS / Tank</div>
+      </div>
+      <div class="overview-cell">
+        <div class="ov-label">Difficulty</div>
+        <div class="ov-value">Easy</div>
+      </div>
+      <div class="overview-cell">
+        <div class="ov-label">Strengths</div>
+        <div class="ov-value">Easy survivability in early game</div>
+      </div>
+      <div class="overview-cell">
+        <div class="ov-label">Weaknesses</div>
+        <div class="ov-value">Jack of all trades, master of none</div>
+      </div>
+      <div class="overview-cell" style="grid-column: 1 / -1;">
+        <div class="ov-label">Why Play It</div>
+        <div class="ov-value">The typical Excalibur class — just with a Spear (which is still cool)</div>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <h2 class="section-heading" id="skills" data-section>Skills</h2>
+
+    <div class="skill-category">
+      <div class="sub-heading">Toggles / Buffs</div>
+      <ul class="skill-list">
+        <li class="skill-item">
+          <div class="skill-icon-wrap"><img src="../../images/classes/Mercenary/blessing.jpg" alt=""/></div>
+          <span class="skill-name">Blessing</span>
+        </li>
+        <li class="skill-item">
+          <div class="skill-icon-wrap"><img src="../../images/classes/Mercenary/divineclsuter.jpg" alt=""/></div>
+          <span class="skill-name">Divine Cluster</span>
+        </li>
+        <li class="skill-item">
+          <div class="skill-icon-wrap"><img src="../../images/classes/Mercenary/holyaura.jpg" alt=""/></div>
+          <span class="skill-name">Holy Aura</span>
+        </li>
+        <li class="skill-item">
+          <div class="skill-icon-wrap"><img src="../../images/classes/Mercenary/defstance.jpg" alt=""/></div>
+          <span class="skill-name">Defensive Stance</span>
+        </li>
+        <li class="skill-item" style="border-left-color: var(--gold-dim);">
+          <div class="skill-icon-wrap"><img src="../../images/classes/Mercenary/Invigaura.jpg" alt=""/></div>
+          <span class="skill-name">Invigorating Essence</span>
+          <span class="skill-note">— your main skill in gear!</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="skill-category">
+      <div class="sub-heading">Single Target</div>
+      <ul class="skill-list">
+        <li class="skill-item">
+          <div class="skill-icon-wrap"><img src="../../images/classes/Mercenary/divinecross.jpg" alt=""/></div>
+          <span class="skill-name">Divine Cross</span>
+        </li>
+        <li class="skill-item">
+          <div class="skill-icon-wrap"><img src="../../images/classes/Mercenary/laserblade.jpg" alt=""/></div>
+          <span class="skill-name">Laser Blade</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="skill-category">
+      <div class="sub-heading">AoE</div>
+      <ul class="skill-list">
+        <li class="skill-item">
+          <div class="skill-icon-wrap"><img src="../../images/classes/Mercenary/wildstream.jpg" alt=""/></div>
+          <span class="skill-name">Wild Stream</span>
+        </li>
+        <li class="skill-item">
+          <div class="skill-icon-wrap"><img src="../../images/classes/Mercenary/dualstrike.jpg" alt=""/></div>
+          <span class="skill-name">Dual Strike</span>
+        </li>
+        <li class="skill-item">
+          <div class="skill-icon-wrap"><img src="../../images/classes/Mercenary/deathblow.jpg" alt=""/></div>
+          <span class="skill-name">Deathblow</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="skill-category">
+      <div class="sub-heading">Utility</div>
+      <ul class="skill-list">
+        <li class="skill-item">
+          <div class="skill-icon-wrap"><img src="../../images/classes/Mercenary/hateaura.jpg" alt=""/></div>
+          <span class="skill-name">Hate Aura</span>
+          <span class="skill-note">— for pulling</span>
+        </li>
+        <li class="skill-item">
+          <div class="skill-icon-wrap"><img src="../../images/classes/Mercenary/lightspeed.jpg" alt=""/></div>
+          <span class="skill-name">Light Speed</span>
+          <span class="skill-note">— for… speeeeeeeed</span>
+        </li>
+        <li class="skill-item">
+          <div class="skill-icon-wrap"><img src="../../images/classes/Mercenary/immortality.jpg" alt=""/></div>
+          <span class="skill-name">Immortality</span>
+          <span class="skill-note">— survive at 1 HP for a few seconds</span>
+        </li>
+        <li class="skill-item">
+          <div class="skill-icon-wrap"><img src="../../images/classes/Mercenary/provocation.jpg" alt=""/></div>
+          <span class="skill-name">Provocation</span>
+        </li>
+        <li class="skill-item">
+          <div class="skill-icon-wrap"><img src="../../images/classes/Mercenary/divineflash.jpg" alt=""/></div>
+          <span class="skill-name">Divine Flash</span>
+          <span class="skill-note">— prevents mobs from attacking for 2 seconds</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="skill-category">
+      <div class="sub-heading">Breakers</div>
+      <ul class="skill-list">
+        <li class="skill-item">
+          <div class="skill-icon-wrap"><img src="../../images/classes/Mercenary/offensebreaker.jpg" alt=""/></div>
+          <span class="skill-name">Offense Breaker</span>
+        </li>
+        <li class="skill-item">
+          <div class="skill-icon-wrap"><img src="../../images/classes/Mercenary/defensebreaker.jpg" alt=""/></div>
+          <span class="skill-name">Defense Breaker</span>
+        </li>
+        <li class="skill-item">
+          <div class="skill-icon-wrap"><img src="../../images/classes/Mercenary/mentalbreaker.jpg" alt=""/></div>
+          <span class="skill-name">Mental Breaker</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="skill-category">
+      <div class="sub-heading">Passives</div>
+      <ul class="skill-list">
+        <li class="skill-item" style="border-left-color: var(--gold-dim);">
+          <div class="skill-icon-wrap"><img src="../../images/classes/Mercenary/lustforblood.jpg" alt=""/></div>
+          <span class="skill-name">Lust for Blood</span>
+          <span class="skill-note">— alt skill on gear if no Invigorating Essence</span>
+        </li>
+        <li class="skill-item">
+          <div class="skill-icon-wrap"><img src="../../images/classes/Mercenary/deflection.jpg" alt=""/></div>
+          <span class="skill-name">Desperate Deflection</span>
+        </li>
+        <li class="skill-item">
+          <div class="skill-icon-wrap"><img src="../../images/classes/Mercenary/franticdefense.jpg" alt=""/></div>
+          <span class="skill-name">Frantic Defense</span>
+        </li>
+        <li class="skill-item">
+          <div class="skill-icon-wrap"><img src="../../images/classes/Mercenary/recklessvivacity.jpg" alt=""/></div>
+          <span class="skill-name">Reckless Vivacity</span>
+        </li>
+        <li class="skill-item">
+          <div class="skill-icon-wrap"><img src="../../images/classes/Mercenary/acceleratedcasting.jpg" alt=""/></div>
+          <span class="skill-name">Accelerated Casting</span>
+          <span class="skill-note">— requires 2H weapon equipped</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- GAMEPLAY -->
+    <h2 class="section-heading" id="gameplay" data-section>Gameplay</h2>
+    <div class="gameplay-block">
+      <p>The playstyle of Mercenary is one of if not the easiest in the game, which is why it is always recommended to start with this class as a new player.</p>
+      <p>Activate your buffs and toggles, use <strong>Hate Aura</strong> <img src="../../images/classes/Mercenary/hateaura.jpg" class="inline-icon" alt=""/> to pull mobs, then cast <strong>Defense Breaker</strong> <img src="../../images/classes/Mercenary/defensebreaker.jpg" class="inline-icon" alt=""/> before your main AoE. This benefits both Tactical Advantage and <strong>Lust for Blood</strong> <img src="../../images/classes/Mercenary/lustforblood.jpg" class="inline-icon" alt=""/> in case Holy Aura hasn't procced yet. Then use your main AoE skills: <strong>Wild Stream</strong> <img src="../../images/classes/Mercenary/wildstream.jpg" class="inline-icon" alt=""/> and <strong>Dual Strike</strong> <img src="../../images/classes/Mercenary/dualstrike.jpg" class="inline-icon" alt=""/>. Use <strong>Divine Flash</strong> <img src="../../images/classes/Mercenary/divineflash.jpg" class="inline-icon" alt=""/> to prevent mobs from attacking for 2 seconds — a safe window to finish them off.</p>
+      <p>You do not need to worry much about healing and defenses thanks to <strong>Desperate Deflection</strong>, <strong>Frantic Defense</strong>, and <strong>Reckless Vivacity</strong> boosting P.Def, HP, and damage reduction — combined with the Lunacy boss card.</p>
+      <p>You must equip a 2H weapon (preferably Spear 170) to activate <strong>Accelerated Casting</strong> <img src="../../images/classes/Mercenary/acceleratedcasting.jpg" class="inline-icon" alt=""/>, which reduces skill cooldowns by 45.5% at level 13 (with R2 Helmet +20, DT buff, and Bear Belt).</p>
+    </div>
+
+    <!-- TALENT BUILD -->
+    <h2 class="section-heading" id="talent-build" data-section>Talent Build</h2>
+    <table class="data-table">
+      <thead><tr><th>Points</th><th>Allocation</th></tr></thead>
+      <tbody>
+        <tr><td>5 TP</td><td>3 | 2 | 0</td></tr>
+        <tr><td>6 TP</td><td>3 | 3 | 0</td></tr>
+        <tr><td>7 TP</td><td>3 | 3 | 1</td></tr>
+        <tr><td>9 TP</td><td>3 | 3 | 3</td></tr>
+      </tbody>
+    </table>
+
+    <!-- STATS -->
+    <h2 class="section-heading" id="stats" data-section>Stats</h2>
+    <table class="data-table">
+      <thead><tr><th>Priority</th><th>Stats</th></tr></thead>
+      <tbody>
+        <tr><td>Damage</td><td>Critical Rate, Critical Power, STR</td></tr>
+        <tr><td>Defense</td><td>Vitality — more Vitality means more HP and P.Def</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ACCESSORIES -->
+    <h2 class="section-heading" id="accessories" data-section>Accessories</h2>
+    <table class="data-table">
+      <thead><tr><th>Setup</th><th>Accessories</th></tr></thead>
+      <tbody>
+        <tr><td>Damage</td><td>Rings with 40+ STR / 20+ CP, the 3rd stat could be movement speed, Evasion, or P.Atk depending on what you need.</td></tr>
+        <tr><td>Defense</td><td>Rings with 40+ Vitality / 20+ CP, the 3rd stat could be movement speed, Evasion, or P.Atk depending on what you need.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- PETS & BELT -->
+    <h2 class="section-heading" id="pets-belt" data-section>Pets &amp; Belt</h2>
+    <table class="data-table">
+      <thead><tr><th>Setup</th><th>Details</th></tr></thead>
+      <tbody>
+        <tr><td>Early</td><td>2 Kenta + 1 Cube + Lunacy</td></tr>
+        <tr><td>Normal</td><td>3 Mino S1 + Lunacy</td></tr>
+        <tr><td>Full</td><td>3 Mino S1 + 2 Snowman + Reviac + Lunacy / P.Hector + Devil Skeleton</td></tr>
+        <tr><td>Belt</td><td>All passives and Physical Deva</td></tr>
+        <tr><td>Summoned Pet</td><td><a class="content-link" href="../../pet/bloodthirsty-slaughterer.html">Bloodthirsty Slaughterer</a></td></tr>
+      </tbody>
+    </table>
+
+    <!-- GEAR -->
+    <h2 class="section-heading" id="gear" data-section>Gear</h2>
+    <div class="sub-heading">Progression Path</div>
+    <ol class="gear-steps">
+      <li>R2 helmet +20 (all skills +1)</li>
+      <li>R6 +15 gear from Hidden Sanctuary</li>
+      <li>Circus weapons and accessories from Circus dungeon</li>
+      <li>Parallel World gear (trash stats 2 slots with Invigorating Aura, or max slots per gear — depends on what you find)</li>
+      <li>Island of Gods weapons and rings</li>
+      <li>DD Accessories and Yushiva belt</li>
+      <li>Lava gear (boots, gloves, armor, helmet)</li>
+      <li>Medal</li>
+      <li>Emblem</li>
+    </ol>
+
+    <div class="sub-heading">Optimization</div>
+    <p>Upgrade the above when applicable (more slots in belt, +24 weapon, +24 Medusa helmet, better stats on gear). Always prioritize:</p>
+    <ul class="bullet-list">
+      <li>Evasion and movement speed on boots | Evasion or CP on armor, Emblem, Medal</li>
+      <li>Accuracy on gloves, medal or emblem</li>
     </ul>
-  </nav>
 
-  <h2 id="overview">Overview</h2>
-  <table class="info-table">
-    <tr><td><strong>Role</strong></td><td>DPS / Tank</td></tr>
-    <tr><td><strong>Difficulty</strong></td><td>Easy</td></tr>
-    <tr><td><strong>Strengths</strong></td><td>Easy survivability in early game</td></tr>
-    <tr><td><strong>Weaknesses</strong></td><td>A jack of all trades, master of none!</td></tr>
-    <tr><td><strong>Why Play It</strong></td><td>The typical Excalibur class, just with a Spear (which is still cool)</td></tr>
-  </table>
+    <table class="data-table">
+      <thead>
+        <tr><th colspan="2">Stat Targets &amp; Item Stat Info</th></tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="2">Accuracy Target</td></tr>
+        <tr><td>RoA</td><td>1000+ Accuracy</td></tr>
+        <tr><td>Hidden RoA</td><td>1200+ Accuracy</td></tr>
+        <tr><td>DD6 (lv 180)</td><td>1500+ Accuracy</td></tr>
+        <tr><td>SF (lv 200)</td><td>2000+ Accuracy</td></tr>
+        <tr><td colspan="2">Item Stat Examples</td></tr>
+        <tr><td>Accuracy</td><td>~200+ on gloves, emblem, or medal</td></tr>
+        <tr><td>Evasion</td><td>~160+ on boots, armor, medal, or emblem</td></tr>
+        <tr><td>Move Speed</td><td>~17+ on boots, 30+ on rings</td></tr>
+        <tr><td colspan="2" style="color:var(--text3)!important;font-size:0.85rem;font-style:italic;">Exact min/max stats available in the Discord channel (to be imported here soon).</td></tr>
+      </tbody>
+    </table>
 
-  <!-- ───────────── SKILLS ───────────── -->
-  <h2 id="skills">Skills</h2>
-
-  <h3>Toggles / Buffs</h3>
-  <ul style="padding-left:2.2rem;">
-    <li><img src="../../images/classes/Mercenary/blessing.jpg" alt="Blessing" style="height:28px;vertical-align:middle;margin-right:8px;"/>Blessing</li>
-    <li><img src="../../images/classes/Mercenary/divineclsuter.jpg" alt="Divine Cluster" style="height:28px;vertical-align:middle;margin-right:8px;"/>Divine Cluster</li>
-    <li><img src="../../images/classes/Mercenary/holyaura.jpg" alt="Holy Aura" style="height:28px;vertical-align:middle;margin-right:8px;"/>Holy Aura</li>
-    <li><img src="../../images/classes/Mercenary/defstance.jpg" alt="Defensive Stance" style="height:28px;vertical-align:middle;margin-right:8px;"/>Defensive Stance</li>
-    <li><img src="../../images/classes/Mercenary/Invigaura.jpg" alt="Invigorating Essence" style="height:28px;vertical-align:middle;margin-right:8px;"/>Invigorating Essence your main skill in gear!</li>
-  </ul>
-
-  <h3>Single Target</h3>
-  <ul style="padding-left:2.2rem;">
-    <li><img src="../../images/classes/Mercenary/divinecross.jpg" alt="Divine Cross" style="height:28px;vertical-align:middle;margin-right:8px;"/>Divine Cross</li>
-    <li><img src="../../images/classes/Mercenary/laserblade.jpg" alt="Laser Blade" style="height:28px;vertical-align:middle;margin-right:8px;"/>Laser Blade</li>
-  </ul>
-
-  <h3>AoE</h3>
-  <ul style="padding-left:2.2rem;">
-    <li><img src="../../images/classes/Mercenary/wildstream.jpg" alt="Wild Stream" style="height:28px;vertical-align:middle;margin-right:8px;"/>Wild Stream</li>
-    <li><img src="../../images/classes/Mercenary/dualstrike.jpg" alt="Dual Strike" style="height:28px;vertical-align:middle;margin-right:8px;"/>Dual Strike</li>
-    <li><img src="../../images/classes/Mercenary/deathblow.jpg" alt="Deathblow" style="height:28px;vertical-align:middle;margin-right:8px;"/>Deathblow</li>
-  </ul>
-
-  <h3>Utility</h3>
-  <ul style="padding-left:2.2rem;">
-    <li><img src="../../images/classes/Mercenary/hateaura.jpg" alt="Hate Aura" style="height:28px;vertical-align:middle;margin-right:8px;"/>Hate Aura for pulling</li>
-    <li><img src="../../images/classes/Mercenary/lightspeed.jpg" alt="Light Speed" style="height:28px;vertical-align:middle;margin-right:8px;"/>Light Speed for&hellip; speeeeeeeed</li>
-    <li><img src="../../images/classes/Mercenary/immortality.jpg" alt="Immortality" style="height:28px;vertical-align:middle;margin-right:8px;"/>Immortality you will not die at 1 HP for a few seconds</li>
-    <li><img src="../../images/classes/Mercenary/provocation.jpg" alt="Provocation" style="height:28px;vertical-align:middle;margin-right:8px;"/>Provocation</li>
-    <li><img src="../../images/classes/Mercenary/divineflash.jpg" alt="Divine Flash" style="height:28px;vertical-align:middle;margin-right:8px;"/>Divine Flash prevents mobs from attacking for 2 seconds</li>
-  </ul>
-
-  <h3>Breakers</h3>
-  <ul style="padding-left:2.2rem;">
-    <li><img src="../../images/classes/Mercenary/offensebreaker.jpg" alt="Offense Breaker" style="height:28px;vertical-align:middle;margin-right:8px;"/>Offense Breaker</li>
-    <li><img src="../../images/classes/Mercenary/defensebreaker.jpg" alt="Defense Breaker" style="height:28px;vertical-align:middle;margin-right:8px;"/>Defense Breaker</li>
-    <li><img src="../../images/classes/Mercenary/mentalbreaker.jpg" alt="Mental Breaker" style="height:28px;vertical-align:middle;margin-right:8px;"/>Mental Breaker</li>
-  </ul>
-
-  <h3>Passives</h3>
-  <ul style="padding-left:2.2rem;">
-    <li><img src="../../images/classes/Mercenary/lustforblood.jpg" alt="Lust for Blood" style="height:28px;vertical-align:middle;margin-right:8px;"/>Lust for Blood your alternative skill on gear if you cannot find Invigorating Essence</li>
-    <li><img src="../../images/classes/Mercenary/deflection.jpg" alt="Desperate Deflection" style="height:28px;vertical-align:middle;margin-right:8px;"/>Desperate Deflection</li>
-    <li><img src="../../images/classes/Mercenary/franticdefense.jpg" alt="Frantic Defense" style="height:28px;vertical-align:middle;margin-right:8px;"/>Frantic Defense</li>
-    <li><img src="../../images/classes/Mercenary/recklessvivacity.jpg" alt="Reckless Vivacity" style="height:28px;vertical-align:middle;margin-right:8px;"/>Reckless Vivacity</li>
-    <li><img src="../../images/classes/Mercenary/acceleratedcasting.jpg" alt="Accelerated Casting" style="height:28px;vertical-align:middle;margin-right:8px;"/>Accelerated Casting requires a 2H weapon equipped</li>
-  </ul>
-
-  <!-- ───────────── GAMEPLAY ───────────── -->
-  <h2 id="gameplay">Gameplay</h2>
-  <p>The playstyle of Mercenary is one of if not the easiest in the game, which is why it is always recommended to start with this class as a new player.</p>
-  <p>You activate your buffs and toggles, use Hate Aura <img src="../../images/classes/Mercenary/hateaura.jpg" alt="Hate Aura" style="height:28px;vertical-align:middle;margin:0 4px;"/> to pull mobs, then cast Defense Breaker <img src="../../images/classes/Mercenary/defensebreaker.jpg" alt="Defense Breaker" style="height:28px;vertical-align:middle;margin:0 4px;"/> before your main AoE. This way you benefit from both Tactical Advantage and Lust for Blood <img src="../../images/classes/Mercenary/lustforblood.jpg" alt="Lust for Blood" style="height:28px;vertical-align:middle;margin:0 4px;"/> in case your Holy Aura has not procced yet. Then use your main AoE skills: Wild Stream <img src="../../images/classes/Mercenary/wildstream.jpg" alt="Wild Stream" style="height:28px;vertical-align:middle;margin:0 4px;"/> and Dual Strike <img src="../../images/classes/Mercenary/dualstrike.jpg" alt="Dual Strike" style="height:28px;vertical-align:middle;margin:0 4px;"/>. Use Divine Flash <img src="../../images/classes/Mercenary/divineflash.jpg" alt="Divine Flash" style="height:28px;vertical-align:middle;margin:0 4px;"/> to prevent mobs from attacking for 2 seconds, giving you a safe window to finish them off.</p>
-  <p>You do not have to worry much about healing and defenses thanks to Desperate Deflection <img src="../../images/classes/Mercenary/deflection.jpg" alt="Desperate Deflection" style="height:28px;vertical-align:middle;margin:0 4px;"/>, Frantic Defense <img src="../../images/classes/Mercenary/franticdefense.jpg" alt="Frantic Defense" style="height:28px;vertical-align:middle;margin:0 4px;"/>, and Reckless Vivacity <img src="../../images/classes/Mercenary/recklessvivacity.jpg" alt="Reckless Vivacity" style="height:28px;vertical-align:middle;margin:0 4px;"/> which boost your P.Def, HP, and damage reduction, combined with Lunacy boss card.</p>
-  <p>You must equip a 2H weapon (preferably Spear 170) to activate your passive Accelerated Casting <img src="../../images/classes/Mercenary/acceleratedcasting.jpg" alt="Accelerated Casting" style="height:28px;vertical-align:middle;margin:0 4px;"/>, which reduces the cooldown of your skills by 45.5% at level 13 (with R2 Helmet +20, DT buff, and Bear Belt).</p>
-
-  <!-- ───────────── TALENT BUILD ───────────── -->
-  <h2 id="talent-build">Talent Build</h2>
-  <table class="info-table">
-    <thead><tr><th>Points</th><th>Allocation</th></tr></thead>
-    <tbody>
-      <tr><td>5 TP</td><td>3 | 2 | 0</td></tr>
-      <tr><td>6 TP</td><td>3 | 3 | 0</td></tr>
-      <tr><td>7 TP</td><td>3 | 3 | 1</td></tr>
-      <tr><td>9 TP</td><td>3 | 3 | 3</td></tr>
-    </tbody>
-  </table>
-
-  <!-- ───────────── STATS ───────────── -->
-  <h2 id="stats">Stats</h2>
-  <table class="info-table">
-    <thead><tr><th>Priority</th><th>Stats</th></tr></thead>
-    <tbody>
-      <tr><td>Damage</td><td>Critical Rate, Critical Power, STR</td></tr>
-      <tr><td>Defense</td><td>Vitality &mdash; more Vitality means more HP and P.Def</td></tr>
-    </tbody>
-  </table>
-
-  <!-- ───────────── ACCESSORIES ───────────── -->
-  <h2 id="accessories">Accessories</h2>
-  <table class="info-table">
-    <thead><tr><th>Setup</th><th>Accessories</th></tr></thead>
-    <tbody>
-      <tr><td>Damage</td><td>Rings with 40+ STR / 20+ CP, the 3rd stat could be movement speed, Evasion, or P.Atk depending on what you need.</td></tr>
-      <tr><td>Defense</td><td>Rings with 40+ Vitality / 20+ CP, the 3rd stat could be movement speed, Evasion, or P.Atk depending on what you need.</td></tr>
-    </tbody>
-  </table>
-
-  <!-- ───────────── PETS & BELT ───────────── -->
-  <h2 id="pets-belt">Pets &amp; Belt</h2>
-  <table class="info-table">
-    <thead><tr><th>Setup</th><th>Details</th></tr></thead>
-    <tbody>
-      <tr><td>Early Setup</td><td>2 Kenta + 1 Cube + Lunacy</td></tr>
-      <tr><td>Normal Setup</td><td>3 Mino S1 + Lunacy</td></tr>
-      <tr><td>Full Setup</td><td>3 Mino S1 + 2 Snowman + Reviac + Lunacy / P.Hector + Devil Skeleton</td></tr>
-      <tr><td>Equipped Belt</td><td>All passives and Physical Deva</td></tr>
-      <tr><td>Summoned Pet</td><td><a class="content-link" href="../../pet/bloodthirsty-slaughterer.html">Bloodthirsty Slaughterer</a></td></tr>
-    </tbody>
-  </table>
-
-  <!-- ───────────── GEAR ───────────── -->
-  <h2 id="gear">Gear</h2>
-  <h3>Progression Path</h3>
-  <ol class="priority-list">
-    <li>R2 helmet +20 (all skills +1)</li>
-    <li>R6 +15 gear from Hidden Sanctuary</li>
-    <li>Circus weapons and accessories from Circus dungeon</li>
-    <li>Parallel World gear (either trash stats 2 slots with Invigorating Aura, or max slots in each gear but trash skill, depends on what you could find)</li>
-    <li>Island of Gods weapons and rings</li>
-    <li>DD Accessories and Yushiva belt</li>
-    <li>Lava gear (boots, gloves, armor, helmet)</li>
-    <li>Medal</li>
-    <li>Emblem</li>
-  </ol>
-  <h3>Optimization</h3>
-  <p>You upgrade the above when applicable e.g., more slots in belt, +24 weapon, +24 Medusa helmet, better stats on gear. You always prioritize stats like the following:</p>
-  <ul>
-    <li>Evasion and movement speed on boots | Evasion or CP on armor, Emblem, Medal</li>
-    <li>Accuracy on gloves, medal or emblem</li>
-  </ul>
-  <table class="info-table" style="margin-top:1.2rem;">
-    <thead>
-      <tr><th colspan="2">Stat Targets &amp; Item Stat Info</th></tr>
-    </thead>
-    <tbody>
-      <tr><td colspan="2" style="color:var(--gold2);font-weight:600;">Accuracy Target</td></tr>
-      <tr><td>RoA</td><td>1000+ Accuracy</td></tr>
-      <tr><td>Hidden RoA</td><td>1200+ Accuracy</td></tr>
-      <tr><td>DD6 (level 180)</td><td>1500+ Accuracy</td></tr>
-      <tr><td>SF (level 200)</td><td>2000+ Accuracy</td></tr>
-      <tr><td colspan="2" style="color:var(--gold2);font-weight:600;">Item Stat Examples</td></tr>
-      <tr><td>Accuracy</td><td>~200+ on gloves, emblem, or medal</td></tr>
-      <tr><td>Evasion</td><td>~160+ on boots, armor, medal, or emblem</td></tr>
-      <tr><td>Movement Speed</td><td>~17+ on boots, 30+ on rings</td></tr>
-      <tr><td colspan="2"><em>You can find the exact min/max stats on the Discord channel (to be imported here soon).</em></td></tr>
-    </tbody>
-  </table>
-
-
-  <!-- ───────────── TITLES ───────────── -->
-  <h2 id="titles">Titles</h2>
-  <ul>
-    <li><b>Title for Reduced Damage:</b> <span style="color:var(--gold2);">Camper</span><br/>
-      <span style="color:var(--text2);">(Purchase a tent from the Merchant in Hidden Village)</span>
-    </li>
-    <li><b>Titles from Underground Dungeons Stage 2:</b>
-      <table class="info-table" style="margin-top:0.7em;max-width:600px;">
-        <thead>
-          <tr><th>Title</th><th>Location</th><th>Strength</th><th>Vitality</th></tr>
-        </thead>
+    <!-- TITLES -->
+    <h2 class="section-heading" id="titles" data-section>Titles</h2>
+    <div class="title-group">
+      <div class="title-group-label">Reduced Damage Title</div>
+      <ul class="bullet-list">
+        <li><strong style="color:var(--gold2)">Camper</strong> — Purchase a tent from the Merchant in Hidden Village</li>
+      </ul>
+    </div>
+    <div class="title-group">
+      <div class="title-group-label">Underground Dungeons Stage 2</div>
+      <table class="data-table">
+        <thead><tr><th>Title</th><th>Location</th><th>STR</th><th>VIT</th></tr></thead>
         <tbody>
           <tr><td>Akt II, Scene IV Allegro</td><td>Palmir Plateau</td><td>+28</td><td>+23</td></tr>
           <tr><td>Akt II, Scene IV Moderato</td><td>Palmir Plateau</td><td>+23</td><td>+19</td></tr>
@@ -254,41 +1219,62 @@
           <tr><td>Akt II, Scene III Allegro</td><td>Crystal Valley</td><td>+22</td><td>+18</td></tr>
         </tbody>
       </table>
-    </li>
-  </ul>
+    </div>
 
-  <!-- ───────────── LEVELING ───────────── -->
-  <h2 id="leveling">Leveling Progression</h2>
-  <ul>
-    <li><a class="content-link" href="../../guide/getting-started/">Starting with Rappelz</a></li>
-    <li><a class="content-link" href="../../guide/beyond-master-class/">Master Class and Beyond</a></li>
-    <li><a class="content-link" href="../../guide/175-and-beyond/">175 and Beyond</a></li>
-  </ul>
+    <!-- LEVELING -->
+    <h2 class="section-heading" id="leveling" data-section>Leveling Progression</h2>
+    <ul class="bullet-list">
+      <li><a class="content-link" href="../../guide/getting-started/">Starting with Rappelz</a></li>
+      <li><a class="content-link" href="../../guide/beyond-master-class/">Master Class and Beyond</a></li>
+      <li><a class="content-link" href="../../guide/175-and-beyond/">175 and Beyond</a></li>
+    </ul>
 
-  <!-- ───────────── TIPS ───────────── -->
-  <h2 id="tips">Tips</h2>
-  <ul>
-    <li>Use the Bloodthirsty Slaughterer potion for a big damage boost.</li>
-    <li>After using both AoEs, you can kite mobs if you have a hard time tanking.</li>
-    <li>Save Immortality <img src="../../images/classes/Mercenary/immortality.jpg" alt="Immortality" style="height:28px;vertical-align:middle;margin:0 4px;"/> during boss encounters like the Reviac room.</li>
-    <li>Lunacy card is your best friend.</li>
-      <li>You can switch to a shield to activate Deflecting Shield + Shield of Revenge, then switch back to your Spear during hard encounters.</li>
-  </ul>
+    <!-- TIPS -->
+    <h2 class="section-heading" id="tips" data-section>Tips</h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-num">01</div>
+        <div class="tip-text">Use the Bloodthirsty Slaughterer potion for a significant damage boost.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">02</div>
+        <div class="tip-text">After both AoEs, kite mobs if you're struggling to tank — your mobility is an asset.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">03</div>
+        <div class="tip-text">Save <strong>Immortality</strong> <img src="../../images/classes/Mercenary/immortality.jpg" class="inline-icon" alt=""/> for critical boss encounters like the Reviac room.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">04</div>
+        <div class="tip-text">Lunacy card is your best friend. Don't leave town without it.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">05</div>
+        <div class="tip-text">You can swap to a shield to activate Deflecting Shield + Shield of Revenge, then switch back to your Spear for hard encounters.</div>
+      </div>
+    </div>
 
-  <!-- ───────────── ENDGAME ───────────── -->
-  <h2 id="endgame">Endgame</h2>
-  <table class="info-table">
-    <thead><tr><th>Aspect</th><th>Rating</th></tr></thead>
-    <tbody>
-      <tr><td>Performance</td><td>7/10</td></tr>
-      <tr><td>Solo Ability</td><td>6/10</td></tr>
-    </tbody>
-  </table>
+    <!-- ENDGAME -->
+    <h2 class="section-heading" id="endgame" data-section>Endgame</h2>
+    <div class="ratings-grid">
+      <div class="rating-card">
+        <div class="rating-label">Performance</div>
+        <div class="rating-score">7<sub>/10</sub></div>
+        <div class="rating-bar"><div class="rating-fill" style="width:70%"></div></div>
+      </div>
+      <div class="rating-card">
+        <div class="rating-label">Solo Ability</div>
+        <div class="rating-score">6<sub>/10</sub></div>
+        <div class="rating-bar"><div class="rating-fill" style="width:60%"></div></div>
+      </div>
+    </div>
 
+  </main>
 </div>
 
 <footer>
-  <strong>RAPPELZ GUIDELINES</strong> &mdash; Fan-made community guide
+  <div class="footer-logo">Rappelz Guidelines</div>
+  <div class="footer-sub">Fan-made community guide — not affiliated with Valofe</div>
 </footer>
 
 </body>
