@@ -10,10 +10,10 @@
 
 /* ── TOKENS ─────────────────────────────────────────── */
 :root {
-  --bg0: #141219;
-  --bg1: #1b1925;
-  --bg2: #222033;
-  --bg3: #2c2a40;
+  --bg0: #141210;
+  --bg1: #1c1814;
+  --bg2: #22201a;
+  --bg3: #2a2620;
   --gold: #c9a84c;
   --gold2: #e8c96a;
   --gold3: #f5e098;
@@ -44,43 +44,16 @@ body {
   overflow-x: hidden;
 }
 
-/* ── ANIMATED BACKGROUND ────────────────────────────── */
+/* ── BACKGROUND ─────────────────────────────────────── */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(160,32,32,0.15) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 80% 100%, rgba(201,168,76,0.09) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 50% at 10% 60%, rgba(40,30,75,0.35) 0%, transparent 60%);
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(160,32,32,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 90% 100%, rgba(201,168,76,0.07) 0%, transparent 50%);
   pointer-events: none;
   z-index: 0;
-}
-
-/* Animated noise grain overlay */
-body::after {
-  content: '';
-  position: fixed;
-  inset: -200%;
-  width: 400%;
-  height: 400%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.6;
-  animation: grain 8s steps(10) infinite;
-}
-@keyframes grain {
-  0%,100% { transform: translate(0,0); }
-  10% { transform: translate(-5%,-10%); }
-  20% { transform: translate(-15%,5%); }
-  30% { transform: translate(7%,-25%); }
-  40% { transform: translate(-5%,25%); }
-  50% { transform: translate(-15%,10%); }
-  60% { transform: translate(15%,0%); }
-  70% { transform: translate(0%,15%); }
-  80% { transform: translate(3%,35%); }
-  90% { transform: translate(-10%,10%); }
 }
 
 /* ── SCROLLBAR ──────────────────────────────────────── */
