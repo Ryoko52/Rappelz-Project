@@ -130,6 +130,51 @@
     .stat-card ul { margin: 0; padding-left: 1.2rem; }
     .stat-card li { font-size: 0.97rem; color: var(--text); margin-bottom: 0.2rem; }
     .stat-val { color: var(--gold); font-weight: 600; }
+    .enchant-section { margin-top: 2.5rem; }
+    .enchant-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 600px) { .enchant-grid { grid-template-columns: 1fr; } }
+    .enchant-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-hi);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .enchant-card-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 10px 14px;
+      display: flex; align-items: center; gap: 8px;
+      border-bottom: 1px solid var(--border-hi);
+    }
+    .enchant-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    .enchant-table th {
+      font-family: 'Cinzel', serif;
+      font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--gold-dim); background: var(--bg-th);
+      padding: 7px 12px; border-bottom: 1px solid var(--border-hi);
+      text-align: left;
+    }
+    .enchant-table td {
+      padding: 5px 12px;
+      border-bottom: 1px solid var(--border);
+      font-variant-numeric: tabular-nums;
+    }
+    .enchant-table tr:last-child td { border-bottom: none; }
+    .enchant-table tr:nth-child(odd)  td { background: var(--bg-row-odd); }
+    .enchant-table tr:nth-child(even) td { background: var(--bg-row-even); }
+    .enchant-table .lv { font-family: 'Cinzel', serif; font-size: 0.78rem; color: var(--text-dim); }
+    .enchant-table .lv-luciad { color: var(--gold); font-weight: 600; }
+    .enchant-table .sv { color: var(--gold); font-weight: 600; }
+    .enchant-img { width: 100%; border-radius: 4px; display: block; }
     .c-green  { color: #6ecf7e; font-weight: 600; }
     .c-red    { color: #e06060; font-weight: 600; }
     .c-blue   { color: #6aadea; font-weight: 600; }
@@ -321,6 +366,270 @@
         <li><span class="stat-val">+20%</span> M. Atk.</li>
         <li><span class="stat-val">+20</span> Crit. Pow.</li>
       </ul>
+    </div>
+  </div>
+
+  <div class="enchant-section">
+    <h2>Medal Enchant Stats (+0 to 32/32)</h2>
+    <p>Stats gained per enchant level, in addition to the base stats above.</p>
+    <div class="enchant-grid">
+
+      <!-- Ordinary Medal -->
+      <div class="enchant-card">
+        <div class="enchant-card-title" style="color:#b08ae0;">
+          <img class="item-icon" src="../../../images/faq/gem/icon_basic_medal.jpg" alt="">Ordinary Medal
+        </div>
+        <table class="enchant-table">
+          <thead><tr><th>Level</th><th>P.DEF</th><th>M.DEF</th></tr></thead>
+          <tbody>
+            <tr><td class="lv">+0</td><td class="sv">1</td><td class="sv">1</td></tr>
+            <tr><td class="lv">+1</td><td class="sv">9</td><td class="sv">9</td></tr>
+            <tr><td class="lv">+2</td><td class="sv">18</td><td class="sv">18</td></tr>
+            <tr><td class="lv">+3</td><td class="sv">27</td><td class="sv">27</td></tr>
+            <tr><td class="lv">+4</td><td class="sv">36</td><td class="sv">36</td></tr>
+            <tr><td class="lv">+5</td><td class="sv">46</td><td class="sv">46</td></tr>
+            <tr><td class="lv">+6</td><td class="sv">56</td><td class="sv">56</td></tr>
+            <tr><td class="lv">+7</td><td class="sv">66</td><td class="sv">66</td></tr>
+            <tr><td class="lv">+8</td><td class="sv">76</td><td class="sv">76</td></tr>
+            <tr><td class="lv">+9</td><td class="sv">88</td><td class="sv">88</td></tr>
+            <tr><td class="lv">+10</td><td class="sv">199</td><td class="sv">199</td></tr>
+            <tr><td class="lv">+11</td><td class="sv">113</td><td class="sv">113</td></tr>
+            <tr><td class="lv">+12</td><td class="sv">125</td><td class="sv">125</td></tr>
+            <tr><td class="lv">+13</td><td class="sv">141</td><td class="sv">141</td></tr>
+            <tr><td class="lv">+14</td><td class="sv">157</td><td class="sv">157</td></tr>
+            <tr><td class="lv">+15</td><td class="sv">173</td><td class="sv">173</td></tr>
+            <tr><td class="lv">+16</td><td class="sv">189</td><td class="sv">189</td></tr>
+            <tr><td class="lv">+17</td><td class="sv">205</td><td class="sv">205</td></tr>
+            <tr><td class="lv">+18</td><td class="sv">221</td><td class="sv">221</td></tr>
+            <tr><td class="lv">+19</td><td class="sv">237</td><td class="sv">237</td></tr>
+            <tr><td class="lv lv-luciad">1/32</td><td class="sv">253</td><td class="sv">253</td></tr>
+            <tr><td class="lv lv-luciad">2/32</td><td class="sv">461</td><td class="sv">461</td></tr>
+            <tr><td class="lv lv-luciad">3/32</td><td class="sv">574</td><td class="sv">574</td></tr>
+            <tr><td class="lv lv-luciad">4/32</td><td class="sv">687</td><td class="sv">687</td></tr>
+            <tr><td class="lv lv-luciad">5/32</td><td class="sv">748</td><td class="sv">748</td></tr>
+            <tr><td class="lv lv-luciad">6/32</td><td class="sv">809</td><td class="sv">809</td></tr>
+            <tr><td class="lv lv-luciad">7/32</td><td class="sv">870</td><td class="sv">870</td></tr>
+            <tr><td class="lv lv-luciad">8/32</td><td class="sv">931</td><td class="sv">931</td></tr>
+            <tr><td class="lv lv-luciad">9/32</td><td class="sv">964</td><td class="sv">964</td></tr>
+            <tr><td class="lv lv-luciad">10/32</td><td class="sv">997</td><td class="sv">997</td></tr>
+            <tr><td class="lv lv-luciad">11/32</td><td class="sv">1,030</td><td class="sv">1,030</td></tr>
+            <tr><td class="lv lv-luciad">12/32</td><td class="sv">1,063</td><td class="sv">1,063</td></tr>
+            <tr><td class="lv lv-luciad">13/32</td><td class="sv">1,096</td><td class="sv">1,096</td></tr>
+            <tr><td class="lv lv-luciad">14/32</td><td class="sv">1,129</td><td class="sv">1,129</td></tr>
+            <tr><td class="lv lv-luciad">15/32</td><td class="sv">1,162</td><td class="sv">1,162</td></tr>
+            <tr><td class="lv lv-luciad">16/32</td><td class="sv">1,195</td><td class="sv">1,195</td></tr>
+            <tr><td class="lv lv-luciad">17/32</td><td class="sv">1,212</td><td class="sv">1,212</td></tr>
+            <tr><td class="lv lv-luciad">18/32</td><td class="sv">1,230</td><td class="sv">1,230</td></tr>
+            <tr><td class="lv lv-luciad">19/32</td><td class="sv">1,248</td><td class="sv">1,248</td></tr>
+            <tr><td class="lv lv-luciad">20/32</td><td class="sv">1,265</td><td class="sv">1,265</td></tr>
+            <tr><td class="lv lv-luciad">21/32</td><td class="sv">1,283</td><td class="sv">1,283</td></tr>
+            <tr><td class="lv lv-luciad">22/32</td><td class="sv">1,301</td><td class="sv">1,301</td></tr>
+            <tr><td class="lv lv-luciad">23/32</td><td class="sv">1,318</td><td class="sv">1,318</td></tr>
+            <tr><td class="lv lv-luciad">24/32</td><td class="sv">1,336</td><td class="sv">1,336</td></tr>
+            <tr><td class="lv lv-luciad">25/32</td><td class="sv">1,354</td><td class="sv">1,354</td></tr>
+            <tr><td class="lv lv-luciad">26/32</td><td class="sv">1,371</td><td class="sv">1,371</td></tr>
+            <tr><td class="lv lv-luciad">27/32</td><td class="sv">1,389</td><td class="sv">1,389</td></tr>
+            <tr><td class="lv lv-luciad">28/32</td><td class="sv">1,407</td><td class="sv">1,407</td></tr>
+            <tr><td class="lv lv-luciad">29/32</td><td class="sv">1,424</td><td class="sv">1,424</td></tr>
+            <tr><td class="lv lv-luciad">30/32</td><td class="sv">1,442</td><td class="sv">1,442</td></tr>
+            <tr><td class="lv lv-luciad">31/32</td><td class="sv">1,460</td><td class="sv">1,460</td></tr>
+            <tr><td class="lv lv-luciad">32/32</td><td class="sv">1,478</td><td class="sv">1,478</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Health Medal -->
+      <div class="enchant-card">
+        <div class="enchant-card-title" style="color:#6ecf7e;">
+          <img class="item-icon" src="../../../images/faq/gem/icon_health_medal.jpg" alt="">Enhanced Health Medal
+        </div>
+        <table class="enchant-table">
+          <thead><tr><th>Level</th><th>VIT</th><th>Max HP</th></tr></thead>
+          <tbody>
+            <tr><td class="lv">+0</td><td class="sv">1</td><td class="sv">1</td></tr>
+            <tr><td class="lv">+1</td><td class="sv">6</td><td class="sv">155</td></tr>
+            <tr><td class="lv">+2</td><td class="sv">11</td><td class="sv">310</td></tr>
+            <tr><td class="lv">+3</td><td class="sv">16</td><td class="sv">464</td></tr>
+            <tr><td class="lv">+4</td><td class="sv">21</td><td class="sv">619</td></tr>
+            <tr><td class="lv">+5</td><td class="sv">26</td><td class="sv">795</td></tr>
+            <tr><td class="lv">+6</td><td class="sv">32</td><td class="sv">971</td></tr>
+            <tr><td class="lv">+7</td><td class="sv">38</td><td class="sv">1,147</td></tr>
+            <tr><td class="lv">+8</td><td class="sv">43</td><td class="sv">1,323</td></tr>
+            <tr><td class="lv">+9</td><td class="sv">50</td><td class="sv">1,541</td></tr>
+            <tr><td class="lv">+10</td><td class="sv">57</td><td class="sv">1,759</td></tr>
+            <tr><td class="lv">+11</td><td class="sv">64</td><td class="sv">1,977</td></tr>
+            <tr><td class="lv">+12</td><td class="sv">71</td><td class="sv">2,196</td></tr>
+            <tr><td class="lv">+13</td><td class="sv">81</td><td class="sv">2,478</td></tr>
+            <tr><td class="lv">+14</td><td class="sv">90</td><td class="sv">2,761</td></tr>
+            <tr><td class="lv">+15</td><td class="sv">99</td><td class="sv">3,043</td></tr>
+            <tr><td class="lv">+16</td><td class="sv">108</td><td class="sv">3,326</td></tr>
+            <tr><td class="lv">+17</td><td class="sv">117</td><td class="sv">3,608</td></tr>
+            <tr><td class="lv">+18</td><td class="sv">126</td><td class="sv">3,891</td></tr>
+            <tr><td class="lv">+19</td><td class="sv">135</td><td class="sv">4,174</td></tr>
+            <tr><td class="lv lv-luciad">1/32</td><td class="sv">144</td><td class="sv">4,456</td></tr>
+            <tr><td class="lv lv-luciad">2/32</td><td class="sv">167</td><td class="sv">5,163</td></tr>
+            <tr><td class="lv lv-luciad">3/32</td><td class="sv">190</td><td class="sv">6,046</td></tr>
+            <tr><td class="lv lv-luciad">4/32</td><td class="sv">213</td><td class="sv">6,929</td></tr>
+            <tr><td class="lv lv-luciad">5/32</td><td class="sv">235</td><td class="sv">8,032</td></tr>
+            <tr><td class="lv lv-luciad">6/32</td><td class="sv">258</td><td class="sv">9,136</td></tr>
+            <tr><td class="lv lv-luciad">7/32</td><td class="sv">281</td><td class="sv">10,240</td></tr>
+            <tr><td class="lv lv-luciad">8/32</td><td class="sv">304</td><td class="sv">11,344</td></tr>
+            <tr><td class="lv lv-luciad">9/32</td><td class="sv">326</td><td class="sv">12,723</td></tr>
+            <tr><td class="lv lv-luciad">10/32</td><td class="sv">349</td><td class="sv">14,103</td></tr>
+            <tr><td class="lv lv-luciad">11/32</td><td class="sv">372</td><td class="sv">15,483</td></tr>
+            <tr><td class="lv lv-luciad">12/32</td><td class="sv">395</td><td class="sv">16,863</td></tr>
+            <tr><td class="lv lv-luciad">13/32</td><td class="sv">418</td><td class="sv">18,242</td></tr>
+            <tr><td class="lv lv-luciad">14/32</td><td class="sv">441</td><td class="sv">19,622</td></tr>
+            <tr><td class="lv lv-luciad">15/32</td><td class="sv">464</td><td class="sv">21,002</td></tr>
+            <tr><td class="lv lv-luciad">16/32</td><td class="sv">483</td><td class="sv">22,382</td></tr>
+            <tr><td class="lv lv-luciad">17/32</td><td class="sv">509</td><td class="sv">24,106</td></tr>
+            <tr><td class="lv lv-luciad">18/32</td><td class="sv">532</td><td class="sv">25,831</td></tr>
+            <tr><td class="lv lv-luciad">19/32</td><td class="sv">555</td><td class="sv">27,556</td></tr>
+            <tr><td class="lv lv-luciad">20/32</td><td class="sv">578</td><td class="sv">29,281</td></tr>
+            <tr><td class="lv lv-luciad">21/32</td><td class="sv">601</td><td class="sv">31,005</td></tr>
+            <tr><td class="lv lv-luciad">22/32</td><td class="sv">624</td><td class="sv">32,730</td></tr>
+            <tr><td class="lv lv-luciad">23/32</td><td class="sv">647</td><td class="sv">34,455</td></tr>
+            <tr><td class="lv lv-luciad">24/32</td><td class="sv">670</td><td class="sv">36,180</td></tr>
+            <tr><td class="lv lv-luciad">25/32</td><td class="sv">692</td><td class="sv">37,904</td></tr>
+            <tr><td class="lv lv-luciad">26/32</td><td class="sv">715</td><td class="sv">39,629</td></tr>
+            <tr><td class="lv lv-luciad">27/32</td><td class="sv">738</td><td class="sv">41,354</td></tr>
+            <tr><td class="lv lv-luciad">28/32</td><td class="sv">761</td><td class="sv">43,079</td></tr>
+            <tr><td class="lv lv-luciad">29/32</td><td class="sv">784</td><td class="sv">44,803</td></tr>
+            <tr><td class="lv lv-luciad">30/32</td><td class="sv">807</td><td class="sv">46,528</td></tr>
+            <tr><td class="lv lv-luciad">31/32</td><td class="sv">830</td><td class="sv">48,253</td></tr>
+            <tr><td class="lv lv-luciad">32/32</td><td class="sv">853</td><td class="sv">49,978</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Strength Medal -->
+      <div class="enchant-card">
+        <div class="enchant-card-title" style="color:#e06060;">
+          <img class="item-icon" src="../../../images/faq/gem/icon_power_medal.jpg" alt="">Enhanced Strength Medal
+        </div>
+        <table class="enchant-table">
+          <thead><tr><th>Level</th><th>STR</th><th>P.ATK</th></tr></thead>
+          <tbody>
+            <tr><td class="lv">+0</td><td class="sv">1</td><td class="sv">1</td></tr>
+            <tr><td class="lv">+1</td><td class="sv">6</td><td class="sv">64</td></tr>
+            <tr><td class="lv">+2</td><td class="sv">11</td><td class="sv">127</td></tr>
+            <tr><td class="lv">+3</td><td class="sv">16</td><td class="sv">190</td></tr>
+            <tr><td class="lv">+4</td><td class="sv">21</td><td class="sv">253</td></tr>
+            <tr><td class="lv">+5</td><td class="sv">26</td><td class="sv">325</td></tr>
+            <tr><td class="lv">+6</td><td class="sv">32</td><td class="sv">397</td></tr>
+            <tr><td class="lv">+7</td><td class="sv">38</td><td class="sv">469</td></tr>
+            <tr><td class="lv">+8</td><td class="sv">43</td><td class="sv">541</td></tr>
+            <tr><td class="lv">+9</td><td class="sv">50</td><td class="sv">630</td></tr>
+            <tr><td class="lv">+10</td><td class="sv">57</td><td class="sv">720</td></tr>
+            <tr><td class="lv">+11</td><td class="sv">64</td><td class="sv">809</td></tr>
+            <tr><td class="lv">+12</td><td class="sv">71</td><td class="sv">898</td></tr>
+            <tr><td class="lv">+13</td><td class="sv">81</td><td class="sv">1,013</td></tr>
+            <tr><td class="lv">+14</td><td class="sv">90</td><td class="sv">1,129</td></tr>
+            <tr><td class="lv">+15</td><td class="sv">99</td><td class="sv">1,244</td></tr>
+            <tr><td class="lv">+16</td><td class="sv">108</td><td class="sv">1,360</td></tr>
+            <tr><td class="lv">+17</td><td class="sv">117</td><td class="sv">1,475</td></tr>
+            <tr><td class="lv">+18</td><td class="sv">126</td><td class="sv">1,591</td></tr>
+            <tr><td class="lv">+19</td><td class="sv">135</td><td class="sv">1,706</td></tr>
+            <tr><td class="lv">+20</td><td class="sv">144</td><td class="sv">1,822</td></tr>
+            <tr><td class="lv lv-luciad">2/32</td><td class="sv">167</td><td class="sv">2,111</td></tr>
+            <tr><td class="lv lv-luciad">3/32</td><td class="sv">190</td><td class="sv">2,399</td></tr>
+            <tr><td class="lv lv-luciad">4/32</td><td class="sv">213</td><td class="sv">2,688</td></tr>
+            <tr><td class="lv lv-luciad">5/32</td><td class="sv">235</td><td class="sv">2,976</td></tr>
+            <tr><td class="lv lv-luciad">6/32</td><td class="sv">258</td><td class="sv">3,265</td></tr>
+            <tr><td class="lv lv-luciad">7/32</td><td class="sv">281</td><td class="sv">3,554</td></tr>
+            <tr><td class="lv lv-luciad">8/32</td><td class="sv">304</td><td class="sv">3,843</td></tr>
+            <tr><td class="lv lv-luciad">9/32</td><td class="sv">326</td><td class="sv">4,131</td></tr>
+            <tr><td class="lv lv-luciad">10/32</td><td class="sv">349</td><td class="sv">4,420</td></tr>
+            <tr><td class="lv lv-luciad">11/32</td><td class="sv">372</td><td class="sv">4,709</td></tr>
+            <tr><td class="lv lv-luciad">12/32</td><td class="sv">395</td><td class="sv">4,998</td></tr>
+            <tr><td class="lv lv-luciad">13/32</td><td class="sv">418</td><td class="sv">5,287</td></tr>
+            <tr><td class="lv lv-luciad">14/32</td><td class="sv">441</td><td class="sv">5,576</td></tr>
+            <tr><td class="lv lv-luciad">15/32</td><td class="sv">464</td><td class="sv">5,865</td></tr>
+            <tr><td class="lv lv-luciad">16/32</td><td class="sv">487</td><td class="sv">6,154</td></tr>
+            <tr><td class="lv lv-luciad">17/32</td><td class="sv">509</td><td class="sv">6,442</td></tr>
+            <tr><td class="lv lv-luciad">18/32</td><td class="sv">532</td><td class="sv">6,731</td></tr>
+            <tr><td class="lv lv-luciad">19/32</td><td class="sv">555</td><td class="sv">7,020</td></tr>
+            <tr><td class="lv lv-luciad">20/32</td><td class="sv">578</td><td class="sv">7,309</td></tr>
+            <tr><td class="lv lv-luciad">21/32</td><td class="sv">601</td><td class="sv">7,598</td></tr>
+            <tr><td class="lv lv-luciad">22/32</td><td class="sv">624</td><td class="sv">7,886</td></tr>
+            <tr><td class="lv lv-luciad">23/32</td><td class="sv">647</td><td class="sv">8,175</td></tr>
+            <tr><td class="lv lv-luciad">24/32</td><td class="sv">670</td><td class="sv">8,464</td></tr>
+            <tr><td class="lv lv-luciad">25/32</td><td class="sv">692</td><td class="sv">8,753</td></tr>
+            <tr><td class="lv lv-luciad">26/32</td><td class="sv">715</td><td class="sv">9,042</td></tr>
+            <tr><td class="lv lv-luciad">27/32</td><td class="sv">738</td><td class="sv">9,330</td></tr>
+            <tr><td class="lv lv-luciad">28/32</td><td class="sv">761</td><td class="sv">9,619</td></tr>
+            <tr><td class="lv lv-luciad">29/32</td><td class="sv">784</td><td class="sv">9,908</td></tr>
+            <tr><td class="lv lv-luciad">30/32</td><td class="sv">807</td><td class="sv">10,197</td></tr>
+            <tr><td class="lv lv-luciad">31/32</td><td class="sv">830</td><td class="sv">10,486</td></tr>
+            <tr><td class="lv lv-luciad">32/32</td><td class="sv">853</td><td class="sv">10,775</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Intelligence Medal -->
+      <div class="enchant-card">
+        <div class="enchant-card-title" style="color:#6aadea;">
+          <img class="item-icon" src="../../../images/faq/gem/icon_intelligence_medal.jpg" alt="">Enhanced Intelligence Medal
+        </div>
+        <table class="enchant-table">
+          <thead><tr><th>Level</th><th>INT</th><th>M.ATK</th></tr></thead>
+          <tbody>
+            <tr><td class="lv">+0</td><td class="sv">1</td><td class="sv">1</td></tr>
+            <tr><td class="lv">+1</td><td class="sv">6</td><td class="sv">49</td></tr>
+            <tr><td class="lv">+2</td><td class="sv">11</td><td class="sv">97</td></tr>
+            <tr><td class="lv">+3</td><td class="sv">16</td><td class="sv">146</td></tr>
+            <tr><td class="lv">+4</td><td class="sv">21</td><td class="sv">194</td></tr>
+            <tr><td class="lv">+5</td><td class="sv">26</td><td class="sv">249</td></tr>
+            <tr><td class="lv">+6</td><td class="sv">32</td><td class="sv">304</td></tr>
+            <tr><td class="lv">+7</td><td class="sv">38</td><td class="sv">359</td></tr>
+            <tr><td class="lv">+8</td><td class="sv">43</td><td class="sv">415</td></tr>
+            <tr><td class="lv">+9</td><td class="sv">50</td><td class="sv">483</td></tr>
+            <tr><td class="lv">+10</td><td class="sv">57</td><td class="sv">551</td></tr>
+            <tr><td class="lv">+11</td><td class="sv">64</td><td class="sv">619</td></tr>
+            <tr><td class="lv">+12</td><td class="sv">71</td><td class="sv">688</td></tr>
+            <tr><td class="lv">+13</td><td class="sv">81</td><td class="sv">776</td></tr>
+            <tr><td class="lv">+14</td><td class="sv">90</td><td class="sv">865</td></tr>
+            <tr><td class="lv">+15</td><td class="sv">99</td><td class="sv">953</td></tr>
+            <tr><td class="lv">+16</td><td class="sv">108</td><td class="sv">1,042</td></tr>
+            <tr><td class="lv">+17</td><td class="sv">117</td><td class="sv">1,130</td></tr>
+            <tr><td class="lv">+18</td><td class="sv">126</td><td class="sv">1,218</td></tr>
+            <tr><td class="lv">+19</td><td class="sv">135</td><td class="sv">1,307</td></tr>
+            <tr><td class="lv">+20</td><td class="sv">144</td><td class="sv">1,395</td></tr>
+            <tr><td class="lv lv-luciad">2/32</td><td class="sv">167</td><td class="sv">1,617</td></tr>
+            <tr><td class="lv lv-luciad">3/32</td><td class="sv">190</td><td class="sv">1,838</td></tr>
+            <tr><td class="lv lv-luciad">4/32</td><td class="sv">213</td><td class="sv">2,059</td></tr>
+            <tr><td class="lv lv-luciad">5/32</td><td class="sv">235</td><td class="sv">2,280</td></tr>
+            <tr><td class="lv lv-luciad">6/32</td><td class="sv">258</td><td class="sv">2,501</td></tr>
+            <tr><td class="lv lv-luciad">7/32</td><td class="sv">281</td><td class="sv">2,722</td></tr>
+            <tr><td class="lv lv-luciad">8/32</td><td class="sv">304</td><td class="sv">2,943</td></tr>
+            <tr><td class="lv lv-luciad">9/32</td><td class="sv">326</td><td class="sv">3,164</td></tr>
+            <tr><td class="lv lv-luciad">10/32</td><td class="sv">349</td><td class="sv">3,385</td></tr>
+            <tr><td class="lv lv-luciad">11/32</td><td class="sv">372</td><td class="sv">3,606</td></tr>
+            <tr><td class="lv lv-luciad">12/32</td><td class="sv">395</td><td class="sv">3,828</td></tr>
+            <tr><td class="lv lv-luciad">13/32</td><td class="sv">418</td><td class="sv">4,049</td></tr>
+            <tr><td class="lv lv-luciad">14/32</td><td class="sv">441</td><td class="sv">4,270</td></tr>
+            <tr><td class="lv lv-luciad">15/32</td><td class="sv">464</td><td class="sv">4,491</td></tr>
+            <tr><td class="lv lv-luciad">16/32</td><td class="sv">487</td><td class="sv">4,713</td></tr>
+            <tr><td class="lv lv-luciad">17/32</td><td class="sv">509</td><td class="sv">4,934</td></tr>
+            <tr><td class="lv lv-luciad">18/32</td><td class="sv">532</td><td class="sv">5,155</td></tr>
+            <tr><td class="lv lv-luciad">19/32</td><td class="sv">555</td><td class="sv">5,376</td></tr>
+            <tr><td class="lv lv-luciad">20/32</td><td class="sv">578</td><td class="sv">5,597</td></tr>
+            <tr><td class="lv lv-luciad">21/32</td><td class="sv">601</td><td class="sv">5,818</td></tr>
+            <tr><td class="lv lv-luciad">22/32</td><td class="sv">624</td><td class="sv">6,039</td></tr>
+            <tr><td class="lv lv-luciad">23/32</td><td class="sv">647</td><td class="sv">6,260</td></tr>
+            <tr><td class="lv lv-luciad">24/32</td><td class="sv">670</td><td class="sv">6,482</td></tr>
+            <tr><td class="lv lv-luciad">25/32</td><td class="sv">692</td><td class="sv">6,703</td></tr>
+            <tr><td class="lv lv-luciad">26/32</td><td class="sv">715</td><td class="sv">6,924</td></tr>
+            <tr><td class="lv lv-luciad">27/32</td><td class="sv">738</td><td class="sv">7,145</td></tr>
+            <tr><td class="lv lv-luciad">28/32</td><td class="sv">761</td><td class="sv">7,366</td></tr>
+            <tr><td class="lv lv-luciad">29/32</td><td class="sv">784</td><td class="sv">7,587</td></tr>
+            <tr><td class="lv lv-luciad">30/32</td><td class="sv">807</td><td class="sv">7,808</td></tr>
+            <tr><td class="lv lv-luciad">31/32</td><td class="sv">830</td><td class="sv">8,029</td></tr>
+            <tr><td class="lv lv-luciad">32/32</td><td class="sv">853</td><td class="sv">8,251</td></tr>
+          </tbody>
+        </table>
+      </div>
+
     </div>
   </div>
 
