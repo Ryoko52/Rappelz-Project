@@ -127,6 +127,14 @@
     .c-blue   { color: #6aadea; font-weight: 600; }
     .c-pink   { color: #e87fbf; font-weight: 600; }
     .c-purple { color: #b08ae0; font-weight: 600; }
+    .item-icon {
+      width: 24px; height: 24px;
+      object-fit: contain;
+      vertical-align: middle;
+      margin-right: 5px;
+      border-radius: 3px;
+      position: relative; top: -1px;
+    }
   </style>
 </head>
 <body>
@@ -137,14 +145,14 @@
   <p>Combine one of the following to get a chance at crafting an Ordinary Medal:</p>
   <div class="step-box">
     <ul>
-      <li><span class="qty">x1000</span> Naha's Basic Blueprints</li>
-      <li><span class="qty">x500</span> Naha's Blueprints</li>
-      <li><span class="qty">x100</span> Naha's Advanced Blueprints</li>
+      <li><span class="qty">x1000</span> <img class="item-icon" src="../../../images/faq/gem/icon_basic_naha_blueprint1.jpg" alt="">Naha's Basic Blueprints</li>
+      <li><span class="qty">x500</span> <img class="item-icon" src="../../../images/faq/gem/icon_naha_blueprint2.jpg" alt="">Naha's Blueprints</li>
+      <li><span class="qty">x100</span> <img class="item-icon" src="../../../images/faq/gem/icon_advanced_naha_blueprint3.jpg" alt="">Naha's Advanced Blueprints</li>
     </ul>
   </div>
   <div class="note">
-    If it fails, you will receive <strong>1 Medal Shard</strong>. Combining <strong>10 Medal Shards</strong> will give you an <span class="c-purple">Ordinary Medal</span>.<br>
-    Alternatively, adding <strong>x1 Naha's Advanced Medal Shard</strong> to the combination will <strong>guarantee success</strong>.
+    If it fails, you will receive <img class="item-icon" src="../../../images/faq/gem/icon_item_medal_shard1.jpg" alt=""><strong>1 Medal Shard</strong>. Combining <strong>10 Medal Shards</strong> will give you an <img class="item-icon" src="../../../images/faq/gem/icon_basic_medal.jpg" alt=""><span class="c-purple">Ordinary Medal</span>.<br>
+    Alternatively, adding <img class="item-icon" src="../../../images/faq/gem/icon_item_medal_shard2.jpg" alt=""><strong>x1 Naha's Advanced Medal Shard</strong> to the combination will <strong>guarantee success</strong>.
   </div>
 
   <h2>Identify the Medal</h2>
@@ -161,9 +169,9 @@
   <p>Once identified, combine the medal with a gem to get an enhanced version:</p>
   <div class="step-box">
     <ul>
-      <li><span class="c-green">Health Gem</span> &rarr; <span class="c-green">Enhanced Health Medal</span></li>
-      <li><span class="c-red">Strength Gem</span> &rarr; <span class="c-red">Enhanced Strength Medal</span></li>
-      <li><span class="c-blue">Intelligence Gem</span> &rarr; <span class="c-blue">Enhanced Intelligence Medal</span></li>
+      <li><img class="item-icon" src="../../../images/faq/gem/icon_health_gem.jpg" alt=""><span class="c-green">Health Gem</span> &rarr; <img class="item-icon" src="../../../images/faq/gem/icon_health_medal.jpg" alt=""><span class="c-green">Enhanced Health Medal</span></li>
+      <li><img class="item-icon" src="../../../images/faq/gem/icon_power_gem.jpg" alt=""><span class="c-red">Strength Gem</span> &rarr; <img class="item-icon" src="../../../images/faq/gem/icon_power_medal.jpg" alt=""><span class="c-red">Enhanced Strength Medal</span></li>
+      <li><img class="item-icon" src="../../../images/faq/gem/item_intelligence_gem.jpg" alt=""><span class="c-blue">Intelligence Gem</span> &rarr; <img class="item-icon" src="../../../images/faq/gem/icon_intelligence_medal.jpg" alt=""><span class="c-blue">Enhanced Intelligence Medal</span></li>
     </ul>
   </div>
   <div class="note">
@@ -174,8 +182,8 @@
   <p>All 4 medal types can be enchanted up to <strong>+32 Luciad Power</strong>.</p>
   <div class="step-box">
     <ul>
-      <li><strong>+0 to +20</strong> requires a <span class="c-pink">Medal Cube</span>. If the enchantment fails, it can be repaired with an <span class="c-pink">E-Repair Powder: Medal</span>.</li>
-      <li>To increase beyond +20, use <strong>Luciad's Power: Medal</strong>.</li>
+      <li><strong>+0 to +20</strong> requires a <img class="item-icon" src="../../../images/faq/gem/icon_cube_medal.jpg" alt=""><span class="c-pink">Medal Cube</span>. If the enchantment fails, it can be repaired with an <img class="item-icon" src="../../../images/faq/gem/icon_regenpowder_medal.jpg" alt=""><span class="c-pink">E-Repair Powder: Medal</span>.</li>
+      <li>To increase beyond +20, use <img class="item-icon" src="../../../images/faq/gem/icon_luciad_power_medal.jpg" alt=""><strong>Luciad's Power: Medal</strong>.</li>
     </ul>
   </div>
 
@@ -183,13 +191,13 @@
   <p>Each medal type provides the following base stats regardless of enchantment level:</p>
   <div class="stats-grid">
     <div class="stat-card">
-      <div class="stat-card-title" style="color:#b08ae0;">Ordinary Medal</div>
+      <div class="stat-card-title" style="color:#b08ae0;"><img class="item-icon" src="../../../images/faq/gem/icon_basic_medal.jpg" alt="">Ordinary Medal</div>
       <ul>
         <li><span class="stat-val">+5%</span> Basic Stats <em style="color:var(--text-dim);font-size:0.9em;">(Except Luck)</em></li>
       </ul>
     </div>
     <div class="stat-card">
-      <div class="stat-card-title" style="color:#6ecf7e;">Enhanced Health Medal</div>
+      <div class="stat-card-title" style="color:#6ecf7e;"><img class="item-icon" src="../../../images/faq/gem/icon_health_medal.jpg" alt="">Enhanced Health Medal</div>
       <ul>
         <li><span class="stat-val">+15%</span> Max HP / Max MP</li>
         <li><span class="stat-val">+15%</span> P. Def / M. Def</li>
@@ -197,14 +205,14 @@
       </ul>
     </div>
     <div class="stat-card">
-      <div class="stat-card-title" style="color:#e06060;">Enhanced Strength Medal</div>
+      <div class="stat-card-title" style="color:#e06060;"><img class="item-icon" src="../../../images/faq/gem/icon_power_medal.jpg" alt="">Enhanced Strength Medal</div>
       <ul>
         <li><span class="stat-val">+20%</span> P. Atk.</li>
         <li><span class="stat-val">+20</span> Crit. Pow.</li>
       </ul>
     </div>
     <div class="stat-card">
-      <div class="stat-card-title" style="color:#6aadea;">Enhanced Intelligence Medal</div>
+      <div class="stat-card-title" style="color:#6aadea;"><img class="item-icon" src="../../../images/faq/gem/icon_intelligence_medal.jpg" alt="">Enhanced Intelligence Medal</div>
       <ul>
         <li><span class="stat-val">+20%</span> M. Atk.</li>
         <li><span class="stat-val">+20</span> Crit. Pow.</li>
