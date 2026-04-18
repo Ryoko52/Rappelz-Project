@@ -15,10 +15,10 @@
     --red:#a33b2a; --red2:#c44a35;
     --text:#d4c9a8; --text2:#a09070; --text3:#6a5f45;
     --border:rgba(201,168,76,0.18); --border2:rgba(201,168,76,0.30);
-    --nusy:#7eb8d4;    --nusy-bg:rgba(126,184,212,0.07);  --nusy-b:rgba(126,184,212,0.30);
-    --flumi:#6db87a;   --flumi-bg:rgba(109,184,122,0.07); --flumi-b:rgba(109,184,122,0.30);
-    --inferno:#e07840; --inferno-bg:rgba(224,120,64,0.07); --inferno-b:rgba(224,120,64,0.30);
-    --reviac:#b86ce0;  --reviac-bg:rgba(184,108,224,0.08); --reviac-b:rgba(184,108,224,0.35);
+    --nusy:#6db87a;    --nusy-bg:rgba(109,184,122,0.07);  --nusy-b:rgba(109,184,122,0.30);
+    --flumi:#7eb8d4;   --flumi-bg:rgba(126,184,212,0.07); --flumi-b:rgba(126,184,212,0.30);
+    --inferno:#b86ce0; --inferno-bg:rgba(184,108,224,0.08); --inferno-b:rgba(184,108,224,0.35);
+    --reviac:#e07840;  --reviac-bg:rgba(224,120,64,0.07); --reviac-b:rgba(224,120,64,0.30);
     --cw:#b8d8ee; --cw-bg:rgba(184,216,238,0.06); --cw-b:rgba(184,216,238,0.28);
     --cb:#7890b8; --cb-bg:rgba(120,144,184,0.06); --cb-b:rgba(120,144,184,0.28);
     --cs:#d4a040; --cs-bg:rgba(212,160,64,0.08);  --cs-b:rgba(212,160,64,0.35);
@@ -50,10 +50,18 @@
   .meta-pill{font-family:'Cinzel',serif;font-size:0.65rem;font-weight:600;letter-spacing:0.08em;padding:0.15rem 0.55rem;background:rgba(201,168,76,0.1);border:1px solid var(--border2);border-radius:2px;color:var(--gold2);}
   .dungeon-hero p{color:var(--text2);font-size:0.95rem;max-width:700px;margin:0;}
 
-  /* ── TOC nav (horizontal pills) ── */
-  .toc-nav{display:flex;flex-wrap:wrap;gap:0.3rem;padding:0.7rem 0;margin-bottom:1.5rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-  .toc-nav a{font-family:'Cinzel',serif;font-size:0.6rem;font-weight:600;letter-spacing:0.07em;color:var(--text3);text-decoration:none;padding:0.2rem 0.55rem;background:var(--bg2);border:1px solid var(--border);border-radius:2px;white-space:nowrap;transition:color 0.15s,background 0.15s,border-color 0.15s;}
-  .toc-nav a:hover{color:var(--gold2);background:var(--bg3);border-color:var(--border2);}
+  /* ── TOC ── */
+  .toc{background:var(--bg1);border:1px solid var(--border2);border-left:3px solid var(--gold);padding:1.2rem 1.6rem;margin:1.2rem 0 2rem;}
+  .toc-title{font-family:'Cinzel',serif;font-size:0.82rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold2);margin-bottom:0.75rem;}
+  .toc ul{list-style:none;padding-left:0;columns:2;column-gap:2rem;}
+  @media(max-width:500px){.toc ul{columns:1;}}
+  .toc li{padding:0.18rem 0;margin:0;}
+  .toc a{font-family:'Cinzel',serif;font-size:0.78rem;color:var(--gold-dim);text-decoration:none;border-bottom:1px dashed var(--border2);padding-bottom:1px;transition:color 0.15s,border-color 0.15s;}
+  .toc a::before{content:'\25B8\00A0';font-size:0.75em;}
+  .toc a:hover{color:var(--gold2);border-bottom-color:var(--gold);}
+  .toc a.toc-dungeon{color:var(--gold-dim);}  .toc a.toc-dungeon::before{color:var(--gold-dim);}
+  .toc a.toc-gear{color:#c9a84c;}             .toc a.toc-gear::before{color:#c9a84c;}
+  .toc a.toc-armor{color:var(--reviac);}      .toc a.toc-armor::before{color:var(--reviac);}
 
   /* ── Section headings ── */
   h2{font-family:'Cinzel',serif;font-size:1.15rem;color:var(--gold2);margin:2rem 0 0.65rem;padding-bottom:0.35rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.5rem;}
@@ -78,18 +86,18 @@
   tbody tr:last-child{border-bottom:none;}
 
   /* Tier rows */
-  tr.tier-nusy td{color:var(--nusy);background:var(--nusy-bg);} tr.tier-nusy td:first-child{border-left:2px solid var(--nusy);} tr.tier-nusy:hover td{background:rgba(126,184,212,0.12);}
-  tr.tier-flumi td{color:var(--flumi);background:var(--flumi-bg);} tr.tier-flumi td:first-child{border-left:2px solid var(--flumi);} tr.tier-flumi:hover td{background:rgba(109,184,122,0.12);}
-  tr.tier-inferno td{color:var(--inferno);background:var(--inferno-bg);} tr.tier-inferno td:first-child{border-left:2px solid var(--inferno);} tr.tier-inferno:hover td{background:rgba(224,120,64,0.12);}
-  tr.tier-reviac td{color:var(--reviac);background:var(--reviac-bg);} tr.tier-reviac td:first-child{border-left:2px solid var(--reviac);} tr.tier-reviac:hover td{background:rgba(184,108,224,0.14);}
+  tr.tier-nusy td{color:var(--nusy);background:var(--nusy-bg);} tr.tier-nusy td:first-child{border-left:2px solid var(--nusy);} tr.tier-nusy:hover td{background:rgba(109,184,122,0.12);}
+  tr.tier-flumi td{color:var(--flumi);background:var(--flumi-bg);} tr.tier-flumi td:first-child{border-left:2px solid var(--flumi);} tr.tier-flumi:hover td{background:rgba(126,184,212,0.12);}
+  tr.tier-inferno td{color:var(--inferno);background:var(--inferno-bg);} tr.tier-inferno td:first-child{border-left:2px solid var(--inferno);} tr.tier-inferno:hover td{background:rgba(184,108,224,0.14);}
+  tr.tier-reviac td{color:var(--reviac);background:var(--reviac-bg);} tr.tier-reviac td:first-child{border-left:2px solid var(--reviac);} tr.tier-reviac:hover td{background:rgba(224,120,64,0.12);}
   tr.cloak-white td{color:var(--cw);background:var(--cw-bg);} tr.cloak-white td:first-child{border-left:2px solid var(--cw);} tr.cloak-white:hover td{background:rgba(184,216,238,0.11);}
   tr.cloak-black td{color:var(--cb);background:var(--cb-bg);} tr.cloak-black td:first-child{border-left:2px solid var(--cb);} tr.cloak-black:hover td{background:rgba(120,144,184,0.11);}
   tr.cloak-sand td{color:var(--cs);background:var(--cs-bg);}  tr.cloak-sand td:first-child{border-left:2px solid var(--cs);}  tr.cloak-sand:hover td{background:rgba(212,160,64,0.13);}
   tr.group-header td{font-family:'Cinzel',serif;font-size:0.72rem;font-weight:700;letter-spacing:0.1em;padding:0.4rem 0.7rem;border-right:none;}
-  tr.group-nusy td{background:rgba(126,184,212,0.13);color:var(--nusy);border-left:2px solid var(--nusy);}
-  tr.group-flumi td{background:rgba(109,184,122,0.13);color:var(--flumi);border-left:2px solid var(--flumi);}
-  tr.group-inferno td{background:rgba(224,120,64,0.13);color:var(--inferno);border-left:2px solid var(--inferno);}
-  tr.group-reviac td{background:rgba(184,108,224,0.13);color:var(--reviac);border-left:2px solid var(--reviac);}
+  tr.group-nusy td{background:rgba(109,184,122,0.13);color:var(--nusy);border-left:2px solid var(--nusy);}
+  tr.group-flumi td{background:rgba(126,184,212,0.13);color:var(--flumi);border-left:2px solid var(--flumi);}
+  tr.group-inferno td{background:rgba(184,108,224,0.13);color:var(--inferno);border-left:2px solid var(--inferno);}
+  tr.group-reviac td{background:rgba(224,120,64,0.13);color:var(--reviac);border-left:2px solid var(--reviac);}
   tr.group-white td{background:rgba(184,216,238,0.10);color:var(--cw);border-left:2px solid var(--cw);}
   tr.group-black-c td{background:rgba(120,144,184,0.10);color:var(--cb);border-left:2px solid var(--cb);}
   tr.group-sand-c td{background:rgba(212,160,64,0.10);color:var(--cs);border-left:2px solid var(--cs);}
@@ -163,6 +171,18 @@
 
   .note{font-size:0.82rem;color:var(--text3);font-style:italic;margin-top:0.25rem;}
 
+  tr.total-row td{font-family:'Cinzel',serif;font-size:0.8rem;font-weight:700;background:rgba(201,168,76,0.18);border-top:3px solid var(--gold);color:var(--gold3);letter-spacing:0.02em;}
+  tr.total-row td:first-child{border-left:3px solid var(--gold);}
+  tr.grand-total td{font-family:'Cinzel',serif;font-size:0.85rem;font-weight:700;background:rgba(201,168,76,0.28);border-top:3px solid var(--gold2);border-bottom:3px solid var(--gold2);color:var(--gold3);letter-spacing:0.03em;}
+  tr.grand-total td:first-child{border-left:3px solid var(--gold2);}
+
+  /* ── Cloak split layout ── */
+  .cloak-pair{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin:0.75rem 0;}
+  @media(max-width:640px){.cloak-pair{grid-template-columns:1fr;}}
+  .cloak-card{border:1px solid var(--border);border-radius:3px;overflow:hidden;}
+  .cloak-card-header{padding:0.5rem 0.75rem;font-family:'Cinzel',serif;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;display:flex;align-items:center;gap:0.4rem;border-bottom:1px solid var(--border2);}
+  .cloak-card table{margin:0;border:none;}
+
   footer{border-top:1px solid var(--border);padding:1.5rem 2rem;text-align:center;color:var(--text3);font-size:0.78rem;font-style:italic;margin-top:3rem;}
   footer strong{color:var(--gold-dim);font-style:normal;font-family:'Cinzel',serif;font-size:0.72rem;}
 </style>
@@ -192,33 +212,36 @@
     <p>Devildom is a dungeon for players who are at least level 175. Complete the <strong style="color:var(--text);">Ice Maiden quest line</strong> first, then the friendly Marduka <strong style="color:var(--text);">Nakibu</strong> will offer a short quest line that unlocks dungeon access. Located in the centre of <strong style="color:var(--text);">Kaia Lake</strong>.</p>
   </div>
 
-  <!-- ── TOC: horizontal pill nav ── -->
-  <nav class="toc-nav">
-    <a href="#structure">Structure</a>
-    <a href="#stages">Stages &amp; Bosses</a>
-    <a href="#warps">Stage Warps</a>
-    <a href="#drops">Drops &amp; Equipment</a>
-    <a href="#yushiva-belt">Yushiva's Belt</a>
-    <a href="#yushiva-set">Set Bonus</a>
-    <a href="#crystals">Crystals &amp; Beads</a>
-    <a href="#tarun">Blacksmith Tarun</a>
-    <a href="#armor-sets">Armor Progression</a>
-    <a href="#upgrade-tables">Upgrade Tables</a>
-    <a href="#scales-orbs">Scales &amp; Orbs</a>
-    <a href="#daily-quests">Daily Quests</a>
-    <a href="#cloaks">Cloaks</a>
-    <a href="#job-note">Job Type Note</a>
+  <!-- ── TOC ── -->
+  <nav class="toc">
+    <div class="toc-title">Table of Contents</div>
+    <ul>
+      <li><a href="#structure"    class="toc-dungeon">Dungeon Structure</a></li>
+      <li><a href="#stages"       class="toc-dungeon">Stages &amp; Bosses</a></li>
+      <li><a href="#warps"        class="toc-dungeon">Stage Warps</a></li>
+      <li><a href="#drops"        class="toc-gear">Drops &amp; Equipment</a></li>
+      <li><a href="#yushiva-belt" class="toc-gear">Yushiva's Belt</a></li>
+      <li><a href="#yushiva-set"  class="toc-gear">Set Bonus</a></li>
+      <li><a href="#crystals"     class="toc-gear">Crystals &amp; Beads</a></li>
+      <li><a href="#tarun"        class="toc-gear">Blacksmith Tarun</a></li>
+      <li><a href="#armor-sets"   class="toc-armor">Armor Progression</a></li>
+      <li><a href="#upgrade-tables" class="toc-armor">Upgrade Tables</a></li>
+      <li><a href="#scales-orbs"  class="toc-armor">Scales &amp; Orbs</a></li>
+      <li><a href="#cloaks"       class="toc-armor">Cloaks</a></li>
+      <li><a href="#job-note"     class="toc-armor">Job Type Note</a></li>
+    </ul>
   </nav>
+
+  <img src="../../images/dungeons/devildom/devildom_location.png" alt="Devildom Location — Kaia Lake" class="guide-img"/>
 
   <!-- ── Structure ── -->
   <h2 id="structure">Dungeon Structure</h2>
   <p>Devildom is made up of <strong style="color:var(--text);">60 rooms</strong> split across <strong style="color:var(--text);">6 stages</strong>, each harder than the last. You must kill all monsters in a room before moving to the next.</p>
-  <img src="../../images/dungeons/devildom/devildom_location.png" alt="Devildom Location — Kaia Lake" class="guide-img"/>
+  <img src="../../images/dungeons/devildom/devildom_stages.png" alt="Devildom Structure Overview" class="guide-img"/>
 
   <!-- ── Stages ── -->
   <h2 id="stages">Stages &amp; Bosses</h2>
   <p>Stages 1–3 have fixed boss spawns. Stages 4–5 and Stage 6's first room each have a <strong style="color:var(--text);">50% chance</strong> to spawn the default pair <em>or</em> the Main Boss + Yushiva. Stage 6's final room is always a fixed multi-boss encounter.</p>
-  <img src="../../images/dungeons/devildom/devildom_stages.png" alt="Devildom Stages Overview" class="guide-img"/>
 
   <div class="stage-row stage-row-3">
     <div class="stage-card">
@@ -253,7 +276,7 @@
   <div class="stage-row stage-row-2">
     <div class="stage-card">
       <div class="stage-card-num">4</div>
-      <div class="stage-card-title">Stage 4 <span style="color:var(--text3);font-weight:400;">— 50% Chance</span></div>
+      <div class="stage-card-title">Stage 4</div>
       <div class="mob-types">
         <span class="mob-tag mob-undead">Undead</span>
         <span class="mob-tag mob-mecca">Mecca</span>
@@ -266,7 +289,7 @@
     </div>
     <div class="stage-card">
       <div class="stage-card-num">5</div>
-      <div class="stage-card-title">Stage 5 <span style="color:var(--text3);font-weight:400;">— 50% Chance</span></div>
+      <div class="stage-card-title">Stage 5</div>
       <div class="mob-types">
         <span class="mob-tag mob-beast">Beast</span>
         <span class="mob-tag mob-ain">Ain</span>
@@ -387,10 +410,10 @@
     <thead><tr><th>Material</th><th>Amount</th></tr></thead>
     <tbody>
       <tr><td>Ice Maiden's Essence</td><td>50</td></tr>
-      <tr><td><img src="../../images/dungeons/devildom/icon_item_whitedragon_bead.jpg" class="icon" alt="">White Dragon's Soul Bead</td><td>500</td></tr>
-      <tr><td><img src="../../images/dungeons/devildom/icon_item_black_dragon_bead.jpg" class="icon" alt="">Black Dragon's Soul Bead</td><td>300</td></tr>
+      <tr><td><img src="../../images/dungeons/devildom/icon_item_black_dragon_bead.jpg" class="icon" alt="">White Dragon's Soul Bead</td><td>500</td></tr>
+      <tr><td><img src="../../images/dungeons/devildom/icon_item_whitedragon_bead.jpg" class="icon" alt="">Black Dragon's Soul Bead</td><td>300</td></tr>
       <tr><td><img src="../../images/dungeons/devildom/icon_item_sanedragon_bead.jpg" class="icon" alt="">Sand Dragon's Soul Bead</td><td>200</td></tr>
-      <tr><td>White Steel</td><td>500</td></tr>
+      <tr><td><img src="../../images/faq/lava/whitesteel.png" class="icon" alt="">White Steel</td><td>500</td></tr>
       <tr><td><img src="../../images/dungeons/devildom/icon_item_refined_devildom_crystal.jpg" class="icon" alt="">Refined Crystal of Devildom</td><td>500</td></tr>
       <tr><td><img src="../../images/dungeons/devildom/icon_belt_bearskin.jpg" class="icon" alt="">+0 Bear Skin Belt</td><td>1</td></tr>
     </tbody>
@@ -409,8 +432,8 @@
     <li><img src="../../images/dungeons/devildom/icon_item_black_crystal_box.jpg" class="icon" alt=""><strong style="color:var(--text);">Black Crystal Box</strong> → 1 <img src="../../images/dungeons/devildom/icon_item_devildom_crystal.jpg" class="icon" alt="">Crystal of Devildom. Collect 100 to craft 1 <img src="../../images/dungeons/devildom/icon_item_refined_devildom_crystal.jpg" class="icon" alt="">Refined Crystal (double-click to combine).</li>
     <li><strong style="color:var(--text);">Spirit Bead Box</strong> → 1 random Soul Bead:
       <ul>
-        <li><img src="../../images/dungeons/devildom/icon_item_whitedragon_bead.jpg" class="icon" alt=""><em>White Dragon's Soul Bead</em> — most common</li>
-        <li><img src="../../images/dungeons/devildom/icon_item_black_dragon_bead.jpg" class="icon" alt=""><em>Black Dragon's Soul Bead</em> — relatively common</li>
+        <li><img src="../../images/dungeons/devildom/icon_item_black_dragon_bead.jpg" class="icon" alt=""><em>White Dragon's Soul Bead</em> — most common</li>
+        <li><img src="../../images/dungeons/devildom/icon_item_whitedragon_bead.jpg" class="icon" alt=""><em>Black Dragon's Soul Bead</em> — relatively common</li>
         <li><img src="../../images/dungeons/devildom/icon_item_sanedragon_bead.jpg" class="icon" alt=""><em>Sand Dragon's Soul Bead</em> — rare</li>
       </ul>
     </li>
@@ -449,10 +472,12 @@
       <tr class="tier-nusy"><td>Nusylite's Gloves</td><td>175</td><td>Atk / Cast Speed +10</td><td>50</td></tr>
       <tr class="tier-nusy"><td>Nusylite's Boots</td><td>175</td><td>Movement Speed +10</td><td>50</td></tr>
       <tr class="tier-nusy"><td>Nusylite's Armor</td><td>175</td><td>All stats (ex. Luck) +30</td><td>50</td></tr>
+      <tr class="total-row"><td colspan="3">Total — Full Nusylite's Set</td><td>200</td></tr>
       <tr class="tier-flumi"><td>Fluminis's Helmet</td><td>181</td><td>Evasion / M. Res +3%</td><td>130</td></tr>
       <tr class="tier-flumi"><td>Fluminis's Gloves</td><td>182</td><td>Atk / Cast Speed +12</td><td>150</td></tr>
       <tr class="tier-flumi"><td>Fluminis's Boots</td><td>183</td><td>Movement Speed +12</td><td>220</td></tr>
       <tr class="tier-flumi"><td>Fluminis's Armor</td><td>185</td><td>All stats (ex. Luck) +40</td><td>300</td></tr>
+      <tr class="total-row"><td colspan="3">Total — Full Fluminis's Set</td><td>800</td></tr>
     </tbody>
   </table>
 
@@ -463,8 +488,8 @@
       <tr>
         <th>Armor</th><th>Lv</th><th>Base</th>
         <th><img src="../../images/dungeons/devildom/icon_item_refined_devildom_crystal.jpg" class="icon" alt="">Refined Crystal</th>
-        <th><img src="../../images/dungeons/devildom/icon_item_whitedragon_bead.jpg" class="icon" alt="">White Bead</th>
-        <th><img src="../../images/dungeons/devildom/icon_item_black_dragon_bead.jpg" class="icon" alt="">Black Bead</th>
+        <th><img src="../../images/dungeons/devildom/icon_item_black_dragon_bead.jpg" class="icon" alt="">White Bead</th>
+        <th><img src="../../images/dungeons/devildom/icon_item_whitedragon_bead.jpg" class="icon" alt="">Black Bead</th>
         <th><img src="../../images/dungeons/devildom/icon_item_sanedragon_bead.jpg" class="icon" alt="">Sand Bead</th>
         <th><img src="../../images/dungeons/devildom/icon_item_quest_lostisland_dragonscales.jpg" class="icon" alt="">Scale</th>
         <th><img src="../../images/dungeons/devildom/icon_item_devil_orb.jpg" class="icon" alt="">Orb</th>
@@ -479,6 +504,7 @@
       <tr class="tier-inferno"><td>Inferno's Tights</td><td>190</td><td>Fluminis' Armor</td><td>1,000</td><td>5,000</td><td>3,000</td><td>1,500</td><td>50</td><td>—</td></tr>
       <tr class="tier-inferno"><td>Inferno's Garb</td><td>190</td><td>Fluminis' Armor</td><td>1,000</td><td>5,000</td><td>3,000</td><td>1,500</td><td>50</td><td>—</td></tr>
       <tr class="tier-inferno"><td>Inferno's Coat</td><td>190</td><td>Fluminis' Armor</td><td>1,000</td><td>5,000</td><td>3,000</td><td>1,500</td><td>50</td><td>—</td></tr>
+      <tr class="total-row"><td colspan="3">Total — Helmet + Gloves + Boots + 1 Armor piece</td><td>2,200</td><td>15,000</td><td>8,000</td><td>4,000</td><td>100</td><td>—</td></tr>
       <tr class="group-header group-reviac"><td colspan="9">Reviac Set — Lv 191–195 · Best in Slot</td></tr>
       <tr class="tier-reviac"><td>Reviac's Helmet</td><td>191</td><td>Inferno's Helmet</td><td>1,500</td><td>6,000</td><td>3,000</td><td>1,500</td><td>—</td><td>10</td></tr>
       <tr class="tier-reviac"><td>Reviac's Gloves</td><td>192</td><td>Inferno's Gloves</td><td>1,500</td><td>6,000</td><td>3,000</td><td>1,500</td><td>—</td><td>10</td></tr>
@@ -487,6 +513,8 @@
       <tr class="tier-reviac"><td>Reviac's Tights</td><td>195</td><td>Inferno's Tights</td><td>3,000</td><td>10,000</td><td>6,000</td><td>3,000</td><td>—</td><td>35</td></tr>
       <tr class="tier-reviac"><td>Reviac's Garb</td><td>195</td><td>Inferno's Garb</td><td>3,000</td><td>10,000</td><td>6,000</td><td>3,000</td><td>—</td><td>35</td></tr>
       <tr class="tier-reviac"><td>Reviac's Coat</td><td>195</td><td>Inferno's Coat</td><td>3,000</td><td>10,000</td><td>6,000</td><td>3,000</td><td>—</td><td>35</td></tr>
+      <tr class="total-row"><td colspan="3">Total — Helmet + Gloves + Boots + 1 Armor piece</td><td>8,000</td><td>30,000</td><td>16,000</td><td>8,000</td><td>—</td><td>70</td></tr>
+      <tr class="grand-total"><td colspan="3">⬛ Grand Total — Full Journey (Nusy → Fluminis → Inferno → Reviac)</td><td>11,200</td><td>45,000</td><td>24,000</td><td>12,000</td><td>100</td><td>70</td></tr>
     </tbody>
   </table>
   </div>
@@ -495,10 +523,6 @@
   <h2 id="scales-orbs">Scales of Devildom &amp; Devil Orbs</h2>
   <p><img src="../../images/dungeons/devildom/icon_item_quest_lostisland_dragonscales.jpg" class="icon" alt=""><strong style="color:var(--inferno);">Scales of Devildom</strong> — needed for Inferno. Combine <img src="../../images/dungeons/devildom/icon_item_refined_devildom_crystal.jpg" class="icon" alt="">Refined Crystals with Black Scale pieces dropped by Stage 4–6 bosses.</p>
   <p><img src="../../images/dungeons/devildom/icon_item_devil_orb.jpg" class="icon" alt=""><strong style="color:var(--reviac);">Devil Orbs</strong> — needed for Reviac. Drop from Stage 6 bosses. A daily quest rewards a box containing either a <img src="../../images/dungeons/devildom/icon_item_devil_orb.jpg" class="icon" alt="">Devil Orb or a <img src="../../images/dungeons/devildom/icon_item_devil_orb_piece.jpg" class="icon" alt="">Devil Orb Piece — combine <strong style="color:var(--text);">10 pieces</strong> to make one Orb.</p>
-
-  <!-- ── Daily Quests ── -->
-  <h2 id="daily-quests">Daily Quests</h2>
-  <img src="../../images/dungeons/devildom/Quests.png" alt="Devildom Daily Quests and Rewards" class="guide-img-center"/>
 
   <!-- ── Cloaks ── -->
   <h2 id="cloaks">Devildom Cloaks</h2>
@@ -510,65 +534,88 @@
     <div class="tier-legend-item"><img src="../../images/dungeons/devildom/icon_mantle_devildom_sanddragon.jpg" class="icon" alt=""><span style="color:var(--cs);">Sand Dragon's Cloak</span><span style="color:var(--text3);">Hybrid · max +20 · Best</span></div>
   </div>
 
-  <div style="overflow-x:auto;">
-  <table>
-    <thead>
-      <tr><th>Cloak</th><th>Enchant</th><th>P.Def &amp; M.Def</th><th>P.Atk</th><th>M.Atk</th><th>P.&amp;M.Atk</th><th>Ign.P.Def</th><th>Ign.M.Def</th><th>Pierce</th><th>Crit.Pow</th></tr>
-    </thead>
-    <tbody>
-      <tr class="group-header group-white"><td colspan="10"><img src="../../images/dungeons/devildom/icon_mantle_devildom_whitedragon.jpg" class="icon" alt="">White Dragon's Cloak — Physical (max +10)</td></tr>
-      <tr class="cloak-white"><td>White</td><td>+0</td><td>10</td><td>1.0%</td><td>—</td><td>—</td><td>50</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr class="cloak-white"><td>White</td><td>+1</td><td>15</td><td>1.5%</td><td>—</td><td>—</td><td>75</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr class="cloak-white"><td>White</td><td>+2</td><td>20</td><td>2.0%</td><td>—</td><td>—</td><td>100</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr class="cloak-white"><td>White</td><td>+3</td><td>30</td><td>2.5%</td><td>—</td><td>—</td><td>125</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr class="cloak-white"><td>White</td><td>+4</td><td>40</td><td>3.0%</td><td>—</td><td>—</td><td>150</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr class="cloak-white"><td>White</td><td>+5</td><td>55</td><td>4.0%</td><td>—</td><td>—</td><td>200</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr class="cloak-white"><td>White</td><td>+6</td><td>70</td><td>5.0%</td><td>—</td><td>—</td><td>250</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr class="cloak-white"><td>White</td><td>+7</td><td>90</td><td>6.0%</td><td>—</td><td>—</td><td>300</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr class="cloak-white"><td>White</td><td>+8</td><td>110</td><td>7.0%</td><td>—</td><td>—</td><td>350</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr class="cloak-white"><td>White</td><td>+9</td><td>130</td><td>8.0%</td><td>—</td><td>—</td><td>450</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr class="cloak-white"><td>White</td><td>+10</td><td>150</td><td>10.0%</td><td>—</td><td>—</td><td>550</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr class="group-header group-black-c"><td colspan="10"><img src="../../images/dungeons/devildom/icon_mantle_devildom_blackdragon.jpg" class="icon" alt="">Black Dragon's Cloak — Magical (max +10)</td></tr>
-      <tr class="cloak-black"><td>Black</td><td>+0</td><td>10</td><td>—</td><td>1.0%</td><td>—</td><td>—</td><td>50</td><td>—</td><td>—</td></tr>
-      <tr class="cloak-black"><td>Black</td><td>+1</td><td>15</td><td>—</td><td>1.5%</td><td>—</td><td>—</td><td>75</td><td>—</td><td>—</td></tr>
-      <tr class="cloak-black"><td>Black</td><td>+2</td><td>20</td><td>—</td><td>2.0%</td><td>—</td><td>—</td><td>100</td><td>—</td><td>—</td></tr>
-      <tr class="cloak-black"><td>Black</td><td>+3</td><td>30</td><td>—</td><td>2.5%</td><td>—</td><td>—</td><td>125</td><td>—</td><td>—</td></tr>
-      <tr class="cloak-black"><td>Black</td><td>+4</td><td>40</td><td>—</td><td>3.0%</td><td>—</td><td>—</td><td>150</td><td>—</td><td>—</td></tr>
-      <tr class="cloak-black"><td>Black</td><td>+5</td><td>55</td><td>—</td><td>4.0%</td><td>—</td><td>—</td><td>200</td><td>—</td><td>—</td></tr>
-      <tr class="cloak-black"><td>Black</td><td>+6</td><td>70</td><td>—</td><td>5.0%</td><td>—</td><td>—</td><td>250</td><td>—</td><td>—</td></tr>
-      <tr class="cloak-black"><td>Black</td><td>+7</td><td>90</td><td>—</td><td>6.0%</td><td>—</td><td>—</td><td>300</td><td>—</td><td>—</td></tr>
-      <tr class="cloak-black"><td>Black</td><td>+8</td><td>110</td><td>—</td><td>7.0%</td><td>—</td><td>—</td><td>350</td><td>—</td><td>—</td></tr>
-      <tr class="cloak-black"><td>Black</td><td>+9</td><td>130</td><td>—</td><td>8.0%</td><td>—</td><td>—</td><td>450</td><td>—</td><td>—</td></tr>
-      <tr class="cloak-black"><td>Black</td><td>+10</td><td>150</td><td>—</td><td>10.0%</td><td>—</td><td>—</td><td>550</td><td>—</td><td>—</td></tr>
-      <tr class="group-header group-sand-c"><td colspan="10"><img src="../../images/dungeons/devildom/icon_mantle_devildom_sanddragon.jpg" class="icon" alt="">Sand Dragon's Cloak — Hybrid · Best (max +20)</td></tr>
-      <tr class="cloak-sand"><td>Sand</td><td>+0</td><td>200</td><td>—</td><td>—</td><td>10.0%</td><td>—</td><td>—</td><td>2.5%</td><td>2</td></tr>
-      <tr class="cloak-sand"><td>Sand</td><td>+1</td><td>210</td><td>—</td><td>—</td><td>10.0%</td><td>—</td><td>—</td><td>3.0%</td><td>3</td></tr>
-      <tr class="cloak-sand"><td>Sand</td><td>+2</td><td>220</td><td>—</td><td>—</td><td>10.5%</td><td>—</td><td>—</td><td>3.5%</td><td>4</td></tr>
-      <tr class="cloak-sand"><td>Sand</td><td>+3</td><td>230</td><td>—</td><td>—</td><td>10.5%</td><td>—</td><td>—</td><td>4.0%</td><td>5</td></tr>
-      <tr class="cloak-sand"><td>Sand</td><td>+4</td><td>250</td><td>—</td><td>—</td><td>11.0%</td><td>—</td><td>—</td><td>4.5%</td><td>6</td></tr>
-      <tr class="cloak-sand"><td>Sand</td><td>+5</td><td>280</td><td>—</td><td>—</td><td>11.0%</td><td>—</td><td>—</td><td>5.0%</td><td>7</td></tr>
-      <tr class="cloak-sand"><td>Sand</td><td>+6</td><td>320</td><td>—</td><td>—</td><td>11.5%</td><td>—</td><td>—</td><td>5.5%</td><td>8</td></tr>
-      <tr class="cloak-sand"><td>Sand</td><td>+7</td><td>370</td><td>—</td><td>—</td><td>11.5%</td><td>—</td><td>—</td><td>6.0%</td><td>9</td></tr>
-      <tr class="cloak-sand"><td>Sand</td><td>+8</td><td>420</td><td>—</td><td>—</td><td>12.0%</td><td>—</td><td>—</td><td>6.5%</td><td>10</td></tr>
-      <tr class="cloak-sand"><td>Sand</td><td>+9</td><td>470</td><td>—</td><td>—</td><td>12.0%</td><td>—</td><td>—</td><td>7.0%</td><td>11</td></tr>
-      <tr class="cloak-sand"><td>Sand</td><td>+10</td><td>570</td><td>—</td><td>—</td><td>12.5%</td><td>—</td><td>—</td><td>7.5%</td><td>12</td></tr>
-      <tr class="cloak-sand"><td>Sand</td><td>+11</td><td>670</td><td>—</td><td>—</td><td>13.0%</td><td>—</td><td>—</td><td>8.0%</td><td>13</td></tr>
-      <tr class="cloak-sand"><td>Sand</td><td>+12</td><td>770</td><td>—</td><td>—</td><td>13.5%</td><td>—</td><td>—</td><td>8.5%</td><td>14</td></tr>
-      <tr class="cloak-sand"><td>Sand</td><td>+13</td><td>870</td><td>—</td><td>—</td><td>14.0%</td><td>—</td><td>—</td><td>9.0%</td><td>15</td></tr>
-      <tr class="cloak-sand"><td>Sand</td><td>+14</td><td>970</td><td>—</td><td>—</td><td>14.5%</td><td>—</td><td>—</td><td>9.5%</td><td>16</td></tr>
-      <tr class="cloak-sand"><td>Sand</td><td>+15</td><td>1070</td><td>—</td><td>—</td><td>15.0%</td><td>—</td><td>—</td><td>10.0%</td><td>17</td></tr>
-      <tr class="cloak-sand"><td>Sand</td><td>+16</td><td>1170</td><td>—</td><td>—</td><td>16.0%</td><td>—</td><td>—</td><td>11.0%</td><td>18</td></tr>
-      <tr class="cloak-sand"><td>Sand</td><td>+17</td><td>1270</td><td>—</td><td>—</td><td>17.0%</td><td>—</td><td>—</td><td>12.0%</td><td>19</td></tr>
-      <tr class="cloak-sand"><td>Sand</td><td>+18</td><td>1370</td><td>—</td><td>—</td><td>18.0%</td><td>—</td><td>—</td><td>13.0%</td><td>21</td></tr>
-      <tr class="cloak-sand"><td>Sand</td><td>+19</td><td>1470</td><td>—</td><td>—</td><td>19.0%</td><td>—</td><td>—</td><td>14.0%</td><td>23</td></tr>
-      <tr class="cloak-sand"><td>Sand</td><td>+20</td><td>1570</td><td>—</td><td>—</td><td>20.0%</td><td>—</td><td>—</td><td>15.0%</td><td>25</td></tr>
-    </tbody>
-  </table>
+  <!-- White + Black side by side -->
+  <div class="cloak-pair">
+    <div class="cloak-card">
+      <div class="cloak-card-header" style="background:var(--cw-bg);border-color:var(--cw-b);color:var(--cw);">
+        <img src="../../images/dungeons/devildom/icon_mantle_devildom_whitedragon.jpg" class="icon" alt="">White Dragon's Cloak <span style="color:var(--text3);font-weight:400;">· Physical · max +10</span>
+      </div>
+      <table>
+        <thead><tr><th>+</th><th>P/M.Def</th><th>P.Atk</th><th>Ign.P.Def</th></tr></thead>
+        <tbody>
+          <tr class="cloak-white"><td>+0</td><td>10</td><td>1.0%</td><td>50</td></tr>
+          <tr class="cloak-white"><td>+1</td><td>15</td><td>1.5%</td><td>75</td></tr>
+          <tr class="cloak-white"><td>+2</td><td>20</td><td>2.0%</td><td>100</td></tr>
+          <tr class="cloak-white"><td>+3</td><td>30</td><td>2.5%</td><td>125</td></tr>
+          <tr class="cloak-white"><td>+4</td><td>40</td><td>3.0%</td><td>150</td></tr>
+          <tr class="cloak-white"><td>+5</td><td>55</td><td>4.0%</td><td>200</td></tr>
+          <tr class="cloak-white"><td>+6</td><td>70</td><td>5.0%</td><td>250</td></tr>
+          <tr class="cloak-white"><td>+7</td><td>90</td><td>6.0%</td><td>300</td></tr>
+          <tr class="cloak-white"><td>+8</td><td>110</td><td>7.0%</td><td>350</td></tr>
+          <tr class="cloak-white"><td>+9</td><td>130</td><td>8.0%</td><td>450</td></tr>
+          <tr class="cloak-white"><td>+10</td><td>150</td><td>10.0%</td><td>550</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cloak-card">
+      <div class="cloak-card-header" style="background:var(--cb-bg);border-color:var(--cb-b);color:var(--cb);">
+        <img src="../../images/dungeons/devildom/icon_mantle_devildom_blackdragon.jpg" class="icon" alt="">Black Dragon's Cloak <span style="color:var(--text3);font-weight:400;">· Magical · max +10</span>
+      </div>
+      <table>
+        <thead><tr><th>+</th><th>P/M.Def</th><th>M.Atk</th><th>Ign.M.Def</th></tr></thead>
+        <tbody>
+          <tr class="cloak-black"><td>+0</td><td>10</td><td>1.0%</td><td>50</td></tr>
+          <tr class="cloak-black"><td>+1</td><td>15</td><td>1.5%</td><td>75</td></tr>
+          <tr class="cloak-black"><td>+2</td><td>20</td><td>2.0%</td><td>100</td></tr>
+          <tr class="cloak-black"><td>+3</td><td>30</td><td>2.5%</td><td>125</td></tr>
+          <tr class="cloak-black"><td>+4</td><td>40</td><td>3.0%</td><td>150</td></tr>
+          <tr class="cloak-black"><td>+5</td><td>55</td><td>4.0%</td><td>200</td></tr>
+          <tr class="cloak-black"><td>+6</td><td>70</td><td>5.0%</td><td>250</td></tr>
+          <tr class="cloak-black"><td>+7</td><td>90</td><td>6.0%</td><td>300</td></tr>
+          <tr class="cloak-black"><td>+8</td><td>110</td><td>7.0%</td><td>350</td></tr>
+          <tr class="cloak-black"><td>+9</td><td>130</td><td>8.0%</td><td>450</td></tr>
+          <tr class="cloak-black"><td>+10</td><td>150</td><td>10.0%</td><td>550</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Sand Dragon full width -->
+  <div class="cloak-card" style="overflow-x:auto;">
+    <div class="cloak-card-header" style="background:var(--cs-bg);border-color:var(--cs-b);color:var(--cs);">
+      <img src="../../images/dungeons/devildom/icon_mantle_devildom_sanddragon.jpg" class="icon" alt="">Sand Dragon's Cloak <span style="color:var(--text3);font-weight:400;">· Hybrid · Best · max +20</span>
+    </div>
+    <table>
+      <thead><tr><th>+</th><th>P/M.Def</th><th>P.&amp;M.Atk</th><th>Pierce</th><th>Crit.Pow</th></tr></thead>
+      <tbody>
+        <tr class="cloak-sand"><td>+0</td><td>200</td><td>10.0%</td><td>2.5%</td><td>2</td></tr>
+        <tr class="cloak-sand"><td>+1</td><td>210</td><td>10.0%</td><td>3.0%</td><td>3</td></tr>
+        <tr class="cloak-sand"><td>+2</td><td>220</td><td>10.5%</td><td>3.5%</td><td>4</td></tr>
+        <tr class="cloak-sand"><td>+3</td><td>230</td><td>10.5%</td><td>4.0%</td><td>5</td></tr>
+        <tr class="cloak-sand"><td>+4</td><td>250</td><td>11.0%</td><td>4.5%</td><td>6</td></tr>
+        <tr class="cloak-sand"><td>+5</td><td>280</td><td>11.0%</td><td>5.0%</td><td>7</td></tr>
+        <tr class="cloak-sand"><td>+6</td><td>320</td><td>11.5%</td><td>5.5%</td><td>8</td></tr>
+        <tr class="cloak-sand"><td>+7</td><td>370</td><td>11.5%</td><td>6.0%</td><td>9</td></tr>
+        <tr class="cloak-sand"><td>+8</td><td>420</td><td>12.0%</td><td>6.5%</td><td>10</td></tr>
+        <tr class="cloak-sand"><td>+9</td><td>470</td><td>12.0%</td><td>7.0%</td><td>11</td></tr>
+        <tr class="cloak-sand"><td>+10</td><td>570</td><td>12.5%</td><td>7.5%</td><td>12</td></tr>
+        <tr class="cloak-sand"><td>+11</td><td>670</td><td>13.0%</td><td>8.0%</td><td>13</td></tr>
+        <tr class="cloak-sand"><td>+12</td><td>770</td><td>13.5%</td><td>8.5%</td><td>14</td></tr>
+        <tr class="cloak-sand"><td>+13</td><td>870</td><td>14.0%</td><td>9.0%</td><td>15</td></tr>
+        <tr class="cloak-sand"><td>+14</td><td>970</td><td>14.5%</td><td>9.5%</td><td>16</td></tr>
+        <tr class="cloak-sand"><td>+15</td><td>1,070</td><td>15.0%</td><td>10.0%</td><td>17</td></tr>
+        <tr class="cloak-sand"><td>+16</td><td>1,170</td><td>16.0%</td><td>11.0%</td><td>18</td></tr>
+        <tr class="cloak-sand"><td>+17</td><td>1,270</td><td>17.0%</td><td>12.0%</td><td>19</td></tr>
+        <tr class="cloak-sand"><td>+18</td><td>1,370</td><td>18.0%</td><td>13.0%</td><td>21</td></tr>
+        <tr class="cloak-sand"><td>+19</td><td>1,470</td><td>19.0%</td><td>14.0%</td><td>23</td></tr>
+        <tr class="cloak-sand"><td>+20</td><td>1,570</td><td>20.0%</td><td>15.0%</td><td>25</td></tr>
+      </tbody>
+    </table>
   </div>
 
   <h3>Cloak Crafting Materials</h3>
   <div class="highlight-box">
-    <p><strong style="color:var(--gold2);">Formula Update:</strong> Recipes now require <strong style="color:var(--text);">500 White Steel</strong> instead of 50,000 Processed Steel (Extreme Powers).</p>
+    <p><strong style="color:var(--gold2);">Formula Update:</strong> Recipes now require <img src="../../images/faq/lava/whitesteel.png" class="icon" alt=""><strong style="color:var(--text);">500 White Steel</strong> instead of 50,000 Processed Steel (Extreme Powers).</p>
   </div>
   <div style="overflow-x:auto;">
   <table>
@@ -582,11 +629,11 @@
     </thead>
     <tbody>
       <tr><td><img src="../../images/dungeons/devildom/icon_kainen_essence.jpg" class="icon" alt="">Yushiva Essence</td><td>35</td><td>35</td><td>175</td></tr>
-      <tr><td><img src="../../images/dungeons/devildom/icon_item_whitedragon_bead.jpg" class="icon" alt="">Soul Bead of White Dragon</td><td>15,000</td><td>15,000</td><td>15,000</td></tr>
-      <tr><td><img src="../../images/dungeons/devildom/icon_item_black_dragon_bead.jpg" class="icon" alt="">Soul Bead of Black Dragon</td><td>3,000</td><td>3,000</td><td>3,000</td></tr>
+      <tr><td><img src="../../images/dungeons/devildom/icon_item_black_dragon_bead.jpg" class="icon" alt="">Soul Bead of White Dragon</td><td>15,000</td><td>15,000</td><td>15,000</td></tr>
+      <tr><td><img src="../../images/dungeons/devildom/icon_item_whitedragon_bead.jpg" class="icon" alt="">Soul Bead of Black Dragon</td><td>3,000</td><td>3,000</td><td>3,000</td></tr>
       <tr><td><img src="../../images/dungeons/devildom/icon_item_sanedragon_bead.jpg" class="icon" alt="">Soul Bead of Sand Dragon</td><td>1,000</td><td>1,000</td><td>1,000</td></tr>
       <tr><td><img src="../../images/dungeons/devildom/icon_item_refined_devildom_crystal.jpg" class="icon" alt="">Refined Crystal of Devildom</td><td>500</td><td>500</td><td>500</td></tr>
-      <tr><td>White Steel</td><td>500</td><td>500</td><td>500</td></tr>
+      <tr><td><img src="../../images/faq/lava/whitesteel.png" class="icon" alt="">White Steel</td><td>500</td><td>500</td><td>500</td></tr>
       <tr><td><img src="../../images/dungeons/devildom/icon_item_white_fabric.jpg" class="icon" alt="">White Piece of Fabric</td><td>50</td><td>50</td><td>150</td></tr>
       <tr><td><img src="../../images/dungeons/devildom/icon_item_whitedragon_scale.jpg" class="icon" alt="">White Dragon's Scale</td><td>100</td><td>—</td><td>—</td></tr>
       <tr><td><img src="../../images/dungeons/devildom/icon_item_blackdragon_scale.jpg" class="icon" alt="">Black Dragon's Scale</td><td>—</td><td>100</td><td>—</td></tr>
