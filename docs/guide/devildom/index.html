@@ -50,18 +50,21 @@
   .meta-pill{font-family:'Cinzel',serif;font-size:0.65rem;font-weight:600;letter-spacing:0.08em;padding:0.15rem 0.55rem;background:rgba(201,168,76,0.1);border:1px solid var(--border2);border-radius:2px;color:var(--gold2);}
   .dungeon-hero p{color:var(--text2);font-size:0.95rem;max-width:700px;margin:0;}
 
-  /* ── TOC ── */
-  .toc{background:var(--bg1);border:1px solid var(--border2);border-left:3px solid var(--gold);padding:1.2rem 1.6rem;margin:1.2rem 0 2rem;}
-  .toc-title{font-family:'Cinzel',serif;font-size:0.82rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold2);margin-bottom:0.75rem;}
-  .toc ul{list-style:none;padding-left:0;columns:2;column-gap:2rem;}
-  @media(max-width:500px){.toc ul{columns:1;}}
-  .toc li{padding:0.18rem 0;margin:0;}
-  .toc a{font-family:'Cinzel',serif;font-size:0.78rem;color:var(--gold-dim);text-decoration:none;border-bottom:1px dashed var(--border2);padding-bottom:1px;transition:color 0.15s,border-color 0.15s;}
-  .toc a::before{content:'\25B8\00A0';font-size:0.75em;}
-  .toc a:hover{color:var(--gold2);border-bottom-color:var(--gold);}
-  .toc a.toc-dungeon{color:var(--gold-dim);}  .toc a.toc-dungeon::before{color:var(--gold-dim);}
-  .toc a.toc-gear{color:#c9a84c;}             .toc a.toc-gear::before{color:#c9a84c;}
-  .toc a.toc-armor{color:var(--reviac);}      .toc a.toc-armor::before{color:var(--reviac);}
+  /* ── Layout: sidebar + content ── */
+  .page-body{display:grid;grid-template-columns:220px 1fr;gap:3rem;align-items:start;margin-top:1.5rem;}
+  @media(max-width:900px){.page-body{grid-template-columns:1fr;gap:0;}.sidebar{position:static!important;margin-bottom:1.5rem;}}
+
+  /* ── Sidebar TOC ── */
+  .sidebar{position:sticky;top:70px;}
+  .toc-card{background:linear-gradient(160deg,var(--bg2),var(--bg1));border:1px solid var(--border);border-top:2px solid var(--gold-dim);padding:1.4rem;position:relative;overflow:hidden;}
+  .toc-card::before{content:'';position:absolute;top:0;right:0;width:70px;height:70px;background:radial-gradient(circle at top right,rgba(201,168,76,0.08),transparent 70%);}
+  .toc-title{font-family:'Cinzel',serif;font-size:0.58rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.1rem;display:flex;align-items:center;gap:0.6rem;}
+  .toc-title::after{content:'';flex:1;height:1px;background:var(--border);}
+  .toc-list{list-style:none;}
+  .toc-list a{display:flex;align-items:center;gap:0.55rem;padding:0.32rem 0;padding-left:0.5rem;font-family:'Crimson Pro',serif;font-size:0.88rem;color:var(--text3);text-decoration:none;border-left:2px solid transparent;transition:color 0.15s,padding-left 0.15s;}
+  .toc-list a::before{content:'◆';font-size:0.38rem;color:var(--gold-dim);flex-shrink:0;transition:color 0.15s;}
+  .toc-list a:hover{color:var(--gold2);padding-left:0.8rem;border-left-color:var(--gold-dim);}
+  .toc-list a:hover::before{color:var(--gold);}
 
   /* ── Section headings ── */
   h2{font-family:'Cinzel',serif;font-size:1.15rem;color:var(--gold2);margin:2rem 0 0.65rem;padding-bottom:0.35rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.5rem;}
@@ -212,25 +215,32 @@
     <p>Devildom is a dungeon for players who are at least level 175. Complete the <strong style="color:var(--text);">Ice Maiden quest line</strong> first, then the friendly Marduka <strong style="color:var(--text);">Nakibu</strong> will offer a short quest line that unlocks dungeon access. Located in the centre of <strong style="color:var(--text);">Kaia Lake</strong>.</p>
   </div>
 
-  <!-- ── TOC ── -->
-  <nav class="toc">
-    <div class="toc-title">Table of Contents</div>
-    <ul>
-      <li><a href="#structure"    class="toc-dungeon">Dungeon Structure</a></li>
-      <li><a href="#stages"       class="toc-dungeon">Stages &amp; Bosses</a></li>
-      <li><a href="#warps"        class="toc-dungeon">Stage Warps</a></li>
-      <li><a href="#drops"        class="toc-gear">Drops &amp; Equipment</a></li>
-      <li><a href="#yushiva-belt" class="toc-gear">Yushiva's Belt</a></li>
-      <li><a href="#yushiva-set"  class="toc-gear">Set Bonus</a></li>
-      <li><a href="#crystals"     class="toc-gear">Crystals &amp; Beads</a></li>
-      <li><a href="#tarun"        class="toc-gear">Blacksmith Tarun</a></li>
-      <li><a href="#armor-sets"   class="toc-armor">Armor Progression</a></li>
-      <li><a href="#upgrade-tables" class="toc-armor">Upgrade Tables</a></li>
-      <li><a href="#scales-orbs"  class="toc-armor">Scales &amp; Orbs</a></li>
-      <li><a href="#cloaks"       class="toc-armor">Cloaks</a></li>
-      <li><a href="#job-note"     class="toc-armor">Job Type Note</a></li>
-    </ul>
-  </nav>
+  <div class="page-body">
+
+    <!-- ── Sidebar TOC ── -->
+    <aside class="sidebar">
+      <nav class="toc-card" aria-label="Table of contents">
+        <div class="toc-title">Contents</div>
+        <ul class="toc-list">
+          <li><a href="#structure">Dungeon Structure</a></li>
+          <li><a href="#stages">Stages &amp; Bosses</a></li>
+          <li><a href="#warps">Stage Warps</a></li>
+          <li><a href="#drops">Drops &amp; Equipment</a></li>
+          <li><a href="#yushiva-belt">Yushiva's Belt</a></li>
+          <li><a href="#yushiva-set">Set Bonus</a></li>
+          <li><a href="#crystals">Crystals &amp; Beads</a></li>
+          <li><a href="#tarun">Blacksmith Tarun</a></li>
+          <li><a href="#armor-sets">Armor Progression</a></li>
+          <li><a href="#upgrade-tables">Upgrade Tables</a></li>
+          <li><a href="#scales-orbs">Scales &amp; Orbs</a></li>
+          <li><a href="#cloaks">Cloaks</a></li>
+          <li><a href="#job-note">Job Type Note</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- ── Main Content ── -->
+    <main class="content">
 
   <img src="../../images/dungeons/devildom/devildom_location.png" alt="Devildom Location — Kaia Lake" class="guide-img"/>
 
@@ -647,6 +657,9 @@
     <p><span style="color:var(--nusy);">Nusylite</span> and <span style="color:var(--flumi);">Fluminis</span> can be worn by <strong>all job types</strong>, allowing cross-class Parallel World upgrades (e.g. a War Kahuna wearing Berserker-exclusive Mach's Armor upgraded to Nusylite).</p>
     <p>Once upgraded to <strong style="color:var(--inferno);">Inferno</strong>, equipment becomes job-type specific again — plan which character does the upgrade before spending materials.</p>
   </div>
+
+    </main>
+  </div><!-- /.page-body -->
 
 </div>
 
