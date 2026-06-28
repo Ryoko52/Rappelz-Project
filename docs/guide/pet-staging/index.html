@@ -94,10 +94,35 @@
 <div class="page">
   <a class="back-link" href="../../">&#8592; Back to Home</a>
   <h1>Pet Staging</h1>
-  <p>Staging (also called <em>fusing</em>) is the process of combining two pets of the same stage to create a single pet of the next stage. A higher-stage pet is significantly stronger than its base form — but reaching Stage 5 requires a large number of base pets and careful level planning.</p>
 
   <h2>How Staging Works</h2>
-  <p>To create a pet of Stage X, you combine two pets that are both at Stage X&#8209;1. This means the number of base pets (Stage 0) required doubles with every stage:</p>
+  <p>Tame 2 of the same base pet and combine them — that gives you a Stage 1. Combine 2 Stage 1s and you get a Stage 2. It always takes 2 pets of the same stage to make the next one.</p>
+
+  <div class="tip-box">
+    <strong>Starting out?</strong> All you need for your first Stage 1 is 2 base pets (called S0) of the same type. Tame them, then use the staging interface to combine them.
+  </div>
+
+  <p>Each step up requires twice as many base pets. The table below shows how that adds up if you want to reach Stage 5:</p>
+
+  <table class="stage-table">
+    <thead>
+      <tr>
+        <th>Target Stage</th>
+        <th>What you combine</th>
+        <th>Total base pets needed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="stage-s1">Stage 1</td><td>2 Base Pets (S0)</td><td>2</td></tr>
+      <tr><td class="stage-s2">Stage 2</td><td>2 × Stage 1</td><td>4</td></tr>
+      <tr><td class="stage-s3">Stage 3</td><td>2 × Stage 2</td><td>8</td></tr>
+      <tr><td class="stage-s4">Stage 4</td><td>2 × Stage 3</td><td>16</td></tr>
+      <tr><td class="stage-s5">Stage 5</td><td>2 × Stage 4</td><td class="highlight">32</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Full Breakdown to Stage 5</h2>
+  <p>This shows how many pets of each stage you need to build a single Stage 5 from scratch:</p>
 
   <!-- Pyramid diagram -->
   <div class="pyramid">
@@ -111,35 +136,14 @@
     <div class="pyramid-arrow">&#9660;</div>
     <div class="pyramid-tier"><div class="pyramid-bar s1"><span class="stage-name">Stage 1</span><span class="stage-count">&times;16</span></div></div>
     <div class="pyramid-arrow">&#9660;</div>
-    <div class="pyramid-tier"><div class="pyramid-bar s0"><span class="stage-name">Stage 0 (Base)</span><span class="stage-count">&times;32</span></div></div>
+    <div class="pyramid-tier"><div class="pyramid-bar s0"><span class="stage-name">Base Pet (S0)</span><span class="stage-count">&times;32</span></div></div>
   </div>
-  <p style="font-size:0.82rem;color:var(--text3);font-style:italic;text-align:center;margin-top:0.25rem;margin-bottom:1.5rem;">32 base pets (S0) are required to create a single Stage 5</p>
-
-  <table class="stage-table">
-    <thead>
-      <tr>
-        <th>Target Stage</th>
-        <th>Pets Required (that stage)</th>
-        <th>Base Pets (S0) needed total</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>Stage 1</td><td>2 × S0</td><td>2</td></tr>
-      <tr><td>Stage 2</td><td>2 × S1</td><td>4</td></tr>
-      <tr><td>Stage 3</td><td>2 × S2</td><td>8</td></tr>
-      <tr><td>Stage 4</td><td>2 × S3</td><td>16</td></tr>
-      <tr><td>Stage 5</td><td>2 × S4</td><td class="highlight">32</td></tr>
-    </tbody>
-  </table>
-
-  <div class="tip-box">
-    <strong>Note:</strong> The staging process is not guaranteed to succeed. The base success rate depends on the pet type (Classic / Soul / Epic) and can be improved by using higher creature levels and additional items.
-  </div>
+  <p style="font-size:0.82rem;color:var(--text3);font-style:italic;text-align:center;margin-top:0.25rem;margin-bottom:1.5rem;">Getting to Stage 5 requires 32 base pets in total</p>
 
   <hr class="divider"/>
 
-  <h2>Base Success Rates</h2>
-  <p>The success chance decreases at higher stages. These are the base rates before any bonuses are applied:</p>
+  <h2>Success Rates</h2>
+  <p>Staging is not guaranteed. Each attempt has a chance to fail — and if it fails, you lose both pets. The chance depends on the pet type and gets lower at higher stages:</p>
 
   <table class="stage-table">
     <thead>
