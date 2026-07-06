@@ -553,7 +553,7 @@
   .ct-path { display: flex; align-items: center; gap: 8px; }
   .ct-spacer { flex-shrink: 0; }
   .ct-job { display: flex; flex-direction: column; align-items: center; gap: 7px; flex-shrink: 0; width: 110px; cursor: pointer; position: relative; text-decoration: none; }
-  .ct-job img { width: 80px; height: 80px; object-fit: cover; object-position: center top; border-radius: 10px; border: 1px solid var(--border); background: var(--bg1); transition: all 0.2s; }
+  .ct-job img { width: 80px; height: auto; border-radius: 10px; border: 1px solid var(--border); background: var(--bg1); transition: all 0.2s; display: block; }
   .ct-job:hover img { border-color: var(--gold); transform: scale(1.07); filter: brightness(1.15); }
   .ct-job .ct-jname { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.04em; text-align: center; line-height: 1.3; transition: color 0.2s; }
   .ct-job.basic .ct-jname { color: var(--text2); }
@@ -645,11 +645,11 @@
       </div>
       <div class="ct-tree">
         <div class="ct-path">
-          <a class="ct-job basic" href="class/berserker/"><img src="images/classes_logo/Rogue.webp" alt="Rogue"/><div class="ct-jname">Rogue</div></a>
+          <div class="ct-job basic"><img src="images/classes_logo/Rogue.webp" alt="Rogue"/><div class="ct-jname">Rogue</div></div>
           <div class="ct-arr">â†’</div>
-          <a class="ct-job first" href="class/berserker/"><img src="images/classes_logo/Fighter.webp" alt="Fighter"/><div class="ct-jname">Fighter</div></a>
+          <div class="ct-job first"><img src="images/classes_logo/Fighter.webp" alt="Fighter"/><div class="ct-jname">Fighter</div></div>
           <div class="ct-arr">â†’</div>
-          <a class="ct-job second" href="class/berserker/"><img src="images/classes_logo/Champion.webp" alt="Champion"/><div class="ct-jname">Champion</div></a>
+          <div class="ct-job second"><img src="images/classes_logo/Champion.webp" alt="Champion"/><div class="ct-jname">Champion</div></div>
           <div class="ct-arr">â†’</div>
           <a class="ct-job master-gaia" href="class/berserker/"><img src="images/classes_logo/Berserker.webp" alt="Berserker"/><div class="ct-jname">Berserker</div></a>
         </div>
@@ -657,17 +657,17 @@
           <div class="ct-spacer" style="width:110px"></div><div style="width:30px"></div>
           <div class="ct-spacer" style="width:110px"></div>
           <div class="ct-arr">â†’</div>
-          <a class="ct-job second" href="class/marksman/"><img src="images/classes_logo/Archer.webp" alt="Archer"/><div class="ct-jname">Archer</div></a>
+          <div class="ct-job second"><img src="images/classes_logo/Archer.webp" alt="Archer"/><div class="ct-jname">Archer</div></div>
           <div class="ct-arr">â†’</div>
           <a class="ct-job master-gaia" href="class/marksman/"><img src="images/classes_logo/Marksman.webp" alt="Marksman"/><div class="ct-jname">Marksman</div></a>
         </div>
         <div class="ct-sep"></div>
         <div class="ct-path">
-          <a class="ct-job basic" href="class/magus/"><img src="images/classes_logo/Kahuna.webp" alt="Kahuna"/><div class="ct-jname">Kahuna</div></a>
+          <div class="ct-job basic"><img src="images/classes_logo/Kahuna.webp" alt="Kahuna"/><div class="ct-jname">Kahuna</div></div>
           <div class="ct-arr">â†’</div>
-          <a class="ct-job first" href="class/magus/"><img src="images/classes_logo/Druid.webp" alt="Druid"/><div class="ct-jname">Druid</div></a>
+          <div class="ct-job first"><img src="images/classes_logo/Druid.webp" alt="Druid"/><div class="ct-jname">Druid</div></div>
           <div class="ct-arr">â†’</div>
-          <a class="ct-job second" href="class/magus/"><img src="images/classes_logo/battle kahuna.webp" alt="Battle Kahuna"/><div class="ct-jname">Battle Kahuna</div></a>
+          <div class="ct-job second"><img src="images/classes_logo/battle kahuna.webp" alt="Battle Kahuna"/><div class="ct-jname">Battle Kahuna</div></div>
           <div class="ct-arr">â†’</div>
           <a class="ct-job master-gaia" href="class/magus/"><img src="images/classes_logo/Magus.webp" alt="Magus"/><div class="ct-jname">Magus</div></a>
         </div>
@@ -675,15 +675,15 @@
           <div class="ct-spacer" style="width:110px"></div><div style="width:30px"></div>
           <div class="ct-spacer" style="width:110px"></div>
           <div class="ct-arr">â†’</div>
-          <a class="ct-job second" href="class/war-kahuna/"><img src="images/classes_logo/battle kahuna.webp" alt="Battle Kahuna"/><div class="ct-jname">Battle Kahuna</div></a>
+          <div class="ct-job second"><img src="images/classes_logo/battle kahuna.webp" alt="Battle Kahuna"/><div class="ct-jname">Battle Kahuna</div></div>
           <div class="ct-arr">â†’</div>
           <a class="ct-job master-gaia" href="class/war-kahuna/"><img src="images/classes_logo/War Kahuna.webp" alt="War Kahuna"/><div class="ct-jname">War Kahuna</div></a>
         </div>
         <div class="ct-sep"></div>
         <div class="ct-path">
-          <a class="ct-job basic" href="class/beast-master/"><img src="images/classes_logo/Spell Singer.webp" alt="Spell Singer"/><div class="ct-jname">Spell Singer</div></a>
+          <div class="ct-job basic"><img src="images/classes_logo/Spell Singer.webp" alt="Spell Singer"/><div class="ct-jname">Spell Singer</div></div>
           <div class="ct-arr">â†’</div>
-          <a class="ct-job first" href="class/beast-master/"><img src="images/classes_logo/Evoker.webp" alt="Evoker"/><div class="ct-jname">Evoker</div></a>
+          <div class="ct-job first"><img src="images/classes_logo/Evoker.webp" alt="Evoker"/><div class="ct-jname">Evoker</div></div>
           <div class="ct-arr">â†’</div>
           <div class="ct-spacer" style="width:110px"></div>
           <div class="ct-arr" style="opacity:0">â†’</div>
@@ -702,11 +702,11 @@
       </div>
       <div class="ct-tree">
         <div class="ct-path">
-          <a class="ct-job basic" href="class/templar/"><img src="images/classes_logo/Guide.webp" alt="Guide"/><div class="ct-jname">Guide</div></a>
+          <div class="ct-job basic"><img src="images/classes_logo/Guide.webp" alt="Guide"/><div class="ct-jname">Guide</div></div>
           <div class="ct-arr">â†’</div>
-          <a class="ct-job first" href="class/templar/"><img src="images/classes_logo/Holy Warrior.webp" alt="Holy Warrior"/><div class="ct-jname">Holy Warrior</div></a>
+          <div class="ct-job first"><img src="images/classes_logo/Holy Warrior.webp" alt="Holy Warrior"/><div class="ct-jname">Holy Warrior</div></div>
           <div class="ct-arr">â†’</div>
-          <a class="ct-job second" href="class/templar/"><img src="images/classes_logo/Knight.webp" alt="Knight"/><div class="ct-jname">Knight</div></a>
+          <div class="ct-job second"><img src="images/classes_logo/Knight.webp" alt="Knight"/><div class="ct-jname">Knight</div></div>
           <div class="ct-arr">â†’</div>
           <a class="ct-job master-deva" href="class/templar/"><img src="images/classes_logo/Templar.webp" alt="Templar"/><div class="ct-jname">Templar</div></a>
         </div>
@@ -714,17 +714,17 @@
           <div class="ct-spacer" style="width:110px"></div><div style="width:30px"></div>
           <div class="ct-spacer" style="width:110px"></div>
           <div class="ct-arr">â†’</div>
-          <a class="ct-job second" href="class/mercenary/"><img src="images/classes_logo/Soldier.webp" alt="Soldier"/><div class="ct-jname">Soldier</div></a>
+          <div class="ct-job second"><img src="images/classes_logo/Soldier.webp" alt="Soldier"/><div class="ct-jname">Soldier</div></div>
           <div class="ct-arr">â†’</div>
           <a class="ct-job master-deva" href="class/mercenary/"><img src="images/classes_logo/Mercenary.webp" alt="Mercenary"/><div class="ct-jname">Mercenary</div></a>
         </div>
         <div class="ct-sep"></div>
         <div class="ct-path">
-          <a class="ct-job basic" href="class/oracle/"><img src="images/classes_logo/Cleric.webp" alt="Cleric"/><div class="ct-jname">Cleric</div></a>
+          <div class="ct-job basic"><img src="images/classes_logo/Cleric.webp" alt="Cleric"/><div class="ct-jname">Cleric</div></div>
           <div class="ct-arr">â†’</div>
-          <a class="ct-job first" href="class/oracle/"><img src="images/classes_logo/Bishop.webp" alt="Bishop"/><div class="ct-jname">Bishop</div></a>
+          <div class="ct-job first"><img src="images/classes_logo/Bishop.webp" alt="Bishop"/><div class="ct-jname">Bishop</div></div>
           <div class="ct-arr">â†’</div>
-          <a class="ct-job second" href="class/oracle/"><img src="images/classes_logo/Priest.webp" alt="Priest"/><div class="ct-jname">Priest</div></a>
+          <div class="ct-job second"><img src="images/classes_logo/Priest.webp" alt="Priest"/><div class="ct-jname">Priest</div></div>
           <div class="ct-arr">â†’</div>
           <a class="ct-job master-deva" href="class/oracle/"><img src="images/classes_logo/Oracle.webp" alt="Oracle"/><div class="ct-jname">Oracle</div></a>
         </div>
@@ -732,15 +732,15 @@
           <div class="ct-spacer" style="width:110px"></div><div style="width:30px"></div>
           <div class="ct-spacer" style="width:110px"></div>
           <div class="ct-arr">â†’</div>
-          <a class="ct-job second" href="class/cardinal/"><img src="images/classes_logo/Priest.webp" alt="Sage"/><div class="ct-jname">Sage</div></a>
+          <div class="ct-job second"><img src="images/classes_logo/Priest.webp" alt="Sage"/><div class="ct-jname">Sage</div></div>
           <div class="ct-arr">â†’</div>
           <a class="ct-job master-deva" href="class/cardinal/"><img src="images/classes_logo/Cardinal.webp" alt="Cardinal"/><div class="ct-jname">Cardinal</div></a>
         </div>
         <div class="ct-sep"></div>
         <div class="ct-path">
-          <a class="ct-job basic" href="class/master-breeder/"><img src="images/classes_logo/Breeder.webp" alt="Breeder"/><div class="ct-jname">Breeder</div></a>
+          <div class="ct-job basic"><img src="images/classes_logo/Breeder.webp" alt="Breeder"/><div class="ct-jname">Breeder</div></div>
           <div class="ct-arr">â†’</div>
-          <a class="ct-job first" href="class/master-breeder/"><img src="images/classes_logo/Soul Breeder.webp" alt="Soul Breeder"/><div class="ct-jname">Soul Breeder</div></a>
+          <div class="ct-job first"><img src="images/classes_logo/Soul Breeder.webp" alt="Soul Breeder"/><div class="ct-jname">Soul Breeder</div></div>
           <div class="ct-arr">â†’</div>
           <div class="ct-spacer" style="width:110px"></div>
           <div class="ct-arr" style="opacity:0">â†’</div>
@@ -759,11 +759,11 @@
       </div>
       <div class="ct-tree">
         <div class="ct-path">
-          <a class="ct-job basic" href="class/slayer/"><img src="images/classes_logo/Stepper.webp" alt="Stepper"/><div class="ct-jname">Stepper</div></a>
+          <div class="ct-job basic"><img src="images/classes_logo/Stepper.webp" alt="Stepper"/><div class="ct-jname">Stepper</div></div>
           <div class="ct-arr">â†’</div>
-          <a class="ct-job first" href="class/slayer/"><img src="images/classes_logo/Strider.webp" alt="Strider"/><div class="ct-jname">Strider</div></a>
+          <div class="ct-job first"><img src="images/classes_logo/Strider.webp" alt="Strider"/><div class="ct-jname">Strider</div></div>
           <div class="ct-arr">â†’</div>
-          <a class="ct-job second" href="class/slayer/"><img src="images/classes_logo/Assassin.webp" alt="Assassin"/><div class="ct-jname">Assassin</div></a>
+          <div class="ct-job second"><img src="images/classes_logo/Assassin.webp" alt="Assassin"/><div class="ct-jname">Assassin</div></div>
           <div class="ct-arr">â†’</div>
           <a class="ct-job master-asura" href="class/slayer/"><img src="images/classes_logo/Slayer.webp" alt="Slayer"/><div class="ct-jname">Slayer</div></a>
         </div>
@@ -771,17 +771,17 @@
           <div class="ct-spacer" style="width:110px"></div><div style="width:30px"></div>
           <div class="ct-spacer" style="width:110px"></div>
           <div class="ct-arr">â†’</div>
-          <a class="ct-job second" href="class/deadeye/"><img src="images/classes_logo/Shadow Hunter.webp" alt="Shadow Hunter"/><div class="ct-jname">Shadow Hunter</div></a>
+          <div class="ct-job second"><img src="images/classes_logo/Shadow Hunter.webp" alt="Shadow Hunter"/><div class="ct-jname">Shadow Hunter</div></div>
           <div class="ct-arr">â†’</div>
           <a class="ct-job master-asura" href="class/deadeye/"><img src="images/classes_logo/DeadEye.webp" alt="Deadeye"/><div class="ct-jname">Deadeye</div></a>
         </div>
         <div class="ct-sep"></div>
         <div class="ct-path">
-          <a class="ct-job basic" href="class/void-mage/"><img src="images/classes_logo/Dark Magicien.webp" alt="Dark Magician"/><div class="ct-jname">Dark Magician</div></a>
+          <div class="ct-job basic"><img src="images/classes_logo/Dark Magicien.webp" alt="Dark Magician"/><div class="ct-jname">Dark Magician</div></div>
           <div class="ct-arr">â†’</div>
-          <a class="ct-job first" href="class/void-mage/"><img src="images/classes_logo/Chaos Magicien.webp" alt="Chaos Magician"/><div class="ct-jname">Chaos Magician</div></a>
+          <div class="ct-job first"><img src="images/classes_logo/Chaos Magicien.webp" alt="Chaos Magician"/><div class="ct-jname">Chaos Magician</div></div>
           <div class="ct-arr">â†’</div>
-          <a class="ct-job second" href="class/void-mage/"><img src="images/classes_logo/Warlock.webp" alt="Warlock"/><div class="ct-jname">Warlock</div></a>
+          <div class="ct-job second"><img src="images/classes_logo/Warlock.webp" alt="Warlock"/><div class="ct-jname">Warlock</div></div>
           <div class="ct-arr">â†’</div>
           <a class="ct-job master-asura" href="class/void-mage/"><img src="images/classes_logo/Void Mage.webp" alt="Void Mage"/><div class="ct-jname">Void Mage</div></a>
         </div>
@@ -789,15 +789,15 @@
           <div class="ct-spacer" style="width:110px"></div><div style="width:30px"></div>
           <div class="ct-spacer" style="width:110px"></div>
           <div class="ct-arr">â†’</div>
-          <a class="ct-job second" href="class/corruptor/"><img src="images/classes_logo/Warlock.webp" alt="Warlock"/><div class="ct-jname">Warlock</div></a>
+          <div class="ct-job second"><img src="images/classes_logo/Warlock.webp" alt="Warlock"/><div class="ct-jname">Warlock</div></div>
           <div class="ct-arr">â†’</div>
           <a class="ct-job master-asura" href="class/corruptor/"><img src="images/classes_logo/Corruptor.webp" alt="Corruptor"/><div class="ct-jname">Corruptor</div></a>
         </div>
         <div class="ct-sep"></div>
         <div class="ct-path">
-          <a class="ct-job basic" href="class/overlord/"><img src="images/classes_logo/Sorcerer.webp" alt="Sorcerer"/><div class="ct-jname">Sorcerer</div></a>
+          <div class="ct-job basic"><img src="images/classes_logo/Sorcerer.webp" alt="Sorcerer"/><div class="ct-jname">Sorcerer</div></div>
           <div class="ct-arr">â†’</div>
-          <a class="ct-job first" href="class/overlord/"><img src="images/classes_logo/Battle Summoner.webp" alt="Battle Summoner"/><div class="ct-jname">Battle Summoner</div></a>
+          <div class="ct-job first"><img src="images/classes_logo/Battle Summoner.webp" alt="Battle Summoner"/><div class="ct-jname">Battle Summoner</div></div>
           <div class="ct-arr">â†’</div>
           <div class="ct-spacer" style="width:110px"></div>
           <div class="ct-arr" style="opacity:0">â†’</div>
@@ -1429,4 +1429,6 @@
 </script>
 </body>
 </html>
+
+
 
