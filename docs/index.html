@@ -1246,17 +1246,19 @@
   (function(){
     const host = document.getElementById('heroParticles');
     if (host && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      const N = 26;
+      const N = 40;
       for (let i = 0; i < N; i++) {
         const p = document.createElement('div');
         p.className = 'hero-particle';
-        const size = (1.5 + Math.random() * 2.5).toFixed(1);
+        const size = (2 + Math.random() * 3).toFixed(1);
+        const dur = 7 + Math.random() * 8;
         p.style.left = (Math.random() * 100) + '%';
         p.style.width = size + 'px';
         p.style.height = size + 'px';
         p.style.setProperty('--dx', ((Math.random() - 0.5) * 120).toFixed(0) + 'px');
-        p.style.animationDuration = (7 + Math.random() * 9).toFixed(1) + 's';
-        p.style.animationDelay = (Math.random() * 12).toFixed(1) + 's';
+        p.style.animationDuration = dur.toFixed(1) + 's';
+        // negative delay = start mid-animation so the hero is full of particles instantly
+        p.style.animationDelay = (-Math.random() * dur).toFixed(1) + 's';
         host.appendChild(p);
       }
     }
