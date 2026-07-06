@@ -536,9 +536,10 @@
 
   /* CLASS TREE - node graph */
   .nt-wrap { padding: 2rem 0 1rem; }
-  .nt-races { display: flex; justify-content: center; gap: 20px; margin: 0 auto 1.5rem; flex-wrap: wrap; }
+  .nt-races { display: flex; justify-content: center; align-items: flex-end; gap: 28px; margin: 0 auto 1.5rem; flex-wrap: wrap; }
   .nt-racetab { cursor: pointer; text-align: center; opacity: 0.5; transition: opacity .25s, transform .25s; user-select: none; }
-  .nt-racetab img { width: 130px; height: auto; display: block; }
+  .nt-racetab img { width: auto; height: 300px; display: block; margin: 0 auto; }
+  @media (max-width: 640px) { .nt-racetab img { height: 200px; } .nt-races { gap: 14px; } }
   .rt-name { font-family: 'Cinzel', serif; font-size: 0.85rem; font-weight: 700; letter-spacing: .12em; color: var(--text2); margin-top: 0.3rem; }
   .nt-racetab:hover { opacity: 0.85; }
   .nt-racetab.on { opacity: 1; transform: translateY(-4px); }
