@@ -534,40 +534,32 @@
     .search-wrap input { width: 150px; }
   }
 
-  /* CLASS TREE */
-  .ct-wrap { padding: 2.5rem 0 1rem; }
-  .ct-races { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto; }
-  .race-btn { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 0.9rem; text-align: center; cursor: pointer; transition: all 0.2s; user-select: none; }
-  .race-btn.gaia:hover, .race-btn.gaia.active { border-color: #6a9a6a; background: rgba(106,154,106,0.08); }
-  .race-btn.deva:hover, .race-btn.deva.active { border-color: #6a8acc; background: rgba(106,138,204,0.08); }
-  .race-btn.asura:hover, .race-btn.asura.active { border-color: #9a6acc; background: rgba(154,106,204,0.08); }
-  .race-btn .r-name { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.2rem; }
-  .race-btn.gaia .r-name { color: #a0c890; } .race-btn.deva .r-name { color: #90b0e8; } .race-btn.asura .r-name { color: #c090e8; }
-  .race-btn .r-magic { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.15em; color: var(--text3); }
-  .race-btn .r-desc { font-size: 0.78rem; color: var(--text3); margin-top: 0.3rem; font-style: italic; line-height: 1.3; }
-  .ct-panel { display: none; }
-  .ct-panel.active { display: flex; flex-direction: column; align-items: center; }
-  .ct-col-headers { display: flex; gap: 0; margin-bottom: 0.75rem; }
-  .ct-col-h { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.16em; color: var(--text3); text-align: center; }
-  .ct-tree { display: flex; flex-direction: column; gap: 8px; }
-  .ct-path { display: flex; align-items: center; gap: 8px; }
-  .ct-spacer { flex-shrink: 0; }
-  .ct-job { display: flex; flex-direction: column; align-items: center; gap: 6px; flex-shrink: 0; width: 84px; cursor: pointer; position: relative; text-decoration: none; }
-  .ct-job img { width: 38px; height: auto; image-rendering: -webkit-optimize-contrast; border-radius: 6px; border: 1px solid var(--border); background: var(--bg1); transition: all 0.2s; display: block; }
-  .ct-job:hover img { border-color: var(--gold); transform: scale(1.07); filter: brightness(1.15); }
-  .ct-job .ct-jname { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.04em; text-align: center; line-height: 1.3; transition: color 0.2s; }
-  .ct-job.basic .ct-jname { color: var(--text2); }
-  .ct-job.first .ct-jname { color: #90b890; }
-  .ct-job.second .ct-jname { color: #90b0cc; }
-  .ct-job.master-gaia .ct-jname { color: #a0d890; }
-  .ct-job.master-deva .ct-jname { color: #90c0f0; }
-  .ct-job.master-asura .ct-jname { color: #c090f0; }
-  .ct-job:hover .ct-jname { color: var(--gold3); }
-  .ct-arr { color: var(--text3); font-size: 1.2rem; flex-shrink: 0; }
-  .ct-sep { height: 1px; background: var(--border); margin: 0.6rem 0; width: 100%; }
-  .ct-legend { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 1.2rem; }
-  .ct-leg { display: flex; align-items: center; gap: 5px; font-family: 'Cinzel', serif; font-size: 0.6rem; color: var(--text3); }
-  .ct-leg-dot { width: 9px; height: 9px; border-radius: 2px; flex-shrink: 0; }
+  /* CLASS TREE - node graph */
+  .nt-wrap { padding: 2rem 0 1rem; }
+  .nt-tabs { display: flex; justify-content: center; gap: 8px; margin-bottom: 0.5rem; flex-wrap: wrap; }
+  .nt-tab { padding: 0.45rem 1.4rem; border: 1px solid rgba(201,168,76,.18); border-radius: 20px; font-family: 'Cinzel', serif; font-size: 0.72rem; font-weight: 600; letter-spacing: .12em; color: var(--text3); cursor: pointer; transition: all .25s; background: rgba(20,18,12,.5); user-select: none; }
+  .nt-tab .tsub { font-size: .5rem; letter-spacing: .1em; opacity: .7; margin-left: .4rem; }
+  .nt-tab.gaia.on { color: #a8d888; border-color: #6a9a4a; box-shadow: 0 0 16px rgba(120,180,80,.25); background: rgba(60,90,40,.15); }
+  .nt-tab.deva.on { color: #8fc0f5; border-color: #4a80c0; box-shadow: 0 0 16px rgba(80,140,220,.25); background: rgba(40,70,120,.15); }
+  .nt-tab.asura.on { color: #c89ff0; border-color: #8a5ac0; box-shadow: 0 0 16px rgba(150,90,220,.25); background: rgba(80,40,120,.15); }
+  .nt-tab:hover { color: var(--gold2); }
+  .nt-stage { position: relative; width: 100%; max-width: 680px; margin: 0.75rem auto 0; }
+  .nt-canvas { position: relative; width: 680px; transform-origin: top left; }
+  svg.nt-links { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+  .nt-node { position: absolute; transform: translate(-50%,-50%); display: flex; flex-direction: column; align-items: center; gap: 4px; width: 96px; text-decoration: none; transition: opacity .25s; }
+  .nt-head { font-family: 'Cinzel', serif; font-size: .55rem; letter-spacing: .18em; color: var(--text3); text-align: center; position: absolute; transform: translateX(-50%); }
+  .nt-frame { width: 52px; height: 52px; border-radius: 50%; padding: 2px; display: flex; align-items: center; justify-content: center; position: relative; transition: all .25s; background: #14120c; }
+  .nt-frame img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; image-rendering: -webkit-optimize-contrast; }
+  .nt-node .nt-name { font-family: 'Cinzel', serif; font-size: .56rem; letter-spacing: .03em; text-align: center; line-height: 1.15; color: #8a7d5c; transition: color .25s; max-width: 96px; }
+  .nt-node.basic .nt-frame { box-shadow: 0 0 0 1px rgba(201,168,76,.25); }
+  .nt-node.master .nt-frame { box-shadow: 0 0 0 1px var(--rc), 0 0 14px -2px var(--rc); animation: ntpulse 3s ease-in-out infinite; }
+  .nt-node.master .nt-name { color: var(--rc); font-weight: 600; }
+  .nt-node.dim { opacity: .28; }
+  .nt-node.lit .nt-frame { box-shadow: 0 0 0 2px var(--rc), 0 0 20px -1px var(--rc); transform: scale(1.12); animation: none; }
+  .nt-node.lit .nt-name { color: var(--gold3); }
+  a.nt-node.master { cursor: pointer; }
+  @keyframes ntpulse { 0%,100%{box-shadow:0 0 0 1px var(--rc), 0 0 12px -3px var(--rc);} 50%{box-shadow:0 0 0 1px var(--rc), 0 0 20px 0px var(--rc);} }
+  .nt-legend { text-align: center; font-size: .6rem; color: var(--text3); letter-spacing: .06em; margin-top: 0.6rem; font-style: italic; }
 </style>
 </head>
 <body>
@@ -612,206 +604,21 @@
 <div class="page">
 
   <!-- CLASS TREE -->
-  <section class="section ct-wrap">
+  <section class="section nt-wrap" id="class-tree">
     <div class="section-head">
       <h2>CLASS TREE</h2>
       <div class="section-line"></div>
     </div>
-    <div class="ct-races">
-      <div class="race-btn gaia active" onclick="showRace('gaia')">
-        <div class="r-name">GAIA</div>
-        <div class="r-magic">Earth Magic</div>
-        <div class="r-desc">Guardians of the Elements</div>
-      </div>
-      <div class="race-btn deva" onclick="showRace('deva')">
-        <div class="r-name">DEVA</div>
-        <div class="r-magic">Divine Magic</div>
-        <div class="r-desc">Curators of Light</div>
-      </div>
-      <div class="race-btn asura" onclick="showRace('asura')">
-        <div class="r-name">ASURA</div>
-        <div class="r-magic">Dark Magic</div>
-        <div class="r-desc">Warriors of Shadow</div>
-      </div>
+    <p style="text-align:center;font-size:0.85rem;color:var(--text3);letter-spacing:0.08em;margin-bottom:0.5rem;">Hover a class to trace its path back to the base</p>
+    <div class="nt-tabs">
+      <div class="nt-tab gaia on" data-r="gaia" onclick="ntPick('gaia')">GAIA<span class="tsub">Earth</span></div>
+      <div class="nt-tab deva" data-r="deva" onclick="ntPick('deva')">DEVA<span class="tsub">Divine</span></div>
+      <div class="nt-tab asura" data-r="asura" onclick="ntPick('asura')">ASURA<span class="tsub">Dark</span></div>
     </div>
-
-    <!-- GAIA -->
-    <div class="ct-panel active" id="panel-gaia">
-      <div class="ct-col-headers">
-        <div class="ct-col-h" style="width:84px">Basic</div><div style="width:26px"></div>
-        <div class="ct-col-h" style="width:84px">1st Job</div><div style="width:26px"></div>
-        <div class="ct-col-h" style="width:84px">2nd Job</div><div style="width:26px"></div>
-        <div class="ct-col-h" style="width:84px">Master Class</div>
-      </div>
-      <div class="ct-tree">
-        <div class="ct-path">
-          <div class="ct-job basic"><img src="images/classes_logo/Rogue.webp" alt="Rogue"/><div class="ct-jname">Rogue</div></div>
-          <div class="ct-arr">→</div>
-          <div class="ct-job first"><img src="images/classes_logo/Fighter.webp" alt="Fighter"/><div class="ct-jname">Fighter</div></div>
-          <div class="ct-arr">→</div>
-          <div class="ct-job second"><img src="images/classes_logo/Champion.webp" alt="Champion"/><div class="ct-jname">Champion</div></div>
-          <div class="ct-arr">→</div>
-          <a class="ct-job master-gaia" href="class/berserker/"><img src="images/classes_logo/Berserker.webp" alt="Berserker"/><div class="ct-jname">Berserker</div></a>
-        </div>
-        <div class="ct-path">
-          <div class="ct-spacer" style="width:84px"></div><div style="width:26px"></div>
-          <div class="ct-spacer" style="width:84px"></div>
-          <div class="ct-arr">→</div>
-          <div class="ct-job second"><img src="images/classes_logo/Archer.webp" alt="Archer"/><div class="ct-jname">Archer</div></div>
-          <div class="ct-arr">→</div>
-          <a class="ct-job master-gaia" href="class/marksman/"><img src="images/classes_logo/Marksman.webp" alt="Marksman"/><div class="ct-jname">Marksman</div></a>
-        </div>
-        <div class="ct-sep"></div>
-        <div class="ct-path">
-          <div class="ct-job basic"><img src="images/classes_logo/Kahuna.webp" alt="Kahuna"/><div class="ct-jname">Kahuna</div></div>
-          <div class="ct-arr">→</div>
-          <div class="ct-job first"><img src="images/classes_logo/Druid.webp" alt="Druid"/><div class="ct-jname">Druid</div></div>
-          <div class="ct-arr">→</div>
-          <div class="ct-job second"><img src="images/classes_logo/battle kahuna.webp" alt="Battle Kahuna"/><div class="ct-jname">Battle Kahuna</div></div>
-          <div class="ct-arr">→</div>
-          <a class="ct-job master-gaia" href="class/magus/"><img src="images/classes_logo/Magus.webp" alt="Magus"/><div class="ct-jname">Magus</div></a>
-        </div>
-        <div class="ct-path">
-          <div class="ct-spacer" style="width:84px"></div><div style="width:26px"></div>
-          <div class="ct-spacer" style="width:84px"></div>
-          <div class="ct-arr">→</div>
-          <div class="ct-job second"><img src="images/classes_logo/battle kahuna.webp" alt="Battle Kahuna"/><div class="ct-jname">Battle Kahuna</div></div>
-          <div class="ct-arr">→</div>
-          <a class="ct-job master-gaia" href="class/war-kahuna/"><img src="images/classes_logo/War Kahuna.webp" alt="War Kahuna"/><div class="ct-jname">War Kahuna</div></a>
-        </div>
-        <div class="ct-sep"></div>
-        <div class="ct-path">
-          <div class="ct-job basic"><img src="images/classes_logo/Spell Singer.webp" alt="Spell Singer"/><div class="ct-jname">Spell Singer</div></div>
-          <div class="ct-arr">→</div>
-          <div class="ct-job first"><img src="images/classes_logo/Evoker.webp" alt="Evoker"/><div class="ct-jname">Evoker</div></div>
-          <div class="ct-arr">→</div>
-          <div class="ct-spacer" style="width:84px"></div>
-          <div class="ct-arr" style="opacity:0">→</div>
-          <a class="ct-job master-gaia" href="class/beast-master/"><img src="images/classes_logo/Beast Master.webp" alt="Beast Master"/><div class="ct-jname">Beast Master</div></a>
-        </div>
-      </div>
+    <div class="nt-stage">
+      <div class="nt-canvas" id="ntCanvas"></div>
     </div>
-
-    <!-- DEVA -->
-    <div class="ct-panel" id="panel-deva">
-      <div class="ct-col-headers">
-        <div class="ct-col-h" style="width:84px">Basic</div><div style="width:26px"></div>
-        <div class="ct-col-h" style="width:84px">1st Job</div><div style="width:26px"></div>
-        <div class="ct-col-h" style="width:84px">2nd Job</div><div style="width:26px"></div>
-        <div class="ct-col-h" style="width:84px">Master Class</div>
-      </div>
-      <div class="ct-tree">
-        <div class="ct-path">
-          <div class="ct-job basic"><img src="images/classes_logo/Guide.webp" alt="Guide"/><div class="ct-jname">Guide</div></div>
-          <div class="ct-arr">→</div>
-          <div class="ct-job first"><img src="images/classes_logo/Holy Warrior.webp" alt="Holy Warrior"/><div class="ct-jname">Holy Warrior</div></div>
-          <div class="ct-arr">→</div>
-          <div class="ct-job second"><img src="images/classes_logo/Knight.webp" alt="Knight"/><div class="ct-jname">Knight</div></div>
-          <div class="ct-arr">→</div>
-          <a class="ct-job master-deva" href="class/templar/"><img src="images/classes_logo/Templar.webp" alt="Templar"/><div class="ct-jname">Templar</div></a>
-        </div>
-        <div class="ct-path">
-          <div class="ct-spacer" style="width:84px"></div><div style="width:26px"></div>
-          <div class="ct-spacer" style="width:84px"></div>
-          <div class="ct-arr">→</div>
-          <div class="ct-job second"><img src="images/classes_logo/Soldier.webp" alt="Soldier"/><div class="ct-jname">Soldier</div></div>
-          <div class="ct-arr">→</div>
-          <a class="ct-job master-deva" href="class/mercenary/"><img src="images/classes_logo/Mercenary.webp" alt="Mercenary"/><div class="ct-jname">Mercenary</div></a>
-        </div>
-        <div class="ct-sep"></div>
-        <div class="ct-path">
-          <div class="ct-job basic"><img src="images/classes_logo/Cleric.webp" alt="Cleric"/><div class="ct-jname">Cleric</div></div>
-          <div class="ct-arr">→</div>
-          <div class="ct-job first"><img src="images/classes_logo/Bishop.webp" alt="Bishop"/><div class="ct-jname">Bishop</div></div>
-          <div class="ct-arr">→</div>
-          <div class="ct-job second"><img src="images/classes_logo/Priest.webp" alt="Priest"/><div class="ct-jname">Priest</div></div>
-          <div class="ct-arr">→</div>
-          <a class="ct-job master-deva" href="class/oracle/"><img src="images/classes_logo/Oracle.webp" alt="Oracle"/><div class="ct-jname">Oracle</div></a>
-        </div>
-        <div class="ct-path">
-          <div class="ct-spacer" style="width:84px"></div><div style="width:26px"></div>
-          <div class="ct-spacer" style="width:84px"></div>
-          <div class="ct-arr">→</div>
-          <div class="ct-job second"><img src="images/classes_logo/Priest.webp" alt="Sage"/><div class="ct-jname">Sage</div></div>
-          <div class="ct-arr">→</div>
-          <a class="ct-job master-deva" href="class/cardinal/"><img src="images/classes_logo/Cardinal.webp" alt="Cardinal"/><div class="ct-jname">Cardinal</div></a>
-        </div>
-        <div class="ct-sep"></div>
-        <div class="ct-path">
-          <div class="ct-job basic"><img src="images/classes_logo/Breeder.webp" alt="Breeder"/><div class="ct-jname">Breeder</div></div>
-          <div class="ct-arr">→</div>
-          <div class="ct-job first"><img src="images/classes_logo/Soul Breeder.webp" alt="Soul Breeder"/><div class="ct-jname">Soul Breeder</div></div>
-          <div class="ct-arr">→</div>
-          <div class="ct-spacer" style="width:84px"></div>
-          <div class="ct-arr" style="opacity:0">→</div>
-          <a class="ct-job master-deva" href="class/master-breeder/"><img src="images/classes_logo/Master Breeder.webp" alt="Master Breeder"/><div class="ct-jname">Master Breeder</div></a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ASURA -->
-    <div class="ct-panel" id="panel-asura">
-      <div class="ct-col-headers">
-        <div class="ct-col-h" style="width:84px">Basic</div><div style="width:26px"></div>
-        <div class="ct-col-h" style="width:84px">1st Job</div><div style="width:26px"></div>
-        <div class="ct-col-h" style="width:84px">2nd Job</div><div style="width:26px"></div>
-        <div class="ct-col-h" style="width:84px">Master Class</div>
-      </div>
-      <div class="ct-tree">
-        <div class="ct-path">
-          <div class="ct-job basic"><img src="images/classes_logo/Stepper.webp" alt="Stepper"/><div class="ct-jname">Stepper</div></div>
-          <div class="ct-arr">→</div>
-          <div class="ct-job first"><img src="images/classes_logo/Strider.webp" alt="Strider"/><div class="ct-jname">Strider</div></div>
-          <div class="ct-arr">→</div>
-          <div class="ct-job second"><img src="images/classes_logo/Assassin.webp" alt="Assassin"/><div class="ct-jname">Assassin</div></div>
-          <div class="ct-arr">→</div>
-          <a class="ct-job master-asura" href="class/slayer/"><img src="images/classes_logo/Slayer.webp" alt="Slayer"/><div class="ct-jname">Slayer</div></a>
-        </div>
-        <div class="ct-path">
-          <div class="ct-spacer" style="width:84px"></div><div style="width:26px"></div>
-          <div class="ct-spacer" style="width:84px"></div>
-          <div class="ct-arr">→</div>
-          <div class="ct-job second"><img src="images/classes_logo/Shadow Hunter.webp" alt="Shadow Hunter"/><div class="ct-jname">Shadow Hunter</div></div>
-          <div class="ct-arr">→</div>
-          <a class="ct-job master-asura" href="class/deadeye/"><img src="images/classes_logo/DeadEye.webp" alt="Deadeye"/><div class="ct-jname">Deadeye</div></a>
-        </div>
-        <div class="ct-sep"></div>
-        <div class="ct-path">
-          <div class="ct-job basic"><img src="images/classes_logo/Dark Magicien.webp" alt="Dark Magician"/><div class="ct-jname">Dark Magician</div></div>
-          <div class="ct-arr">→</div>
-          <div class="ct-job first"><img src="images/classes_logo/Chaos Magicien.webp" alt="Chaos Magician"/><div class="ct-jname">Chaos Magician</div></div>
-          <div class="ct-arr">→</div>
-          <div class="ct-job second"><img src="images/classes_logo/Warlock.webp" alt="Warlock"/><div class="ct-jname">Warlock</div></div>
-          <div class="ct-arr">→</div>
-          <a class="ct-job master-asura" href="class/void-mage/"><img src="images/classes_logo/Void Mage.webp" alt="Void Mage"/><div class="ct-jname">Void Mage</div></a>
-        </div>
-        <div class="ct-path">
-          <div class="ct-spacer" style="width:84px"></div><div style="width:26px"></div>
-          <div class="ct-spacer" style="width:84px"></div>
-          <div class="ct-arr">→</div>
-          <div class="ct-job second"><img src="images/classes_logo/Warlock.webp" alt="Warlock"/><div class="ct-jname">Warlock</div></div>
-          <div class="ct-arr">→</div>
-          <a class="ct-job master-asura" href="class/corruptor/"><img src="images/classes_logo/Corruptor.webp" alt="Corruptor"/><div class="ct-jname">Corruptor</div></a>
-        </div>
-        <div class="ct-sep"></div>
-        <div class="ct-path">
-          <div class="ct-job basic"><img src="images/classes_logo/Sorcerer.webp" alt="Sorcerer"/><div class="ct-jname">Sorcerer</div></div>
-          <div class="ct-arr">→</div>
-          <div class="ct-job first"><img src="images/classes_logo/Battle Summoner.webp" alt="Battle Summoner"/><div class="ct-jname">Battle Summoner</div></div>
-          <div class="ct-arr">→</div>
-          <div class="ct-spacer" style="width:84px"></div>
-          <div class="ct-arr" style="opacity:0">→</div>
-          <a class="ct-job master-asura" href="class/overlord/"><img src="images/classes_logo/Overlord.webp" alt="Overlord"/><div class="ct-jname">Overlord</div></a>
-        </div>
-      </div>
-    </div>
-
-    <div class="ct-legend">
-      <div class="ct-leg"><div class="ct-leg-dot" style="background:var(--text2)"></div>Basic</div>
-      <div class="ct-leg"><div class="ct-leg-dot" style="background:#90b890"></div>1st Job</div>
-      <div class="ct-leg"><div class="ct-leg-dot" style="background:#90b0cc"></div>2nd Job</div>
-      <div class="ct-leg"><div class="ct-leg-dot" style="background:var(--gold2)"></div>Master Class</div>
-    </div>
+    <div class="nt-legend">Master classes glow &middot; click one to open its guide</div>
   </section>
 
   <!-- TIER LIST -->
@@ -1396,13 +1203,80 @@
     if (!e.target.closest('.search-wrap')) { searchResults.classList.remove('active'); }
   });
 
-  // Class tree
-  function showRace(r) {
-    document.querySelectorAll('.ct-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.race-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById('panel-' + r).classList.add('active');
-    document.querySelector('.race-btn.' + r).classList.add('active');
-  }
+  // Class tree - node graph
+  (function(){
+    const BASE='images/classes_logo/';
+    const RC={gaia:'#8fbf5a',deva:'#6fa8e8',asura:'#b57fe8'};
+    const IMG={'Dark Magician':'Dark Magicien','Chaos Magician':'Chaos Magicien','Deadeye':'DeadEye','Battle Kahuna':'battle kahuna'};
+    const LINK={Berserker:'berserker',Marksman:'marksman',Magus:'magus','War Kahuna':'war-kahuna','Beast Master':'beast-master',Templar:'templar',Mercenary:'mercenary',Cardinal:'cardinal',Oracle:'oracle','Master Breeder':'master-breeder',Slayer:'slayer',Deadeye:'deadeye','Void Mage':'void-mage',Corruptor:'corruptor',Overlord:'overlord'};
+    const DATA={
+      gaia:[['Rogue','basic',null],['Fighter','first','Rogue'],['Kahuna','first','Rogue'],['Spell Singer','first','Rogue'],['Champion','second','Fighter'],['Archer','second','Fighter'],['Druid','second','Kahuna'],['Battle Kahuna','second','Kahuna'],['Evoker','second','Spell Singer'],['Berserker','master','Champion'],['Marksman','master','Archer'],['Magus','master','Druid'],['War Kahuna','master','Battle Kahuna'],['Beast Master','master','Evoker']],
+      deva:[['Guide','basic',null],['Holy Warrior','first','Guide'],['Cleric','first','Guide'],['Breeder','first','Guide'],['Knight','second','Holy Warrior'],['Soldier','second','Holy Warrior'],['Bishop','second','Cleric'],['Priest','second','Cleric'],['Soul Breeder','second','Breeder'],['Templar','master','Knight'],['Mercenary','master','Soldier'],['Cardinal','master','Bishop'],['Oracle','master','Priest'],['Master Breeder','master','Soul Breeder']],
+      asura:[['Stepper','basic',null],['Strider','first','Stepper'],['Dark Magician','first','Stepper'],['Sorcerer','first','Stepper'],['Assassin','second','Strider'],['Shadow Hunter','second','Strider'],['Chaos Magician','second','Dark Magician'],['Warlock','second','Dark Magician'],['Battle Summoner','second','Sorcerer'],['Slayer','master','Assassin'],['Deadeye','master','Shadow Hunter'],['Void Mage','master','Chaos Magician'],['Corruptor','master','Warlock'],['Overlord','master','Battle Summoner']]
+    };
+    const COLX={basic:64,first:250,second:452,master:616};
+    const TIERS=[['basic','BASIC'],['first','1ST JOB'],['second','2ND JOB'],['master','MASTER']];
+    const ROWH=80,TOP=58;
+    const canvas=document.getElementById('ntCanvas');
+    if(!canvas) return;
+
+    function build(r){
+      const rc=RC[r], rows=DATA[r];
+      const map={}; rows.forEach(n=>map[n[0]]={name:n[0],tier:n[1],parent:n[2],children:[]});
+      rows.forEach(n=>{ if(n[2]) map[n[2]].children.push(map[n[0]]); });
+      const masters=rows.filter(n=>n[1]==='master').map(n=>n[0]);
+      const y={}; masters.forEach((m,i)=>{ y[m]=TOP+i*ROWH; });
+      rows.filter(n=>n[1]==='second').forEach(n=>{ y[n[0]]=y[map[n[0]].children[0].name]; });
+      rows.filter(n=>n[1]==='first').forEach(n=>{ const cs=map[n[0]].children; y[n[0]]=cs.reduce((a,c)=>a+y[c.name],0)/cs.length; });
+      rows.filter(n=>n[1]==='basic').forEach(n=>{ const cs=map[n[0]].children; y[n[0]]=cs.reduce((a,c)=>a+y[c.name],0)/cs.length; });
+      const H=TOP+(masters.length-1)*ROWH+58;
+      canvas.style.height=H+'px'; canvas.innerHTML='';
+      TIERS.forEach(([t,lbl])=>{ const h=document.createElement('div'); h.className='nt-head'; h.style.left=COLX[t]+'px'; h.style.top='0px'; h.textContent=lbl; canvas.appendChild(h); });
+      const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+      svg.setAttribute('class','nt-links'); svg.style.height=H+'px';
+      rows.forEach(n=>{ if(!n[2])return; const p=map[n[2]],c=map[n[0]];
+        const x1=COLX[p.tier]+22,y1=y[p.name],x2=COLX[c.tier]-22,y2=y[c.name],dx=(x2-x1)*0.5;
+        const path=document.createElementNS('http://www.w3.org/2000/svg','path');
+        path.setAttribute('d','M'+x1+' '+y1+' C'+(x1+dx)+' '+y1+', '+(x2-dx)+' '+y2+', '+x2+' '+y2);
+        path.setAttribute('fill','none'); path.setAttribute('stroke',rc); path.setAttribute('stroke-width','1.6'); path.setAttribute('stroke-opacity','.32');
+        path.dataset.link=n[2]+'>'+n[0]; svg.appendChild(path);
+      });
+      canvas.appendChild(svg);
+      rows.forEach(n=>{
+        const nm=n[0],tier=n[1],isMaster=tier==='master';
+        const el=document.createElement(isMaster?'a':'div');
+        el.className='nt-node '+tier; el.style.setProperty('--rc',rc);
+        el.style.left=COLX[tier]+'px'; el.style.top=y[nm]+'px';
+        if(isMaster&&LINK[nm]) el.href='class/'+LINK[nm]+'/';
+        const file=(IMG[nm]||nm);
+        el.innerHTML='<div class="nt-frame"><img src="'+BASE+encodeURIComponent(file)+'.webp" alt="'+nm+'"/></div><div class="nt-name">'+nm+'</div>';
+        el.dataset.name=nm;
+        el.addEventListener('mouseenter',()=>lite(nm,map,svg));
+        el.addEventListener('mouseleave',()=>reset(svg));
+        canvas.appendChild(el);
+      });
+      fit();
+    }
+    function ancestry(nm,map){ const set=new Set(); let c=map[nm]; while(c){ set.add(c.name); c=c.parent?map[c.parent]:null; } return set; }
+    function lite(nm,map,svg){
+      const anc=ancestry(nm,map);
+      canvas.querySelectorAll('.nt-node').forEach(e=>{ if(anc.has(e.dataset.name)){ e.classList.add('lit'); e.classList.remove('dim'); } else { e.classList.add('dim'); e.classList.remove('lit'); } });
+      const chain=new Set(); let c=map[nm]; while(c&&c.parent){ chain.add(c.parent+'>'+c.name); c=map[c.parent]; }
+      svg.querySelectorAll('path').forEach(p=>{ if(chain.has(p.dataset.link)){ p.setAttribute('stroke-opacity','1'); p.setAttribute('stroke-width','2.6'); } else { p.setAttribute('stroke-opacity','.1'); } });
+    }
+    function reset(svg){
+      canvas.querySelectorAll('.nt-node').forEach(e=>e.classList.remove('dim','lit'));
+      svg.querySelectorAll('path').forEach(p=>{ p.setAttribute('stroke-opacity','.32'); p.setAttribute('stroke-width','1.6'); });
+    }
+    function fit(){
+      const stage=canvas.parentElement, w=stage.clientWidth, s=Math.min(1,w/680);
+      canvas.style.transform='scale('+s+')';
+      stage.style.height=(canvas.offsetHeight*s)+'px';
+    }
+    window.addEventListener('resize',fit);
+    window.ntPick=function(r){ document.querySelectorAll('.nt-tab').forEach(t=>t.classList.toggle('on',t.dataset.r===r)); build(r); };
+    build('gaia');
+  })();
 
   // FAQ accordion
   document.querySelectorAll('.faq-q').forEach(btn => {
