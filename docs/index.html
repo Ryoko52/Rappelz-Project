@@ -548,8 +548,8 @@
   svg.nt-links { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
   .nt-node { position: absolute; transform: translate(-50%,-50%); display: flex; flex-direction: column; align-items: center; gap: 4px; width: 96px; text-decoration: none; transition: opacity .25s; }
   .nt-head { font-family: 'Cinzel', serif; font-size: .55rem; letter-spacing: .18em; color: var(--text3); text-align: center; position: absolute; transform: translateX(-50%); }
-  .nt-frame { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; transition: all .25s; background: #14120c; }
-  .nt-frame img { width: auto; height: auto; max-width: none; image-rendering: auto; }
+  .nt-frame { width: 34px; height: 34px; border-radius: 50%; padding: 2px; display: flex; align-items: center; justify-content: center; position: relative; transition: all .25s; background: #14120c; }
+  .nt-frame img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; image-rendering: auto; }
   .nt-node .nt-name { font-family: 'Cinzel', serif; font-size: .56rem; letter-spacing: .03em; text-align: center; line-height: 1.15; color: #8a7d5c; transition: color .25s; max-width: 96px; }
   .nt-node.basic .nt-frame { box-shadow: 0 0 0 1px rgba(201,168,76,.25); }
   .nt-node.master .nt-frame { box-shadow: 0 0 0 1px var(--rc), 0 0 14px -2px var(--rc); animation: ntpulse 3s ease-in-out infinite; }
