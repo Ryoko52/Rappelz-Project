@@ -536,22 +536,15 @@
 
   /* CLASS TREE - node graph */
   .nt-wrap { padding: 2rem 0 1rem; }
-  .nt-races { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 640px; margin: 0 auto 1.75rem; }
-  .nt-racetab { position: relative; border-radius: 12px; overflow: hidden; cursor: pointer; aspect-ratio: 0.74; border: 1px solid rgba(201,168,76,.14); background: linear-gradient(160deg, #1a1710, #0e0d0a); transition: transform .3s, box-shadow .3s, filter .3s, border-color .3s; filter: grayscale(0.55) brightness(0.6); user-select: none; }
-  .nt-racetab img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-  .nt-racetab-info { position: absolute; left: 0; right: 0; bottom: 0; padding: 0.85rem 0.5rem 0.7rem; background: linear-gradient(to top, rgba(8,7,5,0.96) 25%, rgba(8,7,5,0.6) 60%, transparent); text-align: center; z-index: 1; }
-  .rt-name { font-family: 'Cinzel', serif; font-size: 0.95rem; font-weight: 700; letter-spacing: .12em; color: var(--text); transition: color .25s; }
-  .rt-magic { font-family: 'Cinzel', serif; font-size: 0.52rem; letter-spacing: .14em; color: var(--text3); margin-top: 1px; }
-  .rt-sub { font-size: 0.62rem; color: var(--text3); font-style: italic; margin-top: 3px; line-height: 1.2; }
-  .nt-racetab:hover { filter: grayscale(0.15) brightness(0.9); transform: translateY(-3px); }
-  .nt-racetab.on { filter: none; transform: translateY(-4px); }
-  .nt-racetab.gaia.on { border-color: #6a9a4a; box-shadow: 0 6px 28px -6px rgba(120,180,80,.5); }
+  .nt-races { display: flex; justify-content: center; gap: 20px; margin: 0 auto 1.5rem; flex-wrap: wrap; }
+  .nt-racetab { cursor: pointer; text-align: center; opacity: 0.5; transition: opacity .25s, transform .25s; user-select: none; }
+  .nt-racetab img { width: 130px; height: auto; display: block; }
+  .rt-name { font-family: 'Cinzel', serif; font-size: 0.85rem; font-weight: 700; letter-spacing: .12em; color: var(--text2); margin-top: 0.3rem; }
+  .nt-racetab:hover { opacity: 0.85; }
+  .nt-racetab.on { opacity: 1; transform: translateY(-4px); }
   .nt-racetab.gaia.on .rt-name { color: #a8d888; }
-  .nt-racetab.deva.on { border-color: #4a80c0; box-shadow: 0 6px 28px -6px rgba(80,140,220,.5); }
   .nt-racetab.deva.on .rt-name { color: #8fc0f5; }
-  .nt-racetab.asura.on { border-color: #8a5ac0; box-shadow: 0 6px 28px -6px rgba(150,90,220,.5); }
   .nt-racetab.asura.on .rt-name { color: #c89ff0; }
-  @media (max-width: 520px) { .rt-sub { display: none; } .rt-name { font-size: 0.8rem; } }
   .nt-stage { position: relative; width: 100%; max-width: 680px; margin: 0.75rem auto 0; }
   .nt-canvas { position: relative; width: 680px; transform-origin: top left; }
   svg.nt-links { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
@@ -661,15 +654,15 @@
     <div class="nt-races">
       <div class="nt-racetab asura" data-r="asura" onclick="ntPick('asura')">
         <img src="images/classes_logo/Asura.png" alt="Asura"/>
-        <div class="nt-racetab-info"><div class="rt-name">ASURA</div><div class="rt-magic">Dark Magic</div><div class="rt-sub">Warriors of Shadow</div></div>
+        <div class="rt-name">ASURA</div>
       </div>
       <div class="nt-racetab gaia on" data-r="gaia" onclick="ntPick('gaia')">
         <img src="images/classes_logo/Gaia.png" alt="Gaia"/>
-        <div class="nt-racetab-info"><div class="rt-name">GAIA</div><div class="rt-magic">Earth Magic</div><div class="rt-sub">Guardians of the Elements</div></div>
+        <div class="rt-name">GAIA</div>
       </div>
       <div class="nt-racetab deva" data-r="deva" onclick="ntPick('deva')">
         <img src="images/classes_logo/Deva.png" alt="Deva"/>
-        <div class="nt-racetab-info"><div class="rt-name">DEVA</div><div class="rt-magic">Divine Magic</div><div class="rt-sub">Curators of Light</div></div>
+        <div class="rt-name">DEVA</div>
       </div>
     </div>
     <div class="nt-stage">
