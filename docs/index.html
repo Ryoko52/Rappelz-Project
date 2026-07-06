@@ -533,6 +533,41 @@
     nav { display: none; }
     .search-wrap input { width: 150px; }
   }
+
+  /* CLASS TREE */
+  .ct-wrap { padding: 2.5rem 0 1rem; }
+  .ct-races { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 1.5rem; }
+  .race-btn { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem; text-align: center; cursor: pointer; transition: all 0.2s; user-select: none; }
+  .race-btn.gaia:hover, .race-btn.gaia.active { border-color: #6a9a6a; background: rgba(106,154,106,0.08); }
+  .race-btn.deva:hover, .race-btn.deva.active { border-color: #6a8acc; background: rgba(106,138,204,0.08); }
+  .race-btn.asura:hover, .race-btn.asura.active { border-color: #9a6acc; background: rgba(154,106,204,0.08); }
+  .race-btn .r-name { font-family: 'Cinzel', serif; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.15rem; }
+  .race-btn.gaia .r-name { color: #a0c890; } .race-btn.deva .r-name { color: #90b0e8; } .race-btn.asura .r-name { color: #c090e8; }
+  .race-btn .r-magic { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.15em; color: var(--text3); }
+  .race-btn .r-desc { font-size: 0.75rem; color: var(--text3); margin-top: 0.3rem; font-style: italic; line-height: 1.3; }
+  .ct-panel { display: none; }
+  .ct-panel.active { display: block; }
+  .ct-col-headers { display: flex; gap: 6px; margin-bottom: 0.6rem; padding: 0 4px; }
+  .ct-col-h { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.16em; color: var(--text3); text-align: center; }
+  .ct-tree { display: flex; flex-direction: column; gap: 6px; overflow-x: auto; padding-bottom: 0.5rem; }
+  .ct-path { display: flex; align-items: center; gap: 6px; }
+  .ct-spacer { flex-shrink: 0; }
+  .ct-job { display: flex; flex-direction: column; align-items: center; gap: 5px; flex-shrink: 0; width: 90px; cursor: pointer; position: relative; text-decoration: none; }
+  .ct-job img { width: 56px; height: 56px; object-fit: contain; border-radius: 8px; border: 1px solid var(--border); background: var(--bg1); padding: 3px; transition: all 0.2s; }
+  .ct-job:hover img { border-color: var(--gold); transform: scale(1.08); filter: brightness(1.15); }
+  .ct-job .ct-jname { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.04em; text-align: center; line-height: 1.25; transition: color 0.2s; }
+  .ct-job.basic .ct-jname { color: var(--text2); }
+  .ct-job.first .ct-jname { color: #90b890; }
+  .ct-job.second .ct-jname { color: #90b0cc; }
+  .ct-job.master-gaia .ct-jname { color: #a0d890; }
+  .ct-job.master-deva .ct-jname { color: #90c0f0; }
+  .ct-job.master-asura .ct-jname { color: #c090f0; }
+  .ct-job:hover .ct-jname { color: var(--gold3); }
+  .ct-arr { color: var(--text3); font-size: 1rem; flex-shrink: 0; }
+  .ct-sep { height: 1px; background: var(--border); margin: 0.4rem 0; }
+  .ct-legend { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 1rem; }
+  .ct-leg { display: flex; align-items: center; gap: 5px; font-family: 'Cinzel', serif; font-size: 0.57rem; color: var(--text3); }
+  .ct-leg-dot { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
 </style>
 </head>
 <body>
@@ -575,6 +610,209 @@
 </section>
 
 <div class="page">
+
+  <!-- CLASS TREE -->
+  <section class="section ct-wrap">
+    <div class="section-head">
+      <h2>CLASS TREE</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="ct-races">
+      <div class="race-btn gaia active" onclick="showRace('gaia')">
+        <div class="r-name">GAIA</div>
+        <div class="r-magic">Earth Magic</div>
+        <div class="r-desc">Guardians of the Elements</div>
+      </div>
+      <div class="race-btn deva" onclick="showRace('deva')">
+        <div class="r-name">DEVA</div>
+        <div class="r-magic">Divine Magic</div>
+        <div class="r-desc">Curators of Light</div>
+      </div>
+      <div class="race-btn asura" onclick="showRace('asura')">
+        <div class="r-name">ASURA</div>
+        <div class="r-magic">Dark Magic</div>
+        <div class="r-desc">Warriors of Shadow</div>
+      </div>
+    </div>
+
+    <!-- GAIA -->
+    <div class="ct-panel active" id="panel-gaia">
+      <div class="ct-col-headers">
+        <div class="ct-col-h" style="width:90px">Basic</div><div style="width:22px"></div>
+        <div class="ct-col-h" style="width:90px">1st Job</div><div style="width:22px"></div>
+        <div class="ct-col-h" style="width:90px">2nd Job</div><div style="width:22px"></div>
+        <div class="ct-col-h" style="width:90px">Master Class</div>
+      </div>
+      <div class="ct-tree">
+        <div class="ct-path">
+          <a class="ct-job basic" href="class/berserker/"><img src="images/classes_logo/Rogue.webp" alt="Rogue"/><div class="ct-jname">Rogue</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job first" href="class/berserker/"><img src="images/classes_logo/Fighter.webp" alt="Fighter"/><div class="ct-jname">Fighter</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job second" href="class/berserker/"><img src="images/classes_logo/Champion.webp" alt="Champion"/><div class="ct-jname">Champion</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job master-gaia" href="class/berserker/"><img src="images/classes_logo/Berserker.webp" alt="Berserker"/><div class="ct-jname">Berserker</div></a>
+        </div>
+        <div class="ct-path">
+          <div class="ct-spacer" style="width:90px"></div><div style="width:22px"></div>
+          <div class="ct-spacer" style="width:90px"></div>
+          <div class="ct-arr">→</div>
+          <a class="ct-job second" href="class/marksman/"><img src="images/classes_logo/Archer.webp" alt="Archer"/><div class="ct-jname">Archer</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job master-gaia" href="class/marksman/"><img src="images/classes_logo/Marksman.webp" alt="Marksman"/><div class="ct-jname">Marksman</div></a>
+        </div>
+        <div class="ct-sep"></div>
+        <div class="ct-path">
+          <a class="ct-job basic" href="class/magus/"><img src="images/classes_logo/Kahuna.webp" alt="Kahuna"/><div class="ct-jname">Kahuna</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job first" href="class/magus/"><img src="images/classes_logo/Druid.webp" alt="Druid"/><div class="ct-jname">Druid</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job second" href="class/magus/"><img src="images/classes_logo/battle kahuna.webp" alt="Battle Kahuna"/><div class="ct-jname">Battle Kahuna</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job master-gaia" href="class/magus/"><img src="images/classes_logo/Magus.webp" alt="Magus"/><div class="ct-jname">Magus</div></a>
+        </div>
+        <div class="ct-path">
+          <div class="ct-spacer" style="width:90px"></div><div style="width:22px"></div>
+          <div class="ct-spacer" style="width:90px"></div>
+          <div class="ct-arr">→</div>
+          <a class="ct-job second" href="class/war-kahuna/"><img src="images/classes_logo/battle kahuna.webp" alt="Battle Kahuna"/><div class="ct-jname">Battle Kahuna</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job master-gaia" href="class/war-kahuna/"><img src="images/classes_logo/War Kahuna.webp" alt="War Kahuna"/><div class="ct-jname">War Kahuna</div></a>
+        </div>
+        <div class="ct-sep"></div>
+        <div class="ct-path">
+          <a class="ct-job basic" href="class/beast-master/"><img src="images/classes_logo/Spell Singer.webp" alt="Spell Singer"/><div class="ct-jname">Spell Singer</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job first" href="class/beast-master/"><img src="images/classes_logo/Evoker.webp" alt="Evoker"/><div class="ct-jname">Evoker</div></a>
+          <div class="ct-arr">→</div>
+          <div class="ct-spacer" style="width:90px"></div>
+          <div class="ct-arr" style="opacity:0">→</div>
+          <a class="ct-job master-gaia" href="class/beast-master/"><img src="images/classes_logo/Beast Master.webp" alt="Beast Master"/><div class="ct-jname">Beast Master</div></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEVA -->
+    <div class="ct-panel" id="panel-deva">
+      <div class="ct-col-headers">
+        <div class="ct-col-h" style="width:90px">Basic</div><div style="width:22px"></div>
+        <div class="ct-col-h" style="width:90px">1st Job</div><div style="width:22px"></div>
+        <div class="ct-col-h" style="width:90px">2nd Job</div><div style="width:22px"></div>
+        <div class="ct-col-h" style="width:90px">Master Class</div>
+      </div>
+      <div class="ct-tree">
+        <div class="ct-path">
+          <a class="ct-job basic" href="class/templar/"><img src="images/classes_logo/Guide.webp" alt="Guide"/><div class="ct-jname">Guide</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job first" href="class/templar/"><img src="images/classes_logo/Holy Warrior.webp" alt="Holy Warrior"/><div class="ct-jname">Holy Warrior</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job second" href="class/templar/"><img src="images/classes_logo/Knight.webp" alt="Knight"/><div class="ct-jname">Knight</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job master-deva" href="class/templar/"><img src="images/classes_logo/Templar.webp" alt="Templar"/><div class="ct-jname">Templar</div></a>
+        </div>
+        <div class="ct-path">
+          <div class="ct-spacer" style="width:90px"></div><div style="width:22px"></div>
+          <div class="ct-spacer" style="width:90px"></div>
+          <div class="ct-arr">→</div>
+          <a class="ct-job second" href="class/mercenary/"><img src="images/classes_logo/Soldier.webp" alt="Soldier"/><div class="ct-jname">Soldier</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job master-deva" href="class/mercenary/"><img src="images/classes_logo/Mercenary.webp" alt="Mercenary"/><div class="ct-jname">Mercenary</div></a>
+        </div>
+        <div class="ct-sep"></div>
+        <div class="ct-path">
+          <a class="ct-job basic" href="class/oracle/"><img src="images/classes_logo/Cleric.webp" alt="Cleric"/><div class="ct-jname">Cleric</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job first" href="class/oracle/"><img src="images/classes_logo/Bishop.webp" alt="Bishop"/><div class="ct-jname">Bishop</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job second" href="class/oracle/"><img src="images/classes_logo/Priest.webp" alt="Priest"/><div class="ct-jname">Priest</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job master-deva" href="class/oracle/"><img src="images/classes_logo/Oracle.webp" alt="Oracle"/><div class="ct-jname">Oracle</div></a>
+        </div>
+        <div class="ct-path">
+          <div class="ct-spacer" style="width:90px"></div><div style="width:22px"></div>
+          <div class="ct-spacer" style="width:90px"></div>
+          <div class="ct-arr">→</div>
+          <a class="ct-job second" href="class/cardinal/"><img src="images/classes_logo/Priest.webp" alt="Sage"/><div class="ct-jname">Sage</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job master-deva" href="class/cardinal/"><img src="images/classes_logo/Cardinal.webp" alt="Cardinal"/><div class="ct-jname">Cardinal</div></a>
+        </div>
+        <div class="ct-sep"></div>
+        <div class="ct-path">
+          <a class="ct-job basic" href="class/master-breeder/"><img src="images/classes_logo/Breeder.webp" alt="Breeder"/><div class="ct-jname">Breeder</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job first" href="class/master-breeder/"><img src="images/classes_logo/Soul Breeder.webp" alt="Soul Breeder"/><div class="ct-jname">Soul Breeder</div></a>
+          <div class="ct-arr">→</div>
+          <div class="ct-spacer" style="width:90px"></div>
+          <div class="ct-arr" style="opacity:0">→</div>
+          <a class="ct-job master-deva" href="class/master-breeder/"><img src="images/classes_logo/Master Breeder.webp" alt="Master Breeder"/><div class="ct-jname">Master Breeder</div></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ASURA -->
+    <div class="ct-panel" id="panel-asura">
+      <div class="ct-col-headers">
+        <div class="ct-col-h" style="width:90px">Basic</div><div style="width:22px"></div>
+        <div class="ct-col-h" style="width:90px">1st Job</div><div style="width:22px"></div>
+        <div class="ct-col-h" style="width:90px">2nd Job</div><div style="width:22px"></div>
+        <div class="ct-col-h" style="width:90px">Master Class</div>
+      </div>
+      <div class="ct-tree">
+        <div class="ct-path">
+          <a class="ct-job basic" href="class/slayer/"><img src="images/classes_logo/Stepper.webp" alt="Stepper"/><div class="ct-jname">Stepper</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job first" href="class/slayer/"><img src="images/classes_logo/Strider.webp" alt="Strider"/><div class="ct-jname">Strider</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job second" href="class/slayer/"><img src="images/classes_logo/Assassin.webp" alt="Assassin"/><div class="ct-jname">Assassin</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job master-asura" href="class/slayer/"><img src="images/classes_logo/Slayer.webp" alt="Slayer"/><div class="ct-jname">Slayer</div></a>
+        </div>
+        <div class="ct-path">
+          <div class="ct-spacer" style="width:90px"></div><div style="width:22px"></div>
+          <div class="ct-spacer" style="width:90px"></div>
+          <div class="ct-arr">→</div>
+          <a class="ct-job second" href="class/deadeye/"><img src="images/classes_logo/Shadow Hunter.webp" alt="Shadow Hunter"/><div class="ct-jname">Shadow Hunter</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job master-asura" href="class/deadeye/"><img src="images/classes_logo/DeadEye.webp" alt="Deadeye"/><div class="ct-jname">Deadeye</div></a>
+        </div>
+        <div class="ct-sep"></div>
+        <div class="ct-path">
+          <a class="ct-job basic" href="class/void-mage/"><img src="images/classes_logo/Dark Magicien.webp" alt="Dark Magician"/><div class="ct-jname">Dark Magician</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job first" href="class/void-mage/"><img src="images/classes_logo/Chaos Magicien.webp" alt="Chaos Magician"/><div class="ct-jname">Chaos Magician</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job second" href="class/void-mage/"><img src="images/classes_logo/Warlock.webp" alt="Warlock"/><div class="ct-jname">Warlock</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job master-asura" href="class/void-mage/"><img src="images/classes_logo/Void Mage.webp" alt="Void Mage"/><div class="ct-jname">Void Mage</div></a>
+        </div>
+        <div class="ct-path">
+          <div class="ct-spacer" style="width:90px"></div><div style="width:22px"></div>
+          <div class="ct-spacer" style="width:90px"></div>
+          <div class="ct-arr">→</div>
+          <a class="ct-job second" href="class/corruptor/"><img src="images/classes_logo/Warlock.webp" alt="Warlock"/><div class="ct-jname">Warlock</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job master-asura" href="class/corruptor/"><img src="images/classes_logo/Corruptor.webp" alt="Corruptor"/><div class="ct-jname">Corruptor</div></a>
+        </div>
+        <div class="ct-sep"></div>
+        <div class="ct-path">
+          <a class="ct-job basic" href="class/overlord/"><img src="images/classes_logo/Sorcerer.webp" alt="Sorcerer"/><div class="ct-jname">Sorcerer</div></a>
+          <div class="ct-arr">→</div>
+          <a class="ct-job first" href="class/overlord/"><img src="images/classes_logo/Battle Summoner.webp" alt="Battle Summoner"/><div class="ct-jname">Battle Summoner</div></a>
+          <div class="ct-arr">→</div>
+          <div class="ct-spacer" style="width:90px"></div>
+          <div class="ct-arr" style="opacity:0">→</div>
+          <a class="ct-job master-asura" href="class/overlord/"><img src="images/classes_logo/Overlord.webp" alt="Overlord"/><div class="ct-jname">Overlord</div></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ct-legend">
+      <div class="ct-leg"><div class="ct-leg-dot" style="background:var(--text2)"></div>Basic</div>
+      <div class="ct-leg"><div class="ct-leg-dot" style="background:#90b890"></div>1st Job</div>
+      <div class="ct-leg"><div class="ct-leg-dot" style="background:#90b0cc"></div>2nd Job</div>
+      <div class="ct-leg"><div class="ct-leg-dot" style="background:var(--gold2)"></div>Master Class</div>
+    </div>
+  </section>
 
   <!-- TIER LIST -->
   <section class="section" id="tier-list">
@@ -1157,6 +1395,14 @@
   document.addEventListener('click', function(e) {
     if (!e.target.closest('.search-wrap')) { searchResults.classList.remove('active'); }
   });
+
+  // Class tree
+  function showRace(r) {
+    document.querySelectorAll('.ct-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.race-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('panel-' + r).classList.add('active');
+    document.querySelector('.race-btn.' + r).classList.add('active');
+  }
 
   // FAQ accordion
   document.querySelectorAll('.faq-q').forEach(btn => {
