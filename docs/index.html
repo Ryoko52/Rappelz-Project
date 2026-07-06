@@ -560,6 +560,44 @@
   a.nt-node.master { cursor: pointer; }
   @keyframes ntpulse { 0%,100%{box-shadow:0 0 0 1px var(--rc), 0 0 12px -3px var(--rc);} 50%{box-shadow:0 0 0 1px var(--rc), 0 0 20px 0px var(--rc);} }
   .nt-legend { text-align: center; font-size: .6rem; color: var(--text3); letter-spacing: .06em; margin-top: 0.6rem; font-style: italic; }
+
+  /* PREMIUM FX */
+  /* hero floating particles */
+  .hero-particles { position: absolute; inset: 0; pointer-events: none; z-index: 1; overflow: hidden; }
+  .hero-particle { position: absolute; bottom: -10px; width: 3px; height: 3px; border-radius: 50%; background: radial-gradient(circle, rgba(245,224,152,0.9), rgba(201,168,76,0.1)); opacity: 0; animation: heroFloat linear infinite; }
+  @keyframes heroFloat {
+    0% { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.4; }
+    100% { transform: translateY(-520px) translateX(var(--dx)) scale(0.4); opacity: 0; }
+  }
+  /* animated title glow */
+  h1 { animation: titleGlow 4s ease-in-out infinite; }
+  @keyframes titleGlow {
+    0%, 100% { text-shadow: 0 0 40px rgba(201,168,76,0.3), 0 2px 8px rgba(0,0,0,0.6); }
+    50% { text-shadow: 0 0 60px rgba(245,224,152,0.5), 0 0 20px rgba(201,168,76,0.3), 0 2px 8px rgba(0,0,0,0.6); }
+  }
+  /* hero content above particles */
+  #hero > div, .hero-tag, h1, .hero-sub, .hero-cards { position: relative; z-index: 1; }
+  /* hero card lift + shimmer */
+  .hero-card { position: relative; overflow: hidden; }
+  .hero-card::after {
+    content: ''; position: absolute; top: 0; left: -120%; width: 60%; height: 100%;
+    background: linear-gradient(100deg, transparent, rgba(245,224,152,0.18), transparent);
+    transition: left 0.6s ease; pointer-events: none;
+  }
+  .hero-card:hover { transform: translateY(-3px); }
+  .hero-card:hover::after { left: 130%; }
+  /* guide card lift */
+  .guide-card { transition: border-color 0.2s, background 0.2s, box-shadow 0.25s, transform 0.25s; }
+  .guide-card:hover { transform: translateY(-4px); }
+  /* scroll reveal */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.visible { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-particle, h1 { animation: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
 </style>
 </head>
 <body>
@@ -587,6 +625,7 @@
 </header>
 
 <section id="hero">
+  <div class="hero-particles" id="heroParticles"></div>
   <div style="position:relative;z-index:1">
     <p class="hero-tag">Community Knowledge Base</p>
     <h1>Rappelz Guidelines</h1>
@@ -1202,6 +1241,37 @@
   document.addEventListener('click', function(e) {
     if (!e.target.closest('.search-wrap')) { searchResults.classList.remove('active'); }
   });
+
+  // Hero floating particles
+  (function(){
+    const host = document.getElementById('heroParticles');
+    if (host && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const N = 26;
+      for (let i = 0; i < N; i++) {
+        const p = document.createElement('div');
+        p.className = 'hero-particle';
+        const size = (1.5 + Math.random() * 2.5).toFixed(1);
+        p.style.left = (Math.random() * 100) + '%';
+        p.style.width = size + 'px';
+        p.style.height = size + 'px';
+        p.style.setProperty('--dx', ((Math.random() - 0.5) * 120).toFixed(0) + 'px');
+        p.style.animationDuration = (7 + Math.random() * 9).toFixed(1) + 's';
+        p.style.animationDelay = (Math.random() * 12).toFixed(1) + 's';
+        host.appendChild(p);
+      }
+    }
+  })();
+
+  // Scroll reveal on sections
+  (function(){
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const targets = document.querySelectorAll('.page .section');
+    targets.forEach(el => el.classList.add('reveal'));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    targets.forEach(el => io.observe(el));
+  })();
 
   // Class tree - node graph
   (function(){
