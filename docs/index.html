@@ -536,13 +536,22 @@
 
   /* CLASS TREE - node graph */
   .nt-wrap { padding: 2rem 0 1rem; }
-  .nt-tabs { display: flex; justify-content: center; gap: 8px; margin-bottom: 0.5rem; flex-wrap: wrap; }
-  .nt-tab { padding: 0.45rem 1.4rem; border: 1px solid rgba(201,168,76,.18); border-radius: 20px; font-family: 'Cinzel', serif; font-size: 0.72rem; font-weight: 600; letter-spacing: .12em; color: var(--text3); cursor: pointer; transition: all .25s; background: rgba(20,18,12,.5); user-select: none; }
-  .nt-tab .tsub { font-size: .5rem; letter-spacing: .1em; opacity: .7; margin-left: .4rem; }
-  .nt-tab.gaia.on { color: #a8d888; border-color: #6a9a4a; box-shadow: 0 0 16px rgba(120,180,80,.25); background: rgba(60,90,40,.15); }
-  .nt-tab.deva.on { color: #8fc0f5; border-color: #4a80c0; box-shadow: 0 0 16px rgba(80,140,220,.25); background: rgba(40,70,120,.15); }
-  .nt-tab.asura.on { color: #c89ff0; border-color: #8a5ac0; box-shadow: 0 0 16px rgba(150,90,220,.25); background: rgba(80,40,120,.15); }
-  .nt-tab:hover { color: var(--gold2); }
+  .nt-races { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 640px; margin: 0 auto 1.75rem; }
+  .nt-racetab { position: relative; border-radius: 12px; overflow: hidden; cursor: pointer; aspect-ratio: 0.74; border: 1px solid rgba(201,168,76,.14); background: linear-gradient(160deg, #1a1710, #0e0d0a); transition: transform .3s, box-shadow .3s, filter .3s, border-color .3s; filter: grayscale(0.55) brightness(0.6); user-select: none; }
+  .nt-racetab img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .nt-racetab-info { position: absolute; left: 0; right: 0; bottom: 0; padding: 0.85rem 0.5rem 0.7rem; background: linear-gradient(to top, rgba(8,7,5,0.96) 25%, rgba(8,7,5,0.6) 60%, transparent); text-align: center; z-index: 1; }
+  .rt-name { font-family: 'Cinzel', serif; font-size: 0.95rem; font-weight: 700; letter-spacing: .12em; color: var(--text); transition: color .25s; }
+  .rt-magic { font-family: 'Cinzel', serif; font-size: 0.52rem; letter-spacing: .14em; color: var(--text3); margin-top: 1px; }
+  .rt-sub { font-size: 0.62rem; color: var(--text3); font-style: italic; margin-top: 3px; line-height: 1.2; }
+  .nt-racetab:hover { filter: grayscale(0.15) brightness(0.9); transform: translateY(-3px); }
+  .nt-racetab.on { filter: none; transform: translateY(-4px); }
+  .nt-racetab.gaia.on { border-color: #6a9a4a; box-shadow: 0 6px 28px -6px rgba(120,180,80,.5); }
+  .nt-racetab.gaia.on .rt-name { color: #a8d888; }
+  .nt-racetab.deva.on { border-color: #4a80c0; box-shadow: 0 6px 28px -6px rgba(80,140,220,.5); }
+  .nt-racetab.deva.on .rt-name { color: #8fc0f5; }
+  .nt-racetab.asura.on { border-color: #8a5ac0; box-shadow: 0 6px 28px -6px rgba(150,90,220,.5); }
+  .nt-racetab.asura.on .rt-name { color: #c89ff0; }
+  @media (max-width: 520px) { .rt-sub { display: none; } .rt-name { font-size: 0.8rem; } }
   .nt-stage { position: relative; width: 100%; max-width: 680px; margin: 0.75rem auto 0; }
   .nt-canvas { position: relative; width: 680px; transform-origin: top left; }
   svg.nt-links { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
@@ -649,10 +658,19 @@
       <div class="section-line"></div>
     </div>
     <p style="text-align:center;font-size:0.85rem;color:var(--text3);letter-spacing:0.08em;margin-bottom:0.5rem;">Hover a class to trace its path back to the base</p>
-    <div class="nt-tabs">
-      <div class="nt-tab gaia on" data-r="gaia" onclick="ntPick('gaia')">GAIA<span class="tsub">Earth</span></div>
-      <div class="nt-tab deva" data-r="deva" onclick="ntPick('deva')">DEVA<span class="tsub">Divine</span></div>
-      <div class="nt-tab asura" data-r="asura" onclick="ntPick('asura')">ASURA<span class="tsub">Dark</span></div>
+    <div class="nt-races">
+      <div class="nt-racetab asura" data-r="asura" onclick="ntPick('asura')">
+        <img src="images/classes_logo/Asura.png" alt="Asura"/>
+        <div class="nt-racetab-info"><div class="rt-name">ASURA</div><div class="rt-magic">Dark Magic</div><div class="rt-sub">Warriors of Shadow</div></div>
+      </div>
+      <div class="nt-racetab gaia on" data-r="gaia" onclick="ntPick('gaia')">
+        <img src="images/classes_logo/Gaia.png" alt="Gaia"/>
+        <div class="nt-racetab-info"><div class="rt-name">GAIA</div><div class="rt-magic">Earth Magic</div><div class="rt-sub">Guardians of the Elements</div></div>
+      </div>
+      <div class="nt-racetab deva" data-r="deva" onclick="ntPick('deva')">
+        <img src="images/classes_logo/Deva.png" alt="Deva"/>
+        <div class="nt-racetab-info"><div class="rt-name">DEVA</div><div class="rt-magic">Divine Magic</div><div class="rt-sub">Curators of Light</div></div>
+      </div>
     </div>
     <div class="nt-stage">
       <div class="nt-canvas" id="ntCanvas"></div>
@@ -1346,7 +1364,7 @@
       stage.style.height=(canvas.offsetHeight*s)+'px';
     }
     window.addEventListener('resize',fit);
-    window.ntPick=function(r){ document.querySelectorAll('.nt-tab').forEach(t=>t.classList.toggle('on',t.dataset.r===r)); build(r); };
+    window.ntPick=function(r){ document.querySelectorAll('.nt-racetab').forEach(t=>t.classList.toggle('on',t.dataset.r===r)); build(r); };
     build('gaia');
   })();
 
