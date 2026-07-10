@@ -122,6 +122,26 @@
   .mtx .yes{color:var(--gold2);font-weight:700;}
   .mtx .no{color:var(--text3);}
   .mtx td:last-child{color:var(--text);font-family:'Cinzel',serif;font-size:0.74rem;letter-spacing:0.03em;}
+  .mtx tr.b td{background:rgba(196,74,53,0.06);} .mtx tr.b td:first-child{color:var(--red2);}
+  .mtx tr.v td{background:rgba(201,168,76,0.08);} .mtx tr.v td:first-child{color:var(--gold3);}
+  .mono-lvl td:not(:first-child){font-family:'Crimson Pro',serif;font-size:0.9rem;color:var(--text);}
+
+  /* captioned media frame */
+  .media{margin:1rem 0 1.5rem;border:1px solid var(--border2);border-radius:4px;overflow:hidden;background:var(--bg2);max-width:760px;}
+  .media-title{font-family:'Cinzel',serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;color:var(--gold2);padding:0.5rem 0.85rem;background:rgba(201,168,76,0.08);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.45rem;}
+  .media-title::before{content:'\25C6';font-size:0.5rem;color:var(--gold-dim);}
+  .media-body img,.media-body video{width:100%;display:block;background:#000;}
+  .media-grid2{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);}
+  @media(max-width:560px){.media-grid2{grid-template-columns:1fr;}}
+  .media-note{font-size:0.82rem;color:var(--text2);font-style:italic;padding:0.5rem 0.85rem;border-top:1px solid var(--border);}
+  .media-note b{color:var(--gold2);font-style:normal;}
+
+  .rarity{display:inline-block;font-family:'Cinzel',serif;font-size:0.66rem;font-weight:700;letter-spacing:0.05em;padding:0.05rem 0.5rem;border-radius:2px;}
+  .rarity-epic{color:#e07840;background:rgba(224,120,64,0.1);border:1px solid rgba(224,120,64,0.35);}
+  .rarity-unique{color:#b86ce0;background:rgba(184,108,224,0.1);border:1px solid rgba(184,108,224,0.35);}
+  .neg{color:var(--red2);}
+  .loot-card.fx .loot-card-header{background:rgba(126,184,212,0.09);color:#8fc4e4;}
+  .loot-card.fx li b{color:#8fc4e4;}
   .roster{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin:0.6rem 0 1rem;}
   @media(max-width:640px){.roster{grid-template-columns:1fr;}}
   .roster-box{background:var(--bg2);border:1px solid var(--border);border-radius:3px;padding:0.7rem 0.9rem;}
@@ -177,7 +197,10 @@
   <!-- Entrance -->
   <h2 id="entrance">Dungeon Entrance</h2>
   <p>Enter through the <strong style="color:var(--text);">Marduka Watchtower</strong> via <strong style="color:var(--text);">Sorcerer Kael</strong>. Talk to him to create the instance and pick your Player Mode.</p>
-  <img src="../../images/dungeons/Alcatraz/dungeon_entrance.png" alt="Alcatraz Dungeon Entrance" class="guide-img"/>
+  <div class="media">
+    <div class="media-title">Marduka Watchtower &mdash; Dungeon Entrance</div>
+    <div class="media-body"><img src="../../images/dungeons/Alcatraz/dungeon_entrance.png" alt="Alcatraz Dungeon Entrance"/></div>
+  </div>
 
   <!-- Difficulty -->
   <h2 id="difficulty">Difficulty &amp; Player Modes</h2>
@@ -208,22 +231,21 @@
       <p><span class="boss-tag">Karmos</span> <span class="boss-tag">Saragorn</span> <span class="boss-tag">Necron</span> mini-bosses, then the final boss <span class="boss-tag">Butcher Vulcan</span>.</p>
     </div>
   </div>
-  <p>Monster levels per stage:</p>
+  <p>Level of each monster in every stage (all regular prisoners share the same level per stage):</p>
   <div style="overflow-x:auto;">
-  <table class="mtx">
-    <thead><tr><th>Stage</th><th>Regular Mobs</th><th>Mini-Bosses</th><th>Butcher Vulcan</th></tr></thead>
+  <table class="mtx mono-lvl">
+    <thead><tr><th>Monster</th><th>S1</th><th>S2</th><th>S3</th><th>S4</th><th>S5</th><th>S6</th><th>S7</th><th>S8</th></tr></thead>
     <tbody>
-      <tr><td>Stage 1</td><td>240</td><td>240&ndash;250</td><td>260</td></tr>
-      <tr><td>Stage 2</td><td>245</td><td>245&ndash;255</td><td>265</td></tr>
-      <tr><td>Stage 3</td><td>250</td><td>250&ndash;260</td><td>270</td></tr>
-      <tr><td>Stage 4</td><td>250</td><td>250&ndash;260</td><td>270</td></tr>
-      <tr><td>Stage 5</td><td>255</td><td>255&ndash;265</td><td>270</td></tr>
-      <tr><td>Stage 6</td><td>258</td><td>258&ndash;263</td><td>269</td></tr>
-      <tr><td>Stage 7</td><td>260</td><td>260&ndash;270</td><td>275</td></tr>
-      <tr><td>Stage 8</td><td>265</td><td>265&ndash;275</td><td>280</td></tr>
+      <tr><td>Regular Prisoners</td><td>240</td><td>245</td><td>250</td><td>250</td><td>255</td><td>258</td><td>260</td><td>265</td></tr>
+      <tr class="b"><td>Karmos</td><td>240</td><td>255</td><td>260</td><td>260</td><td>265</td><td>263</td><td>270</td><td>275</td></tr>
+      <tr class="b"><td>Saragorn</td><td>250</td><td>255</td><td>260</td><td>260</td><td>265</td><td>263</td><td>270</td><td>275</td></tr>
+      <tr class="b"><td>Necron</td><td>250</td><td>255</td><td>260</td><td>260</td><td>265</td><td>263</td><td>270</td><td>275</td></tr>
+      <tr><td>Summoned Prisoner</td><td>250</td><td>255</td><td>260</td><td>260</td><td>265</td><td>263</td><td>270</td><td>275</td></tr>
+      <tr class="v"><td>Butcher Vulcan</td><td>260</td><td>265</td><td>270</td><td>270</td><td>270</td><td>269</td><td>275</td><td>280</td></tr>
     </tbody>
   </table>
   </div>
+  <p class="note">Karmos, Saragorn &amp; Necron are the mini-bosses (red); Butcher Vulcan is the final boss (gold).</p>
 
   <!-- Drops -->
   <h2 id="drops">Loot &amp; Drops</h2>
@@ -304,31 +326,60 @@
     <p><strong style="color:var(--gold2);">Essence cost example:</strong> going from <strong style="color:var(--text);">+9 to +10</strong> requires <strong style="color:var(--text);">100 Stat Essence</strong> (10 &times; 10).</p>
     <p>Base accessories can be enchanted up to <strong style="color:var(--text);">+10</strong>. Enhanced versions can go up to <strong style="color:var(--text);">+15</strong>.</p>
   </div>
-  <p>Enchant success rates:</p>
-  <img src="../../images/dungeons/Alcatraz/Enchant%20rates.png" alt="Alcatraz Enchant Rates" class="guide-img"/>
+  <h3>Success Rates</h3>
+  <p>Base accessories can be enchanted up to <strong style="color:var(--text);">+10</strong>; enhanced versions reach <strong style="color:var(--text);">+15</strong>. <strong style="color:var(--text);">Blessed Imbuement Ore</strong> gives far better odds at high levels.</p>
+  <table style="max-width:520px;">
+    <thead><tr><th>Enchant</th><th style="text-align:center;">Imbuement Ore</th><th style="text-align:center;">Blessed Imbuement Ore</th></tr></thead>
+    <tbody>
+      <tr><td>+1</td><td style="text-align:center;">100%</td><td style="text-align:center;">100%</td></tr>
+      <tr><td>+2</td><td style="text-align:center;">70%</td><td style="text-align:center;">100%</td></tr>
+      <tr><td>+3</td><td style="text-align:center;">60%</td><td style="text-align:center;">90%</td></tr>
+      <tr><td>+4</td><td style="text-align:center;">50%</td><td style="text-align:center;">80%</td></tr>
+      <tr><td>+5</td><td style="text-align:center;">40%</td><td style="text-align:center;">70%</td></tr>
+      <tr><td>+6</td><td style="text-align:center;">30%</td><td style="text-align:center;">60%</td></tr>
+      <tr><td>+7</td><td style="text-align:center;">20%</td><td style="text-align:center;">50%</td></tr>
+      <tr><td>+8</td><td style="text-align:center;">15%</td><td style="text-align:center;">45%</td></tr>
+      <tr><td>+9</td><td style="text-align:center;">10%</td><td style="text-align:center;">40%</td></tr>
+      <tr><td>+10</td><td style="text-align:center;">8%</td><td style="text-align:center;">38%</td></tr>
+      <tr class="b"><td>+11 <span style="color:var(--text3);font-size:0.8rem;">(enhanced)</span></td><td style="text-align:center;">6%</td><td style="text-align:center;">36%</td></tr>
+      <tr class="b"><td>+12 <span style="color:var(--text3);font-size:0.8rem;">(enhanced)</span></td><td style="text-align:center;">5%</td><td style="text-align:center;">35%</td></tr>
+      <tr class="b"><td>+13 <span style="color:var(--text3);font-size:0.8rem;">(enhanced)</span></td><td style="text-align:center;">5%</td><td style="text-align:center;">35%</td></tr>
+      <tr class="b"><td>+14 <span style="color:var(--text3);font-size:0.8rem;">(enhanced)</span></td><td style="text-align:center;">5%</td><td style="text-align:center;">35%</td></tr>
+      <tr class="b"><td>+15 <span style="color:var(--text3);font-size:0.8rem;">(enhanced)</span></td><td style="text-align:center;">5%</td><td style="text-align:center;">35%</td></tr>
+    </tbody>
+  </table>
+  <p class="note">+11 to +15 are only reachable on Enhanced accessories.</p>
 
   <!-- Eraser -->
   <h2 id="eraser">Alcatraz Imbuement Eraser</h2>
   <p>The <strong style="color:var(--gold2);">Alcatraz Imbuement Eraser</strong> removes <strong style="color:var(--text);">only the applied Imbuement Essence</strong>, so you can swap to a different stat while keeping the accessory, its enhancements, and its Awakening intact.</p>
-  <img src="../../images/dungeons/Alcatraz/Ambuement%20eErazer.png" alt="Alcatraz Imbuement Eraser" class="guide-img"/>
-  <video class="guide-video" controls preload="metadata">
-    <source src="../../images/dungeons/Alcatraz/Ambuement%20eErazer%20video.mp4" type="video/mp4"/>
-  </video>
+  <div class="media" style="max-width:420px;">
+    <div class="media-title">Alcatraz Imbuement Eraser</div>
+    <div class="media-body"><img src="../../images/dungeons/Alcatraz/Ambuement%20eErazer.png" alt="Alcatraz Imbuement Eraser item"/></div>
+  </div>
+  <div class="media">
+    <div class="media-title">Using the Imbuement Eraser</div>
+    <div class="media-body"><video controls preload="metadata"><source src="../../images/dungeons/Alcatraz/Ambuement%20eErazer%20video.mp4" type="video/mp4"/></video></div>
+  </div>
   <div class="alert-box">
     <span class="alert-title">Enhanced Mithril Accessories</span>
-    <p>Using an Alcatraz Imbuement Eraser on an <strong style="color:var(--text);">Enhanced Mithril Accessory</strong> removes the Imbuement Essence, but the accessory reverts to an <strong style="color:var(--text);">Enhanced Mithril Accessory +0</strong>.</p>
+    <p>On an <strong style="color:var(--text);">Enhanced Mithril Accessory</strong>, the Eraser removes the Imbuement Essence but reverts the accessory to <strong style="color:var(--text);">Enhanced Mithril +0</strong>.</p>
   </div>
-  <video class="guide-video" controls preload="metadata">
-    <source src="../../images/dungeons/Alcatraz/Imbuement%20Eraser_Mithril.mp4" type="video/mp4"/>
-  </video>
+  <div class="media">
+    <div class="media-title">Erasing an Enhanced Mithril Accessory</div>
+    <div class="media-body"><video controls preload="metadata"><source src="../../images/dungeons/Alcatraz/Imbuement%20Eraser_Mithril.mp4" type="video/mp4"/></video></div>
+  </div>
 
   <!-- Sapphire -->
   <h2 id="sapphire">Sapphire Transfer Scroll</h2>
   <p>The Sapphire Transfer Scroll lets you transfer a <strong style="color:var(--text);">Sapphire Ring, Earring, or Necklace</strong> into a new accessory. Speak to <strong style="color:var(--gold2);">Blacksmith Elara</strong> outside Alcatraz.</p>
 
-  <div class="img-pair">
-    <img src="../../images/dungeons/Alcatraz/Elara%20npc.png" alt="Blacksmith Elara"/>
-    <img src="../../images/dungeons/Alcatraz/Elara%20location.png" alt="Blacksmith Elara Location"/>
+  <div class="media">
+    <div class="media-title">Blacksmith Elara &mdash; found outside Alcatraz</div>
+    <div class="media-body media-grid2">
+      <img src="../../images/dungeons/Alcatraz/Elara%20npc.png" alt="Blacksmith Elara"/>
+      <img src="../../images/dungeons/Alcatraz/Elara%20location.png" alt="Blacksmith Elara Location"/>
+    </div>
   </div>
 
   <h3>Requirements</h3>
@@ -350,21 +401,81 @@
     <div class="step">You'll only be shown <strong style="color:var(--text);">equipped</strong> accessories eligible for transfer. To avoid mistakes, only equip the one you want transferred.</div>
     <div class="step">Click the accessory you wish to transfer and confirm.</div>
   </div>
-  <div class="img-pair">
-    <img src="../../images/dungeons/Alcatraz/Elara%20Saphire%20transfer.png" alt="Elara Sapphire Transfer menu"/>
-    <img src="../../images/dungeons/Alcatraz/Elara%20Saphire%20transfer_chose_accessory.png" alt="Choose accessory to transfer"/>
+  <div class="media">
+    <div class="media-title">Selecting the accessory to transfer</div>
+    <div class="media-body media-grid2">
+      <img src="../../images/dungeons/Alcatraz/Elara%20Saphire%20transfer.png" alt="Elara Sapphire Transfer menu"/>
+      <img src="../../images/dungeons/Alcatraz/Elara%20Saphire%20transfer_chose_accessory.png" alt="Choose accessory to transfer"/>
+    </div>
+    <div class="media-note">Only <b>equipped</b>, eligible accessories appear in the list.</div>
   </div>
-  <img src="../../images/dungeons/Alcatraz/Elara%20Saphire%20transfer_chose_accessory_confirmation.png" alt="Transfer confirmation" class="guide-img"/>
-  <p class="note">Your chosen accessory is updated. Example result:</p>
-  <img src="../../images/dungeons/Alcatraz/example%20accessories%20transfer.png" alt="Example of transferred accessory" class="guide-img"/>
+  <div class="media">
+    <div class="media-title">Confirming the transfer</div>
+    <div class="media-body"><img src="../../images/dungeons/Alcatraz/Elara%20Saphire%20transfer_chose_accessory_confirmation.png" alt="Transfer confirmation"/></div>
+  </div>
+  <div class="media">
+    <div class="media-title">Example &mdash; result after transfer</div>
+    <div class="media-body"><img src="../../images/dungeons/Alcatraz/example%20accessories%20transfer.png" alt="Example of transferred accessory"/></div>
+  </div>
 
   <!-- Boss Cards -->
   <h2 id="boss-cards">Boss Card Collection</h2>
-  <p>Each dungeon boss has a chance to drop its own <strong style="color:var(--text);">Boss Card</strong>. Collect the required number and exchange them with the <strong style="color:var(--gold2);">Black Marketer Nostra Family</strong> NPC for exclusive Collection Cards. The card effects are shown below.</p>
-  <img src="../../images/dungeons/Alcatraz/boss%20card%20effects.png" alt="Alcatraz Boss Card Effects" class="guide-img"/>
-  <h3>Collection Exchange</h3>
-  <p>The required number of Boss Cards and the reward for each exchange:</p>
-  <img src="../../images/dungeons/Alcatraz/boss%20card%20collection.png" alt="Alcatraz Boss Card Collection Rewards" class="guide-img"/>
+  <p>Each boss has a chance to drop its own <strong style="color:var(--text);">Boss Card</strong>. Collect the required number and trade them to the <strong style="color:var(--gold2);">Black Marketer Nostra Family</strong> NPC for a stronger <strong style="color:var(--text);">Collection Card</strong>.</p>
+
+  <h3>Boss Cards &amp; Effects</h3>
+  <p>Equip a Boss Card for these effects. Note that most carry a <span class="neg">drawback</span> alongside their bonuses.</p>
+  <div class="loot-grid">
+    <div class="loot-card fx">
+      <div class="loot-card-header">Necron<span class="loot-card-sub">Shadow of the Reaper &middot; pet build</span></div>
+      <ul>
+        <li><b>Breeder's Synergy, Domestication, Unholy Synergy</b> +5 levels</li>
+        <li><b>Creature Mastery</b> +7 levels</li>
+        <li><b>Creature HP &amp; MP Expansion</b> +5 levels</li>
+        <li class="neg">Creature Control &minus;2 levels</li>
+      </ul>
+    </div>
+    <div class="loot-card fx">
+      <div class="loot-card-header">Saragorn<span class="loot-card-sub">Dark Alchemist &middot; damage / drops</span></div>
+      <ul>
+        <li><b>P. Atk &amp; M. Atk</b> +10%</li>
+        <li><b>Luck</b> +30</li>
+        <li><b>Chance to raise drop rate</b> when attacking</li>
+        <li class="neg">HP / MP &minus;50%</li>
+      </ul>
+    </div>
+    <div class="loot-card fx">
+      <div class="loot-card-header">Karmos<span class="loot-card-sub">Bloodthirsty Beast &middot; tank</span></div>
+      <ul>
+        <li><b>Vitality</b> +10%</li>
+        <li><b>Max HP</b> +20%</li>
+        <li><b>Chance for Devil's Restoration</b> when attacking</li>
+        <li class="neg">Strength / Intelligence &minus;15%</li>
+        <li class="neg">P. Atk &amp; M. Atk &minus;10%</li>
+      </ul>
+    </div>
+    <div class="loot-card fx">
+      <div class="loot-card-header">Butcher Vulcan<span class="loot-card-sub">Final boss &middot; offense</span></div>
+      <ul>
+        <li><b>P. Pierce &amp; M. Pierce</b> +20%</li>
+        <li><b>Critical Power</b> +110</li>
+        <li class="neg">Incoming damage +5%</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Collection Card Exchange</h3>
+  <p>Trade Boss Cards to the Black Marketer for these permanent Collection Cards:</p>
+  <div style="overflow-x:auto;">
+  <table>
+    <thead><tr><th>Collection Card</th><th>Bonus</th><th>Rarity</th><th style="text-align:center;">Cards Needed</th></tr></thead>
+    <tbody>
+      <tr><td>Necron, Shadow of the Reaper</td><td>Strength / Intelligence +50</td><td><span class="rarity rarity-epic">Epic</span></td><td style="text-align:center;">2</td></tr>
+      <tr><td>Saragorn, Dark Alchemist</td><td>Crit Rate +10% &middot; P. Atk &amp; M. Atk +450</td><td><span class="rarity rarity-unique">Unique</span></td><td style="text-align:center;">3</td></tr>
+      <tr><td>Karmos, Bloodthirsty Beast</td><td>Vitality +50 &middot; Max HP +2,000</td><td><span class="rarity rarity-unique">Unique</span></td><td style="text-align:center;">3</td></tr>
+      <tr><td>Butcher Vulcan</td><td>P. Pierce &amp; M. Pierce +500 &middot; Crit Power +30</td><td><span class="rarity rarity-epic">Epic</span></td><td style="text-align:center;">2</td></tr>
+    </tbody>
+  </table>
+  </div>
 
   <!-- Questline -->
   <h2 id="questline">Main Questline</h2>
