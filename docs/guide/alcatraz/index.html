@@ -119,8 +119,13 @@
 
   .mtx th,.mtx td{text-align:center;white-space:nowrap;}
   .mtx td:first-child,.mtx th:first-child{text-align:left;font-family:'Cinzel',serif;font-size:0.74rem;color:var(--gold2);}
-  .mtx .yes{color:var(--gold2);font-weight:700;}
-  .mtx .no{color:var(--text3);}
+  .mtx .yes{color:#8fe07a;font-weight:700;background:rgba(109,184,122,0.16);}
+  .mtx .no{color:#e2655c;font-weight:700;background:rgba(196,74,53,0.16);}
+  .mode-legend{display:flex;flex-wrap:wrap;gap:1.2rem;margin:0.4rem 0 0.6rem;font-size:0.82rem;}
+  .mode-legend span{display:inline-flex;align-items:center;gap:0.4rem;}
+  .mode-legend .sw{width:16px;height:16px;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:0.75rem;}
+  .sw-yes{background:rgba(109,184,122,0.2);color:#8fe07a;border:1px solid rgba(109,184,122,0.5);}
+  .sw-no{background:rgba(196,74,53,0.2);color:#e2655c;border:1px solid rgba(196,74,53,0.5);}
   .mtx td:last-child{color:var(--text);font-family:'Cinzel',serif;font-size:0.74rem;letter-spacing:0.03em;}
   .mtx tr.b td{background:rgba(196,74,53,0.06);} .mtx tr.b td:first-child{color:var(--red2);}
   .mtx tr.v td{background:rgba(201,168,76,0.08);} .mtx tr.v td:first-child{color:var(--gold3);}
@@ -205,14 +210,18 @@
   <!-- Difficulty -->
   <h2 id="difficulty">Difficulty &amp; Player Modes</h2>
   <p>Pick a <strong style="color:var(--text);">Player Mode</strong> at the entrance. It sets the max players and which <strong style="color:var(--text);">stages</strong> you can run &mdash; each stage cleared gives its matching <strong style="color:var(--text);">Bonus Chest</strong>. Fewer players than the cap = better rewards.</p>
+  <div class="mode-legend">
+    <span><span class="sw sw-yes">&#10004;</span> Playable in this mode</span>
+    <span><span class="sw sw-no">&#10008;</span> Locked &mdash; cannot be selected</span>
+  </div>
   <div style="overflow-x:auto;">
   <table class="mtx">
     <thead><tr><th>Mode</th><th>S1</th><th>S2</th><th>S3</th><th>S4</th><th>S5</th><th>S6</th><th>S7</th><th>S8</th><th>Bonus Chests</th></tr></thead>
     <tbody>
-      <tr><td>1 Player</td><td class="yes">&#10004;</td><td class="yes">&#10004;</td><td class="no">&mdash;</td><td class="yes">&#10004;</td><td class="yes">&#10004;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td>1, 2, 4, 5</td></tr>
-      <tr><td>2 Players</td><td class="no">&mdash;</td><td class="yes">&#10004;</td><td class="yes">&#10004;</td><td class="yes">&#10004;</td><td class="no">&mdash;</td><td class="yes">&#10004;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td>1, 2, 3, 5</td></tr>
-      <tr><td>4 Players</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="yes">&#10004;</td><td class="no">&mdash;</td><td class="yes">&#10004;</td><td class="yes">&#10004;</td><td class="yes">&#10004;</td><td class="no">&mdash;</td><td>2, 3, 4, 5</td></tr>
-      <tr><td>8 Players</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="yes">&#10004;</td><td class="no">&mdash;</td><td class="yes">&#10004;</td><td class="yes">&#10004;</td><td class="yes">&#10004;</td><td>2, 3, 5, 6</td></tr>
+      <tr><td>1 Player</td><td class="yes">&#10004;</td><td class="yes">&#10004;</td><td class="no">&#10008;</td><td class="yes">&#10004;</td><td class="yes">&#10004;</td><td class="no">&#10008;</td><td class="no">&#10008;</td><td class="no">&#10008;</td><td>1, 2, 4, 5</td></tr>
+      <tr><td>2 Players</td><td class="no">&#10008;</td><td class="yes">&#10004;</td><td class="yes">&#10004;</td><td class="yes">&#10004;</td><td class="no">&#10008;</td><td class="yes">&#10004;</td><td class="no">&#10008;</td><td class="no">&#10008;</td><td>1, 2, 3, 5</td></tr>
+      <tr><td>4 Players</td><td class="no">&#10008;</td><td class="no">&#10008;</td><td class="yes">&#10004;</td><td class="no">&#10008;</td><td class="yes">&#10004;</td><td class="yes">&#10004;</td><td class="yes">&#10004;</td><td class="no">&#10008;</td><td>2, 3, 4, 5</td></tr>
+      <tr><td>8 Players</td><td class="no">&#10008;</td><td class="no">&#10008;</td><td class="no">&#10008;</td><td class="yes">&#10004;</td><td class="no">&#10008;</td><td class="yes">&#10004;</td><td class="yes">&#10004;</td><td class="yes">&#10004;</td><td>2, 3, 5, 6</td></tr>
     </tbody>
   </table>
   </div>
