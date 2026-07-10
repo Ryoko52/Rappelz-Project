@@ -105,6 +105,29 @@
   .step::before{content:counter(step);position:absolute;left:0;top:0;width:1.5rem;height:1.5rem;background:rgba(201,168,76,0.12);border:1px solid var(--border2);border-radius:50%;font-family:'Cinzel',serif;font-size:0.75rem;font-weight:700;color:var(--gold2);display:flex;align-items:center;justify-content:center;}
   .steps{counter-reset:step;}
 
+  .loot-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin:0.75rem 0 1rem;}
+  @media(max-width:640px){.loot-grid{grid-template-columns:1fr;}}
+  .loot-card{background:var(--bg2);border:1px solid var(--border);border-radius:3px;overflow:hidden;}
+  .loot-card.final{grid-column:1/-1;border-color:var(--border2);background:linear-gradient(140deg,var(--bg3),var(--bg2));}
+  .loot-card-header{padding:0.5rem 0.85rem;font-family:'Cinzel',serif;font-size:0.82rem;font-weight:700;letter-spacing:0.04em;border-bottom:1px solid var(--border2);background:rgba(196,74,53,0.08);color:var(--red2);}
+  .loot-card.final .loot-card-header{background:rgba(201,168,76,0.12);color:var(--gold2);}
+  .loot-card-sub{display:block;font-size:0.64rem;color:var(--text3);font-weight:400;font-style:italic;letter-spacing:0.02em;margin-top:1px;}
+  .loot-card ul{margin:0.55rem 0.85rem 0.7rem 1.7rem;}
+  .loot-card li{font-size:0.9rem;margin-bottom:0.28rem;color:var(--text2);}
+  .loot-card li b{color:var(--gold2);font-weight:600;}
+  .loot-card li .qty{color:var(--text3);font-size:0.82rem;}
+
+  .mtx th,.mtx td{text-align:center;white-space:nowrap;}
+  .mtx td:first-child,.mtx th:first-child{text-align:left;font-family:'Cinzel',serif;font-size:0.74rem;color:var(--gold2);}
+  .mtx .yes{color:var(--gold2);font-weight:700;}
+  .mtx .no{color:var(--text3);}
+  .mtx td:last-child{color:var(--text);font-family:'Cinzel',serif;font-size:0.74rem;letter-spacing:0.03em;}
+  .roster{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin:0.6rem 0 1rem;}
+  @media(max-width:640px){.roster{grid-template-columns:1fr;}}
+  .roster-box{background:var(--bg2);border:1px solid var(--border);border-radius:3px;padding:0.7rem 0.9rem;}
+  .roster-box h4{font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.06em;color:var(--gold2);margin-bottom:0.35rem;}
+  .roster-box p{font-size:0.88rem;color:var(--text2);margin:0;}
+
   footer{border-top:1px solid var(--border);padding:1.5rem 2rem;text-align:center;color:var(--text3);font-size:0.78rem;font-style:italic;margin-top:3rem;}
   footer strong{color:var(--gold-dim);font-style:normal;font-family:'Cinzel',serif;font-size:0.72rem;}
 </style>
@@ -131,7 +154,7 @@
       <span class="meta-pill">8 Difficulties</span>
       <span class="meta-pill">1&ndash;8 Players</span>
     </div>
-    <p>Alcatraz is a high-level Epic dungeon. A prison break led by <strong style="color:var(--text);">The Butcher Vulcan</strong> threatens the Kingdom of Gaia, and adventurers must rally the guilds and retake the prison. Access is unlocked through a questline starting from <strong style="color:var(--text);">Guard Captain Kudun</strong> in Rondo (Lv 228), and the dungeon itself is entered via <strong style="color:var(--text);">Sorcerer Kael</strong> at the Marduka Watchtower (Lv 230).</p>
+    <p>A high-level Epic dungeon. <strong style="color:var(--text);">The Butcher Vulcan</strong> has led a prison break threatening Gaia &mdash; rally the guilds and retake Alcatraz. Unlock it via the questline from <strong style="color:var(--text);">Guard Captain Kudun</strong> in Rondo (Lv 228); enter through <strong style="color:var(--text);">Sorcerer Kael</strong> at the Marduka Watchtower (Lv 230).</p>
   </div>
 
   <!-- TOC -->
@@ -140,9 +163,8 @@
     <ul class="toc-list">
       <li><a href="#entrance">Dungeon Entrance</a></li>
       <li><a href="#difficulty">Difficulty &amp; Player Modes</a></li>
-      <li><a href="#stages">Stages &amp; Bonus Rewards</a></li>
       <li><a href="#monsters">Dungeon Monsters</a></li>
-      <li><a href="#drops">Items &amp; Drops</a></li>
+      <li><a href="#drops">Loot &amp; Drops</a></li>
       <li><a href="#enchant">Accessory Enchanting</a></li>
       <li><a href="#eraser">Imbuement Eraser</a></li>
       <li><a href="#sapphire">Sapphire Transfer Scroll</a></li>
@@ -154,60 +176,118 @@
 
   <!-- Entrance -->
   <h2 id="entrance">Dungeon Entrance</h2>
-  <p>The dungeon is entered through the <strong style="color:var(--text);">Marduka Watchtower</strong>, where <strong style="color:var(--text);">Sorcerer Kael</strong> guards the secret passage into the prison. Speak to the entrance NPC to create an instance and select your Player Mode before entering.</p>
+  <p>Enter through the <strong style="color:var(--text);">Marduka Watchtower</strong> via <strong style="color:var(--text);">Sorcerer Kael</strong>. Talk to him to create the instance and pick your Player Mode.</p>
   <img src="../../images/dungeons/Alcatraz/dungeon_entrance.png" alt="Alcatraz Dungeon Entrance" class="guide-img"/>
 
   <!-- Difficulty -->
   <h2 id="difficulty">Difficulty &amp; Player Modes</h2>
-  <p>Alcatraz offers <strong style="color:var(--text);">8 difficulty levels</strong>, selected by speaking to the entrance NPC before entering. The chosen <strong style="color:var(--text);">Player Mode</strong> also sets the maximum number of players allowed inside the instance.</p>
-  <div class="highlight-box">
-    <p><strong style="color:var(--gold2);">Player limit is enforced.</strong> If a mode is capped at 2 players and a third tries to enter, the extra player is automatically removed from the instance.</p>
-    <p><strong style="color:var(--gold2);">Fewer-player bonus.</strong> Clearing a difficulty with fewer players than allowed grants better bonus rewards. On defeating the final boss, players have a chance at additional bonus loot from a Bonus Chest.</p>
+  <p>Pick a <strong style="color:var(--text);">Player Mode</strong> at the entrance. It sets the max players and which <strong style="color:var(--text);">stages</strong> you can run &mdash; each stage cleared gives its matching <strong style="color:var(--text);">Bonus Chest</strong>. Fewer players than the cap = better rewards.</p>
+  <div style="overflow-x:auto;">
+  <table class="mtx">
+    <thead><tr><th>Mode</th><th>S1</th><th>S2</th><th>S3</th><th>S4</th><th>S5</th><th>S6</th><th>S7</th><th>S8</th><th>Bonus Chests</th></tr></thead>
+    <tbody>
+      <tr><td>1 Player</td><td class="yes">&#10004;</td><td class="yes">&#10004;</td><td class="no">&mdash;</td><td class="yes">&#10004;</td><td class="yes">&#10004;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td>1, 2, 4, 5</td></tr>
+      <tr><td>2 Players</td><td class="no">&mdash;</td><td class="yes">&#10004;</td><td class="yes">&#10004;</td><td class="yes">&#10004;</td><td class="no">&mdash;</td><td class="yes">&#10004;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td>1, 2, 3, 5</td></tr>
+      <tr><td>4 Players</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="yes">&#10004;</td><td class="no">&mdash;</td><td class="yes">&#10004;</td><td class="yes">&#10004;</td><td class="yes">&#10004;</td><td class="no">&mdash;</td><td>2, 3, 4, 5</td></tr>
+      <tr><td>8 Players</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="yes">&#10004;</td><td class="no">&mdash;</td><td class="yes">&#10004;</td><td class="yes">&#10004;</td><td class="yes">&#10004;</td><td>2, 3, 5, 6</td></tr>
+    </tbody>
+  </table>
   </div>
-
-  <p>Each Player Mode grants access to a specific set of dungeon stages. Completing an available stage rewards the matching <strong style="color:var(--text);">Bonus Chest</strong>. Stages not listed for a mode are locked (marked <strong>X</strong>) and cannot be selected.</p>
-
-  <div class="stage-row stage-row-4">
-    <div class="mode-card m1">
-      <div class="mode-card-num">1</div>
-      <div class="mode-card-title">1 Player</div>
-      <div class="mode-card-row"><b>Stages:</b> <span class="chip">1</span><span class="chip">2</span><span class="chip">4</span><span class="chip">5</span></div>
-      <div class="mode-card-row"><b>Bonuses:</b> 1, 2, 4, 5</div>
-    </div>
-    <div class="mode-card m2">
-      <div class="mode-card-num">2</div>
-      <div class="mode-card-title">2 Players</div>
-      <div class="mode-card-row"><b>Stages:</b> <span class="chip">2</span><span class="chip">3</span><span class="chip">4</span><span class="chip">6</span></div>
-      <div class="mode-card-row"><b>Bonuses:</b> 1, 2, 3, 5</div>
-    </div>
-    <div class="mode-card m4">
-      <div class="mode-card-num">4</div>
-      <div class="mode-card-title">4 Players</div>
-      <div class="mode-card-row"><b>Stages:</b> <span class="chip">3</span><span class="chip">5</span><span class="chip">6</span><span class="chip">7</span></div>
-      <div class="mode-card-row"><b>Bonuses:</b> 2, 3, 4, 5</div>
-    </div>
-    <div class="mode-card m8">
-      <div class="mode-card-num">8</div>
-      <div class="mode-card-title">8 Players</div>
-      <div class="mode-card-row"><b>Stages:</b> <span class="chip">4</span><span class="chip">6</span><span class="chip">7</span><span class="chip">8</span></div>
-      <div class="mode-card-row"><b>Bonuses:</b> 2, 3, 5, 6</div>
-    </div>
-  </div>
-
-  <!-- Stages -->
-  <h2 id="stages">Stages &amp; Bonus Rewards</h2>
-  <p>The chart below shows which stages and bonus chests are available for each Player Mode, and the loot from each Bonus Chest.</p>
-  <img src="../../images/dungeons/Alcatraz/Stages_Bonuses.png" alt="Alcatraz Stages and Bonus Rewards" class="guide-img"/>
+  <p class="note">Player limit is enforced &mdash; extra players are removed from the instance. Beating the final boss has a chance to drop extra bonus loot.</p>
 
   <!-- Monsters -->
   <h2 id="monsters">Dungeon Monsters</h2>
-  <p>Below are the monster sets for each stage of the dungeon, along with their levels &mdash; an overview of the enemies you will face as you progress. The key named bosses are <span class="boss-tag">Karmos &middot; Bloodthirsty Beast</span> <span class="boss-tag">Saragorn &middot; Dark Alchemist</span> <span class="boss-tag">Necron &middot; Shadow of the Reaper</span> and the final boss <span class="boss-tag">Vulcan &middot; The Butcher</span>.</p>
-  <img src="../../images/dungeons/Alcatraz/dungeon%20monsters.png" alt="Alcatraz Dungeon Monsters by Stage" class="guide-img"/>
+  <p>Every stage uses the <strong style="color:var(--text);">same enemies</strong> &mdash; only their level rises with the stage. You'll fight waves of prison mobs plus three mini-bosses and the final boss.</p>
+  <div class="roster">
+    <div class="roster-box">
+      <h4>Regular Mobs</h4>
+      <p>Brutal, Cunning, Crazy, Chain, Cursed, Furious &amp; Vengeful Prisoners, Prisoner of Darkness, Herald of Darkness, Follower of Pain, Cursed Soul, Summoned Prisoner.</p>
+    </div>
+    <div class="roster-box">
+      <h4>Bosses</h4>
+      <p><span class="boss-tag">Karmos</span> <span class="boss-tag">Saragorn</span> <span class="boss-tag">Necron</span> mini-bosses, then the final boss <span class="boss-tag">Butcher Vulcan</span>.</p>
+    </div>
+  </div>
+  <p>Monster levels per stage:</p>
+  <div style="overflow-x:auto;">
+  <table class="mtx">
+    <thead><tr><th>Stage</th><th>Regular Mobs</th><th>Mini-Bosses</th><th>Butcher Vulcan</th></tr></thead>
+    <tbody>
+      <tr><td>Stage 1</td><td>240</td><td>240&ndash;250</td><td>260</td></tr>
+      <tr><td>Stage 2</td><td>245</td><td>245&ndash;255</td><td>265</td></tr>
+      <tr><td>Stage 3</td><td>250</td><td>250&ndash;260</td><td>270</td></tr>
+      <tr><td>Stage 4</td><td>250</td><td>250&ndash;260</td><td>270</td></tr>
+      <tr><td>Stage 5</td><td>255</td><td>255&ndash;265</td><td>270</td></tr>
+      <tr><td>Stage 6</td><td>258</td><td>258&ndash;263</td><td>269</td></tr>
+      <tr><td>Stage 7</td><td>260</td><td>260&ndash;270</td><td>275</td></tr>
+      <tr><td>Stage 8</td><td>265</td><td>265&ndash;275</td><td>280</td></tr>
+    </tbody>
+  </table>
+  </div>
 
   <!-- Drops -->
-  <h2 id="drops">Items &amp; Drops</h2>
-  <p>Items and equipment that can drop inside Alcatraz:</p>
-  <img src="../../images/dungeons/Alcatraz/Items%20Drop.png" alt="Alcatraz Items and Drops" class="guide-img"/>
+  <h2 id="drops">Loot &amp; Drops</h2>
+  <p>Loot depends on whether you defeat <strong style="color:var(--text);">normal monsters</strong> or <strong style="color:var(--text);">bosses</strong>. Normal monsters provide materials and progression items, while each boss also drops unique equipment, crafting materials, and its own Boss Card.</p>
+
+  <h3>Normal Monster Rewards</h3>
+  <p>Every normal monster in Alcatraz has a chance to drop:</p>
+  <table style="max-width:460px;">
+    <thead><tr><th>Item</th><th style="text-align:center;">Quantity</th></tr></thead>
+    <tbody>
+      <tr><td>Mithril Ore</td><td style="text-align:center;">1&ndash;2</td></tr>
+      <tr><td>Skill Card Box: Master</td><td style="text-align:center;">1&ndash;2</td></tr>
+      <tr><td>Luciad Medal</td><td style="text-align:center;">1</td></tr>
+      <tr><td>Rank 7 Cube Group</td><td style="text-align:center;">1</td></tr>
+    </tbody>
+  </table>
+  <p class="note">The maximum quantity of Mithril Ore and Skill Card Boxes increases in later stages.</p>
+
+  <h3>Boss Rewards</h3>
+  <p>Each boss has its own exclusive rewards in addition to common materials. All bosses drop a <strong style="color:var(--text);">Mithril Ingot</strong> and their own <strong style="color:var(--text);">Boss Card</strong>.</p>
+  <div class="loot-grid">
+    <div class="loot-card">
+      <div class="loot-card-header">Karmos<span class="loot-card-sub">The Bloodthirsty Beast</span></div>
+      <ul>
+        <li>Boss Card: Bloodthirsty Beast, Karmos <span class="qty">&times;1</span></li>
+        <li><b>Mithril Earrings of Bloodlust</b> <span class="qty">&times;1</span></li>
+        <li><b>Karmos's Blood-Tainted Fang</b> <span class="qty">&times;1</span></li>
+        <li>Mithril Ingot <span class="qty">&times;1</span></li>
+      </ul>
+    </div>
+    <div class="loot-card">
+      <div class="loot-card-header">Saragorn<span class="loot-card-sub">The Dark Alchemist</span></div>
+      <ul>
+        <li>Boss Card: Dark Alchemist, Saragorn <span class="qty">&times;1</span></li>
+        <li><b>Mithril Necklace of Corruption</b> <span class="qty">&times;1</span></li>
+        <li><b>Saragorn's Alembic Vial</b> <span class="qty">&times;1</span></li>
+        <li>Mithril Ingot <span class="qty">&times;1</span></li>
+      </ul>
+    </div>
+    <div class="loot-card">
+      <div class="loot-card-header">Necron<span class="loot-card-sub">The Shadow of the Reaper</span></div>
+      <ul>
+        <li>Boss Card: Shadow of the Reaper, Necron <span class="qty">&times;1</span></li>
+        <li><b>Mithril Ring of Shadows</b> <span class="qty">&times;1</span></li>
+        <li><b>Necron's Shadow Shard</b> <span class="qty">&times;1</span></li>
+        <li>Mithril Ingot <span class="qty">&times;1</span></li>
+      </ul>
+    </div>
+    <div class="loot-card final">
+      <div class="loot-card-header">Butcher Vulcan<span class="loot-card-sub">Final Boss &middot; drops all three accessories</span></div>
+      <ul>
+        <li>Boss Card: Butcher Vulcan <span class="qty">&times;1</span></li>
+        <li><b>Mithril Ring of Shadows</b> <span class="qty">&times;1</span></li>
+        <li><b>Mithril Necklace of Corruption</b> <span class="qty">&times;1</span></li>
+        <li><b>Mithril Earrings of Bloodlust</b> <span class="qty">&times;1</span></li>
+        <li><b>Vulcan's Soul Spark</b> <span class="qty">&times;1</span></li>
+        <li><b>Vulcan's Cinder</b> <span class="qty">&times;1</span></li>
+        <li>Mithril Ingot <span class="qty">&times;1</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="highlight-box">
+    <p>Boss rewards stay the same across all stages. Progressing to higher stages primarily <strong style="color:var(--text);">increases the quantity of normal monster drops</strong>, making later stages better for farming materials.</p>
+  </div>
 
   <!-- Enchant -->
   <h2 id="enchant">Accessory Enchanting</h2>
@@ -229,8 +309,7 @@
 
   <!-- Eraser -->
   <h2 id="eraser">Alcatraz Imbuement Eraser</h2>
-  <p>To change the imbuement stat on your accessory <strong style="color:var(--text);">without losing the accessory itself</strong> &mdash; or its valuable Awakening &mdash; use an <strong style="color:var(--gold2);">Alcatraz Imbuement Eraser</strong>.</p>
-  <p>The Eraser removes <strong style="color:var(--text);">only the applied Imbuement Essence</strong>, letting you apply a different essence while keeping the same accessory and all of its existing enhancements and Awakening intact.</p>
+  <p>The <strong style="color:var(--gold2);">Alcatraz Imbuement Eraser</strong> removes <strong style="color:var(--text);">only the applied Imbuement Essence</strong>, so you can swap to a different stat while keeping the accessory, its enhancements, and its Awakening intact.</p>
   <img src="../../images/dungeons/Alcatraz/Ambuement%20eErazer.png" alt="Alcatraz Imbuement Eraser" class="guide-img"/>
   <video class="guide-video" controls preload="metadata">
     <source src="../../images/dungeons/Alcatraz/Ambuement%20eErazer%20video.mp4" type="video/mp4"/>
@@ -289,7 +368,7 @@
 
   <!-- Questline -->
   <h2 id="questline">Main Questline</h2>
-  <p>The Alcatraz Epic introduces an original storyline. The chain begins at <strong style="color:var(--text);">Lv 228</strong> in Rondo and moves through the guild cities before unlocking the dungeon at <strong style="color:var(--text);">Lv 230</strong>.</p>
+  <p>Starts at <strong style="color:var(--text);">Lv 228</strong> in Rondo, runs through the guild cities, and unlocks the dungeon at <strong style="color:var(--text);">Lv 230</strong>.</p>
   <div style="overflow-x:auto;">
   <table>
     <thead><tr><th>#</th><th>Quest</th><th>Lv</th><th>Start NPC (City)</th><th>Objective</th></tr></thead>
