@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Alcatraz Dungeon Guide - Rappelz Codex</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0EF1KW006D"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0EF1KW006D');</script>
+<style>
+  :root {
+    --bg0:#0a0907; --bg1:#111009; --bg2:#1a1710; --bg3:#242015; --bg4:#2e2a1a;
+    --gold:#c9a84c; --gold2:#e8c96a; --gold3:#f5e098; --gold-dim:#7a6330;
+    --red:#a33b2a; --red2:#c44a35;
+    --text:#d4c9a8; --text2:#a09070; --text3:#6a5f45;
+    --border:rgba(201,168,76,0.18); --border2:rgba(201,168,76,0.30);
+    --s1:#6db87a; --s1-bg:rgba(109,184,122,0.07);
+    --s2:#7eb8d4; --s2-bg:rgba(126,184,212,0.07);
+    --s4:#b86ce0; --s4-bg:rgba(184,108,224,0.08);
+    --s8:#e07840; --s8-bg:rgba(224,120,64,0.07);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg0);color:var(--text);font-family:'Crimson Pro',Georgia,serif;font-size:16px;line-height:1.7;min-height:100vh;}
+  ::-webkit-scrollbar{width:5px;} ::-webkit-scrollbar-track{background:var(--bg1);} ::-webkit-scrollbar-thumb{background:var(--gold-dim);border-radius:3px;}
+
+  header{position:sticky;top:0;z-index:100;background:rgba(10,9,7,0.93);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);padding:0 2rem;}
+  .header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:2rem;height:54px;}
+  .logo{font-family:'Cinzel',serif;font-size:1.05rem;font-weight:700;color:var(--gold2);letter-spacing:0.12em;text-decoration:none;white-space:nowrap;text-shadow:0 0 18px rgba(201,168,76,0.35);}
+  nav{display:flex;gap:0;flex:1;}
+  nav a{font-family:'Cinzel',serif;font-size:0.68rem;font-weight:600;letter-spacing:0.1em;color:var(--text2);text-decoration:none;padding:0 1rem;height:54px;display:flex;align-items:center;border-bottom:2px solid transparent;transition:color 0.2s,border-color 0.2s;}
+  nav a:hover{color:var(--gold2);border-bottom-color:var(--gold);}
+
+  .page{max-width:1200px;margin:0 auto;padding:1.75rem 2rem 3rem;}
+  .back-link{font-family:'Cinzel',serif;font-size:0.75rem;color:var(--gold-dim);text-decoration:none;display:inline-block;margin-bottom:1rem;}
+  .back-link:hover{color:var(--gold2);}
+
+  .dungeon-hero{background:linear-gradient(140deg,var(--bg3) 0%,var(--bg2) 50%,var(--bg1) 100%);border:1px solid var(--border2);border-radius:3px;padding:1.5rem 2rem 1.4rem;margin-bottom:0;position:relative;overflow:hidden;}
+  .dungeon-hero::after{content:'ALZ';position:absolute;right:1.2rem;top:50%;transform:translateY(-50%);font-family:'Cinzel',serif;font-size:5.5rem;font-weight:700;color:rgba(201,168,76,0.045);pointer-events:none;line-height:1;letter-spacing:-0.08em;}
+  .dungeon-hero-label{font-family:'Cinzel',serif;font-size:0.62rem;font-weight:600;letter-spacing:0.22em;color:var(--gold-dim);margin-bottom:0.35rem;}
+  .dungeon-hero h1{font-family:'Cinzel',serif;font-size:2rem;font-weight:700;color:var(--gold3);line-height:1.1;margin-bottom:0.6rem;}
+  .dungeon-meta{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.9rem;}
+  .meta-pill{font-family:'Cinzel',serif;font-size:0.65rem;font-weight:600;letter-spacing:0.08em;padding:0.15rem 0.55rem;background:rgba(201,168,76,0.1);border:1px solid var(--border2);border-radius:2px;color:var(--gold2);}
+  .dungeon-hero p{color:var(--text2);font-size:0.95rem;max-width:720px;margin:0;}
+
+  .toc{background:var(--bg3);border:1px solid var(--border2);border-left:3px solid var(--gold);padding:1.2rem 1.6rem;margin:1.2rem 0 1.8rem;}
+  .toc-title{font-family:'Cinzel',serif;font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold2);margin-bottom:0.8rem;}
+  .toc-list{list-style:none;columns:2;column-gap:2rem;}
+  @media(max-width:600px){.toc-list{columns:1;}}
+  .toc-list li{padding:0.2rem 0;}
+  .toc-list a{font-family:'Cinzel',serif;font-size:0.76rem;color:var(--text);text-decoration:none;transition:color 0.15s;}
+  .toc-list a::before{content:'\25B8 ';color:var(--gold);}
+  .toc-list a:hover{color:var(--gold2);}
+
+  h2{font-family:'Cinzel',serif;font-size:1.15rem;color:var(--gold2);margin:2rem 0 0.65rem;padding-bottom:0.35rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.5rem;}
+  h2::before{content:'\25C6';font-size:0.52rem;color:var(--gold-dim);flex-shrink:0;margin-bottom:1px;}
+  h3{font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold2);margin:1.3rem 0 0.45rem;opacity:0.9;}
+  p{margin-bottom:0.75rem;color:var(--text);font-size:1rem;}
+  ul,ol{margin:0.4rem 0 0.75rem 1.4rem;color:var(--text);font-size:1rem;}
+  li{margin-bottom:0.3rem;}
+
+  table{width:100%;border-collapse:collapse;margin:0.75rem 0 1.25rem;background:var(--bg2);border:1px solid var(--border);}
+  thead{background:rgba(201,168,76,0.12);border-bottom:1px solid var(--border2);}
+  th{padding:0.45rem 0.7rem;text-align:left;color:var(--gold2);font-family:'Cinzel',serif;font-weight:600;font-size:0.75rem;border-right:1px solid var(--border);letter-spacing:0.03em;}
+  th:last-child{border-right:none;}
+  td{padding:0.42rem 0.7rem;border-right:1px solid var(--border);color:var(--text);font-size:0.93rem;vertical-align:middle;}
+  td:last-child{border-right:none;}
+  tbody tr{border-bottom:1px solid rgba(201,168,76,0.07);transition:background 0.15s;}
+  tbody tr:last-child{border-bottom:none;}
+  tbody tr:hover td{background:rgba(201,168,76,0.05);}
+
+  .highlight-box{background:rgba(201,168,76,0.07);border-left:3px solid var(--gold);padding:0.85rem 1.1rem;margin:0.75rem 0 1rem;border-radius:2px;}
+  .highlight-box p{margin-bottom:0.3rem;font-size:1rem;} .highlight-box p:last-child{margin-bottom:0;}
+  .alert-box{background:rgba(163,59,42,0.10);border-left:3px solid var(--red2);padding:0.85rem 1.1rem;margin:0.75rem 0 1rem;border-radius:2px;}
+  .alert-box p{margin-bottom:0.3rem;color:var(--text);font-size:1rem;} .alert-box p:last-child{margin-bottom:0;}
+  .alert-title{color:var(--red2);font-family:'Cinzel',serif;font-weight:700;font-size:0.8rem;letter-spacing:0.08em;display:block;margin-bottom:0.4rem;}
+
+  .stage-row{display:grid;gap:0.65rem;margin-bottom:0.65rem;}
+  .stage-row-4{grid-template-columns:repeat(4,1fr);}
+  @media(max-width:760px){.stage-row-4{grid-template-columns:1fr 1fr;}}
+  @media(max-width:460px){.stage-row-4{grid-template-columns:1fr;}}
+  .mode-card{background:var(--bg2);border:1px solid var(--border);border-radius:3px;padding:0.85rem 0.9rem;position:relative;overflow:hidden;}
+  .mode-card-num{position:absolute;right:0.5rem;bottom:-0.7rem;font-family:'Cinzel',serif;font-size:3.2rem;font-weight:700;color:rgba(201,168,76,0.06);line-height:1;pointer-events:none;}
+  .mode-card-title{font-family:'Cinzel',serif;font-size:0.82rem;font-weight:700;letter-spacing:0.05em;margin-bottom:0.5rem;}
+  .mode-card-row{font-size:0.82rem;color:var(--text2);margin-bottom:0.2rem;}
+  .mode-card-row b{color:var(--text);font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.04em;}
+  .mode-card.m1{border-top:2px solid var(--s1);} .mode-card.m1 .mode-card-title{color:var(--s1);}
+  .mode-card.m2{border-top:2px solid var(--s2);} .mode-card.m2 .mode-card-title{color:var(--s2);}
+  .mode-card.m4{border-top:2px solid var(--s4);} .mode-card.m4 .mode-card-title{color:var(--s4);}
+  .mode-card.m8{border-top:2px solid var(--s8);} .mode-card.m8 .mode-card-title{color:var(--s8);}
+  .chip{display:inline-block;font-family:'Cinzel',serif;font-size:0.68rem;font-weight:700;padding:0.05rem 0.4rem;margin:0.1rem 0.15rem 0.1rem 0;border-radius:2px;background:rgba(201,168,76,0.1);border:1px solid var(--border2);color:var(--gold2);}
+
+  .boss-tag{display:inline-block;font-family:'Cinzel',serif;font-size:0.66rem;font-weight:700;letter-spacing:0.04em;padding:0.06rem 0.42rem;border-radius:2px;color:var(--red2);background:rgba(196,74,53,0.1);border:1px solid rgba(196,74,53,0.3);}
+
+  .guide-img{width:100%;max-width:760px;border:1px solid var(--border);border-radius:3px;margin:0.6rem 0 1rem;display:block;}
+  .guide-img-center{display:block;margin:0.6rem auto 1rem;max-width:760px;width:100%;border:1px solid var(--border);border-radius:3px;}
+  .guide-video{width:100%;max-width:620px;border:1px solid var(--border);border-radius:3px;margin:0.6rem 0 1rem;display:block;background:#000;}
+  .img-pair{display:grid;grid-template-columns:1fr 1fr;gap:0.65rem;margin:0.6rem 0 1rem;}
+  .img-pair img{width:100%;border:1px solid var(--border);border-radius:3px;}
+  @media(max-width:640px){.img-pair{grid-template-columns:1fr;}}
+  .note{font-size:0.82rem;color:var(--text3);font-style:italic;margin-top:0.25rem;}
+
+  .step{counter-increment:step;position:relative;padding-left:2.1rem;margin:0.7rem 0;}
+  .step::before{content:counter(step);position:absolute;left:0;top:0;width:1.5rem;height:1.5rem;background:rgba(201,168,76,0.12);border:1px solid var(--border2);border-radius:50%;font-family:'Cinzel',serif;font-size:0.75rem;font-weight:700;color:var(--gold2);display:flex;align-items:center;justify-content:center;}
+  .steps{counter-reset:step;}
+
+  footer{border-top:1px solid var(--border);padding:1.5rem 2rem;text-align:center;color:var(--text3);font-size:0.78rem;font-style:italic;margin-top:3rem;}
+  footer strong{color:var(--gold-dim);font-style:normal;font-family:'Cinzel',serif;font-size:0.72rem;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="../../">RAPPELZ<span style="color:var(--text3);font-weight:400;font-size:0.72rem;margin-left:4px;">CODEX</span></a>
+    <nav><a href="../../">&larr; Back to Home</a></nav>
+  </div>
+</header>
+
+<div class="page">
+  <a class="back-link" href="../../">&larr; Back to Home</a>
+
+  <!-- Hero -->
+  <div class="dungeon-hero">
+    <div class="dungeon-hero-label">Epic Dungeon Guide</div>
+    <h1>Alcatraz</h1>
+    <div class="dungeon-meta">
+      <span class="meta-pill">Lv 228&ndash;230</span>
+      <span class="meta-pill">Marduka Watchtower</span>
+      <span class="meta-pill">8 Difficulties</span>
+      <span class="meta-pill">1&ndash;8 Players</span>
+    </div>
+    <p>Alcatraz is a high-level Epic dungeon. A prison break led by <strong style="color:var(--text);">The Butcher Vulcan</strong> threatens the Kingdom of Gaia, and adventurers must rally the guilds and retake the prison. Access is unlocked through a questline starting from <strong style="color:var(--text);">Guard Captain Kudun</strong> in Rondo (Lv 228), and the dungeon itself is entered via <strong style="color:var(--text);">Sorcerer Kael</strong> at the Marduka Watchtower (Lv 230).</p>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc">
+    <div class="toc-title">Table of Contents</div>
+    <ul class="toc-list">
+      <li><a href="#entrance">Dungeon Entrance</a></li>
+      <li><a href="#difficulty">Difficulty &amp; Player Modes</a></li>
+      <li><a href="#stages">Stages &amp; Bonus Rewards</a></li>
+      <li><a href="#monsters">Dungeon Monsters</a></li>
+      <li><a href="#drops">Items &amp; Drops</a></li>
+      <li><a href="#enchant">Accessory Enchanting</a></li>
+      <li><a href="#eraser">Imbuement Eraser</a></li>
+      <li><a href="#sapphire">Sapphire Transfer Scroll</a></li>
+      <li><a href="#boss-cards">Boss Card Collection</a></li>
+      <li><a href="#questline">Main Questline</a></li>
+      <li><a href="#dailies">Daily &amp; Weekly Quests</a></li>
+    </ul>
+  </div>
+
+  <!-- Entrance -->
+  <h2 id="entrance">Dungeon Entrance</h2>
+  <p>The dungeon is entered through the <strong style="color:var(--text);">Marduka Watchtower</strong>, where <strong style="color:var(--text);">Sorcerer Kael</strong> guards the secret passage into the prison. Speak to the entrance NPC to create an instance and select your Player Mode before entering.</p>
+  <img src="../../images/dungeons/Alcatraz/dungeon_entrance.png" alt="Alcatraz Dungeon Entrance" class="guide-img"/>
+
+  <!-- Difficulty -->
+  <h2 id="difficulty">Difficulty &amp; Player Modes</h2>
+  <p>Alcatraz offers <strong style="color:var(--text);">8 difficulty levels</strong>, selected by speaking to the entrance NPC before entering. The chosen <strong style="color:var(--text);">Player Mode</strong> also sets the maximum number of players allowed inside the instance.</p>
+  <div class="highlight-box">
+    <p><strong style="color:var(--gold2);">Player limit is enforced.</strong> If a mode is capped at 2 players and a third tries to enter, the extra player is automatically removed from the instance.</p>
+    <p><strong style="color:var(--gold2);">Fewer-player bonus.</strong> Clearing a difficulty with fewer players than allowed grants better bonus rewards. On defeating the final boss, players have a chance at additional bonus loot from a Bonus Chest.</p>
+  </div>
+
+  <p>Each Player Mode grants access to a specific set of dungeon stages. Completing an available stage rewards the matching <strong style="color:var(--text);">Bonus Chest</strong>. Stages not listed for a mode are locked (marked <strong>X</strong>) and cannot be selected.</p>
+
+  <div class="stage-row stage-row-4">
+    <div class="mode-card m1">
+      <div class="mode-card-num">1</div>
+      <div class="mode-card-title">1 Player</div>
+      <div class="mode-card-row"><b>Stages:</b> <span class="chip">1</span><span class="chip">2</span><span class="chip">4</span><span class="chip">5</span></div>
+      <div class="mode-card-row"><b>Bonuses:</b> 1, 2, 4, 5</div>
+    </div>
+    <div class="mode-card m2">
+      <div class="mode-card-num">2</div>
+      <div class="mode-card-title">2 Players</div>
+      <div class="mode-card-row"><b>Stages:</b> <span class="chip">2</span><span class="chip">3</span><span class="chip">4</span><span class="chip">6</span></div>
+      <div class="mode-card-row"><b>Bonuses:</b> 1, 2, 3, 5</div>
+    </div>
+    <div class="mode-card m4">
+      <div class="mode-card-num">4</div>
+      <div class="mode-card-title">4 Players</div>
+      <div class="mode-card-row"><b>Stages:</b> <span class="chip">3</span><span class="chip">5</span><span class="chip">6</span><span class="chip">7</span></div>
+      <div class="mode-card-row"><b>Bonuses:</b> 2, 3, 4, 5</div>
+    </div>
+    <div class="mode-card m8">
+      <div class="mode-card-num">8</div>
+      <div class="mode-card-title">8 Players</div>
+      <div class="mode-card-row"><b>Stages:</b> <span class="chip">4</span><span class="chip">6</span><span class="chip">7</span><span class="chip">8</span></div>
+      <div class="mode-card-row"><b>Bonuses:</b> 2, 3, 5, 6</div>
+    </div>
+  </div>
+
+  <!-- Stages -->
+  <h2 id="stages">Stages &amp; Bonus Rewards</h2>
+  <p>The chart below shows which stages and bonus chests are available for each Player Mode, and the loot from each Bonus Chest.</p>
+  <img src="../../images/dungeons/Alcatraz/Stages_Bonuses.png" alt="Alcatraz Stages and Bonus Rewards" class="guide-img"/>
+
+  <!-- Monsters -->
+  <h2 id="monsters">Dungeon Monsters</h2>
+  <p>Below are the monster sets for each stage of the dungeon, along with their levels &mdash; an overview of the enemies you will face as you progress. The key named bosses are <span class="boss-tag">Karmos &middot; Bloodthirsty Beast</span> <span class="boss-tag">Saragorn &middot; Dark Alchemist</span> <span class="boss-tag">Necron &middot; Shadow of the Reaper</span> and the final boss <span class="boss-tag">Vulcan &middot; The Butcher</span>.</p>
+  <img src="../../images/dungeons/Alcatraz/dungeon%20monsters.png" alt="Alcatraz Dungeon Monsters by Stage" class="guide-img"/>
+
+  <!-- Drops -->
+  <h2 id="drops">Items &amp; Drops</h2>
+  <p>Items and equipment that can drop inside Alcatraz:</p>
+  <img src="../../images/dungeons/Alcatraz/Items%20Drop.png" alt="Alcatraz Items and Drops" class="guide-img"/>
+
+  <!-- Enchant -->
+  <h2 id="enchant">Accessory Enchanting</h2>
+  <p>Enchanting Alcatraz accessories follows the same principle as <strong style="color:var(--text);">Sky Accessories</strong>.</p>
+  <table>
+    <thead><tr><th>Slot</th><th>Requirement</th></tr></thead>
+    <tbody>
+      <tr><td><strong style="color:var(--gold2);">Main Slot</strong></td><td>The accessory you want to enchant</td></tr>
+      <tr><td><strong style="color:var(--gold2);">Material Slot</strong></td><td>Stat Essence &times; (target enchant &times; 10)</td></tr>
+      <tr><td><strong style="color:var(--gold2);">Material Slot</strong></td><td>Imbuement Ore <em>or</em> Blessed Imbuement Ore &times; 1</td></tr>
+    </tbody>
+  </table>
+  <div class="highlight-box">
+    <p><strong style="color:var(--gold2);">Essence cost example:</strong> going from <strong style="color:var(--text);">+9 to +10</strong> requires <strong style="color:var(--text);">100 Stat Essence</strong> (10 &times; 10).</p>
+    <p>Base accessories can be enchanted up to <strong style="color:var(--text);">+10</strong>. Enhanced versions can go up to <strong style="color:var(--text);">+15</strong>.</p>
+  </div>
+  <p>Enchant success rates:</p>
+  <img src="../../images/dungeons/Alcatraz/Enchant%20rates.png" alt="Alcatraz Enchant Rates" class="guide-img"/>
+
+  <!-- Eraser -->
+  <h2 id="eraser">Alcatraz Imbuement Eraser</h2>
+  <p>To change the imbuement stat on your accessory <strong style="color:var(--text);">without losing the accessory itself</strong> &mdash; or its valuable Awakening &mdash; use an <strong style="color:var(--gold2);">Alcatraz Imbuement Eraser</strong>.</p>
+  <p>The Eraser removes <strong style="color:var(--text);">only the applied Imbuement Essence</strong>, letting you apply a different essence while keeping the same accessory and all of its existing enhancements and Awakening intact.</p>
+  <img src="../../images/dungeons/Alcatraz/Ambuement%20eErazer.png" alt="Alcatraz Imbuement Eraser" class="guide-img"/>
+  <video class="guide-video" controls preload="metadata">
+    <source src="../../images/dungeons/Alcatraz/Ambuement%20eErazer%20video.mp4" type="video/mp4"/>
+  </video>
+  <div class="alert-box">
+    <span class="alert-title">Enhanced Mithril Accessories</span>
+    <p>Using an Alcatraz Imbuement Eraser on an <strong style="color:var(--text);">Enhanced Mithril Accessory</strong> removes the Imbuement Essence, but the accessory reverts to an <strong style="color:var(--text);">Enhanced Mithril Accessory +0</strong>.</p>
+  </div>
+  <video class="guide-video" controls preload="metadata">
+    <source src="../../images/dungeons/Alcatraz/Imbuement%20Eraser_Mithril.mp4" type="video/mp4"/>
+  </video>
+
+  <!-- Sapphire -->
+  <h2 id="sapphire">Sapphire Transfer Scroll</h2>
+  <p>The Sapphire Transfer Scroll lets you transfer a <strong style="color:var(--text);">Sapphire Ring, Earring, or Necklace</strong> into a new accessory. Speak to <strong style="color:var(--gold2);">Blacksmith Elara</strong> outside Alcatraz.</p>
+
+  <div class="img-pair">
+    <img src="../../images/dungeons/Alcatraz/Elara%20npc.png" alt="Blacksmith Elara"/>
+    <img src="../../images/dungeons/Alcatraz/Elara%20location.png" alt="Blacksmith Elara Location"/>
+  </div>
+
+  <h3>Requirements</h3>
+  <ul>
+    <li>The <strong style="color:var(--text);">Sapphire Transfer Scroll</strong> in your inventory.</li>
+    <li>The <strong style="color:var(--text);">Sapphire Ring / Earring / Necklace</strong> you want to transfer <em>equipped</em>.</li>
+    <li>Combination materials in your inventory: <strong style="color:var(--text);">50 Mithril Ore</strong> + <strong style="color:var(--text);">1 accessory-specific item</strong>:
+      <ul>
+        <li>Necron's Shadow Shard</li>
+        <li>Karmos's Blood-Tainted Fang</li>
+        <li>Saragorn's Alembic Vial</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>How to Transfer</h3>
+  <div class="steps">
+    <div class="step">Talk to <strong style="color:var(--text);">Blacksmith Elara</strong> outside Alcatraz and choose <strong style="color:var(--gold2);">"Sapphire Transfer"</strong> from the menu.</div>
+    <div class="step">You'll only be shown <strong style="color:var(--text);">equipped</strong> accessories eligible for transfer. To avoid mistakes, only equip the one you want transferred.</div>
+    <div class="step">Click the accessory you wish to transfer and confirm.</div>
+  </div>
+  <div class="img-pair">
+    <img src="../../images/dungeons/Alcatraz/Elara%20Saphire%20transfer.png" alt="Elara Sapphire Transfer menu"/>
+    <img src="../../images/dungeons/Alcatraz/Elara%20Saphire%20transfer_chose_accessory.png" alt="Choose accessory to transfer"/>
+  </div>
+  <img src="../../images/dungeons/Alcatraz/Elara%20Saphire%20transfer_chose_accessory_confirmation.png" alt="Transfer confirmation" class="guide-img"/>
+  <p class="note">Your chosen accessory is updated. Example result:</p>
+  <img src="../../images/dungeons/Alcatraz/example%20accessories%20transfer.png" alt="Example of transferred accessory" class="guide-img"/>
+
+  <!-- Boss Cards -->
+  <h2 id="boss-cards">Boss Card Collection</h2>
+  <p>Each dungeon boss has a chance to drop its own <strong style="color:var(--text);">Boss Card</strong>. Collect the required number and exchange them with the <strong style="color:var(--gold2);">Black Marketer Nostra Family</strong> NPC for exclusive Collection Cards. The card effects are shown below.</p>
+  <img src="../../images/dungeons/Alcatraz/boss%20card%20effects.png" alt="Alcatraz Boss Card Effects" class="guide-img"/>
+  <h3>Collection Exchange</h3>
+  <p>The required number of Boss Cards and the reward for each exchange:</p>
+  <img src="../../images/dungeons/Alcatraz/boss%20card%20collection.png" alt="Alcatraz Boss Card Collection Rewards" class="guide-img"/>
+
+  <!-- Questline -->
+  <h2 id="questline">Main Questline</h2>
+  <p>The Alcatraz Epic introduces an original storyline. The chain begins at <strong style="color:var(--text);">Lv 228</strong> in Rondo and moves through the guild cities before unlocking the dungeon at <strong style="color:var(--text);">Lv 230</strong>.</p>
+  <div style="overflow-x:auto;">
+  <table>
+    <thead><tr><th>#</th><th>Quest</th><th>Lv</th><th>Start NPC (City)</th><th>Objective</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>The Guards' Tension</td><td>228</td><td>Guard Captain Kudun (Rondo)</td><td>Talk to Guard Captain Kudun</td></tr>
+      <tr><td>2</td><td>A Threat to the Kingdom of Gaia</td><td>228</td><td>Guard Captain Kudun (Rondo)</td><td>Talk to Mayor Ailrena in Rondo</td></tr>
+      <tr><td>3</td><td>Begging For Help</td><td>228</td><td>Mayor Ailrena (Rondo)</td><td>Talk to Guild Official Resha in Rondo</td></tr>
+      <tr><td>4</td><td>Recruitment of Mercenaries (1)</td><td>228</td><td>Guild Official Resha (Rondo)</td><td>Talk to Guild Official Oveli in Horizon</td></tr>
+      <tr><td>5</td><td>Recruitment of Mercenaries (2)</td><td>228</td><td>Guild Official Oveli (Horizon)</td><td>Talk to Guild Official Leviathan in Katan</td></tr>
+      <tr><td>6</td><td>Recruitment of Mercenaries (3)</td><td>228</td><td>Guild Official Leviathan (Katan)</td><td>Talk to Guild Official Ces in Laksy</td></tr>
+      <tr><td>7</td><td>Good News</td><td>228</td><td>Guild Official Ces (Laksy)</td><td>Talk to Guard Captain Kudun in Rondo</td></tr>
+      <tr><td>8</td><td>Delivery to Alcatraz</td><td>228</td><td>Guard Captain Kudun (Rondo)</td><td>Deliver the letter to Sorcerer Kael at Marduka Watchtower</td></tr>
+      <tr><td>9</td><td>Clear The Way (1)</td><td>230</td><td>Sorcerer Kael (Watchtower)</td><td>Kill <span class="boss-tag">Karmos, the Bloodthirsty Beast</span></td></tr>
+      <tr><td>10</td><td>Clear The Way (2)</td><td>230</td><td>Sorcerer Kael (Watchtower)</td><td>Kill <span class="boss-tag">Saragorn, the Dark Alchemist</span></td></tr>
+      <tr><td>11</td><td>Vulcan's Right Hand</td><td>230</td><td>Sorcerer Kael (Watchtower)</td><td>Kill <span class="boss-tag">Necron, the Shadow of the Reaper</span></td></tr>
+      <tr><td>12</td><td>Vulcan's Fate</td><td>230</td><td>Sorcerer Kael (Watchtower)</td><td>Kill <span class="boss-tag">The Butcher Vulcan</span></td></tr>
+      <tr><td>13</td><td>The Guardians' Request (1&ndash;8)</td><td>230</td><td>Sorcerer Kael (Watchtower)</td><td>Kill The Butcher Vulcan in each Stage (1 through 8) &middot; 500 AP each</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <!-- Dailies -->
+  <h2 id="dailies">Daily &amp; Weekly Quests</h2>
+  <p>Repeatable quests from <strong style="color:var(--text);">Sorcerer Kael</strong> at the Marduka Watchtower. All reward <strong style="color:var(--gold2);">Mithril Ingot</strong>.</p>
+  <table>
+    <thead><tr><th>Type</th><th>Quest</th><th>Objective</th><th>Reward</th></tr></thead>
+    <tbody>
+      <tr><td><span class="chip" style="color:var(--s1);border-color:var(--s1);background:var(--s1-bg);">Daily</span></td><td>Helping the Guards</td><td>Kill &times;5 Butcher Vulcan (Stages 1, 2, 3)</td><td>Mithril Ingot &times;1</td></tr>
+      <tr><td><span class="chip" style="color:var(--s1);border-color:var(--s1);background:var(--s1-bg);">Daily</span></td><td>Helping the Guards [2]</td><td>Kill &times;5 Butcher Vulcan (Stages 4, 5, 6)</td><td>Mithril Ingot &times;1</td></tr>
+      <tr><td><span class="chip" style="color:var(--s4);border-color:var(--s4);background:var(--s4-bg);">Weekly</span></td><td>Defending the Kingdom</td><td>Kill &times;25 Butcher Vulcan (Stages 1, 2, 3)</td><td>Mithril Ingot &times;5</td></tr>
+      <tr><td><span class="chip" style="color:var(--s4);border-color:var(--s4);background:var(--s4-bg);">Weekly</span></td><td>Defending the Kingdom [2]</td><td>Kill &times;25 Butcher Vulcan (Stages 4, 5, 6)</td><td>Mithril Ingot &times;5</td></tr>
+      <tr><td><span class="chip" style="color:var(--s4);border-color:var(--s4);background:var(--s4-bg);">Weekly</span></td><td>Defending the Kingdom [3]</td><td>Kill &times;5 Butcher Vulcan (Stages 7, 8)</td><td>Mithril Ingot &times;5</td></tr>
+    </tbody>
+  </table>
+
+</div>
+
+<footer>
+  <strong>RAPPELZ CODEX</strong> &middot; Fan-made community guide &middot; Not affiliated with Gala Lab or any official publisher
+</footer>
+</body>
+</html>
