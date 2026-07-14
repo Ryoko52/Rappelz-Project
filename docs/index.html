@@ -510,6 +510,31 @@
   .map-level { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.1em; color: var(--gold-dim); }
   .diff { display: flex; gap: 3px; align-items: center; }
   .diff span { width: 7px; height: 7px; border-radius: 50%; background: var(--border2); display: inline-block; }
+
+  /* ZONES gallery */
+  .zone-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 0.9rem; }
+  .zone-card { position: relative; display: block; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); aspect-ratio: 16 / 10; text-decoration: none; transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s; }
+  .zone-card:hover { border-color: var(--border2); transform: translateY(-3px); box-shadow: var(--glow); }
+  .zone-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+  .zone-card:hover img { transform: scale(1.06); }
+  .zone-name { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.6rem 0.9rem 0.65rem; background: linear-gradient(to top, rgba(8,7,5,0.94) 25%, rgba(8,7,5,0.5) 65%, transparent); font-family: 'Cinzel', serif; font-size: 0.85rem; font-weight: 600; color: var(--gold3); letter-spacing: 0.04em; }
+
+  /* PETS by rarity */
+  .pet-rarity { margin-bottom: 1.5rem; }
+  .pet-rarity-head { font-family: 'Cinzel', serif; font-size: 0.66rem; letter-spacing: 0.16em; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.55rem; color: var(--rc); }
+  .pet-rarity-head .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--rc); flex-shrink: 0; }
+  .pet-rarity-head .line { flex: 1; height: 1px; background: rgba(201,168,76,0.12); }
+  .pet-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.8rem; }
+  .pet-card { display: block; border-radius: 8px; overflow: hidden; border: 1px solid var(--pc-b); background: var(--bg2); text-decoration: none; transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; }
+  .pet-card:hover { transform: translateY(-3px); border-color: var(--rc); box-shadow: 0 6px 20px -6px var(--rc); }
+  .pet-card .pc-img { height: 130px; overflow: hidden; background: var(--bg4); }
+  .pet-card .pc-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+  .pet-card:hover .pc-img img { transform: scale(1.07); }
+  .pet-card .pc-name { padding: 0.55rem 0.5rem; text-align: center; font-family: 'Cinzel', serif; font-size: 0.74rem; font-weight: 600; color: var(--rc); line-height: 1.25; }
+  .r-legendary { --rc: #e8c96a; --pc-b: rgba(232,201,106,0.28); }
+  .r-unique { --rc: #b988e8; --pc-b: rgba(185,136,232,0.28); }
+  .r-rare { --rc: #6fa8e0; --pc-b: rgba(111,168,224,0.28); }
+  .r-common { --rc: #9a9382; --pc-b: rgba(154,147,130,0.28); }
   .diff span.on { background: var(--gold); }
 
   /* ORNAMENT */
@@ -855,30 +880,22 @@
       <h2>MAPS &amp; ZONES</h2>
       <div class="section-line"></div>
     </div>
-    <div class="map-grid">
-      <a class="map-card" href="map/remains-of-the-ancients/" style="text-decoration:none;color:inherit;">
-        <div class="map-thumb"><img src="images/maps/Roa.webp" alt="Remains of the Ancients" style="width:100%;height:100%;object-fit:cover;border-radius:6px;"></div>
-        <div class="map-info">
-          <h4>Remains of the Ancients</h4>
-        </div>
+    <div class="zone-grid">
+      <a class="zone-card" href="map/remains-of-the-ancients/">
+        <img src="images/maps/Roa.webp" alt="Remains of the Ancients"/>
+        <div class="zone-name">Remains of the Ancients</div>
       </a>
-      <a class="map-card" href="map/snowbasin/" style="text-decoration:none;color:inherit;">
-        <div class="map-thumb"><img src="images/maps/snowbasin.png" alt="SnowBasin" style="width:100%;height:100%;object-fit:cover;border-radius:6px;"></div>
-        <div class="map-info">
-          <h4>SnowBasin</h4>
-        </div>
+      <a class="zone-card" href="map/snowbasin/">
+        <img src="images/maps/snowbasin.png" alt="SnowBasin"/>
+        <div class="zone-name">SnowBasin</div>
       </a>
-      <a class="map-card" href="map/lake-kaia/" style="text-decoration:none;color:inherit;">
-        <div class="map-thumb"><img src="images/maps/Kainen.png" alt="Lake Kaia" style="width:100%;height:100%;object-fit:cover;border-radius:6px;"></div>
-        <div class="map-info">
-          <h4>Lake Kaia</h4>
-        </div>
+      <a class="zone-card" href="map/lake-kaia/">
+        <img src="images/maps/Kainen.png" alt="Lake Kaia"/>
+        <div class="zone-name">Lake Kaia</div>
       </a>
-      <a class="map-card" href="map/pigs-spot/" style="text-decoration:none;color:inherit;">
-        <div class="map-thumb"><img src="images/maps/pigs.png" alt="Pig's Spot" style="width:100%;height:100%;object-fit:cover;border-radius:6px;"></div>
-        <div class="map-info">
-          <h4>Pig's Spot</h4>
-        </div>
+      <a class="zone-card" href="map/pigs-spot/">
+        <img src="images/maps/pigs.png" alt="Pig's Spot"/>
+        <div class="zone-name">Pig's Spot</div>
       </a>
     </div>
   </section>
@@ -889,62 +906,56 @@
       <h2>PETS</h2>
       <div class="section-line"></div>
     </div>
-    <div style="margin-bottom:2.2rem;display:flex;flex-direction:column;gap:1.5rem;">
-      <div style="display:flex;gap:2.5rem;flex-wrap:wrap;">
-        <div style="flex:1 1 0;min-width:220px;">
-          <h3 style="color:var(--gold2);margin-bottom:0.7rem;">Legendary</h3>
-          <div class="pet-grid">
-            <a class="map-card" href="pet/grandmaster-hector.html" style="text-decoration:none;color:inherit;">
-              <div class="pet-thumb"><img src="images/pets/Hector.png" alt="Grandmaster Hector"></div>
-              <div class="map-info"><h4>Grandmaster Hector</h4></div>
-            </a>
-            <a class="map-card" href="pet/death-gladiator.html" style="text-decoration:none;color:inherit;">
-              <div class="pet-thumb"><img src="images/pets/DG.png" alt="Death Gladiator"></div>
-              <div class="map-info"><h4>Death Gladiator</h4></div>
-            </a>
-          </div>
-        </div>
-        <div style="flex:1 1 0;min-width:220px;">
-          <h3 style="color:var(--gold2);margin-bottom:0.7rem;">Unique</h3>
-          <div style="display:flex;gap:0.5rem;flex-wrap:nowrap;justify-content:flex-start;">
-            <a class="map-card" href="pet/crystal-golem.html" style="text-decoration:none;color:inherit;flex:1 1 0;min-width:0;">
-              <div class="pet-thumb"><img src="images/pets/Crystalgolem.png" alt="Crystal Golem"></div>
-              <div class="map-info"><h4 style="word-break:break-word;white-space:normal;">Crystal Golem</h4></div>
-            </a>
-            <a class="map-card" href="pet/bloodthirsty-slaughterer.html" style="text-decoration:none;color:inherit;flex:1 1 0;min-width:0;">
-              <div class="pet-thumb"><img src="images/pets/blood.png" alt="Bloodthirsty Slaughterer"></div>
-              <div class="map-info"><h4 style="word-break:break-word;white-space:normal;font-size:0.7em;">Bloodthirsty Slaughterer</h4></div>
-            </a>
-            <a class="map-card" href="pet/ethereal-pixie.html" style="text-decoration:none;color:inherit;flex:1 1 0;min-width:0;">
-              <div class="pet-thumb"><img src="images/pets/EP.png?v=2" alt="Ethereal Pixie"></div>
-              <div class="map-info"><h4 style="word-break:break-word;white-space:normal;">Ethereal Pixie</h4></div>
-            </a>
-            <a class="map-card" href="pet/wind-pixie.html" style="text-decoration:none;color:inherit;flex:1 1 0;min-width:0;">
-              <div class="pet-thumb"><img src="images/pets/WP.png?v=2" alt="Wind Pixie"></div>
-              <div class="map-info"><h4 style="word-break:break-word;white-space:normal;">Wind Pixie</h4></div>
-            </a>
-          </div>
-        </div>
+    <div class="pet-rarity r-legendary">
+      <div class="pet-rarity-head"><span class="dot"></span>Legendary<span class="line"></span></div>
+      <div class="pet-cards">
+        <a class="pet-card r-legendary" href="pet/grandmaster-hector.html">
+          <div class="pc-img"><img src="images/pets/Hector.png" alt="Grandmaster Hector"></div>
+          <div class="pc-name">Grandmaster Hector</div>
+        </a>
+        <a class="pet-card r-legendary" href="pet/death-gladiator.html">
+          <div class="pc-img"><img src="images/pets/DG.png" alt="Death Gladiator"></div>
+          <div class="pc-name">Death Gladiator</div>
+        </a>
       </div>
-      <div style="display:flex;gap:2.5rem;flex-wrap:wrap;">
-        <div style="flex:1 1 0;min-width:220px;">
-          <h3 style="color:var(--gold2);margin-bottom:0.7rem;">Rare</h3>
-          <div class="pet-grid">
-            <a class="map-card" href="pet/crystal-spider.html" style="text-decoration:none;color:inherit;">
-              <div class="pet-thumb"><img src="images/pets/Spider.png" alt="Crystal Spider"></div>
-              <div class="map-info"><h4>Crystal Spider</h4></div>
-            </a>
-          </div>
-        </div>
-        <div style="flex:1 1 0;min-width:220px;">
-          <h3 style="color:var(--gold2);margin-bottom:0.7rem;">Common</h3>
-          <div class="pet-grid">
-            <a class="map-card" href="pet/forest-pixie.html" style="text-decoration:none;color:inherit;">
-              <div class="pet-thumb"><img src="images/pets/forestpixie.png" alt="Forest Pixie"></div>
-              <div class="map-info"><h4>Forest Pixie</h4></div>
-            </a>
-          </div>
-        </div>
+    </div>
+    <div class="pet-rarity r-unique">
+      <div class="pet-rarity-head"><span class="dot"></span>Unique<span class="line"></span></div>
+      <div class="pet-cards">
+        <a class="pet-card r-unique" href="pet/crystal-golem.html">
+          <div class="pc-img"><img src="images/pets/Crystalgolem.png" alt="Crystal Golem"></div>
+          <div class="pc-name">Crystal Golem</div>
+        </a>
+        <a class="pet-card r-unique" href="pet/bloodthirsty-slaughterer.html">
+          <div class="pc-img"><img src="images/pets/blood.png" alt="Bloodthirsty Slaughterer"></div>
+          <div class="pc-name">Bloodthirsty Slaughterer</div>
+        </a>
+        <a class="pet-card r-unique" href="pet/ethereal-pixie.html">
+          <div class="pc-img"><img src="images/pets/EP.png?v=2" alt="Ethereal Pixie"></div>
+          <div class="pc-name">Ethereal Pixie</div>
+        </a>
+        <a class="pet-card r-unique" href="pet/wind-pixie.html">
+          <div class="pc-img"><img src="images/pets/WP.png?v=2" alt="Wind Pixie"></div>
+          <div class="pc-name">Wind Pixie</div>
+        </a>
+      </div>
+    </div>
+    <div class="pet-rarity r-rare">
+      <div class="pet-rarity-head"><span class="dot"></span>Rare<span class="line"></span></div>
+      <div class="pet-cards">
+        <a class="pet-card r-rare" href="pet/crystal-spider.html">
+          <div class="pc-img"><img src="images/pets/Spider.png" alt="Crystal Spider"></div>
+          <div class="pc-name">Crystal Spider</div>
+        </a>
+      </div>
+    </div>
+    <div class="pet-rarity r-common">
+      <div class="pet-rarity-head"><span class="dot"></span>Common<span class="line"></span></div>
+      <div class="pet-cards">
+        <a class="pet-card r-common" href="pet/forest-pixie.html">
+          <div class="pc-img"><img src="images/pets/forestpixie.png" alt="Forest Pixie"></div>
+          <div class="pc-name">Forest Pixie</div>
+        </a>
       </div>
     </div>
   </section>
