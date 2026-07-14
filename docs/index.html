@@ -541,6 +541,7 @@
   .tl-row { display: flex; align-items: stretch; border-radius: 6px; overflow: hidden; border: 1px solid var(--border); }
   .tl-badge { width: 52px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-weight: 700; font-size: 1.4rem; color: #0a0907; }
   .tl-splus .tl-badge { background: linear-gradient(135deg, #f5e098, #d4574f); font-size: 1.15rem; }
+  .tl-sminus .tl-badge { background: linear-gradient(135deg, #e0574f, #e0954f); font-size: 1.15rem; }
   .tl-s .tl-badge { background: #e0574f; } .tl-a .tl-badge { background: #e0954f; } .tl-b .tl-badge { background: #e0c94f; }
   .tl-c .tl-badge { background: #7fae5a; } .tl-d .tl-badge { background: #8a8578; }
   .tl-body { flex: 1; display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 10px; background: var(--bg2); align-items: center; }
@@ -549,6 +550,18 @@
   .tl-cls img { width: 28px; height: 28px; object-fit: cover; border-radius: 4px; }
   .tl-cls span { font-family: 'Cinzel', serif; font-size: 0.72rem; color: var(--text); white-space: nowrap; }
   .tl-cls.wip span { color: #e08080; }
+
+  /* GUIDE LANES */
+  .g-lane { margin-bottom: 1.3rem; }
+  .g-lane-head { display: flex; align-items: center; gap: 0.55rem; font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.1em; color: var(--gold2); margin-bottom: 0.6rem; }
+  .g-lane-head .ic { width: 24px; height: 24px; border-radius: 5px; background: rgba(201,168,76,0.12); border: 1px solid var(--border2); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; flex-shrink: 0; }
+  .g-lane-head .line { flex: 1; height: 1px; background: var(--border); }
+  .g-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 8px; }
+  .g-item { display: flex; flex-direction: column; gap: 2px; background: var(--bg2); border: 1px solid var(--border); border-left: 2px solid var(--gold-dim); border-radius: 0 5px 5px 0; padding: 0.6rem 0.85rem; text-decoration: none; transition: border-left-color 0.2s, background 0.2s, transform 0.2s; }
+  .g-item:hover { border-left-color: var(--gold2); background: var(--bg3); transform: translateX(2px); }
+  .g-item b { font-family: 'Cinzel', serif; font-size: 0.78rem; color: var(--gold2); font-weight: 600; }
+  .g-item small { color: var(--text2); font-size: 0.82rem; }
+  .g-item .meta { color: var(--gold-dim); font-size: 0.64rem; font-family: 'Cinzel', serif; letter-spacing: 0.04em; margin-top: 2px; }
   .diff span.on { background: var(--gold); }
 
   /* ORNAMENT */
@@ -727,6 +740,11 @@
         <div class="tl-badge">S</div>
         <div class="tl-body">
           <a class="tl-cls" href="class/slayer/"><img src="images/classes_logo/Slayer.webp" alt=""><span>Slayer</span></a>
+        </div>
+      </div>
+      <div class="tl-row tl-sminus">
+        <div class="tl-badge">S-</div>
+        <div class="tl-body">
           <a class="tl-cls" href="class/void-mage/"><img src="images/classes_logo/Void%20Mage.webp" alt=""><span>Void Mage</span></a>
         </div>
       </div>
@@ -774,73 +792,36 @@
       <h2>GUIDES</h2>
       <div class="section-line"></div>
     </div>
-    <div class="guide-grid">
-      <a class="guide-card" href="guide/getting-started/">
-        <div class="guide-card-tag">BEGINNER &middot; PROGRESSION</div>
-        <h3>Getting Started in Rappelz</h3>
-        <p>Everything a new player needs: early leveling zones, buffs, quests and more.</p>
-        <div class="guide-card-meta"><span>&#9201; 12 min read</span><span>Lv 1&ndash;153</span></div>
-      </a>
-      <a class="guide-card" href="guide/beyond-master-class/">
-        <div class="guide-card-tag">PROGRESSION &middot; GEAR</div>
-        <h3>Beyond Master Class</h3>
-        <p>Gear requirements to move forward before making it to 175.</p>       
-        <div class="guide-card-meta"><span>&#9201; 15 min read</span><span>Lv 153&ndash;175</span></div>
-      </a>
-      <a class="guide-card" href="guide/175-and-beyond/">
-        <div class="guide-card-tag">ROADMAP &middot; MILESTONES</div>
-        <h3>175 and beyond</h3>
-        <p>Complete progression guide from level 175 to 210 with target gear setups.</p>
-        <div class="guide-card-meta"><span>&#9201; 20 min read</span></div>
-      </a>
-      <a class="guide-card" href="guide/rupee-farming/">
-        <div class="guide-card-tag">ECONOMY &middot; FARMING</div>
-        <h3>Rupee Farming</h3>
-        <p>Luck build and best spots and methods to farm.</p>
-        <div class="guide-card-meta"><span>&#9201; 10 min read</span></div>
-      </a>
-      <a class="guide-card" href="guide/boss-card-collection/">
-        <div class="guide-card-tag">CARDS &middot; PROGRESSION</div>
-        <h3>Boss Card Collection</h3>
-        <p>Cheapest boss cards collection to give you a quick boost to your stats.</p>
-        <div class="guide-card-meta"><span>&#9201; 8 min read</span></div>
-      </a>
-      <a class="guide-card" href="guide/pet-taming/">
-        <div class="guide-card-tag">PET SYSTEM &middot; ADVANCED</div>
-        <h3>Pet Taming</h3>
-        <p>All you need to do about taming, best pets, pet skills to upgrade and more.</p>
-        <div class="guide-card-meta"><span>&#9201; 18 min read</span><span>All levels</span></div>
-      </a>
-      <a class="guide-card" href="guide/general-tips/">
-        <div class="guide-card-tag">TIPS &middot; OPTIMIZATION</div>
-        <h3>General Tips & Tricks</h3>
-        <p>Essential advice for efficient leveling, survivability, and gameplay optimization.</p>
-        <div class="guide-card-meta"><span>&#9201; 10 min read</span><span>All levels</span></div>
-      </a>
-      <a class="guide-card" href="guide/pet-farm/">
-        <div class="guide-card-tag">PET SYSTEM &middot; FARMING</div>
-        <h3>Pet Farm</h3>
-        <p>Details about the Pet Farm system and exp rates with basic pass, premium pass, and crackers.</p>
-        <div class="guide-card-meta"><span>&#9201; 3 min read</span><span>All levels</span></div>
-      </a>
-      <a class="guide-card" href="guide/pet-staging/">
-        <div class="guide-card-tag">PET SYSTEM &middot; STAGING</div>
-        <h3>Pet Staging</h3>
-        <p>How to stage pets from S0 to S5, success rates by pet type, and level requirements to reach 100%.</p>
-        <div class="guide-card-meta"><span>&#9201; 5 min read</span><span>All levels</span></div>
-      </a>
-      <a class="guide-card" href="guide/devildom/">
-        <div class="guide-card-tag">DUNGEON &middot; GEAR</div>
-        <h3>Devildom</h3>
-        <p>Full guide to the Devildom dungeon: stages, bosses, armor sets, cloaks, belts and crafting materials.</p>
-        <div class="guide-card-meta"><span>&#9201; 15 min read</span><span>Lv 175+</span></div>
-      </a>
-      <a class="guide-card" href="guide/alcatraz/">
-        <div class="guide-card-tag">DUNGEON &middot; EPIC</div>
-        <h3>Alcatraz</h3>
-        <p>Full guide to the Alcatraz epic dungeon: difficulties, stages, monsters, accessory enchanting, sapphire transfer, boss cards and the questline.</p>
-        <div class="guide-card-meta"><span>&#9201; 15 min read</span><span>Lv 228&ndash;230</span></div>
-      </a>
+    <div class="g-lane">
+      <div class="g-lane-head"><span class="ic">&#9876;</span>Progression &amp; Leveling<span class="line"></span></div>
+      <div class="g-list">
+        <a class="g-item" href="guide/getting-started/"><b>Getting Started in Rappelz</b><small>Early zones, buffs, quests and more.</small><span class="meta">Lv 1&ndash;153 &middot; 12 min</span></a>
+        <a class="g-item" href="guide/beyond-master-class/"><b>Beyond Master Class</b><small>Gear requirements before 175.</small><span class="meta">Lv 153&ndash;175 &middot; 15 min</span></a>
+        <a class="g-item" href="guide/175-and-beyond/"><b>175 and Beyond</b><small>Roadmap from 175 to 210 with target gear.</small><span class="meta">Lv 175+ &middot; 20 min</span></a>
+        <a class="g-item" href="guide/general-tips/"><b>General Tips &amp; Tricks</b><small>Efficient leveling, survivability, optimization.</small><span class="meta">All levels &middot; 10 min</span></a>
+        <a class="g-item" href="guide/boss-card-collection/"><b>Boss Card Collection</b><small>Cheapest cards for a quick stat boost.</small><span class="meta">8 min</span></a>
+      </div>
+    </div>
+    <div class="g-lane">
+      <div class="g-lane-head"><span class="ic">&#128176;</span>Farming &amp; Economy<span class="line"></span></div>
+      <div class="g-list">
+        <a class="g-item" href="guide/rupee-farming/"><b>Rupee Farming</b><small>Luck build, best spots and methods.</small><span class="meta">10 min</span></a>
+      </div>
+    </div>
+    <div class="g-lane">
+      <div class="g-lane-head"><span class="ic">&#128062;</span>Pet System<span class="line"></span></div>
+      <div class="g-list">
+        <a class="g-item" href="guide/pet-taming/"><b>Pet Taming</b><small>Taming, best pets, skills to upgrade.</small><span class="meta">All levels &middot; 18 min</span></a>
+        <a class="g-item" href="guide/pet-farm/"><b>Pet Farm</b><small>Exp rates, basic/premium pass, crackers.</small><span class="meta">All levels &middot; 3 min</span></a>
+        <a class="g-item" href="guide/pet-staging/"><b>Pet Staging</b><small>S0 &rarr; S5 success rates and requirements.</small><span class="meta">All levels &middot; 5 min</span></a>
+      </div>
+    </div>
+    <div class="g-lane">
+      <div class="g-lane-head"><span class="ic">&#127984;</span>Dungeons<span class="line"></span></div>
+      <div class="g-list">
+        <a class="g-item" href="guide/devildom/"><b>Devildom</b><small>Stages, bosses, armor sets, cloaks, belts.</small><span class="meta">Lv 175+ &middot; 15 min</span></a>
+        <a class="g-item" href="guide/alcatraz/"><b>Alcatraz</b><small>Epic dungeon, difficulties, questline, boss cards.</small><span class="meta">Lv 228&ndash;230 &middot; 15 min</span></a>
+      </div>
     </div>
   </section>
 
