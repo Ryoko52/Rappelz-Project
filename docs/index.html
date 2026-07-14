@@ -535,6 +535,20 @@
   .r-unique { --rc: #b988e8; --pc-b: rgba(185,136,232,0.28); }
   .r-rare { --rc: #6fa8e0; --pc-b: rgba(111,168,224,0.28); }
   .r-common { --rc: #9a9382; --pc-b: rgba(154,147,130,0.28); }
+
+  /* CLASS TIER ROWS */
+  .tl-list { display: flex; flex-direction: column; gap: 6px; }
+  .tl-row { display: flex; align-items: stretch; border-radius: 6px; overflow: hidden; border: 1px solid var(--border); }
+  .tl-badge { width: 52px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-weight: 700; font-size: 1.4rem; color: #0a0907; }
+  .tl-splus .tl-badge { background: linear-gradient(135deg, #f5e098, #d4574f); font-size: 1.15rem; }
+  .tl-s .tl-badge { background: #e0574f; } .tl-a .tl-badge { background: #e0954f; } .tl-b .tl-badge { background: #e0c94f; }
+  .tl-c .tl-badge { background: #7fae5a; } .tl-d .tl-badge { background: #8a8578; }
+  .tl-body { flex: 1; display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 10px; background: var(--bg2); align-items: center; }
+  .tl-cls { display: flex; align-items: center; gap: 6px; background: var(--bg3); border: 1px solid var(--border); border-radius: 5px; padding: 3px 10px 3px 3px; text-decoration: none; transition: border-color 0.2s, background 0.2s, transform 0.2s; }
+  .tl-cls:hover { border-color: var(--border2); background: var(--bg4); transform: translateY(-1px); }
+  .tl-cls img { width: 28px; height: 28px; object-fit: cover; border-radius: 4px; }
+  .tl-cls span { font-family: 'Cinzel', serif; font-size: 0.72rem; color: var(--text); white-space: nowrap; }
+  .tl-cls.wip span { color: #e08080; }
   .diff span.on { background: var(--gold); }
 
   /* ORNAMENT */
@@ -702,96 +716,54 @@
       <div class="section-line"></div>
       <span class="section-badge">9.10</span>
     </div>
-    <table class="tier-table">
-      <thead>
-        <tr>
-          <th>TIER</th>
-          <th>CLASS</th>
-          <th>NOTES</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- S TIER -->
-        <tr>
-          <td><span class="tier-badge tier-S">S</span></td>
-          <td><a href="class/deadeye/" style="color:inherit;text-decoration:none;">Deadeye</a></td>
-          <td style="color:var(--text2);font-size:0.88rem">Strongest class right now due to no skill CD, high evasion, and high damage.</td>
-        </tr>
-        <tr>
-          <td><span class="tier-badge tier-S">S</span></td>
-          <td><a href="class/slayer/" style="color:inherit;text-decoration:none;">Slayer</a></td>
-          <td style="color:var(--text2);font-size:0.88rem">Strongest melee class, high damage, and an easier way to sustain health than Deadeye.</td>
-        </tr>
-        <tr>
-          <td><span class="tier-badge tier-S">S</span></td>
-          <td><a href="class/void-mage/" style="color:inherit;text-decoration:none;">Void Mage</a></td>
-          <td style="color:var(--text2);font-size:0.88rem">Hard in the early game, but in the end game it becomes equivalent to Deadeye and Slayer.</td>
-        </tr>
-        <!-- A TIER -->
-        <tr>
-          <td><span class="tier-badge tier-A">A</span></td>
-          <td><a href="class/mercenary/" style="color:inherit;text-decoration:none;">Mercenary</a></td>
-          <td style="color:var(--text2);font-size:0.88rem">Beginner-friendly and easy to learn.</td>
-        </tr>
-        <tr>
-          <td><span class="tier-badge tier-A">A</span></td>
-          <td><a href="class/master-breeder/" style="color:inherit;text-decoration:none;">Master Breeder</a></td>
-          <td style="color:var(--text2);font-size:0.88rem">Weaker than Overlord in the early game, then becomes stronger at 200+, and is hard to play in 220+ content.</td>
-        </tr>
-        <tr>
-          <td><span class="tier-badge tier-A">A</span></td>
-          <td><a href="class/overlord/" style="color:inherit;text-decoration:none;">Overlord</a></td>
-          <td style="color:var(--text2);font-size:0.88rem">Strongest pet class in the early game and highly recommended for beginners who want to farm Devildom with a small budget as a first character.</td>
-        </tr>
-        <tr>
-          <td><span class="tier-badge tier-A">A</span></td>
-          <td><a href="class/cardinal/" style="color:inherit;text-decoration:none;">Cardinal</a></td>
-          <td style="color:var(--text2);font-size:0.88rem">Very strong mage class and performs very well across game content until end game, with better defensive capabilities than Magus.</td>
-        </tr>
-        <tr>
-          <td><span class="tier-badge tier-A">A</span></td>
-          <td><a href="class/magus/" style="color:inherit;text-decoration:none;">Magus</a></td>
-          <td style="color:var(--text2);font-size:0.88rem">Very strong mage class, high damage, but lack of HP and threat reduction makes it a solo class and not favorable for party play.</td>
-        </tr>
-        <!-- B TIER -->
-        <tr>
-          <td><span class="tier-badge tier-B">B</span></td>
-          <td><a href="class/templar/" style="color:#e08080;text-decoration:none;">Templar</a></td>
-          <td style="color:var(--text2);font-size:0.88rem">The best and only tank in the game, very needed for party and guild play, especially in the end game.</td>
-        </tr>
-        <tr>
-          <td><span class="tier-badge tier-B">B</span></td>
-          <td><a href="class/berserker/" style="color:inherit;text-decoration:none;">Berserker</a></td>
-          <td style="color:var(--text2);font-size:0.88rem">High health, medium damage, cool AoE skills, and lacks defensive capabilities except for a 5-minute CD skill.</td>
-        </tr>
-        <tr>
-          <td><span class="tier-badge tier-B">B</span></td>
-          <td><a href="class/war-kahuna/" style="color:inherit;text-decoration:none;">War Kahuna</a></td>
-          <td style="color:var(--text2);font-size:0.88rem">Very high damage, but lack of HP makes it unplayable in late game unless you meet all requirements to reach 100% damage reduction, which costs a lot.</td>
-        </tr>
-        <!-- C TIER -->
-        <tr>
-          <td><span class="tier-badge tier-C">C</span></td>
-          <td><a href="class/oracle/" style="color:inherit;text-decoration:none;">Oracle</a></td>
-          <td style="color:var(--text2);font-size:0.88rem">Support class with very impactful toggles, recommended only if you start the game as a duo or trio, and unable to farm game content efficiently as a beginner.</td>
-        </tr>
-        <tr>
-          <td><span class="tier-badge tier-D">D</span></td>
-          <td><a href="class/corruptor/" style="color:#e08080;text-decoration:none;">Corruptor</a></td>
-          <td style="color:var(--text2);font-size:0.88rem">Very weak class and needs an urgent rebalance.</td>
-        </tr>
-        <tr>
-          <td><span class="tier-badge tier-D">D</span></td>
-          <td><a href="class/marksman/" style="color:#e08080;text-decoration:none;">Marksman</a></td>
-          <td style="color:var(--text2);font-size:0.88rem">Very weak class and needs an urgent rebalance.</td>
-        </tr>
-        <tr>
-          <td><span class="tier-badge tier-D">D</span></td>
-          <td><a href="class/beast-master/" style="color:inherit;text-decoration:none;">Beast Master</a></td>
-          <td style="color:var(--text2);font-size:0.88rem">Best rupee farmer in the game, but weaker for game content than other pet classes. Very weak class and needs an urgent rebalance.</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="tl-list">
+      <div class="tl-row tl-splus">
+        <div class="tl-badge">S+</div>
+        <div class="tl-body">
+          <a class="tl-cls" href="class/deadeye/"><img src="images/classes_logo/DeadEye.webp" alt=""><span>Deadeye</span></a>
+        </div>
+      </div>
+      <div class="tl-row tl-s">
+        <div class="tl-badge">S</div>
+        <div class="tl-body">
+          <a class="tl-cls" href="class/slayer/"><img src="images/classes_logo/Slayer.webp" alt=""><span>Slayer</span></a>
+          <a class="tl-cls" href="class/void-mage/"><img src="images/classes_logo/Void%20Mage.webp" alt=""><span>Void Mage</span></a>
+        </div>
+      </div>
+      <div class="tl-row tl-a">
+        <div class="tl-badge">A</div>
+        <div class="tl-body">
+          <a class="tl-cls" href="class/mercenary/"><img src="images/classes_logo/Mercenary.webp" alt=""><span>Mercenary</span></a>
+          <a class="tl-cls" href="class/master-breeder/"><img src="images/classes_logo/Master%20Breeder.webp" alt=""><span>Master Breeder</span></a>
+          <a class="tl-cls" href="class/overlord/"><img src="images/classes_logo/Overlord.webp" alt=""><span>Overlord</span></a>
+          <a class="tl-cls" href="class/cardinal/"><img src="images/classes_logo/Cardinal.webp" alt=""><span>Cardinal</span></a>
+          <a class="tl-cls" href="class/magus/"><img src="images/classes_logo/Magus.webp" alt=""><span>Magus</span></a>
+        </div>
+      </div>
+      <div class="tl-row tl-b">
+        <div class="tl-badge">B</div>
+        <div class="tl-body">
+          <a class="tl-cls wip" href="class/templar/"><img src="images/classes_logo/Templar.webp" alt=""><span>Templar</span></a>
+          <a class="tl-cls" href="class/berserker/"><img src="images/classes_logo/Berserker.webp" alt=""><span>Berserker</span></a>
+          <a class="tl-cls" href="class/war-kahuna/"><img src="images/classes_logo/War%20Kahuna.webp" alt=""><span>War Kahuna</span></a>
+        </div>
+      </div>
+      <div class="tl-row tl-c">
+        <div class="tl-badge">C</div>
+        <div class="tl-body">
+          <a class="tl-cls" href="class/oracle/"><img src="images/classes_logo/Oracle.webp" alt=""><span>Oracle</span></a>
+        </div>
+      </div>
+      <div class="tl-row tl-d">
+        <div class="tl-badge">D</div>
+        <div class="tl-body">
+          <a class="tl-cls wip" href="class/corruptor/"><img src="images/classes_logo/Corruptor.webp" alt=""><span>Corruptor</span></a>
+          <a class="tl-cls wip" href="class/marksman/"><img src="images/classes_logo/Marksman.webp" alt=""><span>Marksman</span></a>
+          <a class="tl-cls" href="class/beast-master/"><img src="images/classes_logo/Beast%20Master.webp" alt=""><span>Beast Master</span></a>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:0.8rem;color:var(--text3);font-style:italic;margin-top:0.8rem;">Click any class to open its full guide with detailed notes, builds, and gear.</p>
   </section>
 
   <div class="ornament">&#10022; &middot; &middot; &middot; &middot; &#10022; &middot; &middot; &middot; &middot; &#10022;</div>
