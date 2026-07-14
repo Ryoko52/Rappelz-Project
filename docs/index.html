@@ -562,6 +562,17 @@
   .g-item b { font-family: 'Cinzel', serif; font-size: 0.78rem; color: var(--gold2); font-weight: 600; }
   .g-item small { color: var(--text2); font-size: 0.82rem; }
   .g-item .meta { color: var(--gold-dim); font-size: 0.64rem; font-family: 'Cinzel', serif; letter-spacing: 0.04em; margin-top: 2px; }
+
+  /* USEFUL TOOLS cards */
+  .tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }
+  .tool-card { display: flex; gap: 0.85rem; align-items: flex-start; background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem 1rem; text-decoration: none; transition: border-color 0.2s, background 0.2s, transform 0.2s; }
+  .tool-card:hover { border-color: var(--border2); background: var(--bg3); transform: translateY(-2px); box-shadow: var(--glow); }
+  .tool-ic { width: 38px; height: 38px; flex-shrink: 0; border-radius: 8px; background: rgba(201,168,76,0.1); border: 1px solid var(--border2); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+  .tool-body { flex: 1; min-width: 0; }
+  .tool-name { font-family: 'Cinzel', serif; font-size: 0.82rem; font-weight: 600; color: var(--gold2); display: flex; align-items: center; gap: 0.35rem; margin-bottom: 0.15rem; }
+  .tool-name .ext { font-size: 0.68rem; color: var(--text3); }
+  .tool-tag { font-family: 'Cinzel', serif; font-size: 0.52rem; letter-spacing: 0.1em; color: var(--gold-dim); border: 1px solid var(--border2); border-radius: 3px; padding: 1px 5px; margin-left: auto; flex-shrink: 0; }
+  .tool-desc { font-size: 0.82rem; color: var(--text2); line-height: 1.4; }
   .diff span.on { background: var(--gold); }
 
   /* ORNAMENT */
@@ -1072,6 +1083,51 @@
 
 
 
+    <!-- USEFUL TOOLS -->
+    <section class="section" id="useful-tools">
+      <div class="section-head">
+        <h2>USEFUL TOOLS</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="tool-grid">
+        <a class="tool-card" href="tools/mazehelper/">
+          <div class="tool-ic">&#129513;</div>
+          <div class="tool-body">
+            <div class="tool-name">Maze Helper <span class="tool-tag">ON-SITE</span></div>
+            <div class="tool-desc">Interactive tool for solving and visualizing maze puzzles.</div>
+          </div>
+        </a>
+        <a class="tool-card" href="https://7thsyndicate.co.uk/arcm/skillresource.aspx" target="_blank" rel="noopener">
+          <div class="tool-ic">&#129516;</div>
+          <div class="tool-body">
+            <div class="tool-name">Class Skill Trees &amp; Modifiers <span class="ext">&#8599;</span></div>
+            <div class="tool-desc">See all classes, their skill trees, and skill modifiers.</div>
+          </div>
+        </a>
+        <a class="tool-card" href="https://rappelz.pro/" target="_blank" rel="noopener">
+          <div class="tool-ic">&#128506;</div>
+          <div class="tool-body">
+            <div class="tool-name">Rappelz Map <span class="ext">&#8599;</span></div>
+            <div class="tool-desc">Useful for events, boss tracking, and more.</div>
+          </div>
+        </a>
+        <a class="tool-card" href="https://bluemystical.github.io/Rappelz_BeltCalculator/" target="_blank" rel="noopener">
+          <div class="tool-ic">&#129518;</div>
+          <div class="tool-body">
+            <div class="tool-name">Belt Calculator <span class="ext">&#8599;</span></div>
+            <div class="tool-desc">Calculate belt setups and stats.</div>
+          </div>
+        </a>
+        <a class="tool-card" href="https://rappelz.fandom.com/wiki/" target="_blank" rel="noopener">
+          <div class="tool-ic">&#128218;</div>
+          <div class="tool-body">
+            <div class="tool-name">Rappelz Wiki <span class="ext">&#8599;</span></div>
+            <div class="tool-desc">Contains useful information about the game.</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
     <!-- ARCHIVE -->
     <section class="section" id="archive">
       <div class="section-head">
@@ -1093,48 +1149,9 @@
 </div>
 
 <footer>
-      <div style="text-align:center;color:var(--text3);font-size:1.01rem;margin:2.5rem 0 1.2rem 0;line-height:1.7;">
-      </div>
-    </footer>
-    <section class="section" id="useful-tools">
-      <div class="tools-table-wrap">
-        <div class="tools-table-title">&#9881; Useful Tools</div>
-        <table class="tools-table">
-          <thead>
-            <tr>
-              <th style="min-width:200px;">Tool</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><a class="tools-link" href="tools/mazehelper/" target="_blank" rel="noopener"><span class="tools-link-icon">&#129513;</span>Maze Helper</a></td>
-              <td style="color:var(--text2);font-size:1.13rem;">Interactive tool for solving and visualizing maze puzzles.</td>
-            </tr>
-            <tr>
-              <td><a class="tools-link" href="https://7thsyndicate.co.uk/arcm/skillresource.aspx" target="_blank" rel="noopener"><span class="tools-link-icon">&#129516;</span>Class Skill Trees &amp; Modifiers</a></td>
-              <td style="color:var(--text2);font-size:1.13rem;">See all classes, their skill trees, and skill modifiers.</td>
-            </tr>
-            <tr>
-              <td><a class="tools-link" href="https://rappelz.pro/" target="_blank" rel="noopener"><span class="tools-link-icon">&#128506;</span>Rappelz Map</a></td>
-              <td style="color:var(--text2);font-size:1.13rem;">Useful for events, boss tracking, etc.</td>
-            </tr>
-            <tr>
-              <td><a class="tools-link" href="https://bluemystical.github.io/Rappelz_BeltCalculator/" target="_blank" rel="noopener"><span class="tools-link-icon">&#129518;</span>Belt Calculator</a></td>
-              <td style="color:var(--text2);font-size:1.13rem;">Calculate belt setups and stats.</td>
-            </tr>
-            <tr>
-              <td><a class="tools-link" href="https://rappelz.fandom.com/wiki/" target="_blank" rel="noopener"><span class="tools-link-icon">&#128218;</span>Rappelz Wiki</a></td>
-              <td style="color:var(--text2);font-size:1.13rem;">Contains useful information about the game.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    <!-- Useful Tools section ends -->
-    <div style="text-align:center;color:var(--text3);font-size:1.01rem;margin:2.5rem 0 1.2rem 0;line-height:1.7;">
-      <strong>RAPPELZ GUIDELINES</strong> - Fan-made community guide &middot; Not affiliated with Gala Lab or any official publisher<br>
-      Content is community-sourced. Contribute corrections via the Discord.
-    </div>
+  <strong>RAPPELZ GUIDELINES</strong> - Fan-made community guide &middot; Not affiliated with Gala Lab or any official publisher<br>
+  <span style="display:block;margin-top:0.4rem;">Content is community-sourced. Contribute corrections via the Discord.</span>
+</footer>
 
 
 <script src="js/search-index.js?v=9"></script>
